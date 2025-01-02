@@ -4,7 +4,7 @@ project:
 book:
   # Metadaten / meta data
   title: "Bausteine Computergestützter Datenanalyse"
-  subtitle: "Werkzeugbaustein Python"
+  # subtitle: "Werkzeugbaustein Python"
   author:
     - Lukas Arnold
     - Simone Arnold
@@ -16,6 +16,8 @@ book:
   date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
   chapters:
     - index.qmd
+    - einleitung.qmd
+    - Python-Code.qmd
   sidebar:
     title: "Werkzeugbaustein Python"
     logo: "skript/00-bilder/logo_bcd_new.svg"    
@@ -62,4 +64,6 @@ format:
 ## Objekteinstellungen / object options
 cap-location: bottom
 fig-align: center
+mermaid: 
+  theme: neutral 
 

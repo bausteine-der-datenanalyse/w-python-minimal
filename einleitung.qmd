@@ -1,0 +1,47 @@
+# Einleitung: Datenanalyse mit Python
+Die Erzeugung und Auswertung von Daten ist ein zentraler Bestandteil wissenschaftlicher Forschung. Die computergestützte Datenanalyse ermöglicht es, große Datenmengen (teil-)automatisiert auszuwerten. Gut lesbare Skriptsprachen wie Python sorgen für eine nachvollziehbare Datenverarbeitung und ermöglichen es, Analysen "auf Knopfdruck" zu wiederholen oder anzupassen.
+
+::: {.border}
+![Logo der Programmiersprache Python](skript/00-bilder/python-logo-and-wordmark-cc0-tm.png)
+
+Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). Die Wort-Bild-Marke ist markenrechtlich geschützt: <https://www.python.org/psf/trademarks/>. Das Werk ist abrufbar auf [wikimedia](https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg). 2008
+
+::: 
+
+&nbsp;
+
+Als Skriptsprache werden Pythonprogramme nicht in ein fertiges Programm übersetzt, sondern von einem sogenannten Interpreter, der die Programmanweisungen in Maschinencode für das jeweilige Computersystem übersetzt, ausgeführt. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Zwar sind interpretierte Sprachen langsamer als fertig übersetzte Programme. Bei rechenintensiven Alogrithmen helfen jedoch spezialisierte Pakete, die Rechenleistung von Python deutlich zu steigern und diesen Unterschied fast ganz auszugleichen.
+
+Python kommt als schlichte Konsole daher. Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung bereitgestellt.
+
+``` {python}
+#| echo: false
+#| fig-cap: Programmentwicklung mit Python
+#| fig-alt: "Flussdiagramm der Programmentwicklung mit Python. In der Entwicklungsumgebung wird ein Skript geschrieben, in der Konsole können Eingaben getätigt werden. Der Python Interpreter verarbeitet diese in Maschinencode, den der ausführende Computer in ein Ergebnis verarbeitet und Ausgibt."
+
+# install package if necessary
+# import subprocess
+# subprocess.call(['pip', 'install', 'schemdraw'])
+import schemdraw
+
+from schemdraw.flow import *
+
+with schemdraw.Drawing() as d:
+    # Hauptpfad Entwicklungsumgebung
+    with d.container().label('Integrierte Entwicklungsumgebung IDE'):
+        d+= Box().label('Texteditor').at((0, 0))
+        d+= Arrow().length(2).right().label("Skript").at((4, 0))
+        d+= (interpreter := Box().label('Python\nInterpreter')).at((5, 0))
+    d+= Arrow().length(5).right().label("Maschinencode", ofst = (0.7 , 0))
+    d+= Box().label('ausführender\nComputer')
+    d+= Arrow().length(2.5).right().label("Ergebnis")
+    d+= Box().label('Ausgabe')
+
+    # Nebenpfad Konsole
+    d+= (konsole := Box().label('Konsole')).at((0, -3))
+    d+= Wire("-|", arrow = "->").at(konsole.E).label('Eingaben', loc = "bottom").to(interpreter.S) # .S + .E (oder andere Richtungsangaben) müssen gesetzt werden, -| definiert eine zunächst horizontale, rechtwinkelige Kante
+
+    d.draw()
+```
+
+**Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**

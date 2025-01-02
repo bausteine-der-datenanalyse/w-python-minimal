@@ -4,9 +4,79 @@
     "href": "index.html",
     "title": "Bausteine Computergestützter Datenanalyse",
     "section": "",
-    "text": "Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Python von Maik Poetzsch ist lizensiert unter CC BY 4.0. Das Werk ist abrufbar auf GitHub. Ausgenommen von der Lizenz sind alle Logos Dritter und anders gekennzeichneten Inhalte. 2025\n\n\n\nZitiervorschlag\nArnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python“. https://github.com/bausteine-der-datenanalyse/w-python.\nBibTeX-Vorlage\n@misc{BCD-w-python-2025,\n title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python},\n author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},\n year={2025},\n url={https://github.com/bausteine-der-datenanalyse/w-python}} \n\n\n1 Voraussetzungen\nHier stehen die Voraussetzungen\n\n\n2 Lernziele\nHier stehen die Lernziele\n\n\n3 Einleitung\nEinleitungstext",
+    "text": "Werkzeugbaustein Python",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Voraussetzungen</span>"
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "index.html#voraussetzungen",
+    "href": "index.html#voraussetzungen",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "Voraussetzungen",
+    "text": "Voraussetzungen\nHier stehen die Voraussetzungen",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "index.html#lernziele",
+    "href": "index.html#lernziele",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "Lernziele",
+    "text": "Lernziele\nHier stehen die Lernziele",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "index.html#einleitung",
+    "href": "index.html#einleitung",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "Einleitung",
+    "text": "Einleitung\nEinleitungstext",
+    "crumbs": [
+      "Werkzeugbaustein Python"
+    ]
+  },
+  {
+    "objectID": "einleitung.html",
+    "href": "einleitung.html",
+    "title": "1  Einleitung: Datenanalyse mit Python",
+    "section": "",
+    "text": "Die Erzeugung und Auswertung von Daten ist ein zentraler Bestandteil wissenschaftlicher Forschung. Die computergestützte Datenanalyse ermöglicht es, große Datenmengen (teil-)automatisiert auszuwerten. Gut lesbare Skriptsprachen wie Python sorgen für eine nachvollziehbare Datenverarbeitung und ermöglichen es, Analysen “auf Knopfdruck” zu wiederholen oder anzupassen.\n\n\n\n\nLogo der Programmiersprache Python\n\n\nPython Logo von Python Software Foundation steht unter der GPLv3. Die Wort-Bild-Marke ist markenrechtlich geschützt: https://www.python.org/psf/trademarks/. Das Werk ist abrufbar auf wikimedia. 2008\n\n \nAls Skriptsprache werden Pythonprogramme nicht in ein fertiges Programm übersetzt, sondern von einem sogenannten Interpreter, der die Programmanweisungen in Maschinencode für das jeweilige Computersystem übersetzt, ausgeführt. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Zwar sind interpretierte Sprachen langsamer als fertig übersetzte Programme. Bei rechenintensiven Alogrithmen helfen jedoch spezialisierte Pakete, die Rechenleistung von Python deutlich zu steigern und diesen Unterschied fast ganz auszugleichen.\nPython kommt als schlichte Konsole daher. Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung bereitgestellt.\n\n\n\n\n\nProgrammentwicklung mit Python\n\n\n\n\nQuelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+    ]
+  },
+  {
+    "objectID": "Python-Code.html",
+    "href": "Python-Code.html",
+    "title": "2  Python-Code",
+    "section": "",
+    "text": "2.1 Formatierung\nBei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.\n# bloß nicht übertreiben\n# print(\"Python ist großartig!\") # das ist übertrieben\nprint(\"Python ist ziemlich gut.\") # das ist realistisch\n\nPython ist ziemlich gut.\nvariable1 = 15\nvariable2 = 25\n\n# Zeilenfortsetzung mit \\\nsumme = variable1 + \\\n    variable2\n\n# Zeilenfortsetzung innerhalb einer Funktion\nprint(variable1,\n variable2,\n  summe)\n\n15 25 40\nprint(1+0, 1 + 1, 1 +                  2)\n\n1 2 3\nfor i in range(3):\n    print(variable1)\n    print(variable2)\nprint(summe)\n\n15\n25\n15\n25\n15\n25\n40",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Python-Code</span>"
+    ]
+  },
+  {
+    "objectID": "Python-Code.html#formatierung",
+    "href": "Python-Code.html#formatierung",
+    "title": "2  Python-Code",
+    "section": "",
+    "text": "Kommentare werden mit einer vorangestellten # gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.\n\n\n\nAusdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen \\ über mehrere Zeilen fortgesetzt werden (hinter \\ darf keine # stehen). Innerhalb von Funktionen wie zum Beispiel print() können Zeilen nach jedem Komma fortgesetzt werden.\n\n\n\nDie Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.\n\n\n\nDie Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Python-Code</span>"
+    ]
+  },
+  {
+    "objectID": "Python-Code.html#datentypen",
+    "href": "Python-Code.html#datentypen",
+    "title": "2  Python-Code",
+    "section": "2.2 Datentypen",
+    "text": "2.2 Datentypen\nPython ist eine objektorientierte Programmiersprache. Ein Objekt ist eine Einheit mit bestimmten Eigenschaften und Verhaltensweisen. Jedes Objekt gehört zu einer Klasse, die die Eigenschaften und Verhaltensweisen des Objekts bestimmt. Die Klasse ist die Vorlage für jedes Objekt der Klasse. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden).\n\nprint(type(2), 2+2 )\nprint(type('a'), 'a'+'a')\nprint(type(True), True+True)\n\n&lt;class 'int'&gt; 4\n&lt;class 'str'&gt; aa\n&lt;class 'bool'&gt; 2\n\n\nPython kennt sehr viele Datentypen mit unterschiedlichen Eigenschaften und Verhaltensweisen. In diesem Abschnitt werden die für die Datenanalyse wichtigen Datentypen vorgestellt.\n\n\n\n\nDatentypen in Python\n\n\nPython 3. The standard type hierarchy. von Максим Пе ist lizensiert unter CC BY SA 4.0 und abrufbar auf wikimedia. 2018\n\n \nDie print-Funktion haben Sie bereits kennengelernt. Quelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Python-Code</span>"
     ]
   }
 ]

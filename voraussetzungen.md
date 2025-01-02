@@ -1,1 +1,1 @@
-Hier stehen die Voraussetzungen
+Keine Voraussetzungen, hilfreich ist der w-Pseudocode

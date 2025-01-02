@@ -6,15 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lukas Arnold">
-<meta name="author" content="Simone Arnold">
-<meta name="author" content="Florian Bagemihl">
-<meta name="author" content="Matthias Baitsch">
-<meta name="author" content="Marc Fehr">
-<meta name="author" content="Maik Poetzsch">
-<meta name="author" content="Sebastian Seipel">
 
-<title>Bausteine Computergestützter Datenanalyse</title>
+<title>Bausteine Computergestützter Datenanalyse - 1&nbsp; Einleitung: Datenanalyse mit Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./einleitung.html" rel="next">
+<link href="./Python-Code.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -89,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Werkzeugbaustein Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./einleitung.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -119,14 +113,20 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Werkzeugbaustein Python</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./einleitung.html" class="sidebar-item-text sidebar-link">
+  <a href="./einleitung.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Python-Code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python-Code.html</span></span></a>
   </div>
 </li>
     </ul>
@@ -135,49 +135,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
-   
-  <ul>
-  <li><a href="#werkzeugbaustein-python" id="toc-werkzeugbaustein-python" class="nav-link active" data-scroll-target="#werkzeugbaustein-python">Werkzeugbaustein Python</a>
-  <ul class="collapse">
-  <li><a href="#voraussetzungen" id="toc-voraussetzungen" class="nav-link" data-scroll-target="#voraussetzungen">Voraussetzungen</a></li>
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Bausteine Computergestützter Datenanalyse</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor:innen</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lukas Arnold </p>
-             <p>Simone Arnold </p>
-             <p>Florian Bagemihl </p>
-             <p>Matthias Baitsch </p>
-             <p>Marc Fehr </p>
-             <p>Maik Poetzsch </p>
-             <p>Sebastian Seipel </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2. Januar 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -187,42 +159,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="werkzeugbaustein-python" class="level1 unnumbered">
-<h1 class="unnumbered">Werkzeugbaustein Python</h1>
-<div id="Lizenz" class="border">
-<div>
-
+<p>Die Erzeugung und Auswertung von Daten ist ein zentraler Bestandteil wissenschaftlicher Forschung. Die computergestützte Datenanalyse ermöglicht es, große Datenmengen (teil-)automatisiert auszuwerten. Gut lesbare Skriptsprachen wie Python sorgen für eine nachvollziehbare Datenverarbeitung und ermöglichen es, Analysen “auf Knopfdruck” zu wiederholen oder anzupassen.</p>
+<div class="border">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="skript/00-bilder/python-logo-and-wordmark-cc0-tm.png" class="img-fluid figure-img"></p>
+<figcaption>Logo der Programmiersprache Python</figcaption>
+</figure>
 </div>
-<div class="quarto-layout-panel" data-layout="[20, 80]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img src="skript/00-bilder/CC-BY.svg" class="img-fluid" alt="Symbol des Lizenzhinweises Creative Commons BY"></p>
+<p>Python Logo von Python Software Foundation steht unter der <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. Die Wort-Bild-Marke ist markenrechtlich geschützt: <a href="https://www.python.org/psf/trademarks/" class="uri">https://www.python.org/psf/trademarks/</a>. Das Werk ist abrufbar auf <a href="https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg">wikimedia</a>. 2008</p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
-<p>Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Python von Maik Poetzsch ist lizensiert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>. Das Werk ist abrufbar auf <a href="https://github.com/bausteine-der-datenanalyse/w-python">GitHub</a>. Ausgenommen von der Lizenz sind alle Logos Dritter und anders gekennzeichneten Inhalte. 2025</p>
+<p>&nbsp;</p>
+<p>Als Skriptsprache werden Pythonprogramme nicht in ein fertiges Programm übersetzt, sondern von einem sogenannten Interpreter, der die Programmanweisungen in Maschinencode für das jeweilige Computersystem übersetzt, ausgeführt. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Zwar sind interpretierte Sprachen langsamer als fertig übersetzte Programme. Bei rechenintensiven Alogrithmen helfen jedoch spezialisierte Pakete, die Rechenleistung von Python deutlich zu steigern und diesen Unterschied fast ganz auszugleichen.</p>
+<p>Python kommt als schlichte Konsole daher. Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung bereitgestellt.</p>
+<div id="1be09c05" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="einleitung_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
+<figcaption>Programmentwicklung mit Python</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<p>Zitiervorschlag</p>
-<p>Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python“. <a href="https://github.com/bausteine-der-datenanalyse/w-python" class="uri">https://github.com/bausteine-der-datenanalyse/w-python</a>.</p>
-<p>BibTeX-Vorlage</p>
-<pre><code>@misc{BCD-w-python-2025,
- title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python},
- author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},
- year={2025},
- url={https://github.com/bausteine-der-datenanalyse/w-python}} </code></pre>
-</div>
-<section id="voraussetzungen" class="level2">
-<h2 class="anchored" data-anchor-id="voraussetzungen">Voraussetzungen</h2>
-<p>Hier stehen die Voraussetzungen</p>
-</section>
-<section id="lernziele" class="level2">
-<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
-<p>Hier stehen die Lernziele</p>
+<p><strong>Quelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.</strong></p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -636,10 +598,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Werkzeugbaustein Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Werkzeugbaustein Python</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./einleitung.html" class="pagination-link" aria-label="Einleitung: Datenanalyse mit Python">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Python-Code.html" class="pagination-link" aria-label="Python-Code.html">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python-Code.html</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

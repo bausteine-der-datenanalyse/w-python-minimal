@@ -1,0 +1,66 @@
+# Python-Code
+Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) Format umgehen. UTF-8 ist eine sehr weit verbreitete Zeichenkodierung, welche das ASCII-Format erweitert und z. B. deutsche Sonderzeichen abbilden kann.
+
+## Formatierung
+Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
+
+1. Kommentare werden mit einer vorangestellten `#` gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.
+
+```{python}
+# bloß nicht übertreiben
+# print("Python ist großartig!") # das ist übertrieben
+print("Python ist ziemlich gut.") # das ist realistisch
+```
+
+2. Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen `\` über mehrere Zeilen fortgesetzt werden (hinter `\` darf keine `#` stehen). Innerhalb von Funktionen wie zum Beispiel `print()` können Zeilen nach jedem Komma fortgesetzt werden.
+
+``` {python}
+variable1 = 15
+variable2 = 25
+
+# Zeilenfortsetzung mit \
+summe = variable1 + \
+    variable2
+
+# Zeilenfortsetzung innerhalb einer Funktion
+print(variable1,
+ variable2,
+  summe)
+```
+
+3. Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.
+
+``` {python}
+print(1+0, 1 + 1, 1 +                  2)
+```
+
+4. Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
+
+```{python}
+for i in range(3):
+    print(variable1)
+    print(variable2)
+print(summe)
+```
+
+## Objekttypen
+Python ist eine objektorientierte Programmiersprache. Ein Objekt ist eine Einheit mit bestimmten *Eigenschaften* und *Verhaltensweisen*. Jedes Objekt gehört zu einer Klasse, die die Eigenschaften und Verhaltensweisen des Objekts bestimmt. Die Klasse ist die Vorlage für jedes Objekt der Klasse. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
+
+```{python}
+print(type(2), 2 + 2 )
+print(type('a'), 'a' + 'a')
+print(type(True), True + True)
+```
+
+Python kennt sehr viele Objekttypen mit unterschiedlichen Eigenschaften und Verhaltensweisen. In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
+
+::: {.border}
+![Datentypen in Python](skript/00-bilder/python3-standard-type-hierarchy.png){width="60%" fig-alt="Dargestellt ist eine Kategorisierung der Standardtypen in Python. Die Kategorisierung ist nicht vollständig deckungsgleich zu den in der Dokumentation genannten Kategorien von Datentypen. Der Typ None für Nullwerte hat keine weitere Unterteilung. Die Kategorie Numbers unterteilt sich in Zahlenwerte (Ganzzahlen, boolsche Wahrheitswerte), reele Zahlen (floats) und komplexe Zahlen. Die Kategorie Sequences unterteilt sich in Unveränderliche (Strings, Tuple, Bytes) und Veränderliche (Listen, Byte Arrays). Die Kategorie Set Types unterteilt sich in Sets (Mengen) und Frozen Sets. Die Kategorie Mappings enthält Dictionaries (Wörterbücher). Die Kategorie Callable umfasst Funktionen, Methoden und Klassen. Außerdem gibt es die Kategorie Module."}
+
+Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unter [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) und abrufbar auf [wikimedia](https://commons.wikimedia.org/wiki/File:Python_3._The_standard_type_hierarchy.png). 2018
+:::
+
+&nbsp;
+
+Die print-Funktion haben Sie bereits kennengelernt. 
+**Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**
