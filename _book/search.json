@@ -1,0 +1,12 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bausteine Computergestützter Datenanalyse",
+    "section": "",
+    "text": "Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Python von Maik Poetzsch ist lizensiert unter CC BY 4.0. Das Werk ist abrufbar auf GitHub. Ausgenommen von der Lizenz sind alle Logos Dritter und anders gekennzeichneten Inhalte. 2025\n\n\n\nZitiervorschlag\nArnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python“. https://github.com/bausteine-der-datenanalyse/w-python.\nBibTeX-Vorlage\n@misc{BCD-w-python-2025,\n title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python},\n author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},\n year={2025},\n url={https://github.com/bausteine-der-datenanalyse/w-python}} \n\n\n1 Voraussetzungen\nHier stehen die Voraussetzungen\n\n\n2 Lernziele\nHier stehen die Lernziele\n\n\n3 Einleitung\nEinleitungstext",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Voraussetzungen</span>"
+    ]
+  }
+]
