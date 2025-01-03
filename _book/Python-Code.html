@@ -104,6 +104,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg">
 <link rel="icon" type="image/x-icon" href="logo.ico">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -173,7 +202,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#formatierung" id="toc-formatierung" class="nav-link active" data-scroll-target="#formatierung"><span class="header-section-number">2.1</span> Formatierung</a></li>
-  <li><a href="#datentypen" id="toc-datentypen" class="nav-link" data-scroll-target="#datentypen"><span class="header-section-number">2.2</span> Datentypen</a></li>
+  <li><a href="#klassen-typen-und-objekte" id="toc-klassen-typen-und-objekte" class="nav-link" data-scroll-target="#klassen-typen-und-objekte"><span class="header-section-number">2.2</span> Klassen, Typen und Objekte</a>
+  <ul class="collapse">
+  <li><a href="#zahlen" id="toc-zahlen" class="nav-link" data-scroll-target="#zahlen">Zahlen</a></li>
+  </ul></li>
+  <li><a href="#gleitkommazahlen" id="toc-gleitkommazahlen" class="nav-link" data-scroll-target="#gleitkommazahlen"><span class="header-section-number">2.3</span> Gleitkommazahlen</a></li>
+  <li><a href="#logische-operationen" id="toc-logische-operationen" class="nav-link" data-scroll-target="#logische-operationen"><span class="header-section-number">2.4</span> Logische Operationen</a></li>
   </ul>
 </nav>
     </div>
@@ -204,52 +238,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="formatierung"><span class="header-section-number">2.1</span> Formatierung</h2>
 <p>Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.</p>
 <ol type="1">
+<li>Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder Doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.</li>
+</ol>
+<div id="bf7da30a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hallo Welt!'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'Hallo Python!'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text_variable)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+Hallo Welt!
+Hallo Python!</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
 <li>Kommentare werden mit einer vorangestellten <code>#</code> gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.</li>
 </ol>
-<div id="5963ac44" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bloß nicht übertreiben</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Python ist großartig!") # das ist übertrieben</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python ist ziemlich gut."</span>) <span class="co"># das ist realistisch</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="06c9f4a1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bloß nicht übertreiben</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Python ist großartig!") # das ist übertrieben</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python ist ziemlich gut."</span>) <span class="co"># das ist realistisch</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Python ist ziemlich gut.</code></pre>
 </div>
 </div>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen <code>\</code> über mehrere Zeilen fortgesetzt werden (hinter <code>\</code> darf keine <code>#</code> stehen). Innerhalb von Funktionen wie zum Beispiel <code>print()</code> können Zeilen nach jedem Komma fortgesetzt werden.</li>
 </ol>
-<div id="674ffd53" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>variable1 <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>variable2 <span class="op">=</span> <span class="dv">25</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeilenfortsetzung mit \</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>summe <span class="op">=</span> variable1 <span class="op">+</span> <span class="op">\</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    variable2</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeilenfortsetzung innerhalb einer Funktion</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(variable1,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> variable2,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  summe)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="62977d2d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>variable1 <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>variable2 <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeilenfortsetzung mit \</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>summe <span class="op">=</span> variable1 <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    variable2</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeilenfortsetzung innerhalb einer Funktion</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(variable1,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> variable2,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  summe)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>15 25 40</code></pre>
 </div>
 </div>
-<ol start="3" type="1">
+<ol start="4" type="1">
 <li>Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.</li>
 </ol>
-<div id="16f854cb" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">+</span><span class="dv">0</span>, <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span>, <span class="dv">1</span> <span class="op">+</span>                  <span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4e007149" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">+</span><span class="dv">0</span>, <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span>, <span class="dv">1</span> <span class="op">+</span>                  <span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3</code></pre>
 </div>
 </div>
-<ol start="4" type="1">
+<ol start="5" type="1">
 <li>Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.</li>
 </ol>
-<div id="bdff6691" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable1)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable2)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summe)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="430df987" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable1)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable2)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summe)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>15
 25
@@ -261,20 +309,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="datentypen" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="datentypen"><span class="header-section-number">2.2</span> Datentypen</h2>
-<p>Python ist eine objektorientierte Programmiersprache. Ein Objekt ist eine Einheit mit bestimmten <em>Eigenschaften</em> und <em>Verhaltensweisen</em>. Jedes Objekt gehört zu einer Klasse, die die Eigenschaften und Verhaltensweisen des Objekts bestimmt. Die Klasse ist die Vorlage für jedes Objekt der Klasse. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden).</p>
-<div id="9b24513e" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>), <span class="dv">2</span><span class="op">+</span><span class="dv">2</span> )</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">'a'</span>), <span class="st">'a'</span><span class="op">+</span><span class="st">'a'</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>), <span class="va">True</span><span class="op">+</span><span class="va">True</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="klassen-typen-und-objekte" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="klassen-typen-und-objekte"><span class="header-section-number">2.2</span> Klassen, Typen und Objekte</h2>
+<p>Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die <em>Eigenschaften</em> und <em>Verhaltensweisen</em> des Objekts bestimmt. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator <code>+</code>.</p>
+<div id="4487341b" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>), <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>, <span class="st">"Ganzzahlen werden addiert."</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">'a'</span>), <span class="st">'a'</span> <span class="op">+</span> <span class="st">'a'</span>, <span class="st">"Zeichen werden verkettet."</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span> <span class="kw">and</span> <span class="va">False</span>), <span class="va">True</span> <span class="op">+</span> <span class="va">False</span>, <span class="st">"Logische Werte werden addiert."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'int'&gt; 4
-&lt;class 'str'&gt; aa
-&lt;class 'bool'&gt; 2</code></pre>
+<pre><code>&lt;class 'int'&gt; 4 Ganzzahlen werden addiert.
+&lt;class 'str'&gt; aa Zeichen werden verkettet.
+&lt;class 'bool'&gt; 1 Logische Werte werden addiert.</code></pre>
 </div>
 </div>
-<p>Python kennt sehr viele Datentypen mit unterschiedlichen Eigenschaften und Verhaltensweisen. In diesem Abschnitt werden die für die Datenanalyse wichtigen Datentypen vorgestellt.</p>
+<p>Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen (‘int’) und Zeichenketten (‘str’) definiert ist. Python kennt sehr viele Typen (Klassen).</p>
 <div class="border">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -285,7 +333,224 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unter <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY SA 4.0</a> und abrufbar auf <a href="https://commons.wikimedia.org/wiki/File:Python_3._The_standard_type_hierarchy.png">wikimedia</a>. 2018</p>
 </div>
 <p>&nbsp;</p>
-<p>Die print-Funktion haben Sie bereits kennengelernt. <strong>Quelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.</strong></p>
+<p>In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.</p>
+<ul>
+<li><p>Zahlen</p></li>
+<li><p>…</p></li>
+</ul>
+<section id="zahlen" class="level3">
+<h3 class="anchored" data-anchor-id="zahlen">Zahlen</h3>
+<p>Zu den Zahlen gehören Ganzzahlen und boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.</p>
+<section id="ganzzahlen" class="level4">
+<h4 class="anchored" data-anchor-id="ganzzahlen">Ganzzahlen</h4>
+<p>Ganzzahlen werden standardmäßig im Dezimalsystem eingegeben und können positiv oder negativ sein.</p>
+<div id="ed1ae1c8" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">12</span>, <span class="op">-</span><span class="dv">8</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>12 -8</code></pre>
+</div>
+</div>
+<p>Darüber hinaus können Ganzzahlen auch in anderen Basen angegeben werden:</p>
+<ul>
+<li>Dualsystem: Ziffern <code>0</code> und <code>1</code> mit einem <code>0b</code> Prefix</li>
+</ul>
+<div id="6046bff9" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0b1000</span>, <span class="st">"plus"</span>, <span class="bn">0b0000</span>, <span class="st">"plus"</span>, <span class="bn">0b0010</span>, <span class="op">\</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0b0001</span>, <span class="st">"ist"</span>, <span class="bn">0b1011</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>8 plus 0 plus 2 plus 1 ist 11</code></pre>
+</div>
+</div>
+<ul>
+<li>Oktalsystem: Ziffern <code>0</code> bis <code>7</code> mit einem <code>0o</code> Prefix</li>
+</ul>
+<div id="457af1ee" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0o7000</span>, <span class="st">"plus"</span>, <span class="bn">0o0700</span>, <span class="st">"plus"</span>, <span class="bn">0o0020</span>, <span class="op">\</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0o0000</span>, <span class="st">"ist"</span>, <span class="bn">0o7720</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3584 plus 448 plus 16 plus 0 ist 4048</code></pre>
+</div>
+</div>
+<ul>
+<li>Hexadezimalsystem: Ziffern <code>0</code> bis <code>F</code> mit einem <code>0x</code> Prefix</li>
+</ul>
+<div id="a77a6902" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0xF000</span>, <span class="st">"plus"</span>, <span class="bn">0x0200</span>, <span class="st">"plus"</span>, <span class="bn">0x00A0</span>, <span class="op">\</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0x0001</span>, <span class="st">"ist"</span>, <span class="bn">0xF2A1</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>61440 plus 512 plus 160 plus 1 ist 62113</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="gleitkommazahlen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="gleitkommazahlen"><span class="header-section-number">2.3</span> Gleitkommazahlen</h2>
+<p>Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen <code>.</code> oder in Exponentialschreibweise angegeben. Gleitkommazahlen haben den Typ <code>float</code>.</p>
+<div id="dadd164a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">120.6</span>, <span class="fl">1206e-1</span>, <span class="fl">12060e-2</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen."</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1e-7</span>, <span class="st">"oder"</span>, <span class="fl">1e+7</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>120.6 120.6 120.6 
+
+Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.
+1e-07 oder 10000000.0</code></pre>
+</div>
+</div>
+<p>Da Computer im Binärsystem arbeiten, können Dezimalzahlen nicht exakt gespeichert werden. Beispielsweise ist die Division von 1 durch 10 dezimal gleich 0.1. Binär ist 1<sub>2</sub> durch 1010<sub>2</sub> aber ein periodischer Bruch: <span class="math display">\[ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 \]</span></p>
+<p>Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch von 0.1 ist in Dezimalschreibweise 3602879701896397 / 2^55). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python Dokumentation</a>).</p>
+<div id="f44d0bca" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span>) <span class="co"># Die kürzeste Dezimalzahl zur Binärapproximation</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">format</span>(<span class="fl">0.1</span>, <span class="st">'.17g'</span>)) <span class="co"># Die nächstlängere Dezimalzahl zur selben Binärapproximation</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>) <span class="co"># binär gerechnet, ändert sich die Binärapproximation</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.1
+0.10000000000000001
+0.09999999999999998</code></pre>
+</div>
+</div>
+<p>In der praktischen Arbeit mit Python kommen deshalb gelegentlich auf den ersten Blick ungewöhnlich wirkende Ergebnisse vor.</p>
+<div id="de1a3872" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.01</span> <span class="op">+</span> <span class="fl">0.02</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.001</span> <span class="op">+</span> <span class="fl">0.002</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.0001</span> <span class="op">+</span> <span class="fl">0.0002</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.00001</span> <span class="op">+</span> <span class="fl">0.00002</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.30000000000000004
+0.03
+0.003
+0.00030000000000000003
+3.0000000000000004e-05</code></pre>
+</div>
+</div>
+<p>Abhilfe schafft in diesem Fall die Funktion <code>round(Wert, Stellen)</code>. <strong>Querverweis f-strings</strong></p>
+<div id="ea8bcbdb" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>, <span class="dv">2</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.3</code></pre>
+</div>
+</div>
+<p><strong>Operationen mit Zahlen, dann Übungsaufgaben</strong> Rendite 20 Jahre lang mit 3 Prozent, 30 Jahre mit 2 Prozent welche größer ist.</p>
+<section id="boolsche-werte" class="level4">
+<h4 class="anchored" data-anchor-id="boolsche-werte">Boolsche Werte</h4>
+<p>Die boolschen Werte <code>True</code> und <code>False</code> sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte <code>1</code> und <code>0</code> an.</p>
+<div id="531b6c0b" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 größer als 9?"</span>, <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 11 kleiner als 10?"</span>, <span class="dv">11</span> <span class="op">&lt;</span> <span class="dv">10</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 genau 10.0?"</span>, <span class="dv">10</span> <span class="op">==</span> <span class="fl">10.0</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"True und False können mit + addiert:"</span>, <span class="va">True</span> <span class="op">+</span> <span class="va">False</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"... und mit * multipliziert werden:"</span>, <span class="va">True</span> <span class="op">*</span> <span class="va">False</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ist 10 größer als 9? True
+Ist 11 kleiner als 10? False
+Ist 10 genau 10.0? True 
+
+True und False können mit + addiert: 1
+... und mit * multipliziert werden: 0 
+</code></pre>
+</div>
+</div>
+<p>Die Multiplikation von Wahrheitswerten ist nützlich, um mehrere logische Abfragen zu einem logischen UND zu kombinieren:</p>
+<div id="a8c8ddc5" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 &gt; 9 UND &gt; 8?"</span>, (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ist 10 &gt; 9 UND &gt; 8? 1</code></pre>
+</div>
+</div>
+<p>Die Funktion <code>bool()</code> gibt den Wahrheitswert eines Werts zurück.</p>
+<div id="99001ff1" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 &gt; 9 UND &gt; 8?"</span>, <span class="bu">bool</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ist 10 &gt; 9 UND &gt; 8? True</code></pre>
+</div>
+</div>
+<p>Die meisten Werte in Python haben den Wahrheitswert <code>True</code>.</p>
+<div id="108566c4" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">1</span>), <span class="bu">bool</span>(<span class="dv">2</span>), <span class="bu">bool</span>(<span class="fl">2.4</span>))</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">'a'</span>), <span class="bu">bool</span>(<span class="st">'b'</span>), <span class="bu">bool</span>(<span class="st">'ab'</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True True True
+True True True</code></pre>
+</div>
+</div>
+<p>Neben <code>False</code> und <code>0</code> haben leere und nicht existierende Werte und Objekte den Wahrheitswert <code>False</code>.</p>
+<div id="de28937f" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">False</span>), <span class="bu">bool</span>(<span class="dv">0</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">""</span>)) <span class="co"># eine leere Zeichenkette</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>([])) <span class="co"># eine leere Liste</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(())) <span class="co"># eine leeres Tupel</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>({})) <span class="co"># ein leeres Dictionary</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">None</span>)) <span class="co"># None deklariert einen nicht existenten Wert</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False False
+False
+False
+False
+False
+False</code></pre>
+</div>
+</div>
+<p>Die Sammeltypen Liste, Tupel und Dictionary werden wir später kennenlernen. Boolsche Werte können die Ausführung von Programmcode steuern, indem sie wie <code>an</code> und <code>aus</code> wirken. So kann Programmcode mit einer <code>if</code>-Anweisung nur dann ausgeführt werden, wenn ein Sammeltyp auch Werte enthält.</p>
+<div id="9c7b28d2" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>meine_Liste <span class="op">=</span> [<span class="st">'Äpfel'</span>, <span class="st">'Butter'</span>]</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> meine_Liste:</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Wir müssen </span><span class="sc">{</span>meine_Liste<span class="sc">}</span><span class="ss"> einkaufen."</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>meine_Liste <span class="op">=</span> [] <span class="co"># eine leere Liste</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> meine_Liste:</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Wir müssen </span><span class="sc">{</span>meine_Liste<span class="sc">}</span><span class="ss"> einkaufen."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wir müssen ['Äpfel', 'Butter'] einkaufen.</code></pre>
+</div>
+</div>
+<p><strong>logische Operationen, dann Übungsaufgaben</strong> Zwei Divisionen vergleichen, welche größer ist.</p>
+<p><strong>Datentyp muss noch von Klasse / Typ unterschieden werden</strong></p>
+</section>
+</section>
+<section id="logische-operationen" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="logische-operationen"><span class="header-section-number">2.4</span> Logische Operationen</h2>
+<p>Zu den logischen Operationen gehören die logischen Verknüpfungen <code>and</code>, <code>or</code> und <code>not</code>. Darüber hinaus können auch vergleichende Operatoren wie <code>&gt;</code>, <code>&gt;=</code> oder <code>==</code> verwendet werden. Das Ergebnis dieser Operationen ist vom Typ <code>bool</code>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operand</th>
+<th style="text-align: center;">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>and</code></td>
+<td style="text-align: center;">logisches UND</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>or</code></td>
+<td style="text-align: center;">logisches ODER</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>not</code></td>
+<td style="text-align: center;">logisches NICHT</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>&lt;</code>, <code>&gt;</code></td>
+<td style="text-align: center;">kleiner / größer als</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>&lt;=</code>, <code>&gt;=</code></td>
+<td style="text-align: center;">kleiner / größer gleich</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>==</code>, <code>!=</code></td>
+<td style="text-align: center;">gleich / ungleich</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ergänzen: Hinweis auf bitwise AND (&amp;), NOT (~), XOR (^)</strong></p>
+<p><strong>string-formating mit f-strings</strong></p>
+<p><strong>Quelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.</strong></p>
 
 
 </section>

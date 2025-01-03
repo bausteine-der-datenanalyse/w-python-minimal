@@ -61,6 +61,11 @@ format:
     biblio-title: Quellen
     default-image-extension: pdf # Vektorgrafiken werden als PDF eingebunden / vector grafics are embedded as PDF
 
+## Inhaltsverzeichnis / table of contents
+toc: true
+number-sections: true
+number-depth: 2
+
 ## Objekteinstellungen / object options
 cap-location: bottom
 fig-align: center

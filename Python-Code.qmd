@@ -4,7 +4,16 @@ Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem S
 ## Formatierung
 Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
 
-1. Kommentare werden mit einer vorangestellten `#` gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.
+1. Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder Doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.
+
+```{python}
+print(1 + 2)
+print('Hallo Welt!')
+text_variable = 'Hallo Python!'
+print(text_variable)
+```
+
+2. Kommentare werden mit einer vorangestellten `#` gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.
 
 ```{python}
 # bloß nicht übertreiben
@@ -12,7 +21,7 @@ Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
 print("Python ist ziemlich gut.") # das ist realistisch
 ```
 
-2. Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen `\` über mehrere Zeilen fortgesetzt werden (hinter `\` darf keine `#` stehen). Innerhalb von Funktionen wie zum Beispiel `print()` können Zeilen nach jedem Komma fortgesetzt werden.
+3. Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen `\` über mehrere Zeilen fortgesetzt werden (hinter `\` darf keine `#` stehen). Innerhalb von Funktionen wie zum Beispiel `print()` können Zeilen nach jedem Komma fortgesetzt werden.
 
 ``` {python}
 variable1 = 15
@@ -28,13 +37,13 @@ print(variable1,
   summe)
 ```
 
-3. Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.
+4. Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.
 
 ``` {python}
 print(1+0, 1 + 1, 1 +                  2)
 ```
 
-4. Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
+5. Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
 
 ```{python}
 for i in range(3):
@@ -43,16 +52,16 @@ for i in range(3):
 print(summe)
 ```
 
-## Objekttypen
-Python ist eine objektorientierte Programmiersprache. Ein Objekt ist eine Einheit mit bestimmten *Eigenschaften* und *Verhaltensweisen*. Jedes Objekt gehört zu einer Klasse, die die Eigenschaften und Verhaltensweisen des Objekts bestimmt. Die Klasse ist die Vorlage für jedes Objekt der Klasse. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
+## Klassen, Typen und Objekte
+Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
 
 ```{python}
-print(type(2), 2 + 2 )
-print(type('a'), 'a' + 'a')
-print(type(True), True + True)
+print(type(2), 2 + 2, "Ganzzahlen werden addiert.")
+print(type('a'), 'a' + 'a', "Zeichen werden verkettet.")
+print(type(True and False), True + False, "Logische Werte werden addiert.")
 ```
 
-Python kennt sehr viele Objekttypen mit unterschiedlichen Eigenschaften und Verhaltensweisen. In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
+Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int') und Zeichenketten ('str') definiert ist. Python kennt sehr viele Typen (Klassen).
 
 ::: {.border}
 ![Datentypen in Python](skript/00-bilder/python3-standard-type-hierarchy.png){width="60%" fig-alt="Dargestellt ist eine Kategorisierung der Standardtypen in Python. Die Kategorisierung ist nicht vollständig deckungsgleich zu den in der Dokumentation genannten Kategorien von Datentypen. Der Typ None für Nullwerte hat keine weitere Unterteilung. Die Kategorie Numbers unterteilt sich in Zahlenwerte (Ganzzahlen, boolsche Wahrheitswerte), reele Zahlen (floats) und komplexe Zahlen. Die Kategorie Sequences unterteilt sich in Unveränderliche (Strings, Tuple, Bytes) und Veränderliche (Listen, Byte Arrays). Die Kategorie Set Types unterteilt sich in Sets (Mengen) und Frozen Sets. Die Kategorie Mappings enthält Dictionaries (Wörterbücher). Die Kategorie Callable umfasst Funktionen, Methoden und Klassen. Außerdem gibt es die Kategorie Module."}
@@ -62,5 +71,152 @@ Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unte
 
 &nbsp;
 
-Die print-Funktion haben Sie bereits kennengelernt. 
+In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
+
+  - Zahlen
+
+  - ...
+
+### Zahlen
+Zu den Zahlen gehören Ganzzahlen und boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.
+
+#### Ganzzahlen
+Ganzzahlen werden standardmäßig im Dezimalsystem eingegeben und können positiv oder negativ sein.
+
+```{python}
+print(12, -8)
+```
+
+Darüber hinaus können Ganzzahlen auch in anderen Basen angegeben werden:
+
+* Dualsystem: Ziffern `0` und `1` mit einem `0b` Prefix
+```{python}
+print(0b1000, "plus", 0b0000, "plus", 0b0010, \
+      "plus", 0b0001, "ist", 0b1011)
+```
+
+* Oktalsystem: Ziffern `0` bis `7` mit einem `0o` Prefix
+```{python}
+print(0o7000, "plus", 0o0700, "plus", 0o0020, \
+      "plus", 0o0000, "ist", 0o7720)
+```
+
+* Hexadezimalsystem: Ziffern `0` bis `F` mit einem `0x` Prefix
+```{python}
+print(0xF000, "plus", 0x0200, "plus", 0x00A0, \
+      "plus", 0x0001, "ist", 0xF2A1)
+```
+
+## Gleitkommazahlen
+Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen `.` oder in Exponentialschreibweise angegeben. Gleitkommazahlen haben den Typ `float`.
+
+```{python}
+print(120.6, 1206e-1, 12060e-2, "\n")
+
+print("Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.")
+print(1e-7, "oder", 1e+7)
+```
+
+Da Computer im Binärsystem arbeiten, können Dezimalzahlen nicht exakt gespeichert werden. Beispielsweise ist die Division von 1 durch 10 dezimal gleich 0.1. Binär ist 1~2~ durch 1010~2~ aber ein periodischer Bruch:
+$$ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 $$
+
+Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch von 0.1 ist in Dezimalschreibweise 3602879701896397 / 2^55). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der [Python Dokumentation](https://docs.python.org/3/tutorial/floatingpoint.html)). 
+
+```{python}
+print(0.1) # Die kürzeste Dezimalzahl zur Binärapproximation
+print(format(0.1, '.17g')) # Die nächstlängere Dezimalzahl zur selben Binärapproximation
+print(0.3 - 0.2) # binär gerechnet, ändert sich die Binärapproximation
+```
+
+In der praktischen Arbeit mit Python kommen deshalb gelegentlich auf den ersten Blick ungewöhnlich wirkende Ergebnisse vor.
+```{python}
+print(0.1 + 0.2)
+print(0.01 + 0.02)
+print(0.001 + 0.002)
+print(0.0001 + 0.0002)
+print(0.00001 + 0.00002)
+```
+
+Abhilfe schafft in diesem Fall die Funktion `round(Wert, Stellen)`. **Querverweis f-strings**
+
+```{python}
+print(round(0.1 + 0.2, 2))
+```
+
+**Operationen mit Zahlen, dann Übungsaufgaben**
+Rendite 20 Jahre lang mit 3 Prozent, 30 Jahre mit 2 Prozent welche größer ist.
+
+
+#### Boolsche Werte
+Die boolschen Werte `True` und `False` sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte `1` und `0` an.
+```{python}
+print("Ist 10 größer als 9?", 10 > 9)
+print("Ist 11 kleiner als 10?", 11 < 10)
+print("Ist 10 genau 10.0?", 10 == 10.0, "\n")
+
+print("True und False können mit + addiert:", True + False)
+print("... und mit * multipliziert werden:", True * False, "\n")
+```
+
+Die Multiplikation von Wahrheitswerten ist nützlich, um mehrere logische Abfragen zu einem logischen UND zu kombinieren:
+```{python}
+print("Ist 10 > 9 UND > 8?", (10 > 9) * (10 > 8))
+```
+
+Die Funktion `bool()` gibt den Wahrheitswert eines Werts zurück.
+```{python}
+print("Ist 10 > 9 UND > 8?", bool((10 > 9) * (10 > 8)))
+```
+
+Die meisten Werte in Python haben den Wahrheitswert `True`.
+```{python}
+print(bool(1), bool(2), bool(2.4))
+print(bool('a'), bool('b'), bool('ab'))
+```
+
+Neben `False` und `0` haben leere und nicht existierende Werte und Objekte den Wahrheitswert `False`.
+
+```{python}
+print(bool(False), bool(0))
+print(bool("")) # eine leere Zeichenkette
+print(bool([])) # eine leere Liste
+print(bool(())) # eine leeres Tupel
+print(bool({})) # ein leeres Dictionary
+print(bool(None)) # None deklariert einen nicht existenten Wert
+```
+
+Die Sammeltypen Liste, Tupel und Dictionary werden wir später kennenlernen. Boolsche Werte können die Ausführung von Programmcode steuern, indem sie wie `an` und `aus` wirken. So kann Programmcode mit einer `if`-Anweisung nur dann ausgeführt werden, wenn ein Sammeltyp auch Werte enthält.
+
+```{python}
+meine_Liste = ['Äpfel', 'Butter']
+if meine_Liste:
+    print(f"Wir müssen {meine_Liste} einkaufen.")
+
+meine_Liste = [] # eine leere Liste
+if meine_Liste:
+    print(f"Wir müssen {meine_Liste} einkaufen.")
+
+```
+
+**logische Operationen, dann Übungsaufgaben**
+Zwei Divisionen vergleichen, welche größer ist.
+
+**Datentyp muss noch von Klasse / Typ unterschieden werden**
+
+## Logische Operationen
+Zu den logischen Operationen gehören die logischen Verknüpfungen `and`, `or` und `not`. Darüber hinaus können auch vergleichende Operatoren wie `>`, `>=` oder `==` verwendet werden. Das Ergebnis dieser Operationen ist vom Typ `bool`.
+
+| Operand | Beschreibung |
+| :--: | :--: |
+| `and`| logisches UND |
+| `or` | logisches ODER |
+| `not` | logisches NICHT |
+| `<`, `>` | kleiner / größer als |
+| `<=`, `>=` | kleiner / größer gleich |
+| `==`, `!=` | gleich / ungleich |
+
+**ergänzen: Hinweis auf bitwise AND (&), NOT (~), XOR (^)**
+
+**string-formating mit f-strings**
+
 **Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**
