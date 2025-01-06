@@ -1,7 +1,9 @@
 # Python-Code
 Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) Format umgehen. UTF-8 ist eine sehr weit verbreitete Zeichenkodierung, welche das ASCII-Format erweitert und z. B. deutsche Sonderzeichen abbilden kann.
 
-## Formatierung
+In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermittelt. Sie erfahren, wie Sie Python-Code schreiben, was ein Objekt ist, wie Sie Operationen durchführen und wie Sie die Ausgabe formatieren können. 
+
+## Python-Code
 Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
 
 1. Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder Doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.
@@ -37,6 +39,8 @@ print(variable1,
   summe)
 ```
 
+*In dem obenstehenden Beispiel werden Variablen angelegt. Mit Variablen beschäftigten wir uns später in diesem Abschnitt. Trotzdem möchte ich Sie bitten, sich variable1 und variable2 nocheinmal kurz anzusehen. Wir kommen später darauf zurück.*
+
 4. Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.
 
 ``` {python}
@@ -53,15 +57,24 @@ print(summe)
 ```
 
 ## Klassen, Typen und Objekte
-Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
+Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt. Objekte "erben" die Eigenschaften der Klasse, zu der sie gehören. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
 
 ```{python}
 print(type(2), 2 + 2, "Ganzzahlen werden addiert.")
 print(type('a'), 'a' + 'a', "Zeichen werden verkettet.")
-print(type(True and False), True + False, "Logische Werte werden addiert.")
+print(type(True and False), True + False + True, "Logische Werte werden addiert.")
 ```
 
-Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int') und Zeichenketten ('str') definiert ist. Python kennt sehr viele Typen (Klassen).
+Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. Anders verhält es sich mit `None`, also nicht existenten Werten:
+
+```{python}
+try:
+  None + None
+except TypeError as error:
+  print(error)
+```
+
+Python kennt sehr viele Typen (Klassen).
 
 ::: {.border}
 ![Datentypen in Python](skript/00-bilder/python3-standard-type-hierarchy.png){width="60%" fig-alt="Dargestellt ist eine Kategorisierung der Standardtypen in Python. Die Kategorisierung ist nicht vollständig deckungsgleich zu den in der Dokumentation genannten Kategorien von Datentypen. Der Typ None für Nullwerte hat keine weitere Unterteilung. Die Kategorie Numbers unterteilt sich in Zahlenwerte (Ganzzahlen, boolsche Wahrheitswerte), reele Zahlen (floats) und komplexe Zahlen. Die Kategorie Sequences unterteilt sich in Unveränderliche (Strings, Tuple, Bytes) und Veränderliche (Listen, Byte Arrays). Die Kategorie Set Types unterteilt sich in Sets (Mengen) und Frozen Sets. Die Kategorie Mappings enthält Dictionaries (Wörterbücher). Die Kategorie Callable umfasst Funktionen, Methoden und Klassen. Außerdem gibt es die Kategorie Module."}
@@ -72,10 +85,6 @@ Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unte
 &nbsp;
 
 In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
-
-  - Zahlen
-
-  - ...
 
 ### Zahlen
 Zu den Zahlen gehören Ganzzahlen und boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.
@@ -107,7 +116,7 @@ print(0xF000, "plus", 0x0200, "plus", 0x00A0, \
       "plus", 0x0001, "ist", 0xF2A1)
 ```
 
-## Gleitkommazahlen
+#### Gleitkommazahlen
 Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen `.` oder in Exponentialschreibweise angegeben. Gleitkommazahlen haben den Typ `float`.
 
 ```{python}
@@ -120,7 +129,7 @@ print(1e-7, "oder", 1e+7)
 Da Computer im Binärsystem arbeiten, können Dezimalzahlen nicht exakt gespeichert werden. Beispielsweise ist die Division von 1 durch 10 dezimal gleich 0.1. Binär ist 1~2~ durch 1010~2~ aber ein periodischer Bruch:
 $$ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 $$
 
-Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch von 0.1 ist in Dezimalschreibweise 3602879701896397 / 2^55). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der [Python Dokumentation](https://docs.python.org/3/tutorial/floatingpoint.html)). 
+Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch, der 0.1 annähert, ist in Dezimalschreibweise 3602879701896397 / 2^55^). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der [Python Dokumentation](https://docs.python.org/3/tutorial/floatingpoint.html)). 
 
 ```{python}
 print(0.1) # Die kürzeste Dezimalzahl zur Binärapproximation
@@ -137,18 +146,49 @@ print(0.0001 + 0.0002)
 print(0.00001 + 0.00002)
 ```
 
-Abhilfe schafft in diesem Fall die Funktion `round(Wert, Stellen)`. **Querverweis f-strings**
+### Arithmetische Operatoren
+Mit arithmetischen Operatoren können die Grundrechenarten verwendet werden. Das Ergebnis ist meist vom Typ `float`, außer, wenn beide Operanden vom Typ `int` sind und das Ergebnis als ganze Zahl darstellbar ist.
 
-```{python}
-print(round(0.1 + 0.2, 2))
-```
+| Operator | Beschreibung |
+| :--: | :--: |
+| `+`, `-` |  Addition / Subtraktion |
+| `*`, `/` | Multiplikation / Division |
+| `//`, `%` | Ganzzahlige Division / Rest | 
+| `**`| Potenzieren |
 
-**Operationen mit Zahlen, dann Übungsaufgaben**
-Rendite 20 Jahre lang mit 3 Prozent, 30 Jahre mit 2 Prozent welche größer ist.
+Werden mehrere Operatoren kombiniert, so muss deren Reihenfolge beachtet bzw. durch die Verwendung von Klammern `(1 + 2) * 3` hergestellt werden. Grundsätzlich gelten die gleichen Regeln wie beim schriftlichen Rechen. Die vollständige Übersicht der Reihenfolge der Ausführung ist in der [Pythondokumentation](https://docs.python.org/3/reference/expressions.html#operator-precedence) aufgeführt. Für die arithmethischen Operatoren gilt folgende, absteigende Reihenfolge.
 
+| Operator |
+| :--: |
+| `**` |
+| `*` , `/` , `//` , `%` |
+| `+` , `-` |
 
-#### Boolsche Werte
-Die boolschen Werte `True` und `False` sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte `1` und `0` an.
+Bei gleichrangigen Operationen werden diese von links nach rechts ausgeführt.
+
+### Aufgaben Zahlen
+**Lösen Sie die folgenden Aufgaben mit Python.**
+
+1. 4 + 2 * 4 = ?
+2. 2 hoch 12 = ?
+3. Was ist der Rest aus 315 geteilt durch 4?
+4. 𝟣 + 𝟤<sup>6</sup> / 𝟧 = ?
+5. Welche Dezimalzahl ist 11111101001~2~ ?
+6. 11111101001~2~ / 101~2~ = ?
+7. Welcher Kapitalertrag ist größer, wenn 1000 Euro angelegt werden?
+
+    a) 20 Jahre Anlagedauer mit 3 Prozent jährlicher Rendite
+
+    b) 30 Jahre Anlagedauer mit 2 Prozent jährlicher Rendite
+
+**Die Musterlösung kann Marc machen.**
+
+::: {.callout-tip collapse="true"}
+## Musterlösung Zahlen
+:::
+
+### Boolsche Werte
+Die boolschen Werte `True` und `False` sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte `1` und `0` an und gehören in Python deshalb zu den Zahlen.
 ```{python}
 print("Ist 10 größer als 9?", 10 > 9)
 print("Ist 11 kleiner als 10?", 11 < 10)
@@ -178,7 +218,7 @@ Neben `False` und `0` haben leere und nicht existierende Werte und Objekte den W
 
 ```{python}
 print(bool(False), bool(0))
-print(bool("")) # eine leere Zeichenkette
+print(bool("")) # eine leere Zeichenfolge
 print(bool([])) # eine leere Liste
 print(bool(())) # eine leeres Tupel
 print(bool({})) # ein leeres Dictionary
@@ -198,25 +238,122 @@ if meine_Liste:
 
 ```
 
-**logische Operationen, dann Übungsaufgaben**
-Zwei Divisionen vergleichen, welche größer ist.
+### Logische Operatoren
+Zu den logischen Operatoren gehören die logischen Verknüpfungen `and`, `or` und `not`. Darüber hinaus können auch vergleichende Operatoren wie `>`, `>=` oder `==` verwendet werden. Das Ergebnis dieser Operationen ist vom Typ `bool`. Die Operatoren werden in folgender Reihenfolge ausgeführt. Gleichrangige Operatoren werden von links nach rechts ausgeführt.
 
-**Datentyp muss noch von Klasse / Typ unterschieden werden**
-
-## Logische Operationen
-Zu den logischen Operationen gehören die logischen Verknüpfungen `and`, `or` und `not`. Darüber hinaus können auch vergleichende Operatoren wie `>`, `>=` oder `==` verwendet werden. Das Ergebnis dieser Operationen ist vom Typ `bool`.
-
-| Operand | Beschreibung |
+| Operator | Beschreibung |
 | :--: | :--: |
+| `&` | bitweises UND |
+| `^` | bitweises XOR |
+| `|` | bitweises ODER |
+| `<`, `<=`, `>`,  `>=`, `!=`, `==` | kleiner / kleiner gleich / größer als /  größer gleich / ungleich / gleich |
+| `not` | logisches NICHT |
 | `and`| logisches UND |
 | `or` | logisches ODER |
-| `not` | logisches NICHT |
-| `<`, `>` | kleiner / größer als |
-| `<=`, `>=` | kleiner / größer gleich |
-| `==`, `!=` | gleich / ungleich |
 
-**ergänzen: Hinweis auf bitwise AND (&), NOT (~), XOR (^)**
+::: {#wrn-bitwise .callout-warning appearance="simple" collapse="false"}
+## Bitweise Operatoren
+Besondere Vorsicht ist mit den [bitweisen Operatoren](https://wiki.python.org/moin/BitwiseOperators) geboten. Diese vergleichen Zahlen, allerdings nicht als Ganzes, sondern stellenweise (im Binärsystem). Zu beachten ist, dass die bitweisen Operatoren  Ausführungspriorität vor Vergleichsoperationen haben.
 
-**string-formating mit f-strings**
+```{python}
+print(10 > 5 and 10 > 6)
+print(10 > 5 & 10 > 6)
+print((10 > 5) & (10 > 6))
+```
+
+:::: {.callout-tip collapse="false"}
+Im Allgemeinen werden die bitweisen Operatoren für die Datenanalyse nicht benötigt. Vermeiden Sie unnötige Fehler: Vermeiden Sie die bitweisen Operatoren `&`, `^` und `|`.
+
+Die Operatoren `&`, `^` und `|` haben jedoch für Mengen (die wir später kennenlernen werden) eine andere Bedeutung. Auch in anderen Modulen kommt den Operatoren syntaktisch eine andere Bedeutung zu, bspw. im Paket Pandas bei der Übergabe mehrerer Slicing-Bedingungen `df = df[(Bedingung1) & (Bedingung2) | (Bedingung3)]`.
+
+::::
+:::
+
+### Aufgaben boolsche Werte
+**Lösen Sie die Aufgaben mit Python.**
+
+1. Ist das Verhältnis aus 44 zu 4.5 größer als 10?
+2. Ist es wahr, dass 4.5 größer als 4 aber kleiner als 5 ist?
+3. Ist 2 hoch 10 gleich 1024?
+4. Sind die Zahlen 3, 4 und 5 ganzzahlig durch 2 teilbar ODER ungleich 10?
+5. Prüfen Sie, ob eine Person den Vollpreis bezahlen muss, wenn Sie Ihr Alter angibt.  
+Kinder unter 14 Jahren fahren kostenlos, Jugendliche zwischen 14 und 18 Jahren und Senior:innen ab 65 Jahren erhalten einen Rabatt.
+
+### Zeichenfolgen
+Zeichenfolgen (Englisch string) werden in Python in einfache oder doppelte Anführungszeichen gesetzt.
+
+```{python}
+print('eine x-beliebige Zeichefolge')
+print("noch eine x-beliebige Zeichenfolge")
+```
+
+Innerhalb einer Zeichenfolge können einfache oder doppelte Anführungszeichen verwendet werden, solange diese nicht den die Zeichenfolge umschließenden Anführungszeichen entsprechen.
+```{python}
+print('A sophisticated heap beam, which we call a "LASER".')
+print("I've turned the moon into what I like to call a 'Death Star'.")
+```
+
+Das Steuerzeichen `\` (oder Fluchtzeichen, escape character) erlaubt es, bestimmte Sondernzeichen zu verwenden. 
+```{python}
+print("Mit dem Steuerzeichen \\ funktionieren auch die gleichen \"Anführungszeichen\" wie die umschließenden.")
+print("Erst ein\tTabstopp, dann eine\nneue Zeile.")
+```
+
+## Variablen
+Variablen sind Platzhalter bzw. Referenzen auf Daten. Die Zuweisung wird durch den Zuweisungsoperator `=` dargestellt. Der Name einer Variablen darf nur aus Buchstaben, Zahlen und Unterstrichen bestehen. Dabei darf das erste Zeichen keine Zahl sein.
+
+```{python}
+var_1 = 'ABC'
+var_2 = 26
+var_3 = True
+
+print("Das", var_1, "hat", var_2, "Buchstaben. Das ist", var_3)
+```
+
+Variablen müssen in Python nicht initialisiert werden. Der Typ der Variablen wird durch die Zuweisung eines entsprechenden Werts festgelegt.
+
+```{python}
+print("Die Variable var_1 hat den Typ", type(var_1))
+print("Die Variable var_2 hat den Typ", type(var_2))
+print("Die Variable var_3 hat den Typ", type(var_3))
+```
+
+**Zeigen, wie man den Typ einer Variable bestimmt und ändert. (type(x), int(), ord() ... das ist im m-EsD)**
+
+
+Neuzuweisung (var_1), Berechnung (var_2 / 5)
+
+Erklären, warum Sie bereits Variablen erstellt und verwendet haben...
+Python has no command for declaring a variable.
+
+A variable is created the moment you first assign a value to it.
+
+Variables do not need to be declared with any particular type, and can even change type after they have been set.
+
+### Benennung von Variablen
+Für die Benennung von Variablen gibt es (meist) nur wenige Vorgaben. Es empfiehlt sich jedoch "sprechende", das heißt selbsterklärende, Variablennamen zu vergeben. Dies verbessert die Lesbarkeit des Codes und vereinfacht die Benutzung der Variable. Unter selbsterklärenden Variablennamen versteht sich, dass der Variablenname den Inhalt der Variable beschreibt. Wird bspw. in einer Variable der Studienabschluss gespeichert, so kann diese mit `academic_degree` oder `studienabschluss` bezeichnet werden. Werden Daten aus verschiedenen Jahren verarbeitet, kann das Jahr zu besseren Unterscheidbarkeit in den Variablennamen einfließen, etwa: `academic_degree_2023` oder `studienabschluss2024`. Mehr Informationen finden sich in [diesem Wikipedia Abschnitt](https://de.wikipedia.org/wiki/Variable_(Programmierung)#Namenswahl). 
+
+Es ist besser, einen langen, aber ausführlichen Variablennamen zu vergeben, als einen kurzen, der sich schnell schreiben lässt. Denn Programmcode wird deutlich häufiger gelesen als geschrieben. Können Sie sich erinnern? Welcher Wert ist in der Variablen `Var_3` gespeichert, und welche Werte sind in `variable1` und `variable2` gespeichert? Es reicht, wenn Sie den Datentyp korrekt benennen können.
+
+Falls Sie sich nicht erinnern können, dann ist dieses Beispiel gelungen: Die Namensgebung ist alles andere als gut.
+
+::: {.callout-warning}
+## Schlüsselwörter und Funktionsnamen
+
+In Python reservierte Schlüsselwörter und Funktionsnamen sind (selbstverständlich) ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen problemslos neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung ggf. aus dem Skript entfernen und Python neu starten.  
+:::
+
+## Ausgabe formatieren
+
+Funktion `round(Wert, Stellen)`. **Hier Querverweis auf Outputformatierung: f-strings, die bereits verwendete Funktion format(), round()... ein paar Funktionen für die Ausgabe von strings ohne '' und ohne ,**
+
+  - print(format(0.1, '.17g')) # 17 signifikante Stellen
+
+  - print(format(0.1, '.17f')) # 17 Stellen nach dem Komma
+
+```{python}
+print(round(0.1 + 0.2, 2))
+```
+
 
 **Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**

@@ -201,13 +201,22 @@ window.Quarto = {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#formatierung" id="toc-formatierung" class="nav-link active" data-scroll-target="#formatierung"><span class="header-section-number">2.1</span> Formatierung</a></li>
+  <li><a href="#python-code" id="toc-python-code" class="nav-link active" data-scroll-target="#python-code"><span class="header-section-number">2.1</span> Python-Code</a></li>
   <li><a href="#klassen-typen-und-objekte" id="toc-klassen-typen-und-objekte" class="nav-link" data-scroll-target="#klassen-typen-und-objekte"><span class="header-section-number">2.2</span> Klassen, Typen und Objekte</a>
   <ul class="collapse">
   <li><a href="#zahlen" id="toc-zahlen" class="nav-link" data-scroll-target="#zahlen">Zahlen</a></li>
+  <li><a href="#arithmetische-operatoren" id="toc-arithmetische-operatoren" class="nav-link" data-scroll-target="#arithmetische-operatoren">Arithmetische Operatoren</a></li>
+  <li><a href="#aufgaben-zahlen" id="toc-aufgaben-zahlen" class="nav-link" data-scroll-target="#aufgaben-zahlen">Aufgaben Zahlen</a></li>
+  <li><a href="#boolsche-werte" id="toc-boolsche-werte" class="nav-link" data-scroll-target="#boolsche-werte">Boolsche Werte</a></li>
+  <li><a href="#logische-operatoren" id="toc-logische-operatoren" class="nav-link" data-scroll-target="#logische-operatoren">Logische Operatoren</a></li>
+  <li><a href="#aufgaben-boolsche-werte" id="toc-aufgaben-boolsche-werte" class="nav-link" data-scroll-target="#aufgaben-boolsche-werte">Aufgaben boolsche Werte</a></li>
+  <li><a href="#zeichenfolgen" id="toc-zeichenfolgen" class="nav-link" data-scroll-target="#zeichenfolgen">Zeichenfolgen</a></li>
   </ul></li>
-  <li><a href="#gleitkommazahlen" id="toc-gleitkommazahlen" class="nav-link" data-scroll-target="#gleitkommazahlen"><span class="header-section-number">2.3</span> Gleitkommazahlen</a></li>
-  <li><a href="#logische-operationen" id="toc-logische-operationen" class="nav-link" data-scroll-target="#logische-operationen"><span class="header-section-number">2.4</span> Logische Operationen</a></li>
+  <li><a href="#variablen" id="toc-variablen" class="nav-link" data-scroll-target="#variablen"><span class="header-section-number">2.3</span> Variablen</a>
+  <ul class="collapse">
+  <li><a href="#benennung-von-variablen" id="toc-benennung-von-variablen" class="nav-link" data-scroll-target="#benennung-von-variablen">Benennung von Variablen</a></li>
+  </ul></li>
+  <li><a href="#ausgabe-formatieren" id="toc-ausgabe-formatieren" class="nav-link" data-scroll-target="#ausgabe-formatieren"><span class="header-section-number">2.4</span> Ausgabe formatieren</a></li>
   </ul>
 </nav>
     </div>
@@ -234,13 +243,14 @@ window.Quarto = {
 
 
 <p>Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem <a href="https://de.wikipedia.org/wiki/UTF-8">UTF-8</a> Format umgehen. UTF-8 ist eine sehr weit verbreitete Zeichenkodierung, welche das ASCII-Format erweitert und z. B. deutsche Sonderzeichen abbilden kann.</p>
-<section id="formatierung" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="formatierung"><span class="header-section-number">2.1</span> Formatierung</h2>
+<p>In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermittelt. Sie erfahren, wie Sie Python-Code schreiben, was ein Objekt ist, wie Sie Operationen durchführen und wie Sie die Ausgabe formatieren können.</p>
+<section id="python-code" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="python-code"><span class="header-section-number">2.1</span> Python-Code</h2>
 <p>Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.</p>
 <ol type="1">
 <li>Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder Doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.</li>
 </ol>
-<div id="bf7da30a" class="cell" data-execution_count="1">
+<div id="bf9d5026" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hallo Welt!'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'Hallo Python!'</span></span>
@@ -254,7 +264,7 @@ Hallo Python!</code></pre>
 <ol start="2" type="1">
 <li>Kommentare werden mit einer vorangestellten <code>#</code> gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.</li>
 </ol>
-<div id="06c9f4a1" class="cell" data-execution_count="2">
+<div id="30c13557" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bloß nicht übertreiben</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Python ist großartig!") # das ist übertrieben</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python ist ziemlich gut."</span>) <span class="co"># das ist realistisch</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -265,7 +275,7 @@ Hallo Python!</code></pre>
 <ol start="3" type="1">
 <li>Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen <code>\</code> über mehrere Zeilen fortgesetzt werden (hinter <code>\</code> darf keine <code>#</code> stehen). Innerhalb von Funktionen wie zum Beispiel <code>print()</code> können Zeilen nach jedem Komma fortgesetzt werden.</li>
 </ol>
-<div id="62977d2d" class="cell" data-execution_count="3">
+<div id="48785d6c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>variable1 <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>variable2 <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -284,7 +294,7 @@ Hallo Python!</code></pre>
 <ol start="4" type="1">
 <li>Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.</li>
 </ol>
-<div id="4e007149" class="cell" data-execution_count="4">
+<div id="5eb91c0a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">+</span><span class="dv">0</span>, <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span>, <span class="dv">1</span> <span class="op">+</span>                  <span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3</code></pre>
@@ -293,7 +303,7 @@ Hallo Python!</code></pre>
 <ol start="5" type="1">
 <li>Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.</li>
 </ol>
-<div id="430df987" class="cell" data-execution_count="5">
+<div id="fb530ad8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable1)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(variable2)</span>
@@ -311,18 +321,28 @@ Hallo Python!</code></pre>
 </section>
 <section id="klassen-typen-und-objekte" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="klassen-typen-und-objekte"><span class="header-section-number">2.2</span> Klassen, Typen und Objekte</h2>
-<p>Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die <em>Eigenschaften</em> und <em>Verhaltensweisen</em> des Objekts bestimmt. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator <code>+</code>.</p>
-<div id="4487341b" class="cell" data-execution_count="6">
+<p>Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die <em>Eigenschaften</em> und <em>Verhaltensweisen</em> des Objekts bestimmt. Objekte “erben” die Eigenschaften der Klasse, zu der sie gehören. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator <code>+</code>.</p>
+<div id="19c04032" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">2</span>), <span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span>, <span class="st">"Ganzzahlen werden addiert."</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">'a'</span>), <span class="st">'a'</span> <span class="op">+</span> <span class="st">'a'</span>, <span class="st">"Zeichen werden verkettet."</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span> <span class="kw">and</span> <span class="va">False</span>), <span class="va">True</span> <span class="op">+</span> <span class="va">False</span>, <span class="st">"Logische Werte werden addiert."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span> <span class="kw">and</span> <span class="va">False</span>), <span class="va">True</span> <span class="op">+</span> <span class="va">False</span> <span class="op">+</span> <span class="va">True</span>, <span class="st">"Logische Werte werden addiert."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'int'&gt; 4 Ganzzahlen werden addiert.
 &lt;class 'str'&gt; aa Zeichen werden verkettet.
-&lt;class 'bool'&gt; 1 Logische Werte werden addiert.</code></pre>
+&lt;class 'bool'&gt; 2 Logische Werte werden addiert.</code></pre>
 </div>
 </div>
-<p>Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen (‘int’) und Zeichenketten (‘str’) definiert ist. Python kennt sehr viele Typen (Klassen).</p>
+<p>Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen (‘int’), Zeichenfolgen (‘str’) und Boolesche Werte (‘bool’) definiert ist. Anders verhält es sich mit <code>None</code>, also nicht existenten Werten:</p>
+<div id="0ccf8aa9" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="va">None</span> <span class="op">+</span> <span class="va">None</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">TypeError</span> <span class="im">as</span> error:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>unsupported operand type(s) for +: 'NoneType' and 'NoneType'</code></pre>
+</div>
+</div>
+<p>Python kennt sehr viele Typen (Klassen).</p>
 <div class="border">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -344,8 +364,8 @@ Hallo Python!</code></pre>
 <section id="ganzzahlen" class="level4">
 <h4 class="anchored" data-anchor-id="ganzzahlen">Ganzzahlen</h4>
 <p>Ganzzahlen werden standardmäßig im Dezimalsystem eingegeben und können positiv oder negativ sein.</p>
-<div id="ed1ae1c8" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">12</span>, <span class="op">-</span><span class="dv">8</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="327ee4bf" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">12</span>, <span class="op">-</span><span class="dv">8</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>12 -8</code></pre>
 </div>
@@ -354,9 +374,9 @@ Hallo Python!</code></pre>
 <ul>
 <li>Dualsystem: Ziffern <code>0</code> und <code>1</code> mit einem <code>0b</code> Prefix</li>
 </ul>
-<div id="6046bff9" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0b1000</span>, <span class="st">"plus"</span>, <span class="bn">0b0000</span>, <span class="st">"plus"</span>, <span class="bn">0b0010</span>, <span class="op">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0b0001</span>, <span class="st">"ist"</span>, <span class="bn">0b1011</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="99f83ea3" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0b1000</span>, <span class="st">"plus"</span>, <span class="bn">0b0000</span>, <span class="st">"plus"</span>, <span class="bn">0b0010</span>, <span class="op">\</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0b0001</span>, <span class="st">"ist"</span>, <span class="bn">0b1011</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>8 plus 0 plus 2 plus 1 ist 11</code></pre>
 </div>
@@ -364,9 +384,9 @@ Hallo Python!</code></pre>
 <ul>
 <li>Oktalsystem: Ziffern <code>0</code> bis <code>7</code> mit einem <code>0o</code> Prefix</li>
 </ul>
-<div id="457af1ee" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0o7000</span>, <span class="st">"plus"</span>, <span class="bn">0o0700</span>, <span class="st">"plus"</span>, <span class="bn">0o0020</span>, <span class="op">\</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0o0000</span>, <span class="st">"ist"</span>, <span class="bn">0o7720</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9f5a0090" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0o7000</span>, <span class="st">"plus"</span>, <span class="bn">0o0700</span>, <span class="st">"plus"</span>, <span class="bn">0o0020</span>, <span class="op">\</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0o0000</span>, <span class="st">"ist"</span>, <span class="bn">0o7720</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3584 plus 448 plus 16 plus 0 ist 4048</code></pre>
 </div>
@@ -374,24 +394,22 @@ Hallo Python!</code></pre>
 <ul>
 <li>Hexadezimalsystem: Ziffern <code>0</code> bis <code>F</code> mit einem <code>0x</code> Prefix</li>
 </ul>
-<div id="a77a6902" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0xF000</span>, <span class="st">"plus"</span>, <span class="bn">0x0200</span>, <span class="st">"plus"</span>, <span class="bn">0x00A0</span>, <span class="op">\</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0x0001</span>, <span class="st">"ist"</span>, <span class="bn">0xF2A1</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="45a678e5" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0xF000</span>, <span class="st">"plus"</span>, <span class="bn">0x0200</span>, <span class="st">"plus"</span>, <span class="bn">0x00A0</span>, <span class="op">\</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0x0001</span>, <span class="st">"ist"</span>, <span class="bn">0xF2A1</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>61440 plus 512 plus 160 plus 1 ist 62113</code></pre>
 </div>
 </div>
 </section>
-</section>
-</section>
-<section id="gleitkommazahlen" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="gleitkommazahlen"><span class="header-section-number">2.3</span> Gleitkommazahlen</h2>
+<section id="gleitkommazahlen" class="level4">
+<h4 class="anchored" data-anchor-id="gleitkommazahlen">Gleitkommazahlen</h4>
 <p>Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen <code>.</code> oder in Exponentialschreibweise angegeben. Gleitkommazahlen haben den Typ <code>float</code>.</p>
-<div id="dadd164a" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">120.6</span>, <span class="fl">1206e-1</span>, <span class="fl">12060e-2</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen."</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1e-7</span>, <span class="st">"oder"</span>, <span class="fl">1e+7</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8e741503" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">120.6</span>, <span class="fl">1206e-1</span>, <span class="fl">12060e-2</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen."</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1e-7</span>, <span class="st">"oder"</span>, <span class="fl">1e+7</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>120.6 120.6 120.6 
 
@@ -400,11 +418,11 @@ Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.
 </div>
 </div>
 <p>Da Computer im Binärsystem arbeiten, können Dezimalzahlen nicht exakt gespeichert werden. Beispielsweise ist die Division von 1 durch 10 dezimal gleich 0.1. Binär ist 1<sub>2</sub> durch 1010<sub>2</sub> aber ein periodischer Bruch: <span class="math display">\[ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 \]</span></p>
-<p>Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch von 0.1 ist in Dezimalschreibweise 3602879701896397 / 2^55). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python Dokumentation</a>).</p>
-<div id="f44d0bca" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span>) <span class="co"># Die kürzeste Dezimalzahl zur Binärapproximation</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">format</span>(<span class="fl">0.1</span>, <span class="st">'.17g'</span>)) <span class="co"># Die nächstlängere Dezimalzahl zur selben Binärapproximation</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>) <span class="co"># binär gerechnet, ändert sich die Binärapproximation</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dezimalzahlen müssen deshalb als Bruch zweier Ganzzahlen approximiert werden (Der Binärbruch, der 0.1 annähert, ist in Dezimalschreibweise 3602879701896397 / 2<sup>55</sup>). Dadurch kommt es vor, dass mehrere Gleitkommazahlen durch die selbe Binärapproximation repräsentiert werden. Python gibt zwar die jeweils kürzeste Dezimalzahl aus, da Berechnungen aber binär durchgeführt werden, kann sich bei Berechnungen die nächste Binärapproximation und damit die zugehörige kürzeste Dezimalzahl ändern (weitere Informationen in der <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python Dokumentation</a>).</p>
+<div id="299d754d" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span>) <span class="co"># Die kürzeste Dezimalzahl zur Binärapproximation</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">format</span>(<span class="fl">0.1</span>, <span class="st">'.17g'</span>)) <span class="co"># Die nächstlängere Dezimalzahl zur selben Binärapproximation</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>) <span class="co"># binär gerechnet, ändert sich die Binärapproximation</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.1
 0.10000000000000001
@@ -412,12 +430,12 @@ Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.
 </div>
 </div>
 <p>In der praktischen Arbeit mit Python kommen deshalb gelegentlich auf den ersten Blick ungewöhnlich wirkende Ergebnisse vor.</p>
-<div id="de1a3872" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.01</span> <span class="op">+</span> <span class="fl">0.02</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.001</span> <span class="op">+</span> <span class="fl">0.002</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.0001</span> <span class="op">+</span> <span class="fl">0.0002</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.00001</span> <span class="op">+</span> <span class="fl">0.00002</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6da4de5d" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.01</span> <span class="op">+</span> <span class="fl">0.02</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.001</span> <span class="op">+</span> <span class="fl">0.002</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.0001</span> <span class="op">+</span> <span class="fl">0.0002</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.00001</span> <span class="op">+</span> <span class="fl">0.00002</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.30000000000000004
 0.03
@@ -426,18 +444,96 @@ Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.
 3.0000000000000004e-05</code></pre>
 </div>
 </div>
-<p>Abhilfe schafft in diesem Fall die Funktion <code>round(Wert, Stellen)</code>. <strong>Querverweis f-strings</strong></p>
-<div id="ea8bcbdb" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>, <span class="dv">2</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>0.3</code></pre>
+</section>
+</section>
+<section id="arithmetische-operatoren" class="level3">
+<h3 class="anchored" data-anchor-id="arithmetische-operatoren">Arithmetische Operatoren</h3>
+<p>Mit arithmetischen Operatoren können die Grundrechenarten verwendet werden. Das Ergebnis ist meist vom Typ <code>float</code>, außer, wenn beide Operanden vom Typ <code>int</code> sind und das Ergebnis als ganze Zahl darstellbar ist.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operator</th>
+<th style="text-align: center;">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>+</code>, <code>-</code></td>
+<td style="text-align: center;">Addition / Subtraktion</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>*</code>, <code>/</code></td>
+<td style="text-align: center;">Multiplikation / Division</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>//</code>, <code>%</code></td>
+<td style="text-align: center;">Ganzzahlige Division / Rest</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>**</code></td>
+<td style="text-align: center;">Potenzieren</td>
+</tr>
+</tbody>
+</table>
+<p>Werden mehrere Operatoren kombiniert, so muss deren Reihenfolge beachtet bzw. durch die Verwendung von Klammern <code>(1 + 2) * 3</code> hergestellt werden. Grundsätzlich gelten die gleichen Regeln wie beim schriftlichen Rechen. Die vollständige Übersicht der Reihenfolge der Ausführung ist in der <a href="https://docs.python.org/3/reference/expressions.html#operator-precedence">Pythondokumentation</a> aufgeführt. Für die arithmethischen Operatoren gilt folgende, absteigende Reihenfolge.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>**</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>*</code> , <code>/</code> , <code>//</code> , <code>%</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>+</code> , <code>-</code></td>
+</tr>
+</tbody>
+</table>
+<p>Bei gleichrangigen Operationen werden diese von links nach rechts ausgeführt.</p>
+</section>
+<section id="aufgaben-zahlen" class="level3">
+<h3 class="anchored" data-anchor-id="aufgaben-zahlen">Aufgaben Zahlen</h3>
+<p><strong>Lösen Sie die folgenden Aufgaben mit Python.</strong></p>
+<ol type="1">
+<li><p>4 + 2 * 4 = ?</p></li>
+<li><p>2 hoch 12 = ?</p></li>
+<li><p>Was ist der Rest aus 315 geteilt durch 4?</p></li>
+<li><p>𝟣 + 𝟤<sup>6</sup> / 𝟧 = ?</p></li>
+<li><p>Welche Dezimalzahl ist 11111101001<sub>2</sub> ?</p></li>
+<li><p>11111101001<sub>2</sub> / 101<sub>2</sub> = ?</p></li>
+<li><p>Welcher Kapitalertrag ist größer, wenn 1000 Euro angelegt werden?</p>
+<ol type="a">
+<li><p>20 Jahre Anlagedauer mit 3 Prozent jährlicher Rendite</p></li>
+<li><p>30 Jahre Anlagedauer mit 2 Prozent jährlicher Rendite</p></li>
+</ol></li>
+</ol>
+<p><strong>Die Musterlösung kann Marc machen.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Musterlösung Zahlen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
 </div>
 </div>
-<p><strong>Operationen mit Zahlen, dann Übungsaufgaben</strong> Rendite 20 Jahre lang mit 3 Prozent, 30 Jahre mit 2 Prozent welche größer ist.</p>
-<section id="boolsche-werte" class="level4">
-<h4 class="anchored" data-anchor-id="boolsche-werte">Boolsche Werte</h4>
+</div>
+</section>
+<section id="boolsche-werte" class="level3">
+<h3 class="anchored" data-anchor-id="boolsche-werte">Boolsche Werte</h3>
 <p>Die boolschen Werte <code>True</code> und <code>False</code> sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte <code>1</code> und <code>0</code> an.</p>
-<div id="531b6c0b" class="cell" data-execution_count="15">
+<div id="deaef3a1" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 größer als 9?"</span>, <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 11 kleiner als 10?"</span>, <span class="dv">11</span> <span class="op">&lt;</span> <span class="dv">10</span>)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 genau 10.0?"</span>, <span class="dv">10</span> <span class="op">==</span> <span class="fl">10.0</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
@@ -455,21 +551,21 @@ True und False können mit + addiert: 1
 </div>
 </div>
 <p>Die Multiplikation von Wahrheitswerten ist nützlich, um mehrere logische Abfragen zu einem logischen UND zu kombinieren:</p>
-<div id="a8c8ddc5" class="cell" data-execution_count="16">
+<div id="cbf5ffa4" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 &gt; 9 UND &gt; 8?"</span>, (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ist 10 &gt; 9 UND &gt; 8? 1</code></pre>
 </div>
 </div>
 <p>Die Funktion <code>bool()</code> gibt den Wahrheitswert eines Werts zurück.</p>
-<div id="99001ff1" class="cell" data-execution_count="17">
+<div id="5c6fd5c2" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ist 10 &gt; 9 UND &gt; 8?"</span>, <span class="bu">bool</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ist 10 &gt; 9 UND &gt; 8? True</code></pre>
 </div>
 </div>
 <p>Die meisten Werte in Python haben den Wahrheitswert <code>True</code>.</p>
-<div id="108566c4" class="cell" data-execution_count="18">
+<div id="0ed62ebd" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">1</span>), <span class="bu">bool</span>(<span class="dv">2</span>), <span class="bu">bool</span>(<span class="fl">2.4</span>))</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">'a'</span>), <span class="bu">bool</span>(<span class="st">'b'</span>), <span class="bu">bool</span>(<span class="st">'ab'</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -478,9 +574,9 @@ True True True</code></pre>
 </div>
 </div>
 <p>Neben <code>False</code> und <code>0</code> haben leere und nicht existierende Werte und Objekte den Wahrheitswert <code>False</code>.</p>
-<div id="de28937f" class="cell" data-execution_count="19">
+<div id="fda291a7" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">False</span>), <span class="bu">bool</span>(<span class="dv">0</span>))</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">""</span>)) <span class="co"># eine leere Zeichenkette</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">""</span>)) <span class="co"># eine leere Zeichenfolge</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>([])) <span class="co"># eine leere Liste</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(())) <span class="co"># eine leeres Tupel</span></span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>({})) <span class="co"># ein leeres Dictionary</span></span>
@@ -495,7 +591,7 @@ False</code></pre>
 </div>
 </div>
 <p>Die Sammeltypen Liste, Tupel und Dictionary werden wir später kennenlernen. Boolsche Werte können die Ausführung von Programmcode steuern, indem sie wie <code>an</code> und <code>aus</code> wirken. So kann Programmcode mit einer <code>if</code>-Anweisung nur dann ausgeführt werden, wenn ein Sammeltyp auch Werte enthält.</p>
-<div id="9c7b28d2" class="cell" data-execution_count="20">
+<div id="c520a5fa" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>meine_Liste <span class="op">=</span> [<span class="st">'Äpfel'</span>, <span class="st">'Butter'</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> meine_Liste:</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Wir müssen </span><span class="sc">{</span>meine_Liste<span class="sc">}</span><span class="ss"> einkaufen."</span>)</span>
@@ -507,49 +603,187 @@ False</code></pre>
 <pre><code>Wir müssen ['Äpfel', 'Butter'] einkaufen.</code></pre>
 </div>
 </div>
-<p><strong>logische Operationen, dann Übungsaufgaben</strong> Zwei Divisionen vergleichen, welche größer ist.</p>
-<p><strong>Datentyp muss noch von Klasse / Typ unterschieden werden</strong></p>
 </section>
-</section>
-<section id="logische-operationen" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="logische-operationen"><span class="header-section-number">2.4</span> Logische Operationen</h2>
-<p>Zu den logischen Operationen gehören die logischen Verknüpfungen <code>and</code>, <code>or</code> und <code>not</code>. Darüber hinaus können auch vergleichende Operatoren wie <code>&gt;</code>, <code>&gt;=</code> oder <code>==</code> verwendet werden. Das Ergebnis dieser Operationen ist vom Typ <code>bool</code>.</p>
+<section id="logische-operatoren" class="level3">
+<h3 class="anchored" data-anchor-id="logische-operatoren">Logische Operatoren</h3>
+<p>Zu den logischen Operatoren gehören die logischen Verknüpfungen <code>and</code>, <code>or</code> und <code>not</code>. Darüber hinaus können auch vergleichende Operatoren wie <code>&gt;</code>, <code>&gt;=</code> oder <code>==</code> verwendet werden. Das Ergebnis dieser Operationen ist vom Typ <code>bool</code>. Die Operatoren werden in folgender Reihenfolge ausgeführt. Gleichrangige Operatoren werden von links nach rechts ausgeführt.</p>
 <table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Operand</th>
+<th style="text-align: center;">Operator</th>
 <th style="text-align: center;">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><code>and</code></td>
-<td style="text-align: center;">logisches UND</td>
+<td style="text-align: center;"><code>&amp;</code></td>
+<td style="text-align: center;">bitweises UND</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><code>or</code></td>
-<td style="text-align: center;">logisches ODER</td>
+<td style="text-align: center;"><code>^</code></td>
+<td style="text-align: center;">bitweises XOR</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>|</code></td>
+<td style="text-align: center;">bitweises ODER</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code>, <code>==</code></td>
+<td style="text-align: center;">kleiner / kleiner gleich / größer als / größer gleich / ungleich / gleich</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><code>not</code></td>
 <td style="text-align: center;">logisches NICHT</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><code>&lt;</code>, <code>&gt;</code></td>
-<td style="text-align: center;">kleiner / größer als</td>
+<td style="text-align: center;"><code>and</code></td>
+<td style="text-align: center;">logisches UND</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><code>&lt;=</code>, <code>&gt;=</code></td>
-<td style="text-align: center;">kleiner / größer gleich</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><code>==</code>, <code>!=</code></td>
-<td style="text-align: center;">gleich / ungleich</td>
+<td style="text-align: center;"><code>or</code></td>
+<td style="text-align: center;">logisches ODER</td>
 </tr>
 </tbody>
 </table>
-<p><strong>ergänzen: Hinweis auf bitwise AND (&amp;), NOT (~), XOR (^)</strong></p>
-<p><strong>string-formating mit f-strings</strong></p>
+<div id="wrn-bitwise" class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis&nbsp;2.1: Bitweise Operatoren
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Besondere Vorsicht ist mit den <a href="https://wiki.python.org/moin/BitwiseOperators">bitweisen Operatoren</a> geboten. Diese vergleichen Zahlen, allerdings nicht als Ganzes, sondern stellenweise (im Binärsystem). Zu beachten ist, dass die bitweisen Operatoren Ausführungspriorität vor Vergleichsoperationen haben.</p>
+<div id="900b826b" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="op">&amp;</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span>) <span class="op">&amp;</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False
+True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Im Allgemeinen werden die bitweisen Operatoren für die Datenanalyse nicht benötigt. Vermeiden Sie unnötige Fehler: Vermeiden Sie die bitweisen Operatoren <code>&amp;</code>, <code>^</code> und <code>|</code>.</p>
+<p>Die Operatoren <code>&amp;</code>, <code>^</code> und <code>|</code> haben jedoch für Mengen (die wir später kennenlernen werden) eine andere Bedeutung. Auch in anderen Modulen kommt den Operatoren syntaktisch eine andere Bedeutung zu, bspw. im Paket Pandas bei der Übergabe mehrerer Slicing-Bedingungen <code>df = df[(Bedingung1) &amp; (Bedingung2) | (Bedingung3)]</code>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aufgaben-boolsche-werte" class="level3">
+<h3 class="anchored" data-anchor-id="aufgaben-boolsche-werte">Aufgaben boolsche Werte</h3>
+<p><strong>Lösen Sie die Aufgaben mit Python.</strong></p>
+<ol type="1">
+<li>Ist das Verhältnis aus 44 zu 4.5 größer als 10?</li>
+<li>Ist es wahr, dass 4.5 größer als 4 aber kleiner als 5 ist?</li>
+<li>Ist 2 hoch 10 gleich 1024?</li>
+<li>Sind die Zahlen 3, 4 und 5 ganzzahlig durch 2 teilbar ODER ungleich 10?</li>
+<li>Prüfen Sie, ob eine Person den Vollpreis bezahlen muss, wenn Sie Ihr Alter angibt.<br>
+Kinder unter 14 Jahren fahren kostenlos, Jugendliche zwischen 14 und 18 Jahren und Senior:innen ab 65 Jahren erhalten einen Rabatt.</li>
+</ol>
+</section>
+<section id="zeichenfolgen" class="level3">
+<h3 class="anchored" data-anchor-id="zeichenfolgen">Zeichenfolgen</h3>
+<p>Zeichenfolgen (englisch string) werden in Python in einfache oder doppelte Anführungszeichen gesetzt.</p>
+<div id="5a23b6c7" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'eine x-beliebige Zeichefolge'</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"noch eine x-beliebige Zeichenfolge"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>eine x-beliebige Zeichefolge
+noch eine x-beliebige Zeichenfolge</code></pre>
+</div>
+</div>
+<p>Innerhalb einer Zeichenfolge können einfache oder doppelte Anführungszeichen verwendet werden, solange diese nicht den die Zeichenfolge umschließenden Anführungszeichen entsprechen.</p>
+<div id="ed3b5c2c" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'A sophisticated heap beam, which we call a "LASER".'</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"I've turned the moon into what I like to call a 'Death Star'."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A sophisticated heap beam, which we call a "LASER".
+I've turned the moon into what I like to call a 'Death Star'.</code></pre>
+</div>
+</div>
+<p>Das Steuerzeichen <code>\</code> (oder Fluchtzeichen, escape character) erlaubt es, bestimmte Sondernzeichen zu verwenden.</p>
+<div id="7ee8d928" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mit dem Steuerzeichen </span><span class="ch">\\</span><span class="st"> funktionieren auch die gleichen </span><span class="ch">\"</span><span class="st">Anführungszeichen</span><span class="ch">\"</span><span class="st"> wie die umschließenden."</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erst ein</span><span class="ch">\t</span><span class="st">Tabstopp, dann eine</span><span class="ch">\n</span><span class="st">neue Zeile."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mit dem Steuerzeichen \ funktionieren auch die gleichen "Anführungszeichen" wie die umschließenden.
+Erst ein    Tabstopp, dann eine
+neue Zeile.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="variablen" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="variablen"><span class="header-section-number">2.3</span> Variablen</h2>
+<p>Variablen sind Platzhalter bzw. Referenzen auf Daten. Die Zuweisung wird durch den Zuweisungsoperator <code>=</code> dargestellt. Der Name einer Variablen darf nur aus Buchstaben, Zahlen und Unterstrichen bestehen. Dabei darf das erste Zeichen keine Zahl sein.</p>
+<div id="6d77d30f" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>var_2 <span class="op">=</span> <span class="dv">26</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>var_3 <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Das"</span>, var_1, <span class="st">"hat"</span>, var_2, <span class="st">"Buchstaben. Das ist"</span>, var_3)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Das ABC hat 26 Buchstaben. Das ist True</code></pre>
+</div>
+</div>
+<p>Variablen müssen in Python nicht initialisiert werden. Der Typ der Variablen wird durch die Zuweisung eines entsprechenden Werts festgelegt.</p>
+<div id="d9b6ae37" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_1 hat den Typ"</span>, <span class="bu">type</span>(var_1))</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_2 hat den Typ"</span>, <span class="bu">type</span>(var_2))</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_3 hat den Typ"</span>, <span class="bu">type</span>(var_3))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die Variable var_1 hat den Typ &lt;class 'str'&gt;
+Die Variable var_2 hat den Typ &lt;class 'int'&gt;
+Die Variable var_3 hat den Typ &lt;class 'bool'&gt;</code></pre>
+</div>
+</div>
+<p>Erklären, warum Sie bereits Variablen erstellt und verwendet haben… Python has no command for declaring a variable.</p>
+<p>A variable is created the moment you first assign a value to it.</p>
+<p>Variables do not need to be declared with any particular type, and can even change type after they have been set.</p>
+<section id="benennung-von-variablen" class="level3">
+<h3 class="anchored" data-anchor-id="benennung-von-variablen">Benennung von Variablen</h3>
+<p>sprechende Variablen Die Benennung von Variablen ist (meist) dem jeweiligen Programmierer überlassen, es empfiehlt sich jedoch selbsterklärende Variablennamen zu vergeben. Dies verbessert die Lesbarkeit des Codes und vereinfacht die Benutzung der Variable. Mehr Informationen finden sich in <a href="https://de.wikipedia.org/wiki/Variable_(Programmierung)#Namenswahl">diesem Wikipedia Abschnitt</a>.</p>
+<p>Unter selbsterklärenden Variablennamen versteht sich, dass der Variablenname den Inhalt der Variable beschreibt. Wird bspw. in einer Variable der Studienabschluss gespeichert, so kann diese mit <code>academic_degree</code> oder <code>studienabschluss</code> bezeichnet werden.</p>
+<p><strong>Zeigen, wie man den Typ einer Variable bestimmt und ändert. (type(x), int(), ord() … das ist im m-EsD)</strong></p>
+</section>
+</section>
+<section id="ausgabe-formatieren" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="ausgabe-formatieren"><span class="header-section-number">2.4</span> Ausgabe formatieren</h2>
+<p>Funktion <code>round(Wert, Stellen)</code>. <strong>Hier Querverweis auf Outputformatierung: f-strings, die bereits verwendete Funktion format(), round()… ein paar Funktionen für die Ausgabe von strings ohne ’’ und ohne ,</strong></p>
+<ul>
+<li><p>print(format(0.1, ‘.17g’)) # 17 signifikante Stellen</p></li>
+<li><p>print(format(0.1, ‘.17f’)) # 17 Stellen nach dem Komma</p></li>
+</ul>
+<div id="47db31af" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>, <span class="dv">2</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.3</code></pre>
+</div>
+</div>
 <p><strong>Quelle SA Datenanalyse mit Python. Idee des Kurses ‘Datenanalyse mit Python’.</strong></p>
 
 

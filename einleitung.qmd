@@ -10,9 +10,9 @@ Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.g
 
 &nbsp;
 
-Als Skriptsprache werden Pythonprogramme nicht in ein fertiges Programm übersetzt, sondern von einem sogenannten Interpreter, der die Programmanweisungen in Maschinencode für das jeweilige Computersystem übersetzt, ausgeführt. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Zwar sind interpretierte Sprachen langsamer als fertig übersetzte Programme. Bei rechenintensiven Alogrithmen helfen jedoch spezialisierte Pakete, die Rechenleistung von Python deutlich zu steigern und diesen Unterschied fast ganz auszugleichen.
+Als Skriptsprache werden Python-Programme nicht in ein fertiges Programm übersetzt, sondern von einem sogenannten Interpreter, der die Programmanweisungen in Maschinencode für das jeweilige Computersystem übersetzt, ausgeführt. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Zwar sind interpretierte Sprachen langsamer als fertig übersetzte Programme. Bei rechenintensiven Alogrithmen helfen jedoch spezialisierte Pakete, die Rechenleistung von Python deutlich zu steigern und diesen Unterschied fast ganz auszugleichen.
 
-Python kommt als schlichte Konsole daher. Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung bereitgestellt.
+Python kommt als schlichte Konsole daher. Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung (integrated development environment, IDE) bereitgestellt.
 
 ``` {python}
 #| echo: false
