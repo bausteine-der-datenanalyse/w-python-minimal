@@ -6,7 +6,7 @@ In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermitte
 ## Python-Code
 Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
 
-1. Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder Doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.
+1. Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.
 
 ```{python}
 print(1 + 2)
@@ -56,8 +56,8 @@ for i in range(3):
 print(summe)
 ```
 
-## Klassen, Typen und Objekte
-Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt. Objekte "erben" die Eigenschaften der Klasse, zu der sie gehören. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
+## Klassen, Typen, Objekte und Datentypen
+Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt, etwa welche Daten gespeichert und welche Funktionen ausgeführt werden können. Objekte "erben" die Eigenschaften der Klasse, zu der sie gehören. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
 
 ```{python}
 print(type(2), 2 + 2, "Ganzzahlen werden addiert.")
@@ -65,7 +65,8 @@ print(type('a'), 'a' + 'a', "Zeichen werden verkettet.")
 print(type(True and False), True + False + True, "Logische Werte werden addiert.")
 ```
 
-Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. Anders verhält es sich mit `None`, also nicht existenten Werten:
+Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. 
+Anders verhält es sich mit `None`, also nicht existenten Werten:
 
 ```{python}
 try:
@@ -83,6 +84,35 @@ Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unte
 :::
 
 &nbsp;
+
+#### Datentypen
+Objekte, die Daten speichern, haben einen Datentyp. Der Datentyp gibt an, wie die gespeicherten Werte von Python interpretiert werden sollen. Beispielsweise kann der Wert "1" ein Zeichen, eine Ganzzahl, einen Wahrheitswert, den Monat Januar oder die Ausprägung einer kategorialen Variablen repräsentieren.
+
+In der Pythonbasis gibt es nur einfache Datentypen wie Ganzzahl oder Gleitkommazahlen, weshalb der Unterschied zwischen Klassen und Datentypen nicht sofort offensichtlich ist. In Python sind die Begriffe manchmal synonym, etwa für die Klasse der Ganzzahlen 'int' und den Datentyp 'int'. Jedes Objekt gehört zu einer Klasse, aber nicht jeder Klasse ist ein Datentyp zuordenbar - beispielsweise sind auch Funktionen Objekte und gehören einer eigenen Klasse an. Die Funktion print speichert aber keine Daten und hat deshalb auch keinen Datentyp.
+
+```{python}
+type(print)
+```
+
+Deutlicher wird der Unterschied zwischen Klassen und Datentyp erst in spezialisierten Paketen wie NumPy **Querverweis auf w-NumPy** oder Pandas **Querverweis auf w-Pandas**, die weitere Datentypen in Python einführen, wie zum Beispiel Gleitkommazahlen mit 32 Bit (Datentyp 'float32') und 64 Bit Speicherplatzbedarf (Datentyp 'float64'). Objekte vom Datentyp float32 und float64 gehören zur selben Klasse (siehe Beispiel): Sie haben die selben allgemeinen Eigenschaften und Verhaltensweisen. Sie haben aber einen unterschiedlichen Wertebereich und Speicherplatzbedarf - Gleitkommazahlen mit 64 Bit können größere Zahlen speichern, nehmen aber doppelt so viel Platz im Speicher des Computers ein.
+
+::: {#nte-numpypandas .callout-note collapse="true"}
+## Datentypen in NumPy und Pandas
+Die Module NumPy und Pandas sind wichtige Bausteine für die Datenanalyse mit Python.
+
+```{python}
+import numpy as np
+
+float_64 = np.array([1.0])
+print("Der Datentyp des Objekts float_64 ist:", float_64.dtype)
+print("Das Objekt gehört zur Klasse der n-dimensionalen NumPy-Arrays:", type(float_64), "\n")
+
+float_32 = np.array([1.0], dtype = 'float32')
+print("Der Datentyp des Objekts float_32 ist:", float_32.dtype)
+print("Das Objekt gehört zur Klasse der n-dimensionalen NumPy-Arrays:", type(float_32))
+```
+
+:::
 
 In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
 
@@ -258,6 +288,8 @@ Besondere Vorsicht ist mit den [bitweisen Operatoren](https://wiki.python.org/mo
 ```{python}
 print(10 > 5 and 10 > 6)
 print(10 > 5 & 10 > 6)
+print(5 & 10)
+print(10 > False > 6)
 print((10 > 5) & (10 > 6))
 ```
 
@@ -310,7 +342,7 @@ var_3 = True
 print("Das", var_1, "hat", var_2, "Buchstaben. Das ist", var_3)
 ```
 
-Variablen müssen in Python nicht initialisiert werden. Der Typ der Variablen wird durch die Zuweisung eines entsprechenden Werts festgelegt.
+Variablen müssen in Python nicht initialisiert werden. Der Datentyp der Variablen wird durch die Zuweisung eines entsprechenden Werts festgelegt.
 
 ```{python}
 print("Die Variable var_1 hat den Typ", type(var_1))
@@ -318,30 +350,108 @@ print("Die Variable var_2 hat den Typ", type(var_2))
 print("Die Variable var_3 hat den Typ", type(var_3))
 ```
 
-**Zeigen, wie man den Typ einer Variable bestimmt und ändert. (type(x), int(), ord() ... das ist im m-EsD)**
+Der Datentyp einer Variable ändert sich, wenn ihr ein neuer Wert eines anderen Datentyps zugewiesen wird.
+```{python}
+var_1 = 100
+print("Die Variable var_1 hat den Typ", type(var_1))
+```
 
+Ebenso kann sich der Datentyp einer Variable ändern, um das Ergebnis einer Operation aufnehmen zu können. In diesem Beispiel kann das Ergebnis nicht in Form einer Ganzzahl gespeichert werden. Python weist dem Objekt var_1 deshalb den Datentyp 'float' zu. 
+```{python}
+var_1 = var_1 / 11
+print("Die Variable var_1 hat den Typ", type(var_1))
+```
 
-Neuzuweisung (var_1), Berechnung (var_2 / 5)
+Python enthält Funktionen, um den Datentyp einer Variablen zu bestimmen und umzuwandeln. Die Funktion `type()` wurde in den Code-Beispielen bereits benutzt, um den Datentyp (bzw. die Klasse) von Objekten zu bestimmen. Die Umwandlung des Datentyps zeigt der folgende Code-Block.
 
-Erklären, warum Sie bereits Variablen erstellt und verwendet haben...
-Python has no command for declaring a variable.
+``` {python}
+a = 67 
+print(a, type(a))
 
-A variable is created the moment you first assign a value to it.
+b = a + 1.8
+print(b, type(b), "\n")
 
-Variables do not need to be declared with any particular type, and can even change type after they have been set.
+print(f"Beachten Sie das Abschneiden der Nachkommastelle:\nUmwandlung in Ganzzahlen mit int(): {( a := int(a) ), (b := int(b) )}\n")
+
+print(f"Umwandlung in ASCII-Zeichen mit chr(): {( a := chr(a) ), ( b := chr(b) )}\n")
+
+print(f"Umwandlung in eine ASCII-Zahl mit ord(): {( a := ord(a) ), ( b := ord(b) )}\n")
+
+print(f"Umwandlung in Fließkommazahlen mit float(): {( a := float(a) ), ( b := float(b) )}\n")
+
+print(f"Umwandlung in Zeichen mit str(): {( a := str(a) ), ( b:= str(b) )}\n")
+
+print(f"Umwandlung in Wahrheitswerte mit bool(): {bool(a), bool(b)}")
+
+``` 
+
+#### Weitere Zuweisungsoperatoren
+In dem obenstehenden Code-Block wurde der sogenannte [Walross-Operator](https://docs.python.org/3/whatsnew/3.8.html) `:=` verwendet. Dieser erlaubt es, Zuweisungen innerhalb eines Ausdrucks (hier innerhalb der Funktion `print()`) vorzunehmen. Python kennt eine ganze Reihe weiterer Zuweisungsoperatoren (weitere Operatoren siehe [Python-Dokumentation](https://docs.python.org/3/reference/simple_stmts.html) oder übersichtlicher [hier](https://www.w3schools.com/python/python_operators.asp)).
+
+| Operator | entspricht der Zuweisung |
+|---|---|
+| a += 2 | a = a + 2 |
+| a -= 2 | a = a - 2 |
+| a *= 2 | a = a * 2 |
+| a /= 2 | a = a / 2 |
+| a %= 2 | a = a % 2 |
+| a //= 2 | a = a // 2 |
+| a **= 2 | a = a ** 2 |
+
+::: {.callout-tip collapse="false"}
+## Lesbare Zuweisungen
+Die in der Tabelle gezeigten Zuweisungsoperatoren sind für jemanden, der*die Ihren Code liest, gut zu lesen und  nachzuvollziehen, da Zuweisungen immer am Beginn einer Zeile, also ganz links, stehen.
+
+Dagegen kann der Walross-Operator an einer beliebigen Stelle in Ihrem Code stehen. Das mag für Sie beim Schreiben ein Vorteil sein, der Lesbarkeit ist das aber abträglich. Wenn Sie den Walross-Operator verwenden, achten Sie deshalb auf die Nachvollziehbarkeit Ihres Codes.
+:::
 
 ### Benennung von Variablen
-Für die Benennung von Variablen gibt es (meist) nur wenige Vorgaben. Es empfiehlt sich jedoch "sprechende", das heißt selbsterklärende, Variablennamen zu vergeben. Dies verbessert die Lesbarkeit des Codes und vereinfacht die Benutzung der Variable. Unter selbsterklärenden Variablennamen versteht sich, dass der Variablenname den Inhalt der Variable beschreibt. Wird bspw. in einer Variable der Studienabschluss gespeichert, so kann diese mit `academic_degree` oder `studienabschluss` bezeichnet werden. Werden Daten aus verschiedenen Jahren verarbeitet, kann das Jahr zu besseren Unterscheidbarkeit in den Variablennamen einfließen, etwa: `academic_degree_2023` oder `studienabschluss2024`. Mehr Informationen finden sich in [diesem Wikipedia Abschnitt](https://de.wikipedia.org/wiki/Variable_(Programmierung)#Namenswahl). 
+Für die Benennung von Variablen gibt es (meist) nur wenige Vorgaben. Trotzdem ist es besser, einen langen, aber ausführlichen Variablennamen zu vergeben, als einen kurzen, der sich schnell schreiben lässt. Denn Programmcode wird deutlich häufiger gelesen als geschrieben. Können Sie sich erinnern? Welcher Wert ist in der Variablen `Var_3` gespeichert, und welche Werte sind in `variable1` und `a` gespeichert? Es reicht schon, wenn Sie sich an den richtigen Datentyp erinnern können.
 
-Es ist besser, einen langen, aber ausführlichen Variablennamen zu vergeben, als einen kurzen, der sich schnell schreiben lässt. Denn Programmcode wird deutlich häufiger gelesen als geschrieben. Können Sie sich erinnern? Welcher Wert ist in der Variablen `Var_3` gespeichert, und welche Werte sind in `variable1` und `variable2` gespeichert? Es reicht, wenn Sie den Datentyp korrekt benennen können.
+Falls Sie sich nicht erinnern können, dann ist dieses Beispiel gelungen: Die Namensgebung dieser Variablen ist alles andere als gut. Die Auflösung steht im folgenden Aufklapper.
 
-Falls Sie sich nicht erinnern können, dann ist dieses Beispiel gelungen: Die Namensgebung ist alles andere als gut.
+::: {.callout-tip collapse="true"}
+## Auflösung
+```{python}
+print(type(var_3), type(variable1), type(a))
+```
+
+:::
+
+Deshalb empfiehlt es sich "sprechende", das heißt selbsterklärende, Variablennamen zu vergeben. Unter selbsterklärenden Variablennamen versteht sich, dass der Variablenname den Inhalt der Variable beschreibt. Wird bspw. in einer Variable der Studienabschluss gespeichert, so kann diese mit `academic_degree` oder `studienabschluss` bezeichnet werden. Werden Daten aus verschiedenen Jahren verarbeitet, kann das Jahr zu besseren Unterscheidbarkeit in den Variablennamen einfließen, etwa: `academic_degree_2023` oder `studienabschluss2024`. Dies verbessert die Lesbarkeit des Codes und vereinfacht die Benutzung der Variable. Mehr Informationen finden sich in [diesem Wikipedia Abschnitt](https://de.wikipedia.org/wiki/Variable_(Programmierung)#Namenswahl). 
+
 
 ::: {.callout-warning}
 ## Schlüsselwörter und Funktionsnamen
 
-In Python reservierte Schlüsselwörter und Funktionsnamen sind (selbstverständlich) ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen problemslos neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung ggf. aus dem Skript entfernen und Python neu starten.  
+In Python reservierte Schlüsselwörter und Funktionsnamen sind ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen problemslos neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion print dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung aus dem Skript entfernen und Python neu starten.  
 :::
+
+### Aufgaben Variablen
+1. Schreiben Sie ein Skript, welches eine gegebene Zeit 𝗍 in Sekunden in die Anzahl Tage, Stunden, Minuten und Sekunden aufteilt und diese Aufteilung ausgibt.  
+Berechnen Sie die Aufteilung für folgende Zeiten:
+
+    a) 79222 s
+  
+    b) 90061 s
+  
+    c) 300000 s
+
+2. Die Position eines Fahrzeugs zur Zeit $t$, welches konstant mit der Beschleunigung $a$ beschleunigt, ist gegeben durch
+
+$$
+x(t) = x_0 + v_0 \cdot t + \frac{1}{2} \cdot a t^2
+$$
+
+Dabei ist $x_0$ die Anfangsposition und $v_0$ die Anfangsgeschwindigkeit. Erstellen Sie Variablen für $x_0$, $v_0$ und $a$ und weisen Sie ihnen Werte zu. Da die Variablen nur Werte, aber keine Einheiten abbilden, überlegen Sie sich die ggf. notwendigen Umrechnungen. Folgende Werte können sie als Beispiel verwenden:
+
+$$
+x_0 = 10 \, km \,\,\,v_0 = 50 \frac{km}{h} \,\,\,a = 0.1 \frac{m}{s^2}
+$$
+
+Erzeugen Sie eine Variable für den Zeitpunkt $t$, z.B.: $t = 10 \, min$.
+Berechnen Sie mit obiger Gleichung und mit Hilfe der Variablen die Position $x(t)$.
+Geben Sie nicht nur den Wert von $x(t)$ in Kilometer aus, sondern betten ihn in einen ganzen Antwortsatz (einschließlich Einheiten) ein.
 
 ## Ausgabe formatieren
 
