@@ -17,7 +17,10 @@ book:
   chapters:
     - index.qmd
     - einleitung.qmd
-    - Python-Code.qmd
+    - python-code.qmd
+    - funktionen.qmd
+    - sammeltypen.qmd
+
   sidebar:
     title: "Werkzeugbaustein Python"
     logo: "skript/00-bilder/logo_bcd_new.svg"    

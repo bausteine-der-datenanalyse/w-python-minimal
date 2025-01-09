@@ -1,0 +1,118 @@
+# Funktionen
+Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine ganze Reihe von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel werden der Umgang mit den Funktionen der Pythonbasis und die Verwendung eigener Funktionen vermittelt.
+
+Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Argumente - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.
+
+::: {#tip-dokumentation .callout-tip collapse="false"}
+## Dokumentation
+Der wichtigste Tipp zuerst: **Benutzen Sie die Dokumentation!** Auch wenn Sie eine Funktion kennen: Vergewissern Sie sich regelmäßig, dass Sie noch auf dem neuesten Stand sind. Auf diese Weise erhalten Sie einen vollständigen Überblick über standardmäßig gesetzte und optional verfügbare Parameter. Außerdem erkennen Sie Änderungen in der Programmausführung und vermeiden so unerwartete Fehler.
+
+:::: {layout="[1, 1]"}
+
+![Neuerung in Python](skript/00-bilder/added-in-pyhton.png){fig-alt="Hinweis auf eine Neuerung in Python"}
+
+![Abkündigung in Python](skript/00-bilder/deprecated-in-python.png){fig-alt="Hinweis auf eine Abkündigung in Python"}
+
+::::
+:::
+
+## Aufruf
+Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern `()` aufgerufen. Dies kennen Sie bereits aus den vorherigen Kapiteln. Getrennt durch Kommata können mehrere **Argumente** übergeben werden.
+
+```{python}
+print("Die Funktion print wurde schon oft gezeigt.", "Das zweite Funktionsargument.")
+```
+
+**Argumente** steuern die Programmausführung. Die für die Funktion print() verfügbaren Argumente stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print).
+
+```
+print(*objects, sep=' ', end='\n', file=None, flush=False)
+```
+
+... erklären: verpflichtende und optionale Argumente, positionale und Schlüsselwortargumente
+
+
+1. verpflichtende und optionale Argumente
+Was gibt es für Argumente: verpflichtende und optionale Argumente: Welche Argumente muss man übergeben (die ohne =), welche kann man übergeben (die mit =).
+
+2. positionale und Schlüsselwortargumente
+
+
+Am Beispiel print: Das Argument `*objects`  nimmt die Elemente entgegen, die mit print ausgegeben werden sollen. Das Sternchen `*` signalisiert zum einen, dass eine beliebige Anzahl an Argumenten an das Argument `*objects` übergeben werden kann. Zum anderen zeigt das Sternchen `*` an, dass es sich um ein **positionales Argument** handelt. Die Elemente, die mit print ausgegeben werden sollen, **müssen an erster Stelle stehen**.
+
+... demgegenüber **Schlüsselwortargumente** die können überall stehen - in diesem Fall außer an der ersten Stelle, denn dort muss das positionale Objekt `*objects` stehen.
+
+  - Die Eingabe von Daten erfolgt mit dem Funktionsaufruf
+Verarbeitung: Steuerung über Argumente
+Ausgabe: return-statement
+
+ Funktionen ...
+
+  - haben einen Funktionsnamen gefolgt von runden Klammern `()`, über den Sie aufgerufen werden.
+
+  - 
+
+  - müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert `None` zurückgegeben, der nicht existente Werte kennzeichnet.
+
+
+**wichtiger Tipp: die vorausgefüllten Werte sind leider nicht immer die default-Werte**
+
+## Argumente gehören zum Aufruf
+Funktionen können Argumente entgegennehmen, die die Programmausführung steuern.
+
+
+::: {#tip-argumente .callout-tip collapse="false"}
+## Dokumentation
+verpflichtende und optionale Argumente: Welche Argumente muss man übergeben (die ohne =), welche kann man übergeben (die mit =).
+**Einige Funktionen haben dutzende dokumentierte Argumente und können über die Platzhalter \*args und \*\*kwargs weitere Argumente aufnehmen.**
+Bedeutung des Sterns: (Aus glob:) Das Argument `pathname` kann als Schlüsselwort oder positional übergeben werden, die übrigen Argumente müssen als Schlüsselwort übergeben werden (dies signalisiert das Zeichen `*`) Das `*`, das positionale Argumente von Schlüsselwortargumenten trennt, kommt in der Dokumentation immer nur einmal vor.
+Erklärung *args und \*\*kwargs siehe <https://book.pythontips.com/en/latest/args_and_kwargs.html>  
+
+**wichtig ist auch: leider sind die Startwerte in der Funktionsdokumentation nicht (immer) die default-Werte --- da habe ich ein Beispiel in meiner zuerledigen Liste --- daraus kann man gleich eine Aufgabe machen, den default-Wert heraussuchen zu lassen.**
+:::
+
+In den bisherigen Kapiteln haben Sie bereits die Funktion print() kennengelernt, mit der (formatierte) Zeichenfolgen, Variablen und Werte ausgegeben werden können.
+
+```{python}
+print("Die Funktion print gibt Zeichenfolgen, Variablen und Werte aus.")
+```
+
+
+## Ausgabe
+return-statement
+weitere Ausgaben: print() usw.
+
+### `None`-Wert (das wird keine Überschrift)
+
+
+res = print( 15 )
+print(res)
+
+
+**Beginnen mit print (Funktion und Argumente), dann Funktionen wie round(), format() und string-Methoden wie .upper .lower ins nächste Kapitel schieben... sie sind eine gute Einleitung für die objektorientierte Programmierung (manche funktionieren nur mit Zahlen, andere nur mit Zeichen).
+
+## Funktionen und Methoden
+Zahlen: Funktion `round(Wert, Stellen)`. **Hier Querverweis auf Outputformatierung: f-strings, die bereits verwendete Funktion format(), round()... ein paar Funktionen für die Ausgabe von strings ohne '' und ohne ,**
+
+  - print(format(0.1, '.17g')) # 17 signifikante Stellen
+
+  - print(format(0.1, '.17f')) # 17 Stellen nach dem Komma
+
+```{python}
+print(round(0.1 + 0.2, 2))
+```
+
+
+Strings: Methoden .lower(), .upper(), .title()
+https://www.w3schools.com/python/python_ref_string.asp
+
+
+Als nächstes Kapitel: Programmsteuerung
+
+### Fallunterscheidung if
+
+### Schleifen while, for
+
+## Eigene Funktionen schreiben
+
+Ich glaube, hier oder spätestens im nächsten Kapitel sollte das Lesen der Dokumentation trainiert werden?!

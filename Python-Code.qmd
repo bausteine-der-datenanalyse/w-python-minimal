@@ -1,7 +1,7 @@
 # Python-Code
 Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) Format umgehen. UTF-8 ist eine sehr weit verbreitete Zeichenkodierung, welche das ASCII-Format erweitert und z. B. deutsche Sonderzeichen abbilden kann.
 
-In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermittelt. Sie erfahren, wie Sie Python-Code schreiben, was ein Objekt ist, wie Sie Operationen durchführen und wie Sie die Ausgabe formatieren können. 
+In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermittelt. Sie erfahren, wie Sie Python-Code schreiben, was der Unterschied zwischen einem Objekt, seiner Klasse und dem Datentyp ist sowie wie Sie Operationen durchführen und die Ausgabe formatieren können. 
 
 ## Python-Code
 Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
@@ -153,7 +153,7 @@ Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen `.` oder in Exponen
 print(120.6, 1206e-1, 12060e-2, "\n")
 
 print("Beim Lottogewinn in Exponentialschreibeweise zählt das Vorzeichen.")
-print(1e-7, "oder", 1e+7)
+print(1e-3, "oder", 1e+3)
 ```
 
 Da Computer im Binärsystem arbeiten, können Dezimalzahlen nicht exakt gespeichert werden. Beispielsweise ist die Division von 1 durch 10 dezimal gleich 0.1. Binär ist 1~2~ durch 1010~2~ aber ein periodischer Bruch:
@@ -213,7 +213,7 @@ Bei gleichrangigen Operationen werden diese von links nach rechts ausgeführt.
 
 **Die Musterlösung kann Marc machen.**
 
-::: {.callout-tip collapse="true"}
+::: {#tip-lösungzahlen .callout-tip collapse="true"}
 ## Musterlösung Zahlen
 :::
 
@@ -255,7 +255,7 @@ print(bool({})) # ein leeres Dictionary
 print(bool(None)) # None deklariert einen nicht existenten Wert
 ```
 
-Die Sammeltypen Liste, Tupel und Dictionary werden wir später kennenlernen. Boolsche Werte können die Ausführung von Programmcode steuern, indem sie wie `an` und `aus` wirken. So kann Programmcode mit einer `if`-Anweisung nur dann ausgeführt werden, wenn ein Sammeltyp auch Werte enthält.
+Die Sammeltypen Liste, Tupel und Dictionary lernen wir in den folgenden Kapiteln kennen. Boolsche Werte können die Ausführung von Programmcode steuern, indem sie wie `an` und `aus` wirken. So kann Programmcode mit einer `if`-Anweisung nur dann ausgeführt werden, wenn ein Sammeltyp auch Werte enthält.
 
 ```{python}
 meine_Liste = ['Äpfel', 'Butter']
@@ -315,7 +315,7 @@ Kinder unter 14 Jahren fahren kostenlos, Jugendliche zwischen 14 und 18 Jahren u
 Zeichenfolgen (Englisch string) werden in Python in einfache oder doppelte Anführungszeichen gesetzt.
 
 ```{python}
-print('eine x-beliebige Zeichefolge')
+print('eine x-beliebige Zeichenfolge')
 print("noch eine x-beliebige Zeichenfolge")
 ```
 
@@ -327,11 +327,50 @@ print("I've turned the moon into what I like to call a 'Death Star'.")
 
 Das Steuerzeichen `\` (oder Fluchtzeichen, escape character) erlaubt es, bestimmte Sondernzeichen zu verwenden. 
 ```{python}
-print("Mit dem Steuerzeichen \\ funktionieren auch die gleichen \"Anführungszeichen\" wie die umschließenden.")
+print("Das Steuerzeichen \\ ermöglicht die gleichen \"Anführungszeichen\" in der Ausgabe von print.")
 print("Erst ein\tTabstopp, dann eine\nneue Zeile.")
 ```
 
-## Variablen
+Ein vorangestelltes `r` bewirkt, dass das Steuerzeichen `\` nicht verarbeitet wird (raw string literal). Dies ist beispielsweise bei der Arbeit mit Dateipfaden praktisch.
+```{python}
+print("Die Daten liegen unter: C:\tolle_daten\nordpol\weihnachtsmann")
+print(r"Die Daten liegen unter: C:\tolle_daten\nordpol\weihnachtsmann")
+```
+
+### Operationen mit Zeichenfolgen
+Einige Operatoren funktionieren auch mit Daten vom Typ string.
+
+```{python}
+
+# string + string
+print('a' + 'b') # -, *, / funktionieren nicht
+print("\n")
+
+# string + Zahl
+print(15 * 'a') # +, -, / funktionieren nicht
+print("\n")
+
+# logische Operatoren
+print('a' < 'b', 'a' >= 'b', 'a' != 'b')
+print('a' or 'b', 'a' and 'b')
+```
+
+### Aufgaben Zeichenfolgen
+**Lösen Sie die Aufgaben mit Python.**
+
+1. Was passiert, wenn Sie die Zeichenfolge "Python" mit "for beginners" addieren?
+2. Erzeugen Sie eine Zeichenfolge, die 10 mal die Zeichenfolge "tick tack".
+3. Welche Zeichenfolge ist kleiner, "Aachen" oder "Bern". Warum ist das so, wie werden Zeichenfolgen verglichen?
+4. Geben Sie den Dateipfad aus: "~\home\tobi\neue_daten"
+
+**Die Musterlösung kann Marc machen.**
+
+::: {#tip-lösungstrings .callout-tip collapse="true"}
+## Musterlösung Aufgaben Zeichenfolgen
+
+::: 
+
+### Variablen
 Variablen sind Platzhalter bzw. Referenzen auf Daten. Die Zuweisung wird durch den Zuweisungsoperator `=` dargestellt. Der Name einer Variablen darf nur aus Buchstaben, Zahlen und Unterstrichen bestehen. Dabei darf das erste Zeichen keine Zahl sein.
 
 ```{python}
@@ -405,7 +444,7 @@ Die in der Tabelle gezeigten Zuweisungsoperatoren sind für jemanden, der*die Ih
 Dagegen kann der Walross-Operator an einer beliebigen Stelle in Ihrem Code stehen. Das mag für Sie beim Schreiben ein Vorteil sein, der Lesbarkeit ist das aber abträglich. Wenn Sie den Walross-Operator verwenden, achten Sie deshalb auf die Nachvollziehbarkeit Ihres Codes.
 :::
 
-### Benennung von Variablen
+#### Benennung von Variablen
 Für die Benennung von Variablen gibt es (meist) nur wenige Vorgaben. Trotzdem ist es besser, einen langen, aber ausführlichen Variablennamen zu vergeben, als einen kurzen, der sich schnell schreiben lässt. Denn Programmcode wird deutlich häufiger gelesen als geschrieben. Können Sie sich erinnern? Welcher Wert ist in der Variablen `Var_3` gespeichert, und welche Werte sind in `variable1` und `a` gespeichert? Es reicht schon, wenn Sie sich an den richtigen Datentyp erinnern können.
 
 Falls Sie sich nicht erinnern können, dann ist dieses Beispiel gelungen: Die Namensgebung dieser Variablen ist alles andere als gut. Die Auflösung steht im folgenden Aufklapper.
@@ -437,7 +476,7 @@ Berechnen Sie die Aufteilung für folgende Zeiten:
   
     c) 300000 s
 
-2. Die Position eines Fahrzeugs zur Zeit $t$, welches konstant mit der Beschleunigung $a$ beschleunigt, ist gegeben durch
+2. Die Position eines Fahrzeugs zur Zeit $t$, welches konstant mit der Beschleunigung $a$ beschleunigt, ist gegeben durch:
 
 $$
 x(t) = x_0 + v_0 \cdot t + \frac{1}{2} \cdot a t^2
@@ -449,21 +488,108 @@ $$
 x_0 = 10 \, km \,\,\,v_0 = 50 \frac{km}{h} \,\,\,a = 0.1 \frac{m}{s^2}
 $$
 
-Erzeugen Sie eine Variable für den Zeitpunkt $t$, z.B.: $t = 10 \, min$.
+Erzeugen Sie eine Variable für den Zeitpunkt $t$, z. B.: $t = 10 \, min$.
 Berechnen Sie mit obiger Gleichung und mit Hilfe der Variablen die Position $x(t)$.
 Geben Sie nicht nur den Wert von $x(t)$ in Kilometer aus, sondern betten ihn in einen ganzen Antwortsatz (einschließlich Einheiten) ein.
 
+**Die Musterlösung kann Marc machen.**
+
+::: {#tip-lösungvariablen .callout-tip collapse="true"}
+## Musterlösung Aufgaben Variablen
+
+:::
+
+[@Arnold-2023-datentypen-und-grundlagen]
+
 ## Ausgabe formatieren
+Mit sogenannten `f-Strings` können formatierte Zeichenketten erstellt werden. Formatierte Zeichenketten werden mit einem vorgesetzten `f` vor den Anführungsstrichen erstellt. Werte und Variablen können durch Platzhalter eingesetzt werden, die mit geschweiften Klammern `{}` angegeben und mit Formattierungsinformationen versehen werden. Das Formatierungsformat innerhalb der geschweiften Klammer ist, vereinfacht dargestellt:
 
-Funktion `round(Wert, Stellen)`. **Hier Querverweis auf Outputformatierung: f-strings, die bereits verwendete Funktion format(), round()... ein paar Funktionen für die Ausgabe von strings ohne '' und ohne ,**
-
-  - print(format(0.1, '.17g')) # 17 signifikante Stellen
-
-  - print(format(0.1, '.17f')) # 17 Stellen nach dem Komma
-
-```{python}
-print(round(0.1 + 0.2, 2))
+```
+{Variablenname:PlatzbedarfAusgabetyp}
 ```
 
+Ein f-String mit Platzhaltern ohne Formatierungsinformationen:
+```{python}
+zahl1 = 5
+zahl2 = 7
+verhältnis = zahl1 / zahl2
+print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis}.")
+```
 
-**Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**
+Die Anzahl der darzustellenden Nachkommastellen kann wie folgt festgelegt werden: `{verhältnis:.2f}`.
+
+  - `:` leitet die Formatierungsbefehle ein.
+
+  - `.` gibt an, dass Formatierungsinformationen für die Darstellung hinter dem Dezimaltrennzeichen folgen.
+
+  - `2` ist der Wert für die darzustellenden Nachkommastellen.
+
+  - `f` spezifiziert die Darstellung einer Gleitkommazahl 'float'.
+
+```{python}
+print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis:.2f}.")
+```
+
+Das gleiche ist mit einem Wert möglich:
+```{python}
+print(f"Das Verhältnis ist genauer {0.7142857142857143:.3f}.")
+```
+
+Ein Wert für die insgesamt darzustellenden Stellen wird vor dem Dezimaltrennzeichen übergeben `{verhältnis:7.2f}` bzw. inklusive führender Nullen `{verhältnis:07.2f}`: 
+```{python}
+print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis:7.2f}.")
+print(f"Das Verhältnis ist genauer {0.7142857142857143:07.3f}.")
+```
+
+Das Dezimaltrennzeichen zählt als eine Stelle.
+
+Häufig verwendete Formatierung sind:
+
+::: {.panel-tabset}
+## ganze Zahlen
+Ganze Zahlen haben den Ausgabetyp `d`.
+
+| Formatierung | Ausgabe |
+|---|--------|
+| `nd` | n-Stellen werden für die Ausgabe verwendet |
+| `0nd` | Ausgabe von n-Stellen, wobei die Leerstellen mit Nullen aufgefüllt werden. |
+| `+d` | Ausgabe des Vorzeichens auch bei positiven Zahlen |
+
+## Gleitkommazahlen
+Gleitkommazahlen haben die Ausgabetypen `f` und `e`.
+
+| Formatierung | Ausgabe |
+|---|--------|
+| `.mf` | m-Stellen werden für die Nachkommastellen genutzt. |
+| `n.mf` | Insgesamt werden n-Stellen verwendet, wobei m-Stellen für die Nachkommastellen genutzt werden. |
+| `n.me` | Genauso, aber die Ausgabe erfolgt in exponentieller Schreibweise. |
+
+## Zeichenketten
+Zeichenketten haben den Ausgabetyp `s`.
+
+| Formatierung | Ausgabe |
+|---|--------|
+| `ns` | Insgesamt werden n-Stellen verwendet. |
+| `<ns`, `>ns`, `^ns` | Genauso, jedoch wird die Zeichenkette linksbündig, rechtsbündig bzw. zentriert platziert. |
+
+:::
+
+### Aufgaben Ausgabe
+1. "Gleitkommazahlen können natürlich, z. B. {1015.39:12.4f}, oder wissenschaftlich, {1015.39:e}, dargestellt werden."
+ 
+ - Verändern Sie die natürliche Schreibwese so, dass nur noch eine Stelle nach dem Komma angezeigt wird. Was fällt auf?
+ 
+ - Verändern Sie die wissenschaftliche Schreibweise so, dass anstelle von `e` die Zehnerbasis als `E` geschrieben wird.
+
+2. Wandeln Sie die Zahl 1015.39 in eine Zeichenkette um und stellen Sie diese mit 12 Stellen rechtsbündig dar.
+
+3. Geben Sie mit Hilfe der formatierten Zeichenketten eine Tabelle aus, welche die Spalten $x$, $x^2$ und $x^3$ für ganze Zahlen zwischen -2 und 2 auflistet.
+
+
+**Die Musterlösung kann Marc machen.**
+
+::: {#tip-lösungausgabe .callout-tip collapse="true"}
+## Musterlösung Ausgabe
+:::
+
+[@Arnold-2023-funktionen-module-dateien]
