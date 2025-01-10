@@ -172,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sammeltypen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">sammeltypen.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
   </div>
 </li>
     </ul>
@@ -185,13 +185,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#none-wert-das-wird-keine-überschrift" id="toc-none-wert-das-wird-keine-überschrift" class="nav-link active" data-scroll-target="#none-wert-das-wird-keine-überschrift"><span class="header-section-number">3.1</span> <code>None</code>-Wert (das wird keine Überschrift)</a></li>
-  <li><a href="#funktionen-und-methoden" id="toc-funktionen-und-methoden" class="nav-link" data-scroll-target="#funktionen-und-methoden"><span class="header-section-number">3.2</span> Funktionen und Methoden</a>
+  <li><a href="#funktionen-und-methoden" id="toc-funktionen-und-methoden" class="nav-link active" data-scroll-target="#funktionen-und-methoden"><span class="header-section-number">3.1</span> Funktionen und Methoden</a></li>
+  <li><a href="#argumente" id="toc-argumente" class="nav-link" data-scroll-target="#argumente"><span class="header-section-number">3.2</span> Argumente</a></li>
+  <li><a href="#ausgabe" id="toc-ausgabe" class="nav-link" data-scroll-target="#ausgabe"><span class="header-section-number">3.3</span> Ausgabe</a>
+  <ul class="collapse">
+  <li><a href="#none-wert-das-wird-keine-überschrift" id="toc-none-wert-das-wird-keine-überschrift" class="nav-link" data-scroll-target="#none-wert-das-wird-keine-überschrift"><code>None</code>-Wert (das wird keine Überschrift)</a></li>
+  </ul></li>
+  <li><a href="#funktionen-und-methoden-1" id="toc-funktionen-und-methoden-1" class="nav-link" data-scroll-target="#funktionen-und-methoden-1"><span class="header-section-number">3.4</span> Funktionen und Methoden</a>
   <ul class="collapse">
   <li><a href="#fallunterscheidung-if" id="toc-fallunterscheidung-if" class="nav-link" data-scroll-target="#fallunterscheidung-if">Fallunterscheidung if</a></li>
   <li><a href="#schleifen-while-for" id="toc-schleifen-while-for" class="nav-link" data-scroll-target="#schleifen-while-for">Schleifen while, for</a></li>
   </ul></li>
-  <li><a href="#funktionen-schreiben" id="toc-funktionen-schreiben" class="nav-link" data-scroll-target="#funktionen-schreiben"><span class="header-section-number">3.3</span> Funktionen schreiben</a></li>
+  <li><a href="#eigene-funktionen-schreiben" id="toc-eigene-funktionen-schreiben" class="nav-link" data-scroll-target="#eigene-funktionen-schreiben"><span class="header-section-number">3.5</span> Eigene Funktionen schreiben</a></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Funktionen bündeln Programmanweisungen, damit Programmteile mehrfach verwendet werden können. Damit kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der <a href="https://docs.python.org/3/library/functions.html">Dokumentation</a> entnehmen können, eine ganze Reihe von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel werden der Umgang mit den Funktionen der Pythonbasis und die Verwendung eigener Funktionen vermittelt.</p>
+<p>Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der <a href="https://docs.python.org/3/library/functions.html">Dokumentation</a> entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel wird die allgemeine Verwendung von Funktionen in Python sowie das Erstellen eigener Funktionen vermittelt.</p>
 <p>Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Argumente - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.</p>
 <div id="tip-dokumentation" class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
@@ -255,40 +260,195 @@ Tipp&nbsp;3.1: Dokumentation
 </div>
 </div>
 </div>
+<p><strong>ergänzen: Die Python-Dokumentation ist schwer zu lesen (Fachbegriffe, knappe Notation), stellenweise unvollständig (fehlende Erläuterungen, Beispiele usw.) … als aufbauender Tipp.</strong></p>
 </div>
 </div>
 </div>
-<p><strong>Hinweis Doku: Python ist eine sehr dynamische Sprache. Einige Funktionen haben dutzende dokumentierte Argumente und können über die Platzhalter *args und **kwargs weitere Argumente aufnehmen.</strong> Bedeutung des Sterns: (Aus glob:) Das Argument <code>pathname</code> kann als Schlüsselwort oder positional übergeben werden, die übrigen Argumente müssen als Schlüsselwort übergeben werden (dies signalisiert das Zeichen <code>*</code>) Erklärung *args und **kwargs siehe <a href="https://book.pythontips.com/en/latest/args_and_kwargs.html" class="uri">https://book.pythontips.com/en/latest/args_and_kwargs.html</a><br>
-Einiges steht auch im m-EsD</p>
-<p>Funktionen sind nichts anderes als ein Unterprogramm, das heißt Funktionen folgen dem EVA-Prinzip aus Eingabe, Verarbeitung und Ausgabe. Funktionen …</p>
+<section id="funktionen-und-methoden" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="funktionen-und-methoden"><span class="header-section-number">3.1</span> Funktionen und Methoden</h2>
+<p>In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.</p>
+<p>Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern <code>()</code> aufgerufen. Ein Beispiel für eine Funktion ist print(), der Objekte unabhängig von ihrem Datentyp übergeben werden können.</p>
+<div id="d8bb44d7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var_str <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>var_int <span class="op">=</span> <span class="dv">26</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>var_bool <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_1 hat den Typ"</span>, <span class="bu">type</span>(var_str))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_2 hat den Typ"</span>, <span class="bu">type</span>(var_int))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_3 hat den Typ"</span>, <span class="bu">type</span>(var_bool))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die Variable var_1 hat den Typ &lt;class 'str'&gt;
+Die Variable var_2 hat den Typ &lt;class 'int'&gt;
+Die Variable var_3 hat den Typ &lt;class 'bool'&gt;</code></pre>
+</div>
+</div>
+<p>Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Variablen bzw. Objekte abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einem bestimmten Datentyp gehören. Methoden werden getrennt durch einen Punkt <code>.</code> hinter Objekten mit ihrem Namen aufgerufen: <code>Variable.Methode</code> bzw. <code>(Wert).Methode</code>. Die Methoden <code>.upper()</code>, <code>.lower()</code> und <code>.title</code> sind für Zeichenfolgen definierte Methoden.</p>
+<div id="a79cada8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>toller_text <span class="op">=</span> <span class="st">"Python 3.12 ist großartig."</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.upper())</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.lower())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.title(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="st">"Mit in Klammern gesetzten Werten klappt es auch."</span>).upper())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python 3.12 ist großartig.
+PYTHON 3.12 IST GROSSARTIG.
+python 3.12 ist großartig.
+Python 3.12 Ist Großartig. 
+
+MIT IN KLAMMERN GESETZTEN WERTEN KLAPPT ES AUCH.</code></pre>
+</div>
+</div>
+<p>Auf Objekte mit einem falschen Datentyp können Methoden wie <code>.lower()</code> nicht angewendet werden.</p>
+<div id="06842685" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  var_int.upper()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">AttributeError</span> <span class="im">as</span> error:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'int' object has no attribute 'upper'</code></pre>
+</div>
+</div>
+</section>
+<section id="argumente" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="argumente"><span class="header-section-number">3.2</span> Argumente</h2>
+<p>Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Argumente übergeben werden. Argumente steuern die Programmausführung. Argumente werden auch als Parameter bezeichnet.</p>
+<div id="030acc1f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Funktion print wurde schon oft gezeigt."</span>, <span class="st">"Das ist das zweite Argument."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die Funktion print wurde schon oft gezeigt. Das ist das zweite Argument.</code></pre>
+</div>
+</div>
+<p>Die für die Funktion print() verfügbaren Argumente stehen in der <a href="https://docs.python.org/3/library/functions.html#print">Dokumentation der Funktion</a>.</p>
+<pre><code>print(*objects, sep=' ', end='\n', file=None, flush=False)</code></pre>
+<ul>
+<li><p>Argumente ohne vorangestelltes Gleichheitszeichen <code>=</code> müssen beim Funktions- bzw. Methodenaufruf übergeben werden. Argumente mit vorangestellten Gleichheitszeichen <code>=</code> können beim Aufruf übergeben werden, es handelt sich um optionale Argumente.</p></li>
+<li><p>Argumente können in Python entweder als positionales Argument übergeben werden, das heißt Python ordnet Eingaben entsprechend ihrer Reihenfolge Argumenten zu. Alternativ können Argumente als Schlüsselwort übergeben werden, die Zuordnung von Eingaben erfolgt über den Namen des Arguments.</p></li>
+<li><p>das vorangestellte Sternchen vor einem Argument <code>*objects</code> entspricht einem Platzhalter für eine beliebige Anzahl von Argumenten.</p></li>
+</ul>
+<p><code>*objects</code> ist also ein positionales Argument (es steht immer an erster Stelle), das keinen Standardwert hat und dem beliebig viele Argumente übergeben werden können (n Eingaben stehen also an den ersten n-Stellen). Dadurch, dass beliebig viele Argumente übergeben werden können, funktioniert auch ein leerer Aufruf der Funktion print(), obwohl das Argument <code>*objects</code> verpflichtend übergeben werden muss.</p>
+<p>Die weiteren Argumente der Funktion print können als Schlüsselwort übergeben werden. Die Werte hinter dem Gleichheitszeichen zeigen die Standardwerte (default value) der Argumente an. Diese werden verwendet, wenn ein Argument nicht explizit beim Aufruf übergeben wird.</p>
+<p><strong>Geben Sie die drei Werte 1, 2 und 3 mit print() aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:</strong></p>
+<div id="9a0e4e28" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>1_x_2_x_3</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="d64351e5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, sep <span class="op">=</span> <span class="st">"_x_"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Tipp: default value stimmt aber nicht immer</strong></li>
+</ul>
+<p>Ergänzen: Trennzeichen in der Funktionsdokumentation</p>
+<div class="border">
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Linke Seite</th>
+<th style="text-align: center;">Trennzeichen</th>
+<th style="text-align: center;">Rechte Seite</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">nur positionale Argumente</td>
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">positionale oder Schlüsselwortargumente</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">positionale oder Schlüsselwortargumente</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">nur Schlüsselwortargumente</td>
+</tr>
+</tbody>
+</table>
+<p>https://realpython.com/python-asterisk-and-slash-special-parameters/</p>
+<p>Beide Steuerzeichen können innerhalb einer Funktionsdefinition vorkommen, allerdings nur in der Reihenfolge <code>/</code> und <code>*</code>. Im umgekehrten Fall wäre es unmöglich, Argumente zu übergeben.</p>
+</div>
+<ol type="1">
+<li><p>verpflichtende und optionale Argumente Was gibt es für Argumente: verpflichtende und optionale Argumente: Welche Argumente muss man übergeben (die ohne =), welche kann man übergeben (die mit =).</p></li>
+<li><p>positionale und Schlüsselwortargumente</p></li>
+</ol>
+<p>Am Beispiel print: Das Argument <code>*objects</code> nimmt die Elemente entgegen, die mit print ausgegeben werden sollen. Das Sternchen <code>*</code> signalisiert zum einen, dass eine beliebige Anzahl an Argumenten an das Argument <code>*objects</code> übergeben werden kann. Zum anderen zeigt das Sternchen <code>*</code> an, dass es sich um ein <strong>positionales Argument</strong> handelt. Die Elemente, die mit print ausgegeben werden sollen, <strong>müssen an erster Stelle stehen</strong>.</p>
+<p>… demgegenüber <strong>Schlüsselwortargumente</strong> die können überall stehen - in diesem Fall außer an der ersten Stelle, denn dort muss das positionale Objekt <code>*objects</code> stehen.</p>
+<ul>
+<li>Die Eingabe von Daten erfolgt mit dem Funktionsaufruf Verarbeitung: Steuerung über Argumente Ausgabe: return-statement</li>
+</ul>
+<p>Funktionen …</p>
 <ul>
 <li><p>haben einen Funktionsnamen gefolgt von runden Klammern <code>()</code>, über den Sie aufgerufen werden.</p></li>
-<li><p>können Argumente entgegennehmen, die die Programmausführung steuern.</p></li>
+<li></li>
 <li><p>müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert <code>None</code> zurückgegeben, der nicht existente Werte kennzeichnet.</p></li>
 </ul>
+<p><strong>wichtiger Tipp: die vorausgefüllten Werte sind leider nicht immer die default-Werte</strong></p>
+<p>funktionen können Argumente entgegennehmen, die die Programmausführung steuern.</p>
+<p><strong>Mögliche Aufgabe: Erklären, dass Methoden auch Argumente haben… nachgucken lassen, welche Argumente die str.methoden haben</strong></p>
+<div id="tip-argumente" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp&nbsp;3.2: Dokumentation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>verpflichtende und optionale Argumente: Welche Argumente muss man übergeben (die ohne =), welche kann man übergeben (die mit =). <strong>Einige Funktionen haben dutzende dokumentierte Argumente und können über die Platzhalter *args und **kwargs weitere Argumente aufnehmen.</strong> Bedeutung des Sterns: (Aus glob:) Das Argument <code>pathname</code> kann als Schlüsselwort oder positional übergeben werden, die übrigen Argumente müssen als Schlüsselwort übergeben werden (dies signalisiert das Zeichen <code>*</code>) Das <code>*</code>, das positionale Argumente von Schlüsselwortargumenten trennt, kommt in der Dokumentation immer nur einmal vor. Erklärung *args und **kwargs siehe <a href="https://book.pythontips.com/en/latest/args_and_kwargs.html" class="uri">https://book.pythontips.com/en/latest/args_and_kwargs.html</a></p>
+<p><strong>wichtig ist auch: leider sind die Startwerte in der Funktionsdokumentation nicht (immer) die default-Werte — da habe ich ein Beispiel in meiner zuerledigen Liste — daraus kann man gleich eine Aufgabe machen, den default-Wert heraussuchen zu lassen.</strong></p>
+</div>
+</div>
+</div>
 <p>In den bisherigen Kapiteln haben Sie bereits die Funktion print() kennengelernt, mit der (formatierte) Zeichenfolgen, Variablen und Werte ausgegeben werden können.</p>
-<div id="f4a82be3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Funktion print gibt Zeichenfolgen, Variablen und Werte aus."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bc11d2a5" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Funktion print gibt Zeichenfolgen, Variablen und Werte aus."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Die Funktion print gibt Zeichenfolgen, Variablen und Werte aus.</code></pre>
 </div>
 </div>
-<p>Eingabe = Argumente</p>
-<p>Grundlegendes: Funktionen haben Argumente</p>
-<p>Dokumentation lesen: Sternchen als Trennzeichen von Schlüsselwortargumenten und positionalen Argumenten (steht im m-EsD)</p>
-<section id="none-wert-das-wird-keine-überschrift" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="none-wert-das-wird-keine-überschrift"><span class="header-section-number">3.1</span> <code>None</code>-Wert (das wird keine Überschrift)</h2>
+</section>
+<section id="ausgabe" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="ausgabe"><span class="header-section-number">3.3</span> Ausgabe</h2>
+<p>return-statement weitere Ausgaben: print() usw.</p>
+<section id="none-wert-das-wird-keine-überschrift" class="level3">
+<h3 class="anchored" data-anchor-id="none-wert-das-wird-keine-überschrift"><code>None</code>-Wert (das wird keine Überschrift)</h3>
+<p>res = print( 15 ) print(res)</p>
 <p>**Beginnen mit print (Funktion und Argumente), dann Funktionen wie round(), format() und string-Methoden wie .upper .lower ins nächste Kapitel schieben… sie sind eine gute Einleitung für die objektorientierte Programmierung (manche funktionieren nur mit Zahlen, andere nur mit Zeichen).</p>
 </section>
-<section id="funktionen-und-methoden" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="funktionen-und-methoden"><span class="header-section-number">3.2</span> Funktionen und Methoden</h2>
+</section>
+<section id="funktionen-und-methoden-1" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="funktionen-und-methoden-1"><span class="header-section-number">3.4</span> Funktionen und Methoden</h2>
 <p>Zahlen: Funktion <code>round(Wert, Stellen)</code>. <strong>Hier Querverweis auf Outputformatierung: f-strings, die bereits verwendete Funktion format(), round()… ein paar Funktionen für die Ausgabe von strings ohne ’’ und ohne ,</strong></p>
 <ul>
 <li><p>print(format(0.1, ‘.17g’)) # 17 signifikante Stellen</p></li>
 <li><p>print(format(0.1, ‘.17f’)) # 17 Stellen nach dem Komma</p></li>
 </ul>
-<div id="3dd3d72c" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>, <span class="dv">2</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0b57439f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>, <span class="dv">2</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.3</code></pre>
 </div>
@@ -302,8 +462,8 @@ Einiges steht auch im m-EsD</p>
 <h3 class="anchored" data-anchor-id="schleifen-while-for">Schleifen while, for</h3>
 </section>
 </section>
-<section id="funktionen-schreiben" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="funktionen-schreiben"><span class="header-section-number">3.3</span> Funktionen schreiben</h2>
+<section id="eigene-funktionen-schreiben" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="eigene-funktionen-schreiben"><span class="header-section-number">3.5</span> Eigene Funktionen schreiben</h2>
 <p>Ich glaube, hier oder spätestens im nächsten Kapitel sollte das Lesen der Dokumentation trainiert werden?!</p>
 
 
@@ -726,8 +886,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./sammeltypen.html" class="pagination-link" aria-label="sammeltypen.html">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">sammeltypen.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./sammeltypen.html" class="pagination-link" aria-label="Sammeltypen">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

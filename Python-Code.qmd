@@ -574,6 +574,8 @@ Zeichenketten haben den Ausgabetyp `s`.
 
 :::
 
+Eine Auflistung aller verfügbaren Ausgabetypen findet sich in der [Python Dokumentation](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting).
+
 ### Aufgaben Ausgabe
 1. "Gleitkommazahlen können natürlich, z. B. {1015.39:12.4f}, oder wissenschaftlich, {1015.39:e}, dargestellt werden."
  

@@ -1,5 +1,5 @@
 # Funktionen
-Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine ganze Reihe von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel werden der Umgang mit den Funktionen der Pythonbasis und die Verwendung eigener Funktionen vermittelt.
+Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel wird die allgemeine Verwendung von Funktionen in Python sowie das Erstellen eigener Funktionen vermittelt.
 
 Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Argumente - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.
 
@@ -14,52 +14,126 @@ Der wichtigste Tipp zuerst: **Benutzen Sie die Dokumentation!** Auch wenn Sie ei
 ![Abkündigung in Python](skript/00-bilder/deprecated-in-python.png){fig-alt="Hinweis auf eine Abkündigung in Python"}
 
 ::::
+
+**ergänzen: Die Python-Dokumentation ist schwer zu lesen (Fachbegriffe, knappe Notation), stellenweise unvollständig (fehlende Erläuterungen, Beispiele usw.) ... als aufbauender Tipp.**
 :::
 
-## Aufruf
-Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern `()` aufgerufen. Dies kennen Sie bereits aus den vorherigen Kapiteln. Getrennt durch Kommata können mehrere **Argumente** übergeben werden.
+## Funktionen und Methoden
+In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.
+
+Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern `()` aufgerufen. Ein Beispiel für eine Funktion ist print(), der Objekte unabhängig von ihrem Datentyp übergeben werden können.
 
 ```{python}
-print("Die Funktion print wurde schon oft gezeigt.", "Das zweite Funktionsargument.")
+var_str = 'ABC'
+var_int = 26
+var_bool = True
+
+print("Die Variable var_1 hat den Typ", type(var_str))
+print("Die Variable var_2 hat den Typ", type(var_int))
+print("Die Variable var_3 hat den Typ", type(var_bool))
 ```
 
-**Argumente** steuern die Programmausführung. Die für die Funktion print() verfügbaren Argumente stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print).
+Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Variablen bzw. Objekte abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einem bestimmten Datentyp gehören. Methoden werden getrennt durch einen Punkt `.` hinter Objekten mit ihrem Namen aufgerufen: `Variable.Methode` bzw. `(Wert).Methode`. Die Methoden `.upper()`, `.lower()` und `.title` sind für Zeichenfolgen definierte Methoden.
+
+```{python}
+toller_text = "Python 3.12 ist großartig."
+
+print(toller_text)
+print(toller_text.upper())
+print(toller_text.lower())
+print(toller_text.title(), "\n")
+
+print(("Mit in Klammern gesetzten Werten klappt es auch.").upper())
+```
+
+Auf Objekte mit einem falschen Datentyp können Methoden wie `.lower()` nicht angewendet werden.
+
+```{python}
+try:
+  var_int.upper()
+except AttributeError as error:
+  print(error)
+```
+
+## Argumente
+Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Argumente übergeben werden. Argumente steuern die Programmausführung. Argumente werden auch als Parameter bezeichnet.
+
+```{python}
+print("Die Funktion print wurde schon oft gezeigt.", "Das ist das zweite Argument.")
+```
+
+Die für die Funktion print() verfügbaren Argumente stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print). 
 
 ```
 print(*objects, sep=' ', end='\n', file=None, flush=False)
 ```
 
-... erklären: verpflichtende und optionale Argumente, positionale und Schlüsselwortargumente
+  - Argumente ohne vorangestelltes Gleichheitszeichen `=` müssen beim Funktions- bzw. Methodenaufruf übergeben werden. Argumente mit vorangestellten Gleichheitszeichen `=` können beim Aufruf übergeben werden, es handelt sich um optionale Argumente.
 
+  - Argumente können in Python entweder als positionales Argument übergeben werden, das heißt Python ordnet Eingaben entsprechend ihrer Reihenfolge Argumenten zu. Alternativ können Argumente als Schlüsselwort übergeben werden, die Zuordnung von Eingaben erfolgt über den Namen des Arguments.
 
-1. verpflichtende und optionale Argumente
-Was gibt es für Argumente: verpflichtende und optionale Argumente: Welche Argumente muss man übergeben (die ohne =), welche kann man übergeben (die mit =).
+  - das vorangestellte Sternchen vor einem Argument `*objects` entspricht einem Platzhalter für eine beliebige Anzahl von Argumenten.
 
-2. positionale und Schlüsselwortargumente
+`*objects` ist also ein positionales Argument (es steht immer an erster Stelle), das keinen Standardwert hat und dem beliebig viele Argumente übergeben werden können (n Eingaben stehen also an den ersten n-Stellen). Dadurch, dass beliebig viele Argumente übergeben werden können, funktioniert auch ein leerer Aufruf der Funktion print(), obwohl das Argument `*objects` verpflichtend übergeben werden muss.
 
+Die weiteren Argumente der Funktion print können als Schlüsselwort übergeben werden. Die Werte hinter dem Gleichheitszeichen zeigen die Standardwerte (default value) der Argumente an. Diese werden verwendet, wenn ein Argument nicht explizit beim Aufruf übergeben wird.
 
-Am Beispiel print: Das Argument `*objects`  nimmt die Elemente entgegen, die mit print ausgegeben werden sollen. Das Sternchen `*` signalisiert zum einen, dass eine beliebige Anzahl an Argumenten an das Argument `*objects` übergeben werden kann. Zum anderen zeigt das Sternchen `*` an, dass es sich um ein **positionales Argument** handelt. Die Elemente, die mit print ausgegeben werden sollen, **müssen an erster Stelle stehen**.
+**Geben Sie die drei Werte 1, 2 und 3 mit print() aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:**
 
-... demgegenüber **Schlüsselwortargumente** die können überall stehen - in diesem Fall außer an der ersten Stelle, denn dort muss das positionale Objekt `*objects` stehen.
+```{python}
+#| echo: false
 
-  - Die Eingabe von Daten erfolgt mit dem Funktionsaufruf
-Verarbeitung: Steuerung über Argumente
+print(1, 2, 3, sep = "_x_")
+```
+
+::: {.callout-tip collapse="true"}
+## Lösung
+
+```{python}
+#| output: false
+
+print(1, 2, 3, sep = "_x_")
+```
+
+:::
+
+::: {#tip-standardwert .callout-tip collapse="false"}
+## Standardwert None
+Einige Funktionen verwenden das Schlüsselwort `None` zur Kennzeichnung des Standardwerts. 
+Ein Beispiel ist die NumPy-Funktion [numpy.loadtxt()](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html). 
+
+```
+numpy.loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None, max_rows=None, *, quotechar=None, like=None)
+```
+
+Für das Argument `delimiter` ist als Standardwert das Schlüsselwort `None` eingetragen. Wie der Funktionsbeschreibung zu entnehmen ist, ist der Standartwert tatsächlich das Leerzeichen: "The default is whitespace."
+
+Auch das Argument `usecols` hat den Standarwert `None`. Dies bedeutet aber: "The default, None, results in all columns being read."
+:::
+
+**Eventuell als Beispiel oder eingeklappter Tipp (weil mir für Fortgeschrittene wichtig) ergänzen**: Trennzeichen und *args und **kwards in der Funktionsdokumentation
+
+::: {.border}
+
+| Linke Seite | Trennzeichen | Rechte Seite |
+|:---:|:---:|:---:|
+| nur positionale Argumente | / | positionale oder Schlüsselwortargumente |
+| positionale oder Schlüsselwortargumente | * | nur Schlüsselwortargumente |
+https://realpython.com/python-asterisk-and-slash-special-parameters/
+
+Beide Steuerzeichen können innerhalb einer Funktionsdefinition vorkommen, allerdings nur in der Reihenfolge `/` und `*`. Im umgekehrten Fall wäre es unmöglich, Argumente zu übergeben. 
+:::
+
+Beispiele sind glob... und ?!
+
 Ausgabe: return-statement
 
- Funktionen ...
-
-  - haben einen Funktionsnamen gefolgt von runden Klammern `()`, über den Sie aufgerufen werden.
-
-  - 
-
-  - müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert `None` zurückgegeben, der nicht existente Werte kennzeichnet.
+ Funktionen müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert `None` zurückgegeben, der nicht existente Werte kennzeichnet.
 
 
-**wichtiger Tipp: die vorausgefüllten Werte sind leider nicht immer die default-Werte**
 
-## Argumente gehören zum Aufruf
-Funktionen können Argumente entgegennehmen, die die Programmausführung steuern.
 
+**Mögliche Aufgabe: Erklären, dass Methoden auch Argumente haben... nachgucken lassen, welche Argumente die str.methoden haben**
 
 ::: {#tip-argumente .callout-tip collapse="false"}
 ## Dokumentation
