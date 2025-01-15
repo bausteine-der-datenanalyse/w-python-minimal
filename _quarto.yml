@@ -20,6 +20,7 @@ book:
     - python-code.qmd
     - funktionen.qmd
     - sammeltypen.qmd
+    - string-methods.qmd
 
   sidebar:
     title: "Werkzeugbaustein Python"

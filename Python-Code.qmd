@@ -18,9 +18,9 @@ print(text_variable)
 2. Kommentare werden mit einer vorangestellten `#` gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.
 
 ```{python}
-# bloß nicht übertreiben
-# print("Python ist großartig!") # das ist übertrieben
-print("Python ist ziemlich gut.") # das ist realistisch
+# Ein reiner Kommentar
+# print("Python ist großartig!") # auskommentierter Code, gefolgt von einem Kommentar
+print("Python ist ziemlich gut.") # auszuführender Code, gefolgt von einem Kommentar
 ```
 
 3. Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen `\` über mehrere Zeilen fortgesetzt werden (hinter `\` darf keine `#` stehen). Innerhalb von Funktionen wie zum Beispiel `print()` können Zeilen nach jedem Komma fortgesetzt werden.
@@ -47,7 +47,7 @@ print(variable1,
 print(1+0, 1 + 1, 1 +                  2)
 ```
 
-5. Die Einrückung mit Leerzeichen oder Tabstopps kennzeichnet einen zusammengehörigen Code-Block. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
+5. Die Einrückung mit Leerzeichen kennzeichnet einen zusammengehörigen Code-Block. Innerhalb eines Code-Blocks muss immer die gleiche Anzahl Leerzeichen verwendet werden. Es muss mindestens ein Leerzeichen gesetzt werden, ansonsten ist die Anzahl der Leerzeichen beliebig. Üblich sind 2 oder 4 Leerzeichen. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
 
 ```{python}
 for i in range(3):

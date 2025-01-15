@@ -1,0 +1,19 @@
+# String Methods
+https://docs.python.org/3/library/stdtypes.html
+
+Von unschätzbaren Wert beim Einlesen von Datensätzen (Querverweis auf m-EsD)
+str.replace(old, new, count=-1) # wird new als '' übergeben, entspricht die Funktion dem Löschen von Zeichenfolgen
+
+str.split(), str.rsplit(), str.splitlines(keepends=False)
+
+
+nicht von mir verwendet, aber nützlich:  
+str.count(sub[, start[, end]])
+str.find(sub[, start[, end]]) # return the lowest index in the string where substring sub is foun
+str.index(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
+str.rfind(sub[, start[, end]]) # return the highest index in the string where substring sub is foun
+str.rindex(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
+
+str.join(iterable) # das nutze ich einmal im m-EsD (glaube ich)
+
+str.lstrip([chars]), str.rstrip([chars]), str.strip([chars]) --> default ist whitespace
