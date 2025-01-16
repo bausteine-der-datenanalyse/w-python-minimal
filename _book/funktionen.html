@@ -272,6 +272,13 @@ Tipp&nbsp;3.1: Dokumentation
 </div>
 </div>
 </div>
+<p>Achten Sie auf die korrekte Version der Dokumentation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="skript/00-bilder/python-documentation-version.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Versionsauswahl</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -281,7 +288,7 @@ Tipp&nbsp;3.1: Dokumentation
 <section id="funktionen" class="level3">
 <h3 class="anchored" data-anchor-id="funktionen">Funktionen</h3>
 <p>Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern <code>()</code> aufgerufen. Ein Beispiel ist die Funktion <code>print()</code>, der Objekte unabhängig von ihrem Datentyp übergeben werden können.</p>
-<div id="3bf862a1" class="cell" data-execution_count="1">
+<div id="23564c96" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var_str <span class="op">=</span> <span class="st">'ABC'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>var_int <span class="op">=</span> <span class="dv">26</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>var_bool <span class="op">=</span> <span class="va">True</span></span>
@@ -296,7 +303,7 @@ Die Variable var_3 hat den Typ &lt;class 'bool'&gt;</code></pre>
 </div>
 </div>
 <p>Funktionen müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert <code>None</code> zurückgegeben, der nicht existente Werte kennzeichnet.</p>
-<div id="35428479" class="cell" data-execution_count="2">
+<div id="26a76dab" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="bu">print</span>( <span class="dv">15</span> )</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -308,7 +315,7 @@ None</code></pre>
 <section id="methoden" class="level3">
 <h3 class="anchored" data-anchor-id="methoden">Methoden</h3>
 <p>Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Variablen bzw. Objekte abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einem bestimmten Datentyp gehören. Methoden werden getrennt durch einen Punkt <code>.</code> hinter Objekten mit ihrem Namen aufgerufen: <code>Variable.Methode</code> bzw. <code>(Wert).Methode</code>. Die Methoden <code>.upper()</code>, <code>.lower()</code> und <code>.title</code> sind für Zeichenfolgen definierte Methoden.</p>
-<div id="ec373938" class="cell" data-execution_count="3">
+<div id="3891f86c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>toller_text <span class="op">=</span> <span class="st">"Python 3.12 ist großartig."</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text)</span>
@@ -327,7 +334,7 @@ MIT IN KLAMMERN GESETZTEN WERTEN KLAPPT ES AUCH.</code></pre>
 </div>
 </div>
 <p>Auf Objekte mit einem unpassenden Datentyp können Methoden wie <code>.lower()</code> nicht angewendet werden.</p>
-<div id="d74f0ac5" class="cell" data-execution_count="4">
+<div id="fa78ce64" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  var_int.upper()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">AttributeError</span> <span class="im">as</span> error:</span>
@@ -454,7 +461,7 @@ max(iterable, *, key=None)</code></pre>
 <li><p>Richtig oder falsch: Methoden stehen abhängig vom Datentyp eines Werts oder eines Objekts zur Verfügung.</p></li>
 <li><p>Geben Sie die drei Werte 1, 2 und 3 mit <code>print()</code> aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:</p></li>
 </ol>
-<div id="b371e9cb" class="cell" data-execution_count="5">
+<div id="a69a4a9c" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>1_x_2_x_3</code></pre>
 </div>
@@ -480,7 +487,7 @@ Lösungen
 <div class="callout-body-container callout-body">
 <p>Aufgabe 1: richtig</p>
 <p>Aufgabe 2</p>
-<div id="6d40b59c" class="cell" data-execution_count="6">
+<div id="513bff6b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, sep <span class="op">=</span> <span class="st">"_x_"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Aufgabe 3: Die Funktion bool() hat ein optionales Argument object mit dem Standardwert False. Das Argument muss positional übergeben werden.</p>
@@ -496,9 +503,8 @@ Lösungen
 <p>Abzweigungen ermöglichen eine Fallunterscheidung, bei der verschiedene Teile des Skripts ausgeführt werden.</p>
 <p>In Python werden Abzweigungen mit dem <code>if</code> Schlüsselwort eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt <code>:</code> abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.</p>
 <pre><code>if Bedingung:
-    Anweisungsblock
     Anweisungsblock</code></pre>
-<div id="d69afaa5" class="cell" data-execution_count="7">
+<div id="75cbb185" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl kleiner als ein Schwellwert</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">7</span></span>
@@ -515,7 +521,7 @@ Lösungen
 else:
     # Bedingung ist falsch
     Anweisungsblock</code></pre>
-<div id="94e2ca42" class="cell" data-execution_count="8">
+<div id="9ad18933" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl kleiner als ein Schwellwert mit alternativer Ausgabe</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">13</span></span>
@@ -528,7 +534,7 @@ else:
 </div>
 </div>
 <p>Es können auch mehrere Bedingungen übergeben werden.</p>
-<div id="b5f8e1de" class="cell" data-execution_count="9">
+<div id="60d2c78e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl im Wertebereich zwischen 10 und 20</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
@@ -541,7 +547,7 @@ else:
 </div>
 </div>
 <p>Schließlich können mehrere alternative Bedingungen geprüft werden. Dies ist zum einen durch das Verschachteln von Abzweigungen möglich.</p>
-<div id="b804a88c" class="cell" data-execution_count="10">
+<div id="35250eb0" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit verschachtelten Abzweigungen</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
@@ -562,7 +568,7 @@ Damit liegt die Zahl zwischen 10 und 20.</code></pre>
 </div>
 </div>
 <p>Zum anderen ist dies mit dem Schlüsselwort <code>elif</code> möglich.</p>
-<div id="f83bf652" class="cell" data-execution_count="11">
+<div id="0d366883" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit elif</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">112</span></span>
@@ -591,11 +597,11 @@ Damit liegt die Zahl zwischen 10 und 20.</code></pre>
 <p>Die <code>while</code>-Schleife kommt mit nur einer Bedingung im Schleifenkopf aus und ist die allgemeinere von beiden. Jede <code>for</code>-Schleife kann zu einer <code>while</code>-Schleife umgeschrieben werden (indem ein Zähler in den Anweisungsblock integriert wird.) Welcher der beiden Typen verwendet wird, hängt von der jeweiligen Aufgabe ab.</p>
 <section id="while-schleifen" class="level4">
 <h4 class="anchored" data-anchor-id="while-schleifen">while-Schleifen</h4>
-<p>Eine <code>while</code>-Schleife für den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort <code>while</code> eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt <code>:</code> abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.</p>
+<p>Eine <code>while</code>-Schleife führt den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort <code>while</code> eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt <code>:</code> abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.</p>
 <pre><code>while Bedingung:
     Anweisungsblock</code></pre>
 <p>Beim Beginn der Schleife und nach jedem Durchlauf wird die Bedingung geprüft. Ist sie wahr, so wird der Anweisungsblock ausgeführt, wenn nicht, ist die Schleife beendet und die nächste Anweisung außerhalb der Schleife wird ausgeführt.</p>
-<div id="91f19a3f" class="cell" data-execution_count="12">
+<div id="30e2baca" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Erhöhen eines Variablenwertes</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Setzte Startwert</span></span>
@@ -630,14 +636,14 @@ Wert von a nach der Schleife 11</code></pre>
 <p>Während die <code>while</code>-Schleife ausgeführt wird, solange eine Bedingung erfüllt ist, wird die <code>for</code>-Schleife über eine Laufvariable gesteuert, die eine Sequenz durchläuft. Die Syntax sieht wie folgt aus:</p>
 <pre><code>for Laufvariable in Sequenz:
   Anweisungsblock</code></pre>
-<p>Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte <code>for</code> und <code>in</code> und der Kopf wird mit einem Doppelpunkt <code>:</code> abgeschlossen. Auch hier wird der Anweisungsblock eingerückt. Die Sequenz wird mit einem range-Objekt erstellt, das mit <code>range(start = 0, stop, step = 1)</code> erzeugt wird (siehe folgendes Beispiel).</p>
+<p>Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte <code>for</code> und <code>in</code> und der Kopf wird mit einem Doppelpunkt <code>:</code> abgeschlossen. Auch hier wird der Anweisungsblock eingerückt. Die Sequenz wird mit einem range-Objekt erstellt, das mit <code>range(start = 0, stop, step = 1)</code> erzeugt wird (zu <code>range()</code> siehe folgendes Beispiel). <code>range()</code> nimmt ganzzahlige Werte als <strong>positionale Argumente</strong> entgegen und Werte von <code>start</code> bis <strong>nicht einschließlich</strong> <code>stop</code> mit der Schrittweite <code>step</code>. Dabei ist wichtig, dass Python <strong>exklusiv zählt</strong>, das heißt, Python beginnt standarmäßig bei <code>0</code> zu zählen und der als Argument <code>stop</code> übergebene Wert wird nicht mitgezählt.</p>
 <div id="nte-range" class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Beispiel&nbsp;3.1: Unnützes Wissen zum Angeben: Alles was Sie nicht über range wissen müssen
+Beispiel&nbsp;3.1: Unnützes Wissen zum Angeben: Alles was Sie nicht über range() wissen müssen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -645,6 +651,44 @@ Beispiel&nbsp;3.1: Unnützes Wissen zum Angeben: Alles was Sie nicht über range
 <div class="callout-body-container callout-body">
 <p>Auch wenn es so aussieht, ist <code>range()</code> <a href="https://docs.python.org/3/library/functions.html#func-range">keine Funktion, sondern eine Sequenz</a>. Dieser Unterschied ist in der Praxis kaum relevant. Wenn Sie genau wissen möchten, was <code>range()</code> ist, finden Sie <a href="https://treyhunner.com/2018/02/python-range-is-not-an-iterator/">hier</a> eine gute Erklärung.</p>
 </div>
+</div>
+</div>
+<p>Da <code>range()</code> ein range-Objekt zurückgibt, kann mit <code>print()</code> nicht unmittelbar die erwartete Ausgabe erzeugt werden.</p>
+<div id="5d3c0d99" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(start = 1, stop = 5) - step wird nicht übergeben, es gilt der Standardwert step = 1</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>), <span class="bu">type</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>range(1, 5) &lt;class 'range'&gt;</code></pre>
+</div>
+</div>
+<p>Dieses Verhalten wird faule Auswertung (<a href="https://de.wikipedia.org/wiki/Lazy_Evaluation">lazy evaluation</a>) genannt: Die Werte des range-Objekts werden erst erzeugt, wenn Sie benötigt werden. Im Folgenden Code wird das range-Objekt mit einer Schleife durchlaufen und für jeden Durchlauf der Wert der Laufvariable <code>i</code> ausgegeben.</p>
+<div id="5917c9e4" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+2
+3
+4</code></pre>
+</div>
+</div>
+<p>Mit dem Parameter <code>step</code> kann die Schrittweite gesteuert werden.</p>
+<div id="fad5f2bb" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">3</span>):</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+4
+7
+10
+13</code></pre>
+</div>
+</div>
+<p>Ein paar Beispiele: <strong>noch erklären, dass range() grundsätzlich keine Ausgabe, sondern ein range-Objekt erzeugt</strong></p>
+<div id="27ec4873" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">range</span>(<span class="dv">1</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>range(0, 1)</code></pre>
 </div>
 </div>
 <p><strong>exklusives Zählen in Python</strong></p>

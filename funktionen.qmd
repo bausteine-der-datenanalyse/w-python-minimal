@@ -14,6 +14,11 @@ Der wichtigste Tipp zuerst: **Benutzen Sie die Dokumentation!** Auch wenn Sie ei
 ![Abkündigung in Python](skript/00-bilder/deprecated-in-python.png){fig-alt="Hinweis auf eine Abkündigung in Python"}
 
 ::::
+
+Achten Sie auf die korrekte Version der Dokumentation.
+
+![Versionsauswahl](skript/00-bilder/python-documentation-version.png){fig-alt="Auswahlmenü der Dokumentationsversion" width="80%"}
+
 :::
 
 ## Funktionen und Methoden
@@ -193,7 +198,6 @@ In Python werden Abzweigungen mit dem `if` Schlüsselwort eingeleitet. Dieses wi
 ```
 if Bedingung:
     Anweisungsblock
-    Anweisungsblock
 ```
 
 ``` {python}
@@ -281,7 +285,7 @@ Die `while`-Schleife kommt mit nur einer Bedingung im Schleifenkopf aus und ist 
 Welcher der beiden Typen verwendet wird, hängt von der jeweiligen Aufgabe ab.
 
 #### while-Schleifen
-Eine `while`-Schleife für den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort `while` eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt `:` abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.
+Eine `while`-Schleife führt den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort `while` eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt `:` abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.
 
 ```
 while Bedingung:
@@ -319,14 +323,37 @@ for Laufvariable in Sequenz:
   Anweisungsblock
 ```
 
-Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte `for` und `in` und der Kopf wird mit einem Doppelpunkt `:` abgeschlossen. Auch hier wird der Anweisungsblock eingerückt. Die Sequenz wird mit einem range-Objekt erstellt, das mit `range(start = 0, stop, step = 1)` erzeugt wird (siehe folgendes Beispiel).
+Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte `for` und `in` und der Kopf wird mit einem Doppelpunkt `:` abgeschlossen. Auch hier wird der Anweisungsblock eingerückt. Die Sequenz wird mit einem range-Objekt erstellt, das mit der Funktion `range(start = 0, stop, step = 1)` erzeugt wird. `range()` nimmt ganzzahlige Werte als **positionale Argumente** entgegen und erzeugt Ganzzahlen von `start` bis **nicht einschließlich** `stop` mit der Schrittweite `step`. Dabei ist wichtig, dass Python **exklusiv zählt**, das heißt, Python beginnt standarmäßig bei `0` zu zählen und der als Argument `stop` übergebene Wert wird nicht mitgezählt.
 
-::: {#nte-range .callout-note collapse="true"}
-## Unnützes Wissen zum Angeben: Alles was Sie nicht über range wissen müssen
-Auch wenn es so aussieht, ist `range()` [keine Funktion, sondern eine Sequenz](https://docs.python.org/3/library/functions.html#func-range). Dieser Unterschied ist in der Praxis kaum relevant. Wenn Sie genau wissen möchten, was `range()` ist, finden Sie [hier](https://treyhunner.com/2018/02/python-range-is-not-an-iterator/) eine gute Erklärung.
-:::
+Da `range()` ein range-Objekt zurückgibt, kann mit `print()` nicht unmittelbar die erwartete Ausgabe erzeugt werden.
 
-**exklusives Zählen in Python**
+```{python}
+# range(start = 1, stop = 5) - step wird nicht übergeben, es gilt der Standardwert step = 1
+print(range(1, 5), type(range(1, 5)))
+```
+
+Dieses Verhalten wird faule Auswertung ([lazy evaluation](https://de.wikipedia.org/wiki/Lazy_Evaluation)) genannt: Die Werte des range-Objekts werden erst erzeugt, wenn Sie benötigt werden. Im Folgenden Code wird das range-Objekt mit einer Schleife durchlaufen und für jeden Durchlauf der Wert der Laufvariable `i` ausgegeben.
+
+```{python}
+for i in range(1, 5):
+  print(i)
+```
+
+Mit dem Parameter `step` kann die Schrittweite gesteuert werden.
+
+```{python}
+for i in range(1, 15, 3):
+  print(i)
+```
+
+Nützlich ist die Ausgabe des range-Objekts in eine Liste, einen Sammeltyp, der im nächsten Kapitel behandelt wird.
+
+```{python}
+print(list(range(0, 11, 2)))
+```
+
+start und stop können auch negativ sein, step nicht. Um rückwärts zu zählen braucht man die Funktion reversed(seq)
+tuple(reversed(range(-20, 5)))
 
 ### Aufgaben Flusskontrolle
 1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.

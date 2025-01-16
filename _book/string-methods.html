@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bausteine Computergestützter Datenanalyse - 4&nbsp; Sammeltypen</title>
+<title>Bausteine Computergestützter Datenanalyse - 5&nbsp; String Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./string-methods.html" rel="next">
-<link href="./funktionen.html" rel="prev">
+<link href="./sammeltypen.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sammeltypen.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./string-methods.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Methods</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -137,13 +136,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sammeltypen.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sammeltypen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./string-methods.html" class="sidebar-item-text sidebar-link">
+  <a href="./string-methods.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Methods</span></span></a>
   </div>
 </li>
@@ -153,21 +152,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
-   
-  <ul>
-  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link active" data-scroll-target="#sequenzen"><span class="header-section-number">4.1</span> Sequenzen</a></li>
-  <li><a href="#mapping-types" id="toc-mapping-types" class="nav-link" data-scroll-target="#mapping-types"><span class="header-section-number">4.2</span> Mapping Types</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Methods</span></h1>
 </div>
 
 
@@ -184,19 +176,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>(Liste, Tupel, Dict) Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. <strong>Beispiel ergänzen, bei dem ein string verändert wird.</strong> Tatsächlich wird aber immer ein neuer string angelegt.</p>
-<p>Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator <code>[]</code> verwendet.</p>
-<p>Listen mit for-Schleifen –&gt; es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt</p>
-<section id="sequenzen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">4.1</span> Sequenzen</h2>
-<p>https://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range range()</p>
-</section>
-<section id="mapping-types" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="mapping-types"><span class="header-section-number">4.2</span> Mapping Types</h2>
-<p>https://docs.python.org/3/library/stdtypes.html#mapping-types-dict</p>
+<p>https://docs.python.org/3/library/stdtypes.html</p>
+<p>Von unschätzbaren Wert beim Einlesen von Datensätzen (Querverweis auf m-EsD) str.replace(old, new, count=-1) # wird new als ’’ übergeben, entspricht die Funktion dem Löschen von Zeichenfolgen</p>
+<p>str.split(), str.rsplit(), str.splitlines(keepends=False)</p>
+<p>nicht von mir verwendet, aber nützlich:<br>
+str.count(sub[, start[, end]]) str.find(sub[, start[, end]]) # return the lowest index in the string where substring sub is foun str.index(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found. str.rfind(sub[, start[, end]]) # return the highest index in the string where substring sub is foun str.rindex(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.</p>
+<p>str.join(iterable) # das nutze ich einmal im m-EsD (glaube ich)</p>
+<p>str.lstrip([chars]), str.rstrip([chars]), str.strip([chars]) –&gt; default ist whitespace</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -610,14 +598,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./funktionen.html" class="pagination-link" aria-label="Funktionen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen</span></span>
+      <a href="./sammeltypen.html" class="pagination-link" aria-label="Sammeltypen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./string-methods.html" class="pagination-link" aria-label="String Methods">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">String Methods</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
