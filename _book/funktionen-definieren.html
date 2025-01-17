@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bausteine Computergestützter Datenanalyse - 4&nbsp; Sammeltypen</title>
+<title>Bausteine Computergestützter Datenanalyse - 5&nbsp; Funktionen definieren</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./funktionen-definieren.html" rel="next">
-<link href="./funktionen.html" rel="prev">
+<link href="./string-methods.html" rel="next">
+<link href="./sammeltypen.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sammeltypen.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./funktionen-definieren.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funktionen definieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -137,13 +137,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./sammeltypen.html" class="sidebar-item-text sidebar-link active">
+  <a href="./sammeltypen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./funktionen-definieren.html" class="sidebar-item-text sidebar-link">
+  <a href="./funktionen-definieren.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funktionen definieren</span></span></a>
   </div>
 </li>
@@ -163,9 +163,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link active" data-scroll-target="#sequenzen"><span class="header-section-number">4.1</span> Sequenzen</a></li>
-  <li><a href="#mapping-types" id="toc-mapping-types" class="nav-link" data-scroll-target="#mapping-types"><span class="header-section-number">4.2</span> Mapping Types</a></li>
-  <li><a href="#aufgabe-listen-und-sammeltypen" id="toc-aufgabe-listen-und-sammeltypen" class="nav-link" data-scroll-target="#aufgabe-listen-und-sammeltypen"><span class="header-section-number">5</span> Aufgabe Listen und Sammeltypen</a></li>
+  <li><a href="#lambdas" id="toc-lambdas" class="nav-link active" data-scroll-target="#lambdas"><span class="header-section-number">5.1</span> Lambdas</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funktionen definieren</span></h1>
 </div>
 
 
@@ -191,33 +189,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen:</p>
+<p>In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:</p>
 <ul>
-<li><p>Listen</p></li>
-<li><p><a href="https://de.wikipedia.org/wiki/Tupel_%28Informatik%29">Tupel</a></p></li>
-<li><p><a href="https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29">Mengen</a></p></li>
-<li><p><a href="https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29">assoziative Arrays</a> oder Dictionary</p></li>
+<li><p>Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.</p></li>
+<li><p>Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.</p></li>
+<li><p>Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.</p></li>
 </ul>
-<p>… gesehen, dass Sammeltypen wie Listen und Tupel nützlich sind, um mehrere Werte zu speichern.</p>
-<p>(Liste, Tupel, Dict) Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. <strong>Beispiel ergänzen, bei dem ein string verändert wird.</strong> Tatsächlich wird aber immer ein neuer string angelegt.</p>
-<p>Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator <code>[]</code> verwendet.</p>
-<p>Listen mit for-Schleifen –&gt; es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt</p>
-<section id="sequenzen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">4.1</span> Sequenzen</h2>
-<p>https://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range range()</p>
-</section>
-<section id="mapping-types" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="mapping-types"><span class="header-section-number">4.2</span> Mapping Types</h2>
-<p>https://docs.python.org/3/library/stdtypes.html#mapping-types-dict</p>
-</section>
-<section id="aufgabe-listen-und-sammeltypen" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Aufgabe Listen und Sammeltypen</h1>
-<ol type="1">
-<li>Bubble Sort - dafür braucht man Listen und Slicing</li>
-</ol>
-<ol class="example" type="1">
-<li></li>
-</ol>
+<p>eine der vielseitigsten M It’s important to note that the optional argument must always appear after any required arguments when defining the function</p>
+<p>using positional Arguments</p>
+<p>*args wird verwendet, um eine variable Anzahl von nicht-schlüsselwortlichen Argumenten zu empfangen. Innerhalb der Funktion wird args als eine Tuple behandelt, die alle übergebenen Argumente enthält.</p>
+<p>using Keyword Arguments in Python</p>
+<p>**kwargs ist ähnlich wie *args, aber es wird verwendet, um eine variable Anzahl von schlüsselwortbasierten Argumenten zu empfangen. Innerhalb der Funktion wird kwargs als ein Dictionary behandelt.</p>
+<p>Keyword arguments allow developers to specify which arguments should have which values when calling a Python function. This is especially useful if order isn’t important. To use keyword arguments, pass in a dictionary with the keyword and its associated value as an argument. For example:</p>
+<p>my_dict = {“optional_arg1”: 42} func_name(required_arg1, required_arg2, **my_dict)</p>
+<p>Ausgabe: return-statement</p>
+<section id="lambdas" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="lambdas"><span class="header-section-number">5.1</span> Lambdas</h2>
+<p><a href="https://docs.python.org/3/reference/expressions.html#lambda" class="uri">https://docs.python.org/3/reference/expressions.html#lambda</a></p>
 
 
 </section>
@@ -634,13 +622,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./funktionen.html" class="pagination-link" aria-label="Funktionen: Grundlagen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span>
+      <a href="./sammeltypen.html" class="pagination-link" aria-label="Sammeltypen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./funktionen-definieren.html" class="pagination-link" aria-label="Funktionen definieren">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Funktionen definieren</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./string-methods.html" class="pagination-link" aria-label="String Methods">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Methods</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

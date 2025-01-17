@@ -1,5 +1,5 @@
-# Funktionen
-Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel wird die allgemeine Verwendung von Funktionen in Python sowie das Erstellen eigener Funktionen vermittelt.
+# Funktionen: Grundlagen
+Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel wird die allgemeine Verwendung von Funktionen in Python vermittelt.
 
 Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Argumente - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.
 
@@ -167,7 +167,7 @@ In der Funktionsdefinition von `print()` ist `*objects` also ein positionaler Pa
 print(1, 2, 3, sep = "_x_")
 ```
 
-3. Schlagen Sie in fer Dokumentation die Funktion [bool()](https://docs.python.org/3/library/functions.html#bool) nach.
+3. Schlagen Sie in der Dokumentation die Funktion [bool()](https://docs.python.org/3/library/functions.html#bool) nach.
 
   - Welche Parameter nimmt die Funktion entgegen und welche davon sind optional?
 
@@ -346,51 +346,60 @@ for i in range(1, 15, 3):
   print(i)
 ```
 
-Nützlich ist die Ausgabe des range-Objekts in eine Liste, einen Sammeltyp, der im nächsten Kapitel behandelt wird.
+Nützlich ist die Ausgabe des range-Objekts in eine Liste oder in ein Tupel, Sammeltypen, die im nächsten Kapitel behandelt werden.
 
 ```{python}
-print(list(range(0, 11, 2)))
+# Ausgabe der geraden Zahlen 1-10 in eine Liste
+print("Liste:", list(range(2, 11, 2)))
+
+# Ausgabe der ungeraden Zahlen 1-10 in ein Tupel
+print("Tupel:", tuple(range(1, 11, 2)))
 ```
 
-start und stop können auch negativ sein, step nicht. Um rückwärts zu zählen braucht man die Funktion reversed(seq)
-tuple(reversed(range(-20, 5)))
+`start` und `stop` können auch negativ sein, `step` muss immer größer 0 sein.
+
+```{python}
+for i in range(-5, -1):
+  print(i)
+```
+
+`stop` muss immer größer als `start` sein. Um eine absteigende Zahlenfolge zu erzeugen, wird die Funktion `reversed(sequenz)` verwendet.
+
+```{python}
+# Die Ausgabe bleibt leer
+print(list(range(5, 0)))
+
+# Mit der Funktion reversed geht es
+print(list(reversed(range(0, 5))))
+```
 
 ### Aufgaben Flusskontrolle
 1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.
 
-## Funktionen definieren
-Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
+2. Roulette: Schreiben Sie ein Programm, dass für eine Zahl prüft, ob diese im Wertebereich des Spieltischs liegt. Falls nein, soll eine Fehlermeldung ausgegeben werden. Falls ja, soll das Programm ausgeben, ob die Zahl
 
-  - Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.
+  - gerade oder ungerade ist,
 
-  - Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.
+  - rot oder schwarz ist,
 
-  - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
+  - niedrig (1-18) oder hoch (19-36) ist und
 
- eine der vielseitigsten M
-It’s important to note that the optional argument must always appear after any required arguments when defining the function
+  - im 1., 2. oder 3. Dutzend liegt.
 
-using positional Arguments
+:::: {.border}
 
-*args wird verwendet, um eine variable Anzahl von nicht-schlüsselwortlichen Argumenten zu empfangen. Innerhalb der Funktion wird args als eine Tuple behandelt, die alle übergebenen Argumente enthält.
+![Roulette Tableau](aufgaben/00-bilder/European_roulette_cc-by-sa.png){fig-alt="Roulettetisch: Roulette-Scheibe mit Zahlenfeld." width="90%"}
 
+European roulette von Betzaar.com ist lizensiert unter [CC 3.0 BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en) und verfügbar auf 
+[wikimedia.org](https://commons.wikimedia.org/wiki/File:European_roulette.svg). 2010
+::::
 
-using Keyword Arguments in Python
+**Die Musterlösung kann Marc machen.**
 
-**kwargs ist ähnlich wie *args, aber es wird verwendet, um eine variable Anzahl von schlüsselwortbasierten Argumenten zu empfangen. Innerhalb der Funktion wird kwargs als ein Dictionary behandelt.
+::: {.callout-tip collapse="true"}
+## Musterlösung Aufgaben Flusskontrolle
 
-Keyword arguments allow developers to specify which arguments should have which values when calling a Python function. This is especially useful if order isn’t important. To use keyword arguments, pass in a dictionary with the keyword and its associated value as an argument. For example:
+:::
 
-my_dict = {"optional_arg1": 42} func_name(required_arg1, required_arg2, **my_dict)
-
-Ausgabe: return-statement
-
-### Kontrollstrukturen
-
-#### Fallunterscheidung if
-
-#### Schleifen while, for
-
-### lambda
-
+&nbsp;  
 (@Arnold-2023-schleifen-abzweigungen)

@@ -1,16 +1,33 @@
 # Sammeltypen
+Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen:
 
- (Liste, Tupel, Dict)
-  Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. **Beispiel ergänzen, bei dem ein string verändert wird.** Tatsächlich wird aber immer ein neuer string angelegt.
+  - Listen
+
+  - [Tupel](https://de.wikipedia.org/wiki/Tupel_%28Informatik%29)
+
+  - [Mengen](https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29)
+
+  - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionary
+
   
-  Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator `[]` verwendet. 
+## Listen
 
 Listen mit for-Schleifen --> es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt
 
-## Sequenzen
+
+## Unterschied zu Sequenzen
 https://docs.python.org/3/library/stdtypes.html#typesseq
 Sequence Types — list, tuple, range
-range()
+
+Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. **Beispiel ergänzen, bei dem ein string verändert wird.** Tatsächlich wird aber immer ein neuer string angelegt.
+  
+## Slicing
+Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator `[]` verwendet. 
 
 ## Mapping Types
 https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+
+# Aufgabe Listen und Sammeltypen
+1. Bubble Sort - dafür braucht man Listen und Slicing 
+
+(@Arnold-2023-schleifen-abzweigungen)

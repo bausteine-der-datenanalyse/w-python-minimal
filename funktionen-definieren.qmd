@@ -1,0 +1,29 @@
+# Funktionen definieren
+In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
+
+  - Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.
+
+  - Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.
+
+  - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
+
+ eine der vielseitigsten M
+It’s important to note that the optional argument must always appear after any required arguments when defining the function
+
+using positional Arguments
+
+*args wird verwendet, um eine variable Anzahl von nicht-schlüsselwortlichen Argumenten zu empfangen. Innerhalb der Funktion wird args als eine Tuple behandelt, die alle übergebenen Argumente enthält.
+
+
+using Keyword Arguments in Python
+
+**kwargs ist ähnlich wie *args, aber es wird verwendet, um eine variable Anzahl von schlüsselwortbasierten Argumenten zu empfangen. Innerhalb der Funktion wird kwargs als ein Dictionary behandelt.
+
+Keyword arguments allow developers to specify which arguments should have which values when calling a Python function. This is especially useful if order isn’t important. To use keyword arguments, pass in a dictionary with the keyword and its associated value as an argument. For example:
+
+my_dict = {"optional_arg1": 42} func_name(required_arg1, required_arg2, **my_dict)
+
+Ausgabe: return-statement
+
+## Lambdas
+<https://docs.python.org/3/reference/expressions.html#lambda>
