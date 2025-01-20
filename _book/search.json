@@ -304,7 +304,7 @@
     "href": "sammeltypen.html",
     "title": "4  Sammeltypen",
     "section": "",
-    "text": "4.1 Sequenzen\nhttps://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range range()",
+    "text": "4.1 Listen\nListen können eine flexible Anzahl von Elementen beliebigen Typs beinhalten. In Python enthalten Listen nicht wirklich Daten, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Bei der Definition einer Liste, werden die Elemente durch [] eingeklammert und mit Kommata , getrennt.\ntext_variable = 'abc'\n\nliste1 = [1, 'xy', True, text_variable]\nprint(liste1)\n\n# Listen können auch Listen enthalten\nliste2 = [None, liste1]\nprint(liste2)\n\n[1, 'xy', True, 'abc']\n[None, [1, 'xy', True, 'abc']]\nWie alle Typen in Python, werden Listen durch Zuweisung erstellt. Eine leere Liste kann durch Zuweisung von [] erstellt werden.\nleere_liste = []\nprint(leere_liste)\n\n[]\nWie Zeichenfolgen können Listen durch den Operator ‘+’ verkettet werden.\nverkettete_liste = liste1 + liste2\nprint(verkettete_liste)\n\n[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
     ]
@@ -393,8 +393,8 @@
     "objectID": "sammeltypen.html#mapping-types",
     "href": "sammeltypen.html#mapping-types",
     "title": "4  Sammeltypen",
-    "section": "4.2 Mapping Types",
-    "text": "4.2 Mapping Types\nhttps://docs.python.org/3/library/stdtypes.html#mapping-types-dict",
+    "section": "4.7 Mapping Types",
+    "text": "4.7 Mapping Types\nhttps://docs.python.org/3/library/stdtypes.html#mapping-types-dict",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
     ]
@@ -417,6 +417,56 @@
     "text": "5.1 Lambdas\nhttps://docs.python.org/3/reference/expressions.html#lambda",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Funktionen definieren</span>"
+    ]
+  },
+  {
+    "objectID": "sammeltypen.html#unterschied-zu-sequenzen",
+    "href": "sammeltypen.html#unterschied-zu-sequenzen",
+    "title": "4  Sammeltypen",
+    "section": "4.5 Unterschied zu Sequenzen",
+    "text": "4.5 Unterschied zu Sequenzen\nhttps://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range\nHinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. Beispiel ergänzen, bei dem ein string verändert wird. Tatsächlich wird aber immer ein neuer string angelegt.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
+    ]
+  },
+  {
+    "objectID": "sammeltypen.html#slicing",
+    "href": "sammeltypen.html#slicing",
+    "title": "4  Sammeltypen",
+    "section": "4.6 Slicing",
+    "text": "4.6 Slicing\nUm auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator [] verwendet.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
+    ]
+  },
+  {
+    "objectID": "sammeltypen.html#tupel",
+    "href": "sammeltypen.html#tupel",
+    "title": "4  Sammeltypen",
+    "section": "4.3 Tupel",
+    "text": "4.3 Tupel\nwie Simone… Listen sehr ähnlich… weil zu Listen muss man so viel sagen.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
+    ]
+  },
+  {
+    "objectID": "sammeltypen.html#zugriff-auf-sammeltypen",
+    "href": "sammeltypen.html#zugriff-auf-sammeltypen",
+    "title": "4  Sammeltypen",
+    "section": "4.4 Zugriff auf Sammeltypen",
+    "text": "4.4 Zugriff auf Sammeltypen\n\nSlicing-Operator []\n[:] legt eine Kopie an\n\n\n\nSammeltypen & for-Schleifen –&gt; es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt und die Liste, das Tupel, die Menge oder das Dictionary (Ausgabe der keys)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
+    ]
+  },
+  {
+    "objectID": "sammeltypen.html#slicing-der-zugriffsoperator",
+    "href": "sammeltypen.html#slicing-der-zugriffsoperator",
+    "title": "4  Sammeltypen",
+    "section": "4.2 Slicing: der Zugriffsoperator []",
+    "text": "4.2 Slicing: der Zugriffsoperator []\nDer Zugriff auf einzelne oder mehrere Elemente einer Liste (und anderen Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.\n\nZugriff auf einzelne Elemente\nElemente über ihren Index, bei 0 beginnend angesprochen.\n\nprint(liste1)\nprint(liste1[0])\nprint(liste1[3])\n\n[1, 'xy', True, 'abc']\n1\nabc\n\n\nAuf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste liste2 enthält an Indexposition 1 eine Liste mit 4 Elementen.\n\nprint(liste2)\nprint(liste2[1])\nprint(liste2[1][0], liste2[1][1], liste2[1][2], liste2[1][3])\n\n[None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc']\n1 xy True abc\n\n\nMit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.\n\nprint(liste1)\nprint(liste1[-1], liste1[-3])\n\n[1, 'xy', True, 'abc']\nabc xy\n\n\n\n\nZugriff auf mehrere Elemente\nIndexbereiche können in der Form [start:stop:step] angesprochen werden. start ist das erste adressierte Element, stop das erste nicht mehr adressierte Element und step die Schrittweite.\nvon start bis nicht einschließlich stop mit der Schrittweite step.\nSchöne Zusammenstellung der Parameter\nhttps://stackoverflow.com/questions/509211/how-slicing-in-python-works Direktlink: https://stackoverflow.com/a/509295 a[start:stop] # items start through stop-1 a[start:] # items start through the rest of the array a[:stop] # items from the beginning through stop-1 a[:] # a copy of the whole array There is also the step value, which can be used with any of the above: a[start:stop:step] # start through not past stop, by step The key point to remember is that the :stop value represents the first value that is not in the selected slice. So, the difference between stop and start is the number of elements selected (if step is 1, the default). The other feature is that start or stop may be a negative number, which means it counts from the end of the array instead of the beginning. So: a[-1] # last item in the array a[-2:] # last two items in the array a[:-2] # everything except the last two items Similarly, step may be a negative number: a[::-1] # all items in the array, reversed a[1::-1] # the first two items, reversed a[:-3:-1] # the last two items, reversed a[-3::-1] # everything except the last two items, reversed",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sammeltypen</span>"
     ]
   }
 ]

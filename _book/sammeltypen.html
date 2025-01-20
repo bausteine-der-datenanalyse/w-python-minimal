@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -163,8 +197,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link active" data-scroll-target="#sequenzen"><span class="header-section-number">4.1</span> Sequenzen</a></li>
-  <li><a href="#mapping-types" id="toc-mapping-types" class="nav-link" data-scroll-target="#mapping-types"><span class="header-section-number">4.2</span> Mapping Types</a></li>
+  <li><a href="#listen" id="toc-listen" class="nav-link active" data-scroll-target="#listen"><span class="header-section-number">4.1</span> Listen</a></li>
+  <li><a href="#slicing-der-zugriffsoperator" id="toc-slicing-der-zugriffsoperator" class="nav-link" data-scroll-target="#slicing-der-zugriffsoperator"><span class="header-section-number">4.2</span> Slicing: der Zugriffsoperator []</a>
+  <ul class="collapse">
+  <li><a href="#zugriff-auf-einzelne-elemente" id="toc-zugriff-auf-einzelne-elemente" class="nav-link" data-scroll-target="#zugriff-auf-einzelne-elemente">Zugriff auf einzelne Elemente</a></li>
+  <li><a href="#zugriff-auf-mehrere-elemente" id="toc-zugriff-auf-mehrere-elemente" class="nav-link" data-scroll-target="#zugriff-auf-mehrere-elemente">Zugriff auf mehrere Elemente</a></li>
+  </ul></li>
+  <li><a href="#tupel" id="toc-tupel" class="nav-link" data-scroll-target="#tupel"><span class="header-section-number">4.3</span> Tupel</a></li>
+  <li><a href="#zugriff-auf-sammeltypen" id="toc-zugriff-auf-sammeltypen" class="nav-link" data-scroll-target="#zugriff-auf-sammeltypen"><span class="header-section-number">4.4</span> Zugriff auf Sammeltypen</a>
+  <ul class="collapse">
+  <li><a href="#slicing-operator" id="toc-slicing-operator" class="nav-link" data-scroll-target="#slicing-operator">Slicing-Operator []</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  <li><a href="#unterschied-zu-sequenzen" id="toc-unterschied-zu-sequenzen" class="nav-link" data-scroll-target="#unterschied-zu-sequenzen"><span class="header-section-number">4.5</span> Unterschied zu Sequenzen</a></li>
+  <li><a href="#slicing" id="toc-slicing" class="nav-link" data-scroll-target="#slicing"><span class="header-section-number">4.6</span> Slicing</a></li>
+  <li><a href="#mapping-types" id="toc-mapping-types" class="nav-link" data-scroll-target="#mapping-types"><span class="header-section-number">4.7</span> Mapping Types</a></li>
   <li><a href="#aufgabe-listen-und-sammeltypen" id="toc-aufgabe-listen-und-sammeltypen" class="nav-link" data-scroll-target="#aufgabe-listen-und-sammeltypen"><span class="header-section-number">5</span> Aufgabe Listen und Sammeltypen</a></li>
   </ul>
 </nav>
@@ -191,23 +238,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen:</p>
+<p>Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:</p>
 <ul>
-<li><p>Listen</p></li>
+<li><p><a href="https://de.wikipedia.org/wiki/Liste_(Datenstruktur)">Listen</a></p></li>
 <li><p><a href="https://de.wikipedia.org/wiki/Tupel_%28Informatik%29">Tupel</a></p></li>
 <li><p><a href="https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29">Mengen</a></p></li>
 <li><p><a href="https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29">assoziative Arrays</a> oder Dictionary</p></li>
 </ul>
-<p>… gesehen, dass Sammeltypen wie Listen und Tupel nützlich sind, um mehrere Werte zu speichern.</p>
-<p>(Liste, Tupel, Dict) Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. <strong>Beispiel ergänzen, bei dem ein string verändert wird.</strong> Tatsächlich wird aber immer ein neuer string angelegt.</p>
-<p>Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator <code>[]</code> verwendet.</p>
-<p>Listen mit for-Schleifen –&gt; es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt</p>
-<section id="sequenzen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">4.1</span> Sequenzen</h2>
-<p>https://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range range()</p>
+<p><strong>panel-tabset</strong></p>
+<section id="listen" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.1</span> Listen</h2>
+<p>Listen können eine flexible Anzahl von Elementen beliebigen Typs beinhalten. In Python enthalten Listen nicht wirklich Daten, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Bei der Definition einer Liste, werden die Elemente durch <code>[]</code> eingeklammert und mit Kommata <code>,</code> getrennt.</p>
+<div id="fae54041" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'abc'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Listen können auch Listen enthalten</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> [<span class="va">None</span>, liste1]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+[None, [1, 'xy', True, 'abc']]</code></pre>
+</div>
+</div>
+<p>Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Eine leere Liste kann durch Zuweisung von <code>[]</code> erstellt werden.</p>
+<div id="dc813fb9" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>leere_liste <span class="op">=</span> []</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leere_liste)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<p>Wie Zeichenfolgen können Listen durch den Operator ‘+’ verkettet werden.</p>
+<div id="30247e10" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>verkettete_liste <span class="op">=</span> liste1 <span class="op">+</span> liste2</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(verkettete_liste)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]</code></pre>
+</div>
+</div>
 </section>
-<section id="mapping-types" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="mapping-types"><span class="header-section-number">4.2</span> Mapping Types</h2>
+<section id="slicing-der-zugriffsoperator" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="slicing-der-zugriffsoperator"><span class="header-section-number">4.2</span> Slicing: der Zugriffsoperator []</h2>
+<p>Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und anderen Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.</p>
+<section id="zugriff-auf-einzelne-elemente" class="level3">
+<h3 class="anchored" data-anchor-id="zugriff-auf-einzelne-elemente">Zugriff auf einzelne Elemente</h3>
+<p>Elemente über ihren Index, bei 0 beginnend angesprochen.</p>
+<div id="da318927" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">0</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+1
+abc</code></pre>
+</div>
+</div>
+<p>Auf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste <code>liste2</code> enthält an Indexposition 1 eine Liste mit 4 Elementen.</p>
+<div id="11e877ac" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>][<span class="dv">0</span>], liste2[<span class="dv">1</span>][<span class="dv">1</span>], liste2[<span class="dv">1</span>][<span class="dv">2</span>], liste2[<span class="dv">1</span>][<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[None, [1, 'xy', True, 'abc']]
+[1, 'xy', True, 'abc']
+1 xy True abc</code></pre>
+</div>
+</div>
+<p>Mit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.</p>
+<div id="2e971040" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="op">-</span><span class="dv">1</span>], liste1[<span class="op">-</span><span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+abc xy</code></pre>
+</div>
+</div>
+</section>
+<section id="zugriff-auf-mehrere-elemente" class="level3">
+<h3 class="anchored" data-anchor-id="zugriff-auf-mehrere-elemente">Zugriff auf mehrere Elemente</h3>
+<p>Indexbereiche können in der Form <code>[start:stop:step]</code> angesprochen werden. <code>start</code> ist das erste adressierte Element, <code>stop</code> <strong>das erste nicht mehr adressierte Element</strong> und <code>step</code> die Schrittweite.</p>
+<p>von <code>start</code> bis <strong>nicht einschließlich</strong> <code>stop</code> mit der Schrittweite <code>step</code>.</p>
+<p>Schöne Zusammenstellung der Parameter</p>
+<p>https://stackoverflow.com/questions/509211/how-slicing-in-python-works Direktlink: https://stackoverflow.com/a/509295 a[start:stop] # items start through stop-1 a[start:] # items start through the rest of the array a[:stop] # items from the beginning through stop-1 a[:] # a copy of the whole array There is also the step value, which can be used with any of the above: a[start:stop:step] # start through not past stop, by step The key point to remember is that the :stop value represents the first value that is not in the selected slice. So, the difference between stop and start is the number of elements selected (if step is 1, the default). The other feature is that start or stop may be a negative number, which means it counts from the end of the array instead of the beginning. So: a[-1] # last item in the array a[-2:] # last two items in the array a[:-2] # everything except the last two items Similarly, step may be a negative number: a[::-1] # all items in the array, reversed a[1::-1] # the first two items, reversed a[:-3:-1] # the last two items, reversed a[-3::-1] # everything except the last two items, reversed</p>
+</section>
+</section>
+<section id="tupel" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="tupel"><span class="header-section-number">4.3</span> Tupel</h2>
+<p>wie Simone… Listen sehr ähnlich… weil zu Listen muss man so viel sagen.</p>
+</section>
+<section id="zugriff-auf-sammeltypen" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="zugriff-auf-sammeltypen"><span class="header-section-number">4.4</span> Zugriff auf Sammeltypen</h2>
+<section id="slicing-operator" class="level3">
+<h3 class="anchored" data-anchor-id="slicing-operator">Slicing-Operator []</h3>
+<p>[:] legt eine Kopie an</p>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+<p>Sammeltypen &amp; for-Schleifen –&gt; es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt und die Liste, das Tupel, die Menge oder das Dictionary (Ausgabe der keys)</p>
+</section>
+</section>
+<section id="unterschied-zu-sequenzen" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="unterschied-zu-sequenzen"><span class="header-section-number">4.5</span> Unterschied zu Sequenzen</h2>
+<p>https://docs.python.org/3/library/stdtypes.html#typesseq Sequence Types — list, tuple, range</p>
+<p>Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. <strong>Beispiel ergänzen, bei dem ein string verändert wird.</strong> Tatsächlich wird aber immer ein neuer string angelegt.</p>
+</section>
+<section id="slicing" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="slicing"><span class="header-section-number">4.6</span> Slicing</h2>
+<p>Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator <code>[]</code> verwendet.</p>
+</section>
+<section id="mapping-types" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="mapping-types"><span class="header-section-number">4.7</span> Mapping Types</h2>
 <p>https://docs.python.org/3/library/stdtypes.html#mapping-types-dict</p>
 </section>
 <section id="aufgabe-listen-und-sammeltypen" class="level1" data-number="5">
