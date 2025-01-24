@@ -9,8 +9,6 @@ Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und 
 
   - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionary
 
-**panel-tabset**
-
 ## Listen
 Listen können eine flexible Anzahl von Elementen beliebigen Typs beinhalten. In Python enthalten Listen nicht wirklich Daten, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt.
 
@@ -70,34 +68,159 @@ print(liste1[-1], liste1[-3])
 ### Zugriff auf mehrere Elemente
 Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `start` ist das erste adressierte Element, `stop` **das erste nicht mehr adressierte Element** und `step` die Schrittweite.
 
-von `start` bis **nicht einschließlich** `stop` mit der Schrittweite `step`.
+| Zugriffsoperator | Ausschnitt |
+|---|---|
+| liste[start:stop] | Elemente von start bis stop - 1 |
+| liste[start:] | Elemente von start bis zum Ende der Liste |
+| liste[:stop] | Elemente vom Anfang der Liste bis stop - 1 |
+| liste[:] | Kopie der gesamten Liste |
+| liste[::3] | Auswahl jedes dritten Elements |
 
-Schöne Zusammenstellung der Parameter
+&nbsp;
 
-https://stackoverflow.com/questions/509211/how-slicing-in-python-works
-Direktlink: https://stackoverflow.com/a/509295
-a[start:stop]  # items start through stop-1
-a[start:]      # items start through the rest of the array
-a[:stop]       # items from the beginning through stop-1
-a[:]           # a copy of the whole array
-There is also the step value, which can be used with any of the above:
-a[start:stop:step] # start through not past stop, by step
-The key point to remember is that the :stop value represents the first value that is not in the selected slice. So, the difference between stop and start is the number of elements selected (if step is 1, the default).
-The other feature is that start or stop may be a negative number, which means it counts from the end of the array instead of the beginning. So:
-a[-1]    # last item in the array
-a[-2:]   # last two items in the array
-a[:-2]   # everything except the last two items
-Similarly, step may be a negative number:
-a[::-1]    # all items in the array, reversed
-a[1::-1]   # the first two items, reversed
-a[:-3:-1]  # the last two items, reversed
-a[-3::-1]  # everything except the last two items, reversed
+Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl von Elementen.
 
+| Zugriffsoperator | Ausschnitt |
+|---|---|
+| liste[-1] | das letzte Element der Liste |
+| liste[-2:] | die letzten beiden Elemente der Liste |
+| liste[:-2] | alle bis auf die beiden letzten Elemente |
+| liste[::-1] | alle Elemente in umgekehrter Reihenfolge |
+| liste[1::-1] | die ersten beiden Elemente in umgekehrter Reihenfolge |
+| liste[:-3:-1] | die letzten beiden Elemente in umgekehrter Reihenfolge |
+| liste[-3::-1] | alle außer die letzten beiden Elemente in umgekehrter Reihenfolge |
 
+&nbsp;
 
+(Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
+
+### Kopieren von Listen
+In Python werden Sammeltypen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird ein neues Objekt im Speicher angelegt.
+
+```{python}
+# Kopieren durch Zuweisung
+liste1 = [1, 'xy', True, text_variable]
+print("liste1:", liste1, "\n")
+liste2 = liste1
+
+## Ändern eines Elements in liste2
+liste2[0] = 'ABC'
+print("Auch liste1 hat sich durch die Zuweisung in liste2 verändert:", liste1, "\n")
+
+# Verwendung der Methode liste.copy()
+liste1 = [1, 'xy', True, text_variable]
+liste2 = liste1.copy()
+liste2[0] = 'ABC'
+print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1, "\n")
+
+# Verwendung des Slice Operators
+liste1 = [1, 'xy', True, text_variable]
+liste2 = liste1[:]
+
+## Ändern eines Elements in liste2
+liste2[0] = 'ABC'
+print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1)
+```
+
+Die Kopie von Listenelementen ist in dieser Hinsicht unproblematisch.
+
+```{python}
+# Verwendung des Slice Operators
+liste1 = [1, 'xy', True, text_variable]
+liste2 = liste1[0:2]
+
+# Ändern eines Elements in liste2
+liste2[0] = 'ABC'
+print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1)
+```
+
+Um zu überprüfen, ob sich zwei Objekte den Speicherbereich teilen, kann die Objekt-ID mit der Funktion `id()` verglichen oder die Operatoren `is` bzw. `is not` verwendet werden, die die Funktion `id()` aufrufen.
+
+```{python}
+liste1 = [1, 'xy', True, text_variable]
+liste2 = liste1
+
+print("ID liste1:", id(liste1))
+print("ID liste2:", id(liste2))
+print("ID liste1 gleich ID list2:", liste1 is liste2)
+```
+
+#### Identität vs. Wertgleichheit
+Der Operator `is` prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator `==`, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts oder einer Variablen demonstriert werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).
+
+```{python}
+#| warning: false
+
+# Wertgleichheit
+print(1 == 1.0)
+
+# Identität
+print(1 is 1.0)
+```
 
 ## Tupel
-wie Simone... Listen sehr ähnlich... weil zu Listen muss man so viel sagen.
+Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte und können ihre Form, also ihre Länge, nicht ändern. Das bedeutet, dass zu einem existierenden Tupel keine weiteren Elemente hinzugefügt werden können. Auch können bestehende Elemente nicht geändert werden. 
+
+Tupel werdem mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt.
+
+```{python}
+tupel1 = (2, 7.8, 'Feuer', True, text_variable)
+print(tupel1)
+print(tupel1[2:4])
+print(tupel1[::2])
+print(tupel1[-1])
+```
+
+<!-- 
+Wie Listen teilen sich auch Tupel beim Kopieren durch Zuweisung den Speicherplatz. Da Tupel aber unveränderbar sind, ist dies weniger problematisch.
+
+```{python}
+tupel2 = tupel1
+print(tupel2 is tupel1)
+```
+-->
+
+## Mengen
+Eine Menge ist eine Sammlung von Werten, welche zum einen ungeordnet ist und zum anderen jedes Element nur einmal enthält. Es können nur unveränderbare Datenobjekte Teil einer Menge sein.
+
+In Python können Mengen mit der `set()` Funktion aus z. B. einer Liste erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt).
+
+```{python}
+liste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]
+print(set(liste))
+
+menge = {1, 2, 3, 4, 5, 1000, ('tupel', 5), 'a', 123}
+```
+
+Mengen können beispielsweise für Vergleichsoperationen verwendet werden.
+
+```{python}
+
+a = set('Fachhochschule Dortmund')
+b = set('Fachbereich Elektrotechnik')
+
+# einzigartige Buchstaben in a
+print(a)
+
+# Buchstaben in a, aber nicht in b
+print(a - b)
+
+# Buchstaben in a oder b
+print(a | b)
+
+# Buchstaben in a und b
+print(a & b)
+
+# Buchstaben in a oder b
+print(a ^ b)
+```
+
+## Umwandeln von Sammeltypen
+list()
+tuple()
+dict() # hier ist die Syntax anders 
+set()
+
 
 ## Zugriff auf Sammeltypen
 

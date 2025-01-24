@@ -25,7 +25,7 @@ book:
 
   sidebar:
     title: "Werkzeugbaustein Python"
-    logo: "skript/00-bilder/logo_bcd_new.svg"    
+    logo: "skript/00-bilder/logo_with_text_new.svg"    
    
 ## Bibliographie / bibliography
 bibliography: bibliography.bib
