@@ -1,5 +1,5 @@
 # Sammeltypen
-Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:
+Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:
 
   - [Listen](https://de.wikipedia.org/wiki/Liste_(Datenstruktur))
 
@@ -8,6 +8,8 @@ Sammeltypen werden benutzt, um mehrere Werte in einer Variable zu speichern und 
   - [Mengen](https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29)
 
   - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionary
+
+**Dieses Kapitel leidet an den Ausnahmen: geteilter Speicherbereich (betrifft Listen und Dictionaries), Zugriffsoperator nicht für Mengen definiert, Methode `.copy()` nicht für Tupel definiert.**
 
 ## Listen
 Listen können eine flexible Anzahl von Elementen beliebigen Typs beinhalten. In Python enthalten Listen nicht wirklich Daten, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt.
@@ -38,7 +40,7 @@ print(verkettete_liste)
 ```
 
 ## Slicing: der Zugriffsoperator []
-Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und anderen Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.
+Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und andere Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.
 
 ### Zugriff auf einzelne Elemente
 Elemente über ihren Index, bei 0 beginnend angesprochen.
@@ -71,9 +73,9 @@ Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `star
 | Zugriffsoperator | Ausschnitt |
 |---|---|
 | liste[start:stop] | Elemente von start bis stop - 1 |
+| liste[:] | Alle Elemente der Liste (entspricht einer Kopie) |
 | liste[start:] | Elemente von start bis zum Ende der Liste |
 | liste[:stop] | Elemente vom Anfang der Liste bis stop - 1 |
-| liste[:] | Kopie der gesamten Liste |
 | liste[::3] | Auswahl jedes dritten Elements |
 
 &nbsp;
@@ -95,7 +97,7 @@ Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl 
 (Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
 
 ### Kopieren von Listen
-In Python werden Sammeltypen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird ein neues Objekt im Speicher angelegt.
+In Python werden Listen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -171,68 +173,131 @@ print(tupel1[::2])
 print(tupel1[-1])
 ```
 
-<!-- 
-Wie Listen teilen sich auch Tupel beim Kopieren durch Zuweisung den Speicherplatz. Da Tupel aber unveränderbar sind, ist dies weniger problematisch.
+Der Zugriff auf Elemente eines Tupels erfolgt mit dem Zugriffsoperator `[]`.
 
 ```{python}
-tupel2 = tupel1
-print(tupel2 is tupel1)
+print(tupel1[::2])
 ```
--->
+
+### Tupel kopieren
+Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode `.copy()` nicht definiert. Tupel (bzw. die in diesen gespeicherten Werte) können durch Zuweisung kopiert werden. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator `[:]` zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python jedoch ein neues Objekt im Speicher an.
+
+```{python}
+# Kopieren durch Zuweisung
+tupel1 = (1, 2, 3)
+tupel2 = tupel1
+
+## Neuzuweisung der Werte von tupel1
+tupel1 = (4, 5, 6)
+print(f"Die in tupel2 gespeicherten Werte sind unverändert:\n{tupel1} {tupel2}\n")
+
+# Kopieren mit Slice Operator
+tupel1 = (1, 2, 3)
+tupel2 = tupel1[:]
+print(tupel2 is tupel1)
+
+## Neuzuweisung der Werte von tupel1
+tupel1 = (4, 5, 6)
+print(tupel1, tupel2)
+```
 
 ## Mengen
 Eine Menge ist eine Sammlung von Werten, welche zum einen ungeordnet ist und zum anderen jedes Element nur einmal enthält. Es können nur unveränderbare Datenobjekte Teil einer Menge sein.
 
-In Python können Mengen mit der `set()` Funktion aus z. B. einer Liste erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt).
+In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt).
 
 ```{python}
 liste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]
-print(set(liste))
+print("Das Objekt liste als Menge:\n", set(liste))
 
 menge = {1, 2, 3, 4, 5, 1000, ('tupel', 5), 'a', 123}
+print("Die Menge kann auch mit geschweiften Klammern erzeugt werden:", menge)
 ```
 
 Mengen können beispielsweise für Vergleichsoperationen verwendet werden.
 
 ```{python}
 
-a = set('Fachhochschule Dortmund')
-b = set('Fachbereich Elektrotechnik')
+menge_a = set('Python')
+menge_b = set('ist super')
 
-# einzigartige Buchstaben in a
-print(a)
+# einzigartige Zeichen in a
+print("Menge a:", menge_a)
 
-# Buchstaben in a, aber nicht in b
-print(a - b)
+# Zeichen in a, aber nicht in b
+print("Menge a - b:", menge_a - menge_b)
 
-# Buchstaben in a oder b
-print(a | b)
+# Zeichen in a oder b
+print("Menge a | b:", menge_a | menge_b)
 
-# Buchstaben in a und b
-print(a & b)
+# Zeichen in a und b
+print("Menge a & b:", menge_a & menge_b)
 
-# Buchstaben in a oder b
-print(a ^ b)
+# Zeichen in a oder b, aber nicht in beiden (XOR)
+print("Menge a ^ b:", menge_a ^ menge_b)
 ```
 
-## Umwandeln von Sammeltypen
+### Mengen kopieren
+Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist (**der Zugriffsoperator `[:]` kann jedoch nicht auf Mengen angewendet werden**).
+
+```{python}
+# Kopieren durch Zuweisung
+set1 = {1, 2, 3}
+set2 = set1
+print(set1 is set2)
+
+## Neuzuweisen von set1
+set1 = {4, 5, 6}
+print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
+
+# Kopieren durch Methode .copy()
+set1 = {1, 2, 3}
+set2 = set1.copy()
+print(set1 is set2)
+
+
+## Neuzuweisen von set1
+set1 = {4, 5, 6}
+print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
+
+```
+
+## Dictionaries
+Dictionaries sind Zuordnungstabellen, d. h. sie bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein. Dictionaries werden mit geschweiften Klammern `{}` definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt `:` getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator `[]`, welcher den oder die Schlüssel beinhaltet.
+
+```{python}
+dictionary = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+print(dictionary, "\n")
+
+print("Werte des Schlüssels 1:", dictionary[1])
+print("Werte des Schlüssels 'b':",  dictionary['b'])
+```
+
+Auf die Schlüssel eines Dictionaries kann über die Methode `dictionary.keys()`, auf die Werte mittels der Methode `dictionary.values()` zugegriffen werden. 
+
+```{python}
+print("Schlüssel:", dictionary.keys(), "\n")
+print("Werte:", dictionary.values())
+```
+
+### Dictionaries kopieren
+**sollten sich wie Listen verhalten**
+
+## Arbeiten mit Sammeltypen
+**text**
+
+### del-Operator
+
+### Schleifen
+Sammeltypen & for-Schleifen --> es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt und die Liste, das Tupel, die Menge oder das Dictionary (Ausgabe der keys)
+
+### Umwandeln von Sammeltypen
+Damit kann man die Sammeltypen auch erzeugen.
 list()
+  `list(dictionary)` gibt die Schlüssel eines Dictionaries zurück
 tuple()
 dict() # hier ist die Syntax anders 
 set()
-
-
-## Zugriff auf Sammeltypen
-
-### Slicing-Operator []
-
-[:] legt eine Kopie an
-
-### 
-
-Sammeltypen & for-Schleifen --> es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt und die Liste, das Tupel, die Menge oder das Dictionary (Ausgabe der keys)
-
-
 
 ## Unterschied zu Sequenzen
 https://docs.python.org/3/library/stdtypes.html#typesseq
