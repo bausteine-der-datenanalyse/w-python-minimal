@@ -1,18 +1,28 @@
 # Sammeltypen
 Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:
 
-  - [Listen](https://de.wikipedia.org/wiki/Liste_(Datenstruktur))
+  - [Listen](https://de.wikipedia.org/wiki/Liste_(Datenstruktur)) enthalten eine flexible Anzahl von Elementen beliebigen Typs.
 
-  - [Tupel](https://de.wikipedia.org/wiki/Tupel_%28Informatik%29)
+  - [Tupel](https://de.wikipedia.org/wiki/Tupel_%28Informatik%29) können wie Listen Elemente beliebigen Typs enthalten, sind aber unveränderlich.
 
-  - [Mengen](https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29)
+  - [Mengen](https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29) sind ungeordnete Sammlungen, die jedes Element nur einmal enthalten können.
 
-  - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionary
+  - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionaries sind Zuordnungstabellen, d. h. sie bestehen aus Schlüssel-Wert-Paaren. 
+  
+In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen ausführlich erläutert.
 
 **Dieses Kapitel leidet an den Ausnahmen: geteilter Speicherbereich (betrifft Listen und Dictionaries), Zugriffsoperator nicht für Mengen definiert, Methode `.copy()` nicht für Tupel definiert.**
 
+  - Mengen als letztes vorstellen, da diese am Unterschiedlichsten sind.
+
+  - Sonderthemen später behandeln
+
+    - Arbeiten mit Listen
+
+    - Unterschiede der übrigen Sammeltypen zu Listen
+
 ## Listen
-Listen können eine flexible Anzahl von Elementen beliebigen Typs beinhalten. In Python enthalten Listen nicht wirklich Daten, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt.
+Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt. Listen können mit dem `+`-Operator verkettet werden. `*` verkettet eine Liste n-mal.
 
 ```{python}
 text_variable = 'abc'
@@ -23,27 +33,24 @@ print(liste1)
 # Listen können auch Listen enthalten
 liste2 = [None, liste1]
 print(liste2)
+
+# Listen können mit + und * verkettet werden
+print(liste1 + liste2)
+print(liste1 * 2)
 ```
 
-Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Eine leere Liste kann durch Zuweisung von `[]` erstellt werden.
+Eine leere Liste kann durch Zuweisung von `[]` erstellt werden.
 
 ```{python}
 leere_liste = []
 print(leere_liste)
 ```
 
-Wie Zeichenfolgen können Listen durch den Operator '+' verkettet werden.
-
-```{python}
-verkettete_liste = liste1 + liste2
-print(verkettete_liste)
-```
-
-## Slicing: der Zugriffsoperator []
+### Slicing: der Zugriffsoperator []
 Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und andere Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.
 
-### Zugriff auf einzelne Elemente
-Elemente über ihren Index, bei 0 beginnend angesprochen.
+#### Zugriff auf einzelne Elemente
+Elemente werden über ihren Index, bei 0 beginnend, angesprochen.
 
 ```{python}
 print(liste1)
@@ -57,7 +64,6 @@ Auf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren 
 print(liste2)
 print(liste2[1])
 print(liste2[1][0], liste2[1][1], liste2[1][2], liste2[1][3])
-
 ```
 
 Mit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.
@@ -67,7 +73,7 @@ print(liste1)
 print(liste1[-1], liste1[-3])
 ```
 
-### Zugriff auf mehrere Elemente
+#### Zugriff auf mehrere Elemente
 Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `start` ist das erste adressierte Element, `stop` **das erste nicht mehr adressierte Element** und `step` die Schrittweite.
 
 | Zugriffsoperator | Ausschnitt |
@@ -96,8 +102,64 @@ Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl 
 
 (Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
 
-### Kopieren von Listen
-In Python werden Listen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
+### Listenmethoden
+Für den Listentyp sind verschiedene Methoden definiert.
+
+#### Elemente bestimmen
+
+- `list.index(x, start, stop)` gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente start und stop erlauben es, den Suchbereich einzuschränken.
+
+- `list.count(x)` gibt die Häufigkeit von x in der Liste aus.
+
+- `list.reverse()` kehrt die Reihenfolge der Listenelemente um (die Liste wird dadurch verändert!). 
+
+- `list.sort(reverse = False)` sortiert die Liste, mit dem optionalen Argument reverse = True absteigend (die Liste wird dadurch verändert!). Die Datentypen innerhalb der Liste müssen sortierbar sein (d. h. alle Elemente sind numerisch oder Zeichen).
+
+```{python}
+print(liste1)
+
+liste1.reverse()
+print(liste1)
+
+# True wird als 1 gezählt
+print("True wird als 1 gezählt:", liste1.index(1), liste1.count(1))
+```
+
+#### Elemente einfügen
+
+- `list.append(x)` hängt ein einzelnes Element an das Ende der Liste an.
+
+- `list.extend(sammeltyp)` hängt alle mit `sammeltyp` übergebenen Elemente an das Ende der Liste an. Der Sammeltyp kann eine Liste, ein Tupel, eine Menge oder ein Dictionary sein.
+
+- `list.insert(i, x)` fügt an der Position i Element x ein.
+
+```{python}
+print(liste1, "\n")
+
+liste1.append('Hallo')
+liste1.extend(['Hallo', 'Welt!'])
+liste1.insert(2, '12345')
+
+print(liste1)
+```
+
+#### Elemente entfernen
+
+- `list.remove(x)` entfernt *das erste* Element x in der Liste und gibt einen ValueError zurück, wenn x nicht in der Liste enthalten ist.
+
+- `liste.pop(i)` entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode `liste.pop([i])` gibt die entfernten Elemente zurück.
+
+- `liste.clear()` entfernt alle Elemente einer Liste.
+
+```{python}
+liste1.remove('Hallo')
+print(liste1)
+
+liste1.pop(2)
+```
+
+#### Listen und Listenelemente kopieren
+In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. In Python werden Listen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -112,6 +174,8 @@ print("Auch liste1 hat sich durch die Zuweisung in liste2 verändert:", liste1, 
 # Verwendung der Methode liste.copy()
 liste1 = [1, 'xy', True, text_variable]
 liste2 = liste1.copy()
+
+## Ändern eines Elements in liste2
 liste2[0] = 'ABC'
 print("liste1 bleibt durch die Zuweisung in liste2 unverändert:", liste1, "\n")
 
@@ -147,36 +211,58 @@ print("ID liste2:", id(liste2))
 print("ID liste1 gleich ID list2:", liste1 is liste2)
 ```
 
-#### Identität vs. Wertgleichheit
-Der Operator `is` prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator `==`, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts oder einer Variablen demonstriert werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).
+::: {.callout-note collapse="true"}
+## Identität vs. Wertgleichheit
+
+Der Operator `is` prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator `==`, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts verdeutlicht werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).
 
 ```{python}
 #| warning: false
 
 # Wertgleichheit
 print(1 == 1.0)
+print(liste1 == liste2, "\n")
 
 # Identität
 print(1 is 1.0)
+print(liste1 is liste2)
 ```
 
-## Tupel
-Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte und können ihre Form, also ihre Länge, nicht ändern. Das bedeutet, dass zu einem existierenden Tupel keine weiteren Elemente hinzugefügt werden können. Auch können bestehende Elemente nicht geändert werden. 
+:::
 
-Tupel werdem mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt.
+
+### Aufgaben Listen
+
+1. Erstellen Sie eine Liste 'wochentage', die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste 'wochenende' mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste 'wochentage'.
+
+2. 4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste 'wochentage' zu entfernen und der Liste 'wochenende' hinzuzufügen.
+
+3. Bestimmen Sie in der Liste `zahlen = [34, 12, 0, 67, 23]` die Position des Werts 0. Entfernen Sie den Wert aus der Liste und geben Sie die Liste aufsteigend sortiert aus. 
+
+4. Geben Sie nun mit Hilfe des Zugriffsoperators `[]` die Indexpositionen 1 und 3 der sortierten Liste 'zahlen' aus.
+
+**Musterlösung kann Marc machen.**
+
+::: {#tip-listen .callout-tip collapse="true"}
+## Musterlösung
+
+:::
+
+## Tupel
+Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.
+
+Tupel werdem mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form `(wert, )` angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator `[start:stop:step]` möglich. Tupel können mit den Operatoren `+` und `*` verkettet werden.
 
 ```{python}
 tupel1 = (2, 7.8, 'Feuer', True, text_variable)
+tupel2 = (1, )
+
 print(tupel1)
 print(tupel1[2:4])
 print(tupel1[::2])
 print(tupel1[-1])
-```
-
-Der Zugriff auf Elemente eines Tupels erfolgt mit dem Zugriffsoperator `[]`.
-
-```{python}
-print(tupel1[::2])
+print(tupel1[2:4] + tupel2)
+print(3 * tupel2)
 ```
 
 ### Tupel kopieren
@@ -202,8 +288,6 @@ print(tupel1, tupel2)
 ```
 
 ## Mengen
-Eine Menge ist eine Sammlung von Werten, welche zum einen ungeordnet ist und zum anderen jedes Element nur einmal enthält. Es können nur unveränderbare Datenobjekte Teil einer Menge sein.
-
 In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt).
 
 ```{python}
@@ -238,7 +322,7 @@ print("Menge a ^ b:", menge_a ^ menge_b)
 ```
 
 ### Mengen kopieren
-Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist (**der Zugriffsoperator `[:]` kann jedoch nicht auf Mengen angewendet werden**).
+Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist. Allerdings kann der Zugriffsoperator `[:]` nicht auf Mengen angewendet werden.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -255,7 +339,6 @@ set1 = {1, 2, 3}
 set2 = set1.copy()
 print(set1 is set2)
 
-
 ## Neuzuweisen von set1
 set1 = {4, 5, 6}
 print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
@@ -263,55 +346,143 @@ print(f"Die in set2 gespeicherten Werte sind unverändert:\n{set1} {set2}")
 ```
 
 ## Dictionaries
-Dictionaries sind Zuordnungstabellen, d. h. sie bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein. Dictionaries werden mit geschweiften Klammern `{}` definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt `:` getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator `[]`, welcher den oder die Schlüssel beinhaltet.
+Dictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern `{}` definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt `:` getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator `[]`, welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.
 
 ```{python}
-dictionary = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
-print(dictionary, "\n")
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+print(dictionary1, "\n")
 
-print("Werte des Schlüssels 1:", dictionary[1])
-print("Werte des Schlüssels 'b':",  dictionary['b'])
+print("Werte des Schlüssels 1:", dictionary1[1])
+print("Werte des Schlüssels 'b':",  dictionary1['b'])
 ```
 
 Auf die Schlüssel eines Dictionaries kann über die Methode `dictionary.keys()`, auf die Werte mittels der Methode `dictionary.values()` zugegriffen werden. 
 
 ```{python}
-print("Schlüssel:", dictionary.keys(), "\n")
-print("Werte:", dictionary.values())
+print("Schlüssel:", dictionary1.keys(), "\n")
+print("Werte:", dictionary1.values())
 ```
 
 ### Dictionaries kopieren
-**sollten sich wie Listen verhalten**
+Dictionaries verhalten sich beim Kopieren wie Listen, das heißt beim Kopieren durch Zuweisung teilen sich Dictionaries den Speicherbereich.
 
-## Arbeiten mit Sammeltypen
-**text**
+```{python}
+# Kopieren durch Zuweisung
+print("dictionary:", dictionary1, "\n")
+dictionary2 = dictionary1
 
-### del-Operator
+## Ändern eines Elements in dictionary2
+dictionary2[1] = 'ABC'
+print("Auch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:\n",
+       dictionary1, "\n")
 
-### Schleifen
-Sammeltypen & for-Schleifen --> es handelt sich um eine foreach-Schleife, die ohne Zähler auskommt und die Liste, das Tupel, die Menge oder das Dictionary (Ausgabe der keys)
+# Verwendung der Methode dictionary.copy()
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+dictionary2 = dictionary1.copy()
 
-### Umwandeln von Sammeltypen
-Damit kann man die Sammeltypen auch erzeugen.
-list()
-  `list(dictionary)` gibt die Schlüssel eines Dictionaries zurück
-tuple()
-dict() # hier ist die Syntax anders 
-set()
+## Ändern eines Elements in dictionary2
+dictionary2[1] = 'ABC'
+print("dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n",
+       dictionary1, "\n")
 
-## Unterschied zu Sequenzen
-https://docs.python.org/3/library/stdtypes.html#typesseq
-Sequence Types — list, tuple, range
+```
 
-Hinweis: Strings sind in Python eine Sequenz von Zeichen (Zeichenfolge), die unveränderlich ist (immutable). Bei der Arbeit mit strings fällt das nicht unbedingt auf. **Beispiel ergänzen, bei dem ein string verändert wird.** Tatsächlich wird aber immer ein neuer string angelegt.
-  
-## Slicing
-Um auf Elemente einer Zeichenfolge zuzugreifen, wird der Slicing-Operator `[]` verwendet. 
+## Übersicht
+| Merkmal                                        | Listen | Tupel | Mengen | Dictionary |
+|------------------------------------------------|--------|-------|--------|------------|
+| Beschreibung                            | flexible Anzahl von Elementen beliebigen Typs | Elemente beliebigen Typs, unveränderlich | ungeordnete Sammlung, jedes Element nur einmal enthalten | Zuordnungstabelle aus Schlüssel-Wert-Paaren |
+| Speicherbereich bei Zuweisung geteilt          | ja     | Aufhebung bei Neuzuweisung  | Aufhebung bei Neuzuweisung   | ja         |
+| Methode .copy() definiert                      | ja     | nein  | ja     | ja         |
+| Slice-Operator anwendbar                       | ja     | ja    | nein   | ja (nach Schlüssel) |
 
-## Mapping Types
-https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+&nbsp;
 
-# Aufgabe Listen und Sammeltypen
+Die Sammeltypen können ineinander umgewandelt werden. **wohin?!**
+
+```{python}
+dictionary = {1: 'Kater', 2: 'Fähre', 3: 'Ricke'}
+print( (liste := list(dictionary)) )
+print( (menge := set(liste)) )
+print( (tupel := tuple(menge)) )
+
+```
+
+## Löschen: das Schlüsselwort del
+Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort `del` verwendet werden.
+
+```{python}
+# Löschen einer Liste
+del liste1
+
+# Löschen eines Indexbereichs aus einer Liste
+print("Liste vor dem Löschen:", liste2)
+del liste2[1:3]
+print("Liste nach dem Löschen:", liste2)
+
+# Löschen eines Schlüsselworts aus einem Dictionary
+print("Dictionary vor dem Löschen", dictionary1)
+del dictionary1[1]
+print("Dictionary nach dem Löschen", dictionary1)
+```
+
+## Funktionen
+Einige in Python enthaltene Funktionen lassen sich auch auf Sammeltypen anwenden:
+
+* `len()`: liefert die Länge einer Liste, bzw. Sammeltyps, zurück
+* `min()`, `max()`, `sum()`: gibt das Minimum, Maximum bzw. die Summe einer numerischen Liste zurück
+
+## Operationen: Verwendung von Schleifen
+Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. xi
+
+```{python}
+zahlen = list(range(1, 11))
+
+quadratzahlen = [] # Die Liste muss vor der Schleife angelegt werden
+
+for zahl in zahlen:
+  quadratzahlen.append(zahl ** 2)
+
+print(quadratzahlen)
+```
+
+In Python kommt Listen die größte Bedeutung zu, da diese vielseitig eingesetzt werden könnnen. 
+
+Vergleichsoperation zeihen, dann Aufgabe Bubblesort (mit Pseudocode aus w-pseudocode, kann man die grafische Lösung einbinden?)
+
+# Aufgaben Sammeltypen {-}
 1. Bubble Sort - dafür braucht man Listen und Slicing 
 
+
+::: {#tip-musterlösungsammeltypen .callout-tip collapse="true"}
+
+1. Bubble Sort
+```{python}
+
+# statische Liste, Textausgabe
+meine_liste = list(range(9, 0, -1))
+
+if len(meine_liste) > 1: 
+
+    print("Liste zu Beginn: ", meine_liste)
+
+    # äußere Schleife
+    Schritt = 0
+    for i in range(len(meine_liste) - 1):
+
+    # innere Schleife
+        for j in range(len(meine_liste) - 1):
+            if meine_liste[j] > meine_liste[j + 1]:
+                meine_liste[j], meine_liste[j + 1] = meine_liste[j + 1], meine_liste[j]
+
+        Schritt += 1
+        print("Liste nach Schritt ", Schritt, ":", meine_liste)
+
+    print("Liste sortiert:", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen
+
+else:
+    print("Die Liste muss mindenstens zwei Elemente enthalten!")
+
+```
+
+:::
 (@Arnold-2023-schleifen-abzweigungen)
