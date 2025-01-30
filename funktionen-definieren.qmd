@@ -7,7 +7,85 @@ In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Da
 
   - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
 
- eine der vielseitigsten M
+## Syntax
+
+Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird. 
+
+``` {python}
+#| output: false
+def Funktionsname(Argument1, Argument2):
+    Anweisungsblock
+    return Rückgabewert
+```
+
+Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden.
+
+```{python}
+# Beispiel 1: Summe der Quadrate
+
+# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
+def sum_quadrate(a, b):
+    print('Wert Argument a:', a)
+    print('Wert Argument b:', b)
+    print(18 * '=')
+    summe = a**2 + b**2
+    return summe
+
+print(sum_quadrate(6, 7))
+```
+
+Der Rückgabewert kann in einer Variablen gespeichert werden.
+
+```{python}
+ergebnis = sum_quadrate(6, 7)
+print(ergebnis)
+```
+
+Dabei kann die in der Funktion enthaltene Ausgabe mit `print()` unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. 
+
+```{python}
+# Beispiel 2: optionale Argumente
+
+# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
+def sum_quadrate(a, b, output = False):
+    if output:
+      print('Wert Argument a:', a)
+      print('Wert Argument b:', b)
+      print(18 * '=')
+    summe = a**2 + b**2
+    return summe
+
+print(sum_quadrate(42, 7), "\n")
+print(sum_quadrate(42, 7, output = True))
+```
+
+Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.
+
+```{python}
+# Beispiel 3: mehrere optionale Argumente
+
+# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
+def sum_potenzen(a, b, p = 2, output = False):
+    if output:
+      print('Wert Argument a:', a)
+      print('Wert Argument b:', b)
+      print('Wert Argument p:', p)
+      print(18 * '=')
+    summe = a**p + b**p
+    return summe
+
+# positionale Übergabe
+print(sum_potenzen(42, 7, 3, True), "\n")
+
+# Übergabe per Schlüsselwort
+print(sum_potenzen(42, 7, output = True, p = 4))
+```
+
+Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück. **Rückgabe mehrerer Potenzen**  
+
+optionaler Parameter output = true
+immer nur ein Rückgabewert... mehrere Rückgabewerte können mit Komma getrennt übergeben werden. tuple unpacking
+
 It’s important to note that the optional argument must always appear after any required arguments when defining the function
 
 using positional Arguments

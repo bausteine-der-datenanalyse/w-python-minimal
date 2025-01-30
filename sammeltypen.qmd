@@ -230,7 +230,6 @@ print(liste1 is liste2)
 
 :::
 
-
 ### Aufgaben Listen
 
 1. Erstellen Sie eine Liste 'wochentage', die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste 'wochenende' mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste 'wochentage'.
@@ -426,36 +425,101 @@ print("Dictionary nach dem Löschen", dictionary1)
 ```
 
 ## Funktionen
-Einige in Python enthaltene Funktionen lassen sich auch auf Sammeltypen anwenden:
+Einige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:
 
 * `len()`: liefert die Länge einer Liste, bzw. Sammeltyps, zurück
 * `min()`, `max()`, `sum()`: gibt das Minimum, Maximum bzw. die Summe einer numerischen Liste zurück
 
 ## Operationen: Verwendung von Schleifen
-Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. xi
+Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste 'modulo_3' gespeichert.
 
-```{python}
+::: {#lst-quadratzahlen}
+``` {python}
 zahlen = list(range(1, 11))
 
-quadratzahlen = [] # Die Liste muss vor der Schleife angelegt werden
+quadratzahlen = [] # die Liste muss vor der Schleife angelegt werden
+modulo_3 = [] # leere Liste vor der Schleife anlegen
 
 for zahl in zahlen:
-  quadratzahlen.append(zahl ** 2)
+  quadratzahl = zahl ** 2
+  quadratzahlen.append(quadratzahl)
+  modulo_3.append(quadratzahl % 3 == 0)
+
+print(quadratzahlen)
+print(modulo_3)
+```
+
+:::
+
+## Aufgaben Sammeltypen
+1. Modifizieren Sie den Programmcode in @lst-quadratzahlen so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.
+
+2. Umrechnung von Geschwindigkeiten
+Erstellen Sie ein Skript, welches eine Umrechnungstabelle für Geschwindigkeiten erzeugt. Folgende Randbedingungen sollen beachtet werden:
+
+* Die Umrechnung soll von km/h in m/s erfolgen.
+
+* Der Start- und Endwert soll in km/h frei wählbar sein, wobei beide ganzzahlig sein sollen.
+
+* Die Anzahl der Umrechnungspunkte soll definiert werden können und die Zwischenschritte (in km/h) immer als ganze Zahlen ausgegeben werden.
+
+*Tipp: In Ihrem Skript können Sie die Funktion [input()](https://docs.python.org/3/library/functions.html#input) verwenden, um Werte per Eingabe zu erfassen.*
+
+3. Sortieren: Gegeben ist die Liste `meine_liste = list(range(9, 0, -1))`. Diese soll mittels for-Schleifen sortiert werden.    
+
+::: {#tip-musterlösungsammeltypen .callout-tip collapse="true"}
+## Musterlösung Aufgaben Sammeltypen
+
+1. Ganzzahlig durch 3 teilbare Quadratzahlen
+``` {python}
+zahlen = list(range(1, 11))
+
+quadratzahlen = [] # die Liste muss vor der Schleife angelegt werden
+modulo_3 = [] # leere Liste vor der Schleife anlegen
+
+for zahl in zahlen:
+  quadratzahl = zahl ** 2
+  if quadratzahl % 3 == 0:
+    quadratzahlen.append(quadratzahl)
 
 print(quadratzahlen)
 ```
 
-In Python kommt Listen die größte Bedeutung zu, da diese vielseitig eingesetzt werden könnnen. 
+2. Umrechnung von Geschwindigkeiten
 
-Vergleichsoperation zeihen, dann Aufgabe Bubblesort (mit Pseudocode aus w-pseudocode, kann man die grafische Lösung einbinden?)
+```{python}
+# Freie Eingabe
+## start = int(input("Startwert in Kilometer pro Stunde eingeben."))
+## ende = int(input("Endwert in Kilometer pro Stunde eingeben."))
+## ausgabeschritte =  int(input("Anzahl auszugebener Schritte ein geben."))
 
-# Aufgaben Sammeltypen {-}
-1. Bubble Sort - dafür braucht man Listen und Slicing 
+# Fixe Werte für die Lösung
+start = 5
+ende = 107
+ausgabeschritte = 8
 
+# Liste für km erstellen
+schrittweite = (ende - start) / (ausgabeschritte - 1)
+liste_km = []
+for i in range(ausgabeschritte):
+    liste_km.append(round(start + i * schrittweite))
 
-::: {#tip-musterlösungsammeltypen .callout-tip collapse="true"}
+# Umrechnung
+# meter = 1000 * kilometer
+# Sekunde = Stunde * 60 * 60
+liste_m = []
+for wert in liste_km:
+    liste_m.append(round((wert * 1000) / (60 * 60), 2))
 
-1. Bubble Sort
+# Ausgabe
+print(f"Schrittweite: {schrittweite:.2f}")
+print("Kilometer pro Stunde")
+print(liste_km)
+print("Meter pro Sekunde")
+print(liste_m)
+```
+
+3. Sortieren: Bubble Sort Algorithmus
 ```{python}
 
 # statische Liste, Textausgabe
@@ -463,7 +527,7 @@ meine_liste = list(range(9, 0, -1))
 
 if len(meine_liste) > 1: 
 
-    print("Liste zu Beginn: ", meine_liste)
+    print("Liste zu Beginn\t\t  :", meine_liste)
 
     # äußere Schleife
     Schritt = 0
@@ -477,7 +541,7 @@ if len(meine_liste) > 1:
         Schritt += 1
         print("Liste nach Schritt ", Schritt, ":", meine_liste)
 
-    print("Liste sortiert:", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen
+    print("\nListe sortiert:", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen
 
 else:
     print("Die Liste muss mindenstens zwei Elemente enthalten!")
@@ -485,4 +549,6 @@ else:
 ```
 
 :::
+
+&nbsp;  
 (@Arnold-2023-schleifen-abzweigungen)
