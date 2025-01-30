@@ -239,13 +239,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="syntax" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">5.1</span> Syntax</h2>
 <p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird.</p>
-<div id="0443dddd" class="cell" data-execution_count="1">
+<div id="14fddcfa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Funktionsname(Argument1, Argument2):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    Anweisungsblock</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Rückgabewert</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden.</p>
-<div id="3a7423b0" class="cell" data-execution_count="2">
+<div id="a4ceccf5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 1: Summe der Quadrate</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -265,7 +265,7 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Der Rückgabewert kann in einer Variablen gespeichert werden.</p>
-<div id="0b3a2939" class="cell" data-execution_count="3">
+<div id="e3f964f2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> sum_quadrate(<span class="dv">6</span>, <span class="dv">7</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -276,7 +276,7 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Dabei kann die in der Funktion enthaltene Ausgabe mit <code>print()</code> unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden.</p>
-<div id="7aa09b85" class="cell" data-execution_count="4">
+<div id="3b6981ff" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 2: optionale Argumente</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -300,7 +300,7 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.</p>
-<div id="3def99a6" class="cell" data-execution_count="5">
+<div id="7c6460a8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 3: mehrere optionale Argumente</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -332,7 +332,7 @@ Wert Argument p: 4
 3114097</code></pre>
 </div>
 </div>
-<p>Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück. Da</p>
+<p>Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück. <strong>Rückgabe mehrerer Potenzen</strong></p>
 <p>optionaler Parameter output = true immer nur ein Rückgabewert… mehrere Rückgabewerte können mit Komma getrennt übergeben werden. tuple unpacking</p>
 <p>It’s important to note that the optional argument must always appear after any required arguments when defining the function</p>
 <p>using positional Arguments</p>
