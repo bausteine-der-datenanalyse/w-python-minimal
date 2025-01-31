@@ -1,1 +1,48 @@
 # Dateien lesen und schreiben
+
+**Die Grundlagen habe ich im m-EsD bereits verarbeitet - von dort kann man Sie kopieren**
+
+## String Methods
+**eventuell als Unterkapitel von Dateien lesen und schreiben**
+
+https://docs.python.org/3/library/stdtypes.html
+
+Gewisse Sonderstellung, weil Zahlen manchmal als String eingelesen werden. Beim Einlesen von Dateien braucht man das häufig.
+
+
+## Zeichenfolgen als Sequenz
+Zeichenfolgen werden in Python als Sequenz behandelt und können ebenso mit dem Slice Operator verwendet werden.
+
+```{python}
+print('Ich bin ein string'[::2])
+print('Hallo Welt'[0:6])
+
+```
+
+Von unschätzbaren Wert beim Einlesen von Datensätzen (Querverweis auf m-EsD)
+str.replace(old, new, count=-1) # wird new als '' übergeben, entspricht die Funktion dem Löschen von Zeichenfolgen
+
+str.split(), str.rsplit(), str.splitlines(keepends=False)
+
+
+nicht von mir verwendet, aber nützlich:  
+str.count(sub[, start[, end]])
+str.find(sub[, start[, end]]) # return the lowest index in the string where substring sub is foun
+str.index(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
+str.rfind(sub[, start[, end]]) # return the highest index in the string where substring sub is foun
+str.rindex(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
+
+str.join(iterable) # das nutze ich einmal im m-EsD (glaube ich)
+
+str.lstrip([chars]), str.rstrip([chars]), str.strip([chars]) --> default ist whitespace
+
+## Aufgaben string methods
+1. Palindrom
+
+Schreiben Sie eine Funktion is_palindrome, die prüft, ob es sich bei einer übergebenen Zeichenkette um ein Palindrom handelt.
+
+*Hinweis: Ein Palindrom ist eine Zeichenkette, die von vorne und von hinten gelesen gleich bleibt, wie beispielsweise 'Anna', 'Otto', 'Lagerregal'. Palindrome müssen nicht aus Buchstaben bestehen, sie können sich auch aus Zahlen oder Buchstaben und Zahlen zusammensetzen wie beispielsweise '345g543'.*
+
+
+&nbsp;
+(@Arnold-2023-funktionen-module-dateien)

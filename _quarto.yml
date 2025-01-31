@@ -21,7 +21,6 @@ book:
     - funktionen.qmd
     - sammeltypen.qmd
     - funktionen-definieren.qmd
-    - string-methods.qmd
     - dateien-lesen-und-schreiben.qmd
 
   sidebar:

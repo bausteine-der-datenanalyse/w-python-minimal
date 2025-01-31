@@ -1,4 +1,4 @@
-# Funktionen definieren
+# Eigene Funktionen definieren
 In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
 
   - Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.
@@ -8,7 +8,6 @@ In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Da
   - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
 
 ## Syntax
-
 Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird. 
 
 ``` {python}
@@ -41,14 +40,15 @@ ergebnis = sum_quadrate(6, 7)
 print(ergebnis)
 ```
 
+## Optionale Parameter
 Dabei kann die in der Funktion enthaltene Ausgabe mit `print()` unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. 
 
 ```{python}
 # Beispiel 2: optionale Argumente
 
 # Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
-def sum_quadrate(a, b, output = False):
-    if output:
+def sum_quadrate(a, b, ausgabe = False):
+    if ausgabe:
       print('Wert Argument a:', a)
       print('Wert Argument b:', b)
       print(18 * '=')
@@ -56,7 +56,7 @@ def sum_quadrate(a, b, output = False):
     return summe
 
 print(sum_quadrate(42, 7), "\n")
-print(sum_quadrate(42, 7, output = True))
+print(sum_quadrate(42, 7, ausgabe = True))
 ```
 
 Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.
@@ -65,8 +65,8 @@ Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten pos
 # Beispiel 3: mehrere optionale Argumente
 
 # Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
-def sum_potenzen(a, b, p = 2, output = False):
-    if output:
+def sum_potenzen(a, b, p = 2, ausgabe = False):
+    if ausgabe:
       print('Wert Argument a:', a)
       print('Wert Argument b:', b)
       print('Wert Argument p:', p)
@@ -78,30 +78,83 @@ def sum_potenzen(a, b, p = 2, output = False):
 print(sum_potenzen(42, 7, 3, True), "\n")
 
 # Übergabe per Schlüsselwort
-print(sum_potenzen(42, 7, output = True, p = 4))
+print(sum_potenzen(42, 7, ausgabe = True, p = 4))
 ```
 
-Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück. **Rückgabe mehrerer Potenzen**  
+## Rückgabewert(e)
+Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.
 
-optionaler Parameter output = true
-immer nur ein Rückgabewert... mehrere Rückgabewerte können mit Komma getrennt übergeben werden. tuple unpacking
+```{python}
+# Beispiel 4: mehrere Rückgabewerte
 
-It’s important to note that the optional argument must always appear after any required arguments when defining the function
+# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
+def sum_potenzen(a, b, p = 2, ausgabe = False):
+    if ausgabe:
+      print('Wert Argument a:', a)
+      print('Wert Argument b:', b)
+      print('Wert Argument p:', p)
+      print(18 * '=')
+    summe = a**p + b**p
+    return a, b, summe
 
-using positional Arguments
+ergebnis = sum_potenzen(2, 7, ausgabe = False, p = 4)
+print(ergebnis, type(ergebnis))
+```
 
-*args wird verwendet, um eine variable Anzahl von nicht-schlüsselwortlichen Argumenten zu empfangen. Innerhalb der Funktion wird args als eine Tuple behandelt, die alle übergebenen Argumente enthält.
+Mit dem Slice Operator kann ein bestimmter Rückgabewert ausgewählt werden.
+
+```{python}
+print(ergebnis[2])
+
+summe_potenzen = sum_potenzen(2, 7, ausgabe = False, p = 4)[2]
+print(summe_potenzen, type(summe_potenzen))
+```
+
+<!-- ggf. ergänzen
+## anonyme Funktionen Lambdas
+<https://docs.python.org/3/reference/expressions.html#lambda> -->
+
+## Aufgaben Funktionen definieren
+1. Fibonacci-Zahlenreihe
+
+Entwickeln Sie eine Funktion fibonacci(n), die die ersten n Zahlen der Fibonacci-Reihe generiert und als Liste zurückgibt. Die Fibonacci-Reihe beginnt mit 0 und 1, jede weitere Zahl ist die Summe der beiden vorhergehenden Zahlen.
+
+2. Verschlüsselung
+
+Bei Geocachen werden oft verschlüsselte Botschaften als Rätsel verwendet. Oft wird folgende Logik zur Verschlüsselung angewendet:
+
+* A -> Z
+
+* B -> Y
+
+* C -> X
+
+* ...
+
+Schreiben Sie eine Funktion `verschluesseln(str)`, die einen String als Eingabewert bekommt und einen verschlüsselten String zurückgibt. Wie können Sie einen verschlüsselten String am einfachsten wieder entschlüsseln?
+
+3. Temperaturkonverter
+
+Entwickeln Sie eine Funktion `temperatur_umrechnen(wert, von_einheit, nach_einheit)`, die eine Temperatur von einer Einheit in eine andere umwandelt. Die Funktion soll folgende Parameter verwenden:
+
+  - wert: Der Temperaturwert, der umgewandelt werden soll.
+  
+  - von_einheit / nach_einheit: Die Einheit des Ausgangs- bzw. des Zielwerts als string. Mögliche Werte sind 'C' für Celsius, 'F' für Fahrenheit und 'K' für Kelvin.
+
+Es gelten die folgenden Umrechnungsformeln zwischen den Einheiten:
+
+  - Celsius nach Fahrenheit: F = C * 9/5 + 32
+  
+  - Fahrenheit nach Celsius: C = (F - 32) * 5/9
+  
+  - Celsius nach Kelvin: K = C + 273.15
+  
+  - Kelvin nach Celsius: C = K - 273.15
+  
+  - Fahrenheit nach Kelvin: K = (F - 32) * 5/9 + 273.15
+  
+  - Kelvin nach Fahrenheit: F = (K - 273.15) * 9/5 + 32
 
 
-using Keyword Arguments in Python
-
-**kwargs ist ähnlich wie *args, aber es wird verwendet, um eine variable Anzahl von schlüsselwortbasierten Argumenten zu empfangen. Innerhalb der Funktion wird kwargs als ein Dictionary behandelt.
-
-Keyword arguments allow developers to specify which arguments should have which values when calling a Python function. This is especially useful if order isn’t important. To use keyword arguments, pass in a dictionary with the keyword and its associated value as an argument. For example:
-
-my_dict = {"optional_arg1": 42} func_name(required_arg1, required_arg2, **my_dict)
-
-Ausgabe: return-statement
-
-## Lambdas
-<https://docs.python.org/3/reference/expressions.html#lambda>
+&nbsp;
+(@Arnold-2023-funktionen-module-dateien)

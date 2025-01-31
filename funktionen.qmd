@@ -373,7 +373,12 @@ print(list(range(5, 0)))
 print(list(reversed(range(0, 5))))
 ```
 
-### Aufgaben Flusskontrolle
+<!-- ggf. ergänzen
+return beendet die Ausführung des gesamten Anweisungsblocks
+break:  When the break statement is executed, the program immediately exits the loop, and the control moves to the next line of code after the loop.
+continue: forces to execute the next iteration of the loop while skipping the rest of the code inside the loop for the current iteration only -->
+
+## Aufgaben Flusskontrolle
 1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.
 
 2. Roulette: Schreiben Sie ein Programm, dass für eine Zahl prüft, ob diese im Wertebereich des Spieltischs liegt. Falls nein, soll eine Fehlermeldung ausgegeben werden. Falls ja, soll das Programm ausgeben, ob die Zahl

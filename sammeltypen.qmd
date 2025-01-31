@@ -451,6 +451,19 @@ print(modulo_3)
 
 :::
 
+## Listennotation
+
+::: {.border}
+Die sogenannte Listennotation ist eine Kurzschreibweise für for-Schleifen. In Listennotation geschriebene Schleifen müssen in einer Zeile stehen und haben die folgende Syntax:
+
+```{python}
+quadratzahlen = [wert ** 2 for wert in range(10, 0, -1)]
+print(quadratzahlen)
+```
+
+(@matthes2017python, S. 71)
+:::
+
 ## Aufgaben Sammeltypen
 1. Modifizieren Sie den Programmcode in @lst-quadratzahlen so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.
 
