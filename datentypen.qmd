@@ -1,125 +1,12 @@
-# Python-Code
-Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem [UTF-8](https://de.wikipedia.org/wiki/UTF-8) Format umgehen. UTF-8 ist eine sehr weit verbreitete Zeichenkodierung, welche das ASCII-Format erweitert und z. B. deutsche Sonderzeichen abbilden kann.
-
-In diesem Abschnitt werden die Grundzüge der Programmierung mit Python vermittelt. Sie erfahren, wie Sie Python-Code schreiben, was der Unterschied zwischen einem Objekt, seiner Klasse und dem Datentyp ist sowie wie Sie Operationen durchführen und die Ausgabe formatieren können. 
-
-## Python-Code
-Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden.
-
-1. Zahlen und Operatoren können direkt eingegeben werden. Text muss in einfache oder doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts.
-
-```{python}
-print(1 + 2)
-print('Hallo Welt!')
-text_variable = 'Hallo Python!'
-print(text_variable)
-```
-
-2. Kommentare werden mit einer vorangestellten `#` gekennzeichnet. Kommentare markieren Code, der nicht ausgeführt werden soll, oder Erläuterungen.
-
-```{python}
-# Ein reiner Kommentar
-# print("Python ist großartig!") # auskommentierter Code, gefolgt von einem Kommentar
-print("Python ist ziemlich gut.") # auszuführender Code, gefolgt von einem Kommentar
-```
-
-3. Ausdrücke müssen in einer Zeile stehen. Längere Ausdrücke können mit dem Zeichen `\` über mehrere Zeilen fortgesetzt werden (hinter `\` darf keine `#` stehen). Innerhalb von Funktionen wie zum Beispiel `print()` können Zeilen nach jedem Komma fortgesetzt werden.
-
-``` {python}
-variable1 = 15
-variable2 = 25
-
-# Zeilenfortsetzung mit \
-summe = variable1 + \
-    variable2
-
-# Zeilenfortsetzung innerhalb einer Funktion
-print(variable1,
- variable2,
-  summe)
-```
-
-*In dem obenstehenden Beispiel werden Variablen angelegt. Mit Variablen beschäftigten wir uns später in diesem Abschnitt. Trotzdem möchte ich Sie bitten, sich variable1 und variable2 nocheinmal kurz anzusehen. Wir kommen später darauf zurück.*
-
-4. Die Anzahl der Leerzeichen zwischen Operanden und Operatoren kann beliebig sein.
-
-``` {python}
-print(1+0, 1 + 1, 1 +                  2)
-```
-
-5. Die Einrückung mit Leerzeichen kennzeichnet einen zusammengehörigen Code-Block. Innerhalb eines Code-Blocks muss immer die gleiche Anzahl Leerzeichen verwendet werden. Es muss mindestens ein Leerzeichen gesetzt werden, ansonsten ist die Anzahl der Leerzeichen beliebig. Üblich sind 2 oder 4 Leerzeichen. Die for-Schleife führt alle Anweisungen im eingerückten Ausführungsblock aus. Die folgende, nicht eingerückte Zeile markiert den Beginn einer neuen, nicht zur Schleife gehörigen Anweisung.
-
-```{python}
-for i in range(3):
-    print(variable1)
-    print(variable2)
-print(summe)
-```
-
-## Klassen, Typen, Objekte und Datentypen
-Python ist eine objektorientierte Programmiersprache. Jedes Objekt gehört zu einer Klasse, die als Blaupause die *Eigenschaften* und *Verhaltensweisen* des Objekts bestimmt, etwa welche Daten gespeichert und welche Funktionen ausgeführt werden können. Objekte "erben" die Eigenschaften der Klasse, zu der sie gehören. In Python werden Klassen (class) auch Typen (type) genannt (In den Anfängen von Python waren Klassen und Typen noch verschieden). Ein kurzes Beispiel: Abhängig von ihrer Klasse, verhalten sich Objekte anders mit dem Operator `+`.
-
-```{python}
-print(type(2), 2 + 2, "Ganzzahlen werden addiert.")
-print(type('a'), 'a' + 'a', "Zeichen werden verkettet.")
-print(type(True and False), True + False + True, "Logische Werte werden addiert.")
-```
-
-Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. 
-Anders verhält es sich mit `None`, also nicht existenten Werten:
-
-```{python}
-try:
-  None + None
-except TypeError as error:
-  print(error)
-```
-
-Python kennt sehr viele Typen (Klassen).
-
-::: {.border}
-![Datentypen in Python](skript/00-bilder/python3-standard-type-hierarchy.png){width="60%" fig-alt="Dargestellt ist eine Kategorisierung der Standardtypen in Python. Die Kategorisierung ist nicht vollständig deckungsgleich zu den in der Dokumentation genannten Kategorien von Datentypen. Der Typ None für Nullwerte hat keine weitere Unterteilung. Die Kategorie Numbers unterteilt sich in Zahlenwerte (Ganzzahlen, boolsche Wahrheitswerte), reele Zahlen (floats) und komplexe Zahlen. Die Kategorie Sequences unterteilt sich in Unveränderliche (Strings, Tuple, Bytes) und Veränderliche (Listen, Byte Arrays). Die Kategorie Set Types unterteilt sich in Sets (Mengen) und Frozen Sets. Die Kategorie Mappings enthält Dictionaries (Wörterbücher). Die Kategorie Callable umfasst Funktionen, Methoden und Klassen. Außerdem gibt es die Kategorie Module."}
-
-Python 3. The standard type hierarchy. von Максим Пе ist lizensiert unter [CC BY SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) und abrufbar auf [wikimedia](https://commons.wikimedia.org/wiki/File:Python_3._The_standard_type_hierarchy.png). 2018
-:::
-
-&nbsp;
-
-#### Datentypen
-Objekte, die Daten speichern, haben einen Datentyp. Der Datentyp gibt an, wie die gespeicherten Werte von Python interpretiert werden sollen. Beispielsweise kann der Wert "1" ein Zeichen, eine Ganzzahl, einen Wahrheitswert, den Monat Januar oder die Ausprägung einer kategorialen Variablen repräsentieren.
-
-In der Pythonbasis gibt es nur einfache Datentypen wie Ganzzahl oder Gleitkommazahlen, weshalb der Unterschied zwischen Klassen und Datentypen nicht sofort offensichtlich ist. In Python sind die Begriffe manchmal synonym, etwa für die Klasse der Ganzzahlen 'int' und den Datentyp 'int'. Jedes Objekt gehört zu einer Klasse, aber nicht jeder Klasse ist ein Datentyp zuordenbar - beispielsweise sind auch Funktionen Objekte und gehören einer eigenen Klasse an. Die Funktion print speichert aber keine Daten und hat deshalb auch keinen Datentyp.
-
-```{python}
-type(print)
-```
-
-Deutlicher wird der Unterschied zwischen Klassen und Datentyp erst in spezialisierten Paketen wie NumPy **Querverweis auf w-NumPy** oder Pandas **Querverweis auf w-Pandas**, die weitere Datentypen in Python einführen, wie zum Beispiel Gleitkommazahlen mit 32 Bit (Datentyp 'float32') und 64 Bit Speicherplatzbedarf (Datentyp 'float64'). Objekte vom Datentyp float32 und float64 gehören zur selben Klasse (siehe Beispiel): Sie haben die selben allgemeinen Eigenschaften und Verhaltensweisen. Sie haben aber einen unterschiedlichen Wertebereich und Speicherplatzbedarf - Gleitkommazahlen mit 64 Bit können größere Zahlen speichern, nehmen aber doppelt so viel Platz im Speicher des Computers ein.
-
-::: {#nte-numpypandas .callout-note collapse="true"}
-## Datentypen in NumPy und Pandas
-Die Module NumPy und Pandas sind wichtige Bausteine für die Datenanalyse mit Python.
-
-```{python}
-import numpy as np
-
-float_64 = np.array([1.0])
-print("Der Datentyp des Objekts float_64 ist:", float_64.dtype)
-print("Das Objekt gehört zur Klasse der n-dimensionalen NumPy-Arrays:", type(float_64), "\n")
-
-float_32 = np.array([1.0], dtype = 'float32')
-print("Der Datentyp des Objekts float_32 ist:", float_32.dtype)
-print("Das Objekt gehört zur Klasse der n-dimensionalen NumPy-Arrays:", type(float_32))
-```
-
-:::
+# Datentypen
+Objekte, die Daten speichern, haben einen Datentyp. Der Datentyp gibt an, wie die gespeicherten Werte von Python interpretiert werden sollen. Beispielsweise kann der Wert "1" in Python ein Zeichen, eine Ganzzahl, einen Wahrheitswert, den Monat Januar, den Wochentag Dienstag oder die Ausprägung einer kategorialen Variablen repräsentieren.
 
 In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
 
-### Zahlen
-Zu den Zahlen gehören Ganzzahlen und boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.
+## Zahlen
+Zu den Zahlen gehören Ganzzahlen, boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.
 
-#### Ganzzahlen
+### Ganzzahlen
 Ganzzahlen werden standardmäßig im Dezimalsystem eingegeben und können positiv oder negativ sein.
 
 ```{python}
@@ -146,7 +33,7 @@ print(0xF000, "plus", 0x0200, "plus", 0x00A0, \
       "plus", 0x0001, "ist", 0xF2A1)
 ```
 
-#### Gleitkommazahlen
+### Gleitkommazahlen
 Gleitkommazahlen werden entweder mit dem Dezimaltrennzeichen `.` oder in Exponentialschreibweise angegeben. Gleitkommazahlen haben den Typ `float`.
 
 ```{python}
@@ -176,7 +63,7 @@ print(0.0001 + 0.0002)
 print(0.00001 + 0.00002)
 ```
 
-### Arithmetische Operatoren
+## Arithmetische Operatoren
 Mit arithmetischen Operatoren können die Grundrechenarten verwendet werden. Das Ergebnis ist meist vom Typ `float`, außer, wenn beide Operanden vom Typ `int` sind und das Ergebnis als ganze Zahl darstellbar ist.
 
 | Operator | Beschreibung |
@@ -196,7 +83,7 @@ Werden mehrere Operatoren kombiniert, so muss deren Reihenfolge beachtet bzw. du
 
 Bei gleichrangigen Operationen werden diese von links nach rechts ausgeführt.
 
-### Aufgaben Zahlen
+## Aufgaben Zahlen
 **Lösen Sie die folgenden Aufgaben mit Python.**
 
 1. 4 + 2 * 4 = ?
@@ -217,7 +104,7 @@ Bei gleichrangigen Operationen werden diese von links nach rechts ausgeführt.
 ## Musterlösung Zahlen
 :::
 
-### Boolsche Werte
+## Boolsche Werte
 Die boolschen Werte `True` und `False` sind das Ergebnis logischer Abfragen, die wir später genauer kennenlernen. Sie nehmen auch die Werte `1` und `0` an und gehören in Python deshalb zu den Zahlen.
 ```{python}
 print("Ist 10 größer als 9?", 10 > 9)
@@ -230,7 +117,7 @@ print("... und mit * multipliziert werden:", True * False, "\n")
 
 Die Multiplikation von Wahrheitswerten ist nützlich, um mehrere logische Abfragen zu einem logischen UND zu kombinieren:
 ```{python}
-print("Ist 10 > 9 UND > 8?", (10 > 9) * (10 > 8))
+print("Ist 10 > 9 UND 10 > 8?", (10 > 9) * (10 > 8))
 ```
 
 Die Funktion `bool()` gibt den Wahrheitswert eines Werts zurück.
@@ -244,7 +131,7 @@ print(bool(1), bool(2), bool(2.4))
 print(bool('a'), bool('b'), bool('ab'))
 ```
 
-Neben `False` und `0` haben leere und nicht existierende Werte und Objekte den Wahrheitswert `False`.
+Neben `False` und `0` haben leere und nicht existierende Werte oder Objekte den Wahrheitswert `False`.
 
 ```{python}
 print(bool(False), bool(0))
@@ -268,7 +155,7 @@ if meine_Liste:
 
 ```
 
-### Logische Operatoren
+## Logische Operatoren
 Zu den logischen Operatoren gehören die logischen Verknüpfungen `and`, `or` und `not`. Darüber hinaus können auch vergleichende Operatoren wie `>`, `>=` oder `==` verwendet werden. Das Ergebnis dieser Operationen ist vom Typ `bool`. Die Operatoren werden in folgender Reihenfolge ausgeführt. Gleichrangige Operatoren werden von links nach rechts ausgeführt.
 
 | Operator | Beschreibung |
@@ -301,7 +188,7 @@ Die Operatoren `&`, `^` und `|` haben jedoch für Mengen (die wir später kennen
 ::::
 :::
 
-### Aufgaben boolsche Werte
+## Aufgaben boolsche Werte
 **Lösen Sie die Aufgaben mit Python.**
 
 1. Ist das Verhältnis aus 44 zu 4.5 größer als 10?
@@ -311,12 +198,12 @@ Die Operatoren `&`, `^` und `|` haben jedoch für Mengen (die wir später kennen
 5. Prüfen Sie, ob eine Person den Vollpreis bezahlen muss, wenn Sie Ihr Alter angibt.  
 Kinder unter 14 Jahren fahren kostenlos, Jugendliche zwischen 14 und 18 Jahren und Senior:innen ab 65 Jahren erhalten einen Rabatt.
 
-### Zeichenfolgen
+## Zeichenfolgen
 Zeichenfolgen (Englisch string) werden in Python in einfache oder doppelte Anführungszeichen gesetzt.
 
 ```{python}
-print('eine x-beliebige Zeichenfolge')
-print("noch eine x-beliebige Zeichenfolge")
+print('eine Zeichenfolge')
+print("noch eine Zeichenfolge")
 ```
 
 Innerhalb einer Zeichenfolge können einfache oder doppelte Anführungszeichen verwendet werden, solange diese nicht den die Zeichenfolge umschließenden Anführungszeichen entsprechen.
@@ -333,21 +220,23 @@ print("Erst ein\tTabstopp, dann eine\nneue Zeile.")
 
 Ein vorangestelltes `r` bewirkt, dass das Steuerzeichen `\` nicht verarbeitet wird (raw string literal). Dies ist beispielsweise bei der Arbeit mit Dateipfaden praktisch.
 ```{python}
+#| warning: false
+
 print("Die Daten liegen unter: C:\tolle_daten\nordpol\weihnachtsmann")
 print(r"Die Daten liegen unter: C:\tolle_daten\nordpol\weihnachtsmann")
 ```
 
-### Operationen mit Zeichenfolgen
+## Operationen mit Zeichenfolgen
 Einige Operatoren funktionieren auch mit Daten vom Typ string.
 
 ```{python}
 
 # string + string
-print('a' + 'b') # -, *, / funktionieren nicht
+print('a' + 'b')
 print("\n")
 
 # string + Zahl
-print(15 * 'a') # +, -, / funktionieren nicht
+print(15 * 'a')
 print("\n")
 
 # logische Operatoren
@@ -355,7 +244,7 @@ print('a' < 'b', 'a' >= 'b', 'a' != 'b')
 print('a' or 'b', 'a' and 'b')
 ```
 
-### Aufgaben Zeichenfolgen
+## Aufgaben Zeichenfolgen
 **Lösen Sie die Aufgaben mit Python.**
 
 1. Was passiert, wenn Sie die Zeichenfolge "Python" mit "for beginners" addieren?
@@ -370,7 +259,7 @@ print('a' or 'b', 'a' and 'b')
 
 ::: 
 
-### Variablen
+## Variablen
 Variablen sind Platzhalter bzw. Referenzen auf Daten. Die Zuweisung wird durch den Zuweisungsoperator `=` dargestellt. Der Name einer Variablen darf nur aus Buchstaben, Zahlen und Unterstrichen bestehen. Dabei darf das erste Zeichen keine Zahl sein.
 
 ```{python}
@@ -424,7 +313,7 @@ print(f"Umwandlung in Wahrheitswerte mit bool(): {bool(a), bool(b)}")
 
 ``` 
 
-#### Weitere Zuweisungsoperatoren
+### Weitere Zuweisungsoperatoren
 In dem obenstehenden Code-Block wurde der sogenannte [Walross-Operator](https://docs.python.org/3/whatsnew/3.8.html) `:=` verwendet. Dieser erlaubt es, Zuweisungen innerhalb eines Ausdrucks (hier innerhalb der Funktion `print()`) vorzunehmen. Python kennt eine ganze Reihe weiterer Zuweisungsoperatoren (weitere Operatoren siehe [Python-Dokumentation](https://docs.python.org/3/reference/simple_stmts.html) oder übersichtlicher [hier](https://www.w3schools.com/python/python_operators.asp)).
 
 | Operator | entspricht der Zuweisung |
@@ -444,15 +333,24 @@ Die in der Tabelle gezeigten Zuweisungsoperatoren sind für jemanden, der*die Ih
 Dagegen kann der Walross-Operator an einer beliebigen Stelle in Ihrem Code stehen. Das mag für Sie beim Schreiben ein Vorteil sein, der Lesbarkeit ist das aber abträglich. Wenn Sie den Walross-Operator verwenden, achten Sie deshalb auf die Nachvollziehbarkeit Ihres Codes.
 :::
 
-#### Benennung von Variablen
+### Benennung von Variablen
 Für die Benennung von Variablen gibt es (meist) nur wenige Vorgaben. Trotzdem ist es besser, einen langen, aber ausführlichen Variablennamen zu vergeben, als einen kurzen, der sich schnell schreiben lässt. Denn Programmcode wird deutlich häufiger gelesen als geschrieben. Können Sie sich erinnern? Welcher Wert ist in der Variablen `Var_3` gespeichert, und welche Werte sind in `variable1` und `a` gespeichert? Es reicht schon, wenn Sie sich an den richtigen Datentyp erinnern können.
 
 Falls Sie sich nicht erinnern können, dann ist dieses Beispiel gelungen: Die Namensgebung dieser Variablen ist alles andere als gut. Die Auflösung steht im folgenden Aufklapper.
 
 ::: {.callout-tip collapse="true"}
-## Auflösung
+## Auflösung Variablen
+
 ```{python}
-print(type(var_3), type(variable1), type(a))
+#| echo: false
+variable1 = 15
+variable2 = 25
+```
+
+```{python}
+print(var_3, type(var_3))
+print(variable1, type(variable1))
+print(a, type(a))
 ```
 
 :::
@@ -463,10 +361,10 @@ Deshalb empfiehlt es sich "sprechende", das heißt selbsterklärende, Variablenn
 ::: {.callout-warning}
 ## Schlüsselwörter und Funktionsnamen
 
-In Python reservierte Schlüsselwörter und Funktionsnamen sind ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen problemslos neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion print dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung aus dem Skript entfernen und Python neu starten.  
+In Python reservierte Schlüsselwörter und Funktionsnamen sind ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion print dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung aus dem Skript entfernen und Python neu starten.  
 :::
 
-### Aufgaben Variablen
+## Aufgaben Variablen
 1. Schreiben Sie ein Skript, welches eine gegebene Zeit 𝗍 in Sekunden in die Anzahl Tage, Stunden, Minuten und Sekunden aufteilt und diese Aufteilung ausgibt.  
 Berechnen Sie die Aufteilung für folgende Zeiten:
 
@@ -500,98 +398,5 @@ Geben Sie nicht nur den Wert von $x(t)$ in Kilometer aus, sondern betten ihn in 
 :::
 
 [@Arnold-2023-datentypen-und-grundlagen]
-
-## Ausgabe formatieren
-Mit sogenannten `f-Strings` können formatierte Zeichenketten erstellt werden. Formatierte Zeichenketten werden mit einem vorgesetzten `f` vor den Anführungsstrichen erstellt. Werte und Variablen können durch Platzhalter eingesetzt werden, die mit geschweiften Klammern `{}` angegeben und mit Formattierungsinformationen versehen werden. Das Formatierungsformat innerhalb der geschweiften Klammer ist, vereinfacht dargestellt:
-
-```
-{Variablenname:PlatzbedarfAusgabetyp}
-```
-
-Ein f-String mit Platzhaltern ohne Formatierungsinformationen:
-```{python}
-zahl1 = 5
-zahl2 = 7
-verhältnis = zahl1 / zahl2
-print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis}.")
-```
-
-Die Anzahl der darzustellenden Nachkommastellen kann wie folgt festgelegt werden: `{verhältnis:.2f}`.
-
-  - `:` leitet die Formatierungsbefehle ein.
-
-  - `.` gibt an, dass Formatierungsinformationen für die Darstellung hinter dem Dezimaltrennzeichen folgen.
-
-  - `2` ist der Wert für die darzustellenden Nachkommastellen.
-
-  - `f` spezifiziert die Darstellung einer Gleitkommazahl 'float'.
-
-```{python}
-print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis:.2f}.")
-```
-
-Das gleiche ist mit einem Wert möglich:
-```{python}
-print(f"Das Verhältnis ist genauer {0.7142857142857143:.3f}.")
-```
-
-Ein Wert für die insgesamt darzustellenden Stellen wird vor dem Dezimaltrennzeichen übergeben `{verhältnis:7.2f}` bzw. inklusive führender Nullen `{verhältnis:07.2f}`: 
-```{python}
-print(f"Das Verhältnis von {zahl1} zu {zahl2} ist {verhältnis:7.2f}.")
-print(f"Das Verhältnis ist genauer {0.7142857142857143:07.3f}.")
-```
-
-Das Dezimaltrennzeichen zählt als eine Stelle.
-
-Häufig verwendete Formatierung sind:
-
-::: {.panel-tabset}
-## ganze Zahlen
-Ganze Zahlen haben den Ausgabetyp `d`.
-
-| Formatierung | Ausgabe |
-|---|--------|
-| `nd` | n-Stellen werden für die Ausgabe verwendet |
-| `0nd` | Ausgabe von n-Stellen, wobei die Leerstellen mit Nullen aufgefüllt werden. |
-| `+d` | Ausgabe des Vorzeichens auch bei positiven Zahlen |
-
-## Gleitkommazahlen
-Gleitkommazahlen haben die Ausgabetypen `f` und `e`.
-
-| Formatierung | Ausgabe |
-|---|--------|
-| `.mf` | m-Stellen werden für die Nachkommastellen genutzt. |
-| `n.mf` | Insgesamt werden n-Stellen verwendet, wobei m-Stellen für die Nachkommastellen genutzt werden. |
-| `n.me` | Genauso, aber die Ausgabe erfolgt in exponentieller Schreibweise. |
-
-## Zeichenketten
-Zeichenketten haben den Ausgabetyp `s`.
-
-| Formatierung | Ausgabe |
-|---|--------|
-| `ns` | Insgesamt werden n-Stellen verwendet. |
-| `<ns`, `>ns`, `^ns` | Genauso, jedoch wird die Zeichenkette linksbündig, rechtsbündig bzw. zentriert platziert. |
-
-:::
-
-Eine Auflistung aller verfügbaren Ausgabetypen findet sich in der [Python Dokumentation](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting).
-
-### Aufgaben Ausgabe
-1. "Gleitkommazahlen können natürlich, z. B. {1015.39:12.4f}, oder wissenschaftlich, {1015.39:e}, dargestellt werden."
- 
- - Verändern Sie die natürliche Schreibwese so, dass nur noch eine Stelle nach dem Komma angezeigt wird. Was fällt auf?
- 
- - Verändern Sie die wissenschaftliche Schreibweise so, dass anstelle von `e` die Zehnerbasis als `E` geschrieben wird.
-
-2. Wandeln Sie die Zahl 1015.39 in eine Zeichenkette um und stellen Sie diese mit 12 Stellen rechtsbündig dar.
-
-3. Geben Sie mit Hilfe der formatierten Zeichenketten eine Tabelle aus, welche die Spalten $x$, $x^2$ und $x^3$ für ganze Zahlen zwischen -2 und 2 auflistet.
-
-
-**Die Musterlösung kann Marc machen.**
-
-::: {#tip-lösungausgabe .callout-tip collapse="true"}
-## Musterlösung Ausgabe
-:::
 
 [@Arnold-2023-funktionen-module-dateien]

@@ -84,7 +84,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./string-methods.html" rel="next">
+<link href="./dateien-lesen-und-schreiben.html" rel="next">
 <link href="./sammeltypen.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -179,8 +179,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./python-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python-Code</span></span></a>
+  <a href="./datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,14 +203,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./string-methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Methods</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
   </div>
 </li>
     </ul>
@@ -252,7 +246,7 @@ div.csl-indent {
 </header>
 
 
-<p>In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:</p>
+<p>Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:</p>
 <ul>
 <li><p>Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.</p></li>
 <li><p>Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.</p></li>
@@ -260,14 +254,14 @@ div.csl-indent {
 </ul>
 <section id="syntax" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">5.1</span> Syntax</h2>
-<p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird.</p>
-<div id="c3232d5f" class="cell" data-execution_count="1">
+<p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird. <code>return</code> beendet die Ausführung der Schleife.</p>
+<div id="6025b823" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Funktionsname(Argument1, Argument2):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    Anweisungsblock</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Rückgabewert</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden.</p>
-<div id="d3cb36e6" class="cell" data-execution_count="2">
+<div id="5a1b95bd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 1: Summe der Quadrate</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -287,7 +281,7 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Der Rückgabewert kann in einer Variablen gespeichert werden.</p>
-<div id="d63808f0" class="cell" data-execution_count="3">
+<div id="37bbdd6f" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> sum_quadrate(<span class="dv">6</span>, <span class="dv">7</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -301,7 +295,7 @@ Wert Argument b: 7
 <section id="optionale-parameter" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="optionale-parameter"><span class="header-section-number">5.2</span> Optionale Parameter</h2>
 <p>Dabei kann die in der Funktion enthaltene Ausgabe mit <code>print()</code> unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden.</p>
-<div id="91f039f1" class="cell" data-execution_count="4">
+<div id="71d80427" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 2: optionale Argumente</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -325,7 +319,7 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.</p>
-<div id="997d5356" class="cell" data-execution_count="5">
+<div id="096f6edd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 3: mehrere optionale Argumente</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -361,7 +355,7 @@ Wert Argument p: 4
 <section id="rückgabewerte" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="rückgabewerte"><span class="header-section-number">5.3</span> Rückgabewert(e)</h2>
 <p>Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.</p>
-<div id="e3789257" class="cell" data-execution_count="6">
+<div id="67817c96" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 4: mehrere Rückgabewerte</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -381,7 +375,7 @@ Wert Argument p: 4
 </div>
 </div>
 <p>Mit dem Slice Operator kann ein bestimmter Rückgabewert ausgewählt werden.</p>
-<div id="5c23bc5a" class="cell" data-execution_count="7">
+<div id="ae746dcf" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis[<span class="dv">2</span>])</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>summe_potenzen <span class="op">=</span> sum_potenzen(<span class="dv">2</span>, <span class="dv">7</span>, ausgabe <span class="op">=</span> <span class="va">False</span>, p <span class="op">=</span> <span class="dv">4</span>)[<span class="dv">2</span>]</span>
@@ -394,14 +388,22 @@ Wert Argument p: 4
 <!-- ggf. ergänzen
 ## anonyme Funktionen Lambdas
 <https://docs.python.org/3/reference/expressions.html#lambda> -->
+<!-- ggf. ergänzen
+return beendet die Ausführung des gesamten Anweisungsblocks
+-->
 </section>
 <section id="aufgaben-funktionen-definieren" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="aufgaben-funktionen-definieren"><span class="header-section-number">5.4</span> Aufgaben Funktionen definieren</h2>
 <ol type="1">
+<li>Palindrom<br>
+Schreiben Sie eine Funktion is_palindrome(), die prüft, ob es sich bei einer übergebenen Zeichenkette um ein Palindrom handelt.</li>
+</ol>
+<p><em>Hinweis: Ein Palindrom ist eine Zeichenkette, die von vorne und von hinten gelesen gleich bleibt, wie beispielsweise ‘Anna’, ‘Otto’, ‘Lagerregal’. Palindrome müssen nicht aus Buchstaben bestehen, sie können sich auch aus Zahlen oder Buchstaben und Zahlen zusammensetzen wie beispielsweise ‘345g543’.</em></p>
+<ol start="2" type="1">
 <li>Fibonacci-Zahlenreihe</li>
 </ol>
 <p>Entwickeln Sie eine Funktion fibonacci(n), die die ersten n Zahlen der Fibonacci-Reihe generiert und als Liste zurückgibt. Die Fibonacci-Reihe beginnt mit 0 und 1, jede weitere Zahl ist die Summe der beiden vorhergehenden Zahlen.</p>
-<ol start="2" type="1">
+<ol start="3" type="1">
 <li>Verschlüsselung</li>
 </ol>
 <p>Bei Geocachen werden oft verschlüsselte Botschaften als Rätsel verwendet. Oft wird folgende Logik zur Verschlüsselung angewendet:</p>
@@ -412,13 +414,13 @@ Wert Argument p: 4
 <li><p>…</p></li>
 </ul>
 <p>Schreiben Sie eine Funktion <code>verschluesseln(str)</code>, die einen String als Eingabewert bekommt und einen verschlüsselten String zurückgibt. Wie können Sie einen verschlüsselten String am einfachsten wieder entschlüsseln?</p>
-<ol start="3" type="1">
+<ol start="4" type="1">
 <li>Temperaturkonverter</li>
 </ol>
-<p>Entwickeln Sie eine Funktion temperatur_umrechnen(wert, von_einheit, nach_einheit), die eine Temperatur von einer Einheit in eine andere umwandelt. Die Funktion soll folgende Parameter verwenden:</p>
+<p>Entwickeln Sie eine Funktion <code>temperatur_umrechnen(wert, von_einheit, nach_einheit)</code>, die eine Temperatur von einer Einheit in eine andere umwandelt. Die Funktion soll folgende Parameter verwenden:</p>
 <ul>
 <li><p>wert: Der Temperaturwert, der umgewandelt werden soll.</p></li>
-<li><p>von_einheit / nach_einheit: Die Einheit des Ausgangs- bzw. des Zielwerts, als string. Mögliche Werte sind ‘C’ für Celsius, ‘F’ für Fahrenheit und ‘K’ für Kelvin.</p></li>
+<li><p>von_einheit / nach_einheit: Die Einheit des Ausgangs- bzw. des Zielwerts als string. Mögliche Werte sind ‘C’ für Celsius, ‘F’ für Fahrenheit und ‘K’ für Kelvin.</p></li>
 </ul>
 <p>Es gelten die folgenden Umrechnungsformeln zwischen den Einheiten:</p>
 <ul>
@@ -429,6 +431,23 @@ Wert Argument p: 4
 <li><p>Fahrenheit nach Kelvin: K = (F - 32) * 5/9 + 273.15</p></li>
 <li><p>Kelvin nach Fahrenheit: F = (K - 273.15) * 9/5 + 32</p></li>
 </ul>
+<p><strong>Die Musterlösung kann Marc machen</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Musterlösung Aufgaben Funktionen definieren
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
 <p>&nbsp; (<span class="citation" data-cites="Arnold-2023-funktionen-module-dateien">Arnold (<a href="#ref-Arnold-2023-funktionen-module-dateien" role="doc-biblioref">2023</a>)</span>)</p>
 
 
@@ -856,8 +875,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./string-methods.html" class="pagination-link" aria-label="String Methods">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">String Methods</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dateien-lesen-und-schreiben.html" class="pagination-link" aria-label="Dateien lesen und schreiben">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

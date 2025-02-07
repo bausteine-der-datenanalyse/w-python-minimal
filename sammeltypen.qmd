@@ -9,17 +9,10 @@ Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und
 
   - [assoziative Arrays](https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29) oder Dictionaries sind Zuordnungstabellen, d. h. sie bestehen aus Schlüssel-Wert-Paaren. 
   
-In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen ausführlich erläutert.
+In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.
 
-**Dieses Kapitel leidet an den Ausnahmen: geteilter Speicherbereich (betrifft Listen und Dictionaries), Zugriffsoperator nicht für Mengen definiert, Methode `.copy()` nicht für Tupel definiert.**
-
-  - Mengen als letztes vorstellen, da diese am Unterschiedlichsten sind.
-
-  - Sonderthemen später behandeln
-
-    - Arbeiten mit Listen
-
-    - Unterschiede der übrigen Sammeltypen zu Listen
+**Dieses Kapitel leidet an den Ausnahmen: geteilter Speicherbereich (betrifft Listen und Dictionaries), Zugriffsoperator nicht für Mengen definiert, Methode `.copy()` nicht für Tupel definiert.**  
+**Der Slice-Operator ist unnatürlich platziert.**
 
 ## Listen
 Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt. Listen können mit dem `+`-Operator verkettet werden. `*` verkettet eine Liste n-mal.
@@ -101,6 +94,15 @@ Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl 
 &nbsp;
 
 (Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
+
+#### Zeichenfolgen
+Auch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.
+
+```{python}
+print('Ich bin ein string'[::2])
+print('Hallo Welt'[0:6])
+print('abc'[::-1])
+```
 
 ### Listenmethoden
 Für den Listentyp sind verschiedene Methoden definiert.
@@ -386,7 +388,7 @@ print("dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n",
 
 ```
 
-## Übersicht
+## Übersicht Sammeltypen
 | Merkmal                                        | Listen | Tupel | Mengen | Dictionary |
 |------------------------------------------------|--------|-------|--------|------------|
 | Beschreibung                            | flexible Anzahl von Elementen beliebigen Typs | Elemente beliebigen Typs, unveränderlich | ungeordnete Sammlung, jedes Element nur einmal enthalten | Zuordnungstabelle aus Schlüssel-Wert-Paaren |
@@ -395,16 +397,6 @@ print("dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n",
 | Slice-Operator anwendbar                       | ja     | ja    | nein   | ja (nach Schlüssel) |
 
 &nbsp;
-
-Die Sammeltypen können ineinander umgewandelt werden. **wohin?!**
-
-```{python}
-dictionary = {1: 'Kater', 2: 'Fähre', 3: 'Ricke'}
-print( (liste := list(dictionary)) )
-print( (menge := set(liste)) )
-print( (tupel := tuple(menge)) )
-
-```
 
 ## Löschen: das Schlüsselwort del
 Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort `del` verwendet werden.
@@ -425,10 +417,20 @@ print("Dictionary nach dem Löschen", dictionary1)
 ```
 
 ## Funktionen
+Die Sammeltypen können ineinander umgewandelt werden.
+
+```{python}
+dictionary = {1: 'Kater', 2: 'Fähre', 3: 'Ricke'}
+print( (liste := list(dictionary)) )
+print( (menge := set(liste)) )
+print( (tupel := tuple(menge)) )
+
+```
+
 Einige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:
 
-* `len()`: liefert die Länge einer Liste, bzw. Sammeltyps, zurück
-* `min()`, `max()`, `sum()`: gibt das Minimum, Maximum bzw. die Summe einer numerischen Liste zurück
+* `len()` liefert die Länge eines Sammeltyps zurück
+* `min()`, `max()`, `sum()` gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt)
 
 ## Operationen: Verwendung von Schleifen
 Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste 'modulo_3' gespeichert.

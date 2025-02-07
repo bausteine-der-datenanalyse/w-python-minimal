@@ -17,7 +17,7 @@ book:
   chapters:
     - index.qmd
     - einleitung.qmd
-    - python-code.qmd
+    - datentypen.qmd
     - funktionen.qmd
     - sammeltypen.qmd
     - funktionen-definieren.qmd

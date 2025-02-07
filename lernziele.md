@@ -1,6 +1,6 @@
 In diesem Bausteine werden die Grundzüge der Programmierung mit Python vermittelt. In diesem Baustein lernen Sie ...
 
-  - Grundbegriffe der objektorientierten Programmierung.
+  - Grundbegriffe der objektorientierten Programmierung kennen.
   
   - Python-Code zu schreiben, Variablen zu erstellen, Operationen durchzuführen und die Ausgabe zu formatieren.
 

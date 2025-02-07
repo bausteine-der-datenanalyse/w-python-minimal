@@ -1,5 +1,5 @@
 # Eigene Funktionen definieren
-In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
+Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
 
   - Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.
 
@@ -8,7 +8,7 @@ In diesem Kapitel wird gezeigt, wie Sie eigene Funktionen definieren können. Da
   - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
 
 ## Syntax
-Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird. 
+Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird.  `return` beendet die Ausführung der Schleife.
 
 ``` {python}
 #| output: false
@@ -114,12 +114,21 @@ print(summe_potenzen, type(summe_potenzen))
 ## anonyme Funktionen Lambdas
 <https://docs.python.org/3/reference/expressions.html#lambda> -->
 
+<!-- ggf. ergänzen
+return beendet die Ausführung des gesamten Anweisungsblocks
+-->
+
 ## Aufgaben Funktionen definieren
-1. Fibonacci-Zahlenreihe
+1. Palindrom  
+Schreiben Sie eine Funktion is_palindrome(), die prüft, ob es sich bei einer übergebenen Zeichenkette um ein Palindrom handelt.
+
+*Hinweis: Ein Palindrom ist eine Zeichenkette, die von vorne und von hinten gelesen gleich bleibt, wie beispielsweise ‘Anna’, ‘Otto’, ‘Lagerregal’. Palindrome müssen nicht aus Buchstaben bestehen, sie können sich auch aus Zahlen oder Buchstaben und Zahlen zusammensetzen wie beispielsweise ‘345g543’.*
+
+2. Fibonacci-Zahlenreihe
 
 Entwickeln Sie eine Funktion fibonacci(n), die die ersten n Zahlen der Fibonacci-Reihe generiert und als Liste zurückgibt. Die Fibonacci-Reihe beginnt mit 0 und 1, jede weitere Zahl ist die Summe der beiden vorhergehenden Zahlen.
 
-2. Verschlüsselung
+3. Verschlüsselung
 
 Bei Geocachen werden oft verschlüsselte Botschaften als Rätsel verwendet. Oft wird folgende Logik zur Verschlüsselung angewendet:
 
@@ -133,7 +142,7 @@ Bei Geocachen werden oft verschlüsselte Botschaften als Rätsel verwendet. Oft 
 
 Schreiben Sie eine Funktion `verschluesseln(str)`, die einen String als Eingabewert bekommt und einen verschlüsselten String zurückgibt. Wie können Sie einen verschlüsselten String am einfachsten wieder entschlüsseln?
 
-3. Temperaturkonverter
+4. Temperaturkonverter
 
 Entwickeln Sie eine Funktion `temperatur_umrechnen(wert, von_einheit, nach_einheit)`, die eine Temperatur von einer Einheit in eine andere umwandelt. Die Funktion soll folgende Parameter verwenden:
 
@@ -155,6 +164,12 @@ Es gelten die folgenden Umrechnungsformeln zwischen den Einheiten:
   
   - Kelvin nach Fahrenheit: F = (K - 273.15) * 9/5 + 32
 
+**Die Musterlösung kann Marc machen**
+
+::: {.callout-tip collapse="true"}
+## Musterlösung Aufgaben Funktionen definieren
+
+:::
 
 &nbsp;
 (@Arnold-2023-funktionen-module-dateien)

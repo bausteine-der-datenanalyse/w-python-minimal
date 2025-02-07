@@ -1,7 +1,7 @@
 # Funktionen: Grundlagen
-Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. Durch das Laden von Modulen können weitere Funktionen hinzugefügt werden. Außerdem können eigene Funktionen definiert werden. In diesem Kapitel wird die allgemeine Verwendung von Funktionen in Python vermittelt.
+Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. In diesem Kapitel wird die allgemeine Verwendung der in Python enthaltenen Funktionen vermittelt.
 
-Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Argumente - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.
+Eine vollständige Beschreibung der in Python verfügbaren Funktionen ist nicht nur wegen des Umfangs - einige Funktionen haben dutzende dokumentierte Parameter - unmöglich. Auch kann Python umfangreich durch Module erweitert werden und wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist.
 
 ::: {#tip-dokumentation .callout-tip collapse="false"}
 ## Dokumentation
@@ -22,7 +22,7 @@ Achten Sie auf die korrekte Version der Dokumentation.
 :::
 
 ## Funktionen und Methoden
-In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden. In diesem Kapitel werden hauptsächlich Funktionen behandelt. Im Kapitel **Querverweis** wird der Umgang mit Methoden vertieft.
+In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.
 
 ### Funktionen
 Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern `()` aufgerufen. Ein Beispiel ist die Funktion `print()`, der Objekte unabhängig von ihrem Datentyp übergeben werden können.
@@ -45,12 +45,11 @@ print(res)
 ```
 
 ### Methoden
-Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Variablen bzw. Objekte abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einem bestimmten Datentyp gehören. Methoden werden getrennt durch einen Punkt `.` hinter Objekten mit ihrem Namen aufgerufen: `Variable.Methode` bzw. `(Wert).Methode`. Die Methoden `.upper()`, `.lower()` und `.title` sind für Zeichenfolgen definierte Methoden.
+Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Variablen bzw. Objekte abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einem bestimmten Datentyp gehören. Methoden werden getrennt durch einen Punkt `.` hinter Objekten mit ihrem Namen aufgerufen: `variable.methode` bzw. `(wert).methode`. Beispielsweise sind `.upper()`, `.lower()` und `.title` für Zeichenfolgen definierte Methoden.
 
 ```{python}
 toller_text = "Python 3.12 ist großartig."
 
-print(toller_text)
 print(toller_text.upper())
 print(toller_text.lower())
 print(toller_text.title(), "\n")
@@ -58,17 +57,76 @@ print(toller_text.title(), "\n")
 print(("Mit in Klammern gesetzten Werten klappt es auch.").upper())
 ```
 
-Auf Objekte mit einem unpassenden Datentyp können Methoden wie `.lower()` nicht angewendet werden.
+Für Objekte mit einem unpassenden Datentyp sind Methoden wie `.lower()` nicht verfügbar.
 
 ```{python}
+#| eval: false
+
+print((1).upper())
+```
+
+```{python}
+#| echo: false
 try:
-  var_int.upper()
+  print((1).upper())
 except AttributeError as error:
   print(error)
 ```
 
+Methoden können verkettet und so nacheinander ausgeführt werden. In diesem Beispiel wird die Zeichenfolge 'Katze' klein geschrieben, dann die Häufigkeit des Buchstabens 'k' gezählt und schließlich geprüft, ob der Häufigkeitswert eine Ganzzahl ist.
+
+```{python}
+print('Katze'.lower().count('k').is_integer())
+```
+
+Welche Methoden für ein Objekt verfügbar sind, kann mit der Funktion `dir(objekt)` bestimmt werden. Die Ausgabe der Funktion ist aber häufig sehr umfangreich. Um die relevanten Einträge auszuwählen, muss die Ausgabe gefiltert werden. Notwendig ist das aber nicht - Interessierte schauen in @nte-methods.
+
+::: {#nte-methods .callout-note collapse="true"}
+## Methoden eines Objekts bestimmen
+
+Mit der Funktion `dir(objekt)` können die verfügbaren Methoden eines Objekts ausgegeben werden. Dabei werden jedoch auch die Attribute und die Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:
+
+```{python}
+print(dir(1))
+```
+
+Um die Ausgabe auf Methoden einzugrenzen, kann folgende Funktion verwendet werden:
+
+```{python}
+objekt = 1
+
+attribute = [attr for attr in dir(objekt) if callable (getattr(objekt, attr))]
+print(attribute)
+```
+
+Mit doppelten Unterstrichen umschlossene Methoden sind für die Klasse definierte Methoden. Folgende Funktion entfernt Methoden mit doppelten Unterstrichen aus der Ausgabe:
+
+```{python}
+objekt = 1
+
+attribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]
+print(attribute)
+```
+
+Im Fall einer Ganzzahl können Methoden (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:
+
+```{python}
+(1).as_integer_ratio()
+```
+
+Die Methoden des Objekts 'toller_text':
+
+```{python}
+objekt = toller_text
+
+attribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]
+print(attribute)
+```
+
+:::
+
 ## Parameter
-Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Parameter übergeben werden. [Parameter](https://docs.python.org/3/glossary.html#term-parameter) steuern die Programmausführung. Die für die Funktion `print()` verfügbaren Parameter stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print). Die Werte, die als Parameter übergeben werden, werden Argumente genannt ([Python-Dokumentation](https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter)).
+Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Parameter übergeben werden (Die Werte, die als Parameter übergeben werden, werden Argumente genannt, [Python-Dokumentation](https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter)). [Parameter](https://docs.python.org/3/glossary.html#term-parameter) steuern die Programmausführung. Die für die Funktion `print()` verfügbaren Parameter stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print):
 
 ```
 print(*objects, sep=' ', end='\n', file=None, flush=False)
@@ -188,12 +246,12 @@ Aufgabe 3: Die Funktion bool() hat ein optionales Argument object mit dem Standa
 :::
 
 ## Flusskontrolle
-Die Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder (mehrfach) ausgeführt werden.
+Die Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder mehrfach ausgeführt werden.
 
 ### Abzweigungen
 Abzweigungen ermöglichen eine Fallunterscheidung, bei der verschiedene Teile des Skripts ausgeführt werden.
 
-In Python werden Abzweigungen mit dem `if` Schlüsselwort eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt `:` abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.
+In Python werden Abzweigungen mit dem Schlüsselwort `if` eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt `:` abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.
 
 ```
 if Bedingung:
@@ -315,6 +373,24 @@ while a <= 10:
 print('Wert von a nach der Schleife', a)
 ```
 
+::: {#wrn-endlosschleife .callout-warning appearance="simple" collapse="false"}
+## Endlosschleife
+
+`while`-Schleifen führen zu einer Endlosschleife, wenn die Abbruchbedingung nicht erreicht werden kann. Beispielsweise fehlt in der folgenden Schleife eine Möglichkeit für die Laufvariable x den Wert 5 zu erreichen.
+
+``` {python}
+#| eval: false
+
+x = 1
+
+while x < 5:
+  print(x)
+```
+
+In diesem Fall können Sie die Programmausführung durch Drücken von `Strg`+ `C` beenden.
+
+:::
+
 #### for-Schleifen
 Während die `while`-Schleife ausgeführt wird, solange eine Bedingung erfüllt ist, wird die `for`-Schleife über eine Laufvariable gesteuert, die eine Sequenz durchläuft. Die Syntax sieht wie folgt aus:
 
@@ -373,10 +449,86 @@ print(list(range(5, 0)))
 print(list(reversed(range(0, 5))))
 ```
 
-<!-- ggf. ergänzen
-return beendet die Ausführung des gesamten Anweisungsblocks
-break:  When the break statement is executed, the program immediately exits the loop, and the control moves to the next line of code after the loop.
-continue: forces to execute the next iteration of the loop while skipping the rest of the code inside the loop for the current iteration only -->
+#### Die Schlüsselwörter break und continue
+Manchmal kann es notwendig sein, den Anweisungsblock einer Schleife vorzeitig zu verlassen. Dafür können die Schlüsselwörter `break` und `continue` benutzt werden. Das Schlüsselwort `break` bewirkt, dass die Schleife sofort verlassen wird. Dagegen führt das Schlüsselwort `continue` dazu, dass der aktuelle Schleifendurchlauf beendet und der nächste Durchlauf begonnen wird.
+
+``` {python}
+x = 0
+while x < 10:
+
+  x += 1
+
+  # keine geraden Zahlen ausgeben
+  if x % 2 == 0:
+    continue
+
+  # Schleife bei x == 7 beenden
+  if x == 7:
+    break
+
+  print(x)
+
+```
+
+### Ausnahmebehandlung
+
+In Python gibt es zwei Arten von Fehlern.
+
+Dies sind erstens Syntaxfehler, die Python mit einer Fehlermeldung ähnlich wie der folgenden quitiert. Syntaxfehler werden durch das Schreiben von syntaktisch korrektem Programmcode behoben.
+```{python}
+#| eval: false
+
+print(1}
+```
+
+```{python}
+#| echo: false
+
+try:
+  eval('print(1}')
+except SyntaxError as error:
+  print(str(error)[:58])
+```
+
+Die zweite Art von Fehlern sind Ausnahmen (exceptions), die auch bei syntaktisch korrektem Programmcode auftreten können. Ausnahmen führen auch zu Fehlermeldungen.
+
+```{python}
+#| eval: false
+
+# Beispiel 1: Division durch Null
+print(1 / 0)
+```
+
+```{python}
+#| echo: false
+
+try:
+  print(1 / 0)
+except ZeroDivisionError as error:
+  print(error)
+```
+
+```{python}
+#| eval: false
+
+# Beispiel 2: undefinierte Variable
+print(undefinierte_variable)
+```
+
+```{python}
+#| echo: false
+
+try:
+  print(undefinierte_variable)
+except NameError as error:
+  print(error)
+```
+
+Ausnahmen haben verschiedene Typen ...
+
+try except
+
+https://docs.python.org/3/tutorial/errors.html
 
 ## Aufgaben Flusskontrolle
 1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.
@@ -398,6 +550,8 @@ continue: forces to execute the next iteration of the loop while skipping the re
 European roulette von Betzaar.com ist lizensiert unter [CC 3.0 BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en) und verfügbar auf 
 [wikimedia.org](https://commons.wikimedia.org/wiki/File:European_roulette.svg). 2010
 ::::
+
+&nbsp;
 
 **Die Musterlösung kann Marc machen.**
 
