@@ -472,9 +472,9 @@ while x < 10:
 
 ### Ausnahmebehandlung
 
-In Python gibt es zwei Arten von Fehlern.
+Die Ausnahmebehandlung erlaubt es, Python alternative Anweisungen zu geben, die beim Auftreten eines Fehlers ausgeführt werden sollen. Dies ist beispielsweise beim Einlesen von Datensätzen nützlich, um sich die Ursache von Fehlermeldungen ausgeben zu lassen - eine Technik, die im **Querverweis m-EsD** vorgestellt wird. 
 
-Dies sind erstens Syntaxfehler, die Python mit einer Fehlermeldung ähnlich wie der folgenden quitiert. Syntaxfehler werden durch das Schreiben von syntaktisch korrektem Programmcode behoben.
+In Python gibt es zwei Arten von Fehlern. Dies sind erstens Syntaxfehler, die Python mit einer Fehlermeldung ähnlich wie der folgenden quitiert. Syntaxfehler werden durch das Schreiben von syntaktisch korrektem Programmcode behoben.
 ```{python}
 #| eval: false
 
@@ -524,11 +524,60 @@ except NameError as error:
   print(error)
 ```
 
-Ausnahmen haben verschiedene Typen ...
+Fehlermeldungen wie diese können in Python mit der [Ausnahmebehandlung](https://docs.python.org/3/tutorial/errors.html) abgefangen werden. Diese wird mit dem Schlüsselwort `try` eingeleitet, das mit dem Doppeltpunkt `:` abgeschlossen wird. In der nächsten Zeile folgt eingrückt der Anweisungblock, der auf Ausnahmen getestet werden soll (*Hinweis: Der Anweisungsblock wird tatsächlich ausgeführt, Änderungen an Daten oder Dateien sind also möglich.*). Anschließend wird mit dem Schlüsselwort `except`, das von einem Doppelpunkt `:` und in der nächsten Zeile von einem eingerückten Anweisungsblock gefolgt wird, festgelegt, was beim Aufkommen einer Ausnahme passieren soll. Optional kann mit dem Schlüsselwort `else` nach dem gleichen Schema ein weiterer Anweisungsblock definiert werden, der bei einer erfolgreichen Ausführung des Anweisungsblocks unter `try` *zusätzlich* ausgeführt wird. Der allgemeiner Aufbau lautet wie folgt:
 
-try except
+```
+try:
+  Anweisungsblock_1 
+except:
+  Anweisungsblock falls Anweisungblock_1 eine Ausnahme erzeugt
+else:
+  optionaler Anweisungsblock falls Anweisungsblock_1 keine Ausnhame erzeugt
+```
 
-https://docs.python.org/3/tutorial/errors.html
+Mithilfe der Ausnahmebehandlungen können die Elemente angezeigt werden, die zu einer Fehlermeldung führen.
+
+```{python}
+a = 1
+b = 2
+
+try:
+  differenz = a - b
+except:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
+
+```{python}
+a = 1
+b = 'abc'
+
+try:
+  differenz = a - b
+except:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
+
+Auch ist es möglich, die Fehlermeldung abzufangen und auszugeben. Dafür wird die Zeile `except:` wie folgt modifiziert `except Exception as error:`
+
+```{python}
+a = 1
+b = 'abc'
+
+try:
+  differenz = a - b
+except Exception as error:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+  print(error)
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
 
 ## Aufgaben Flusskontrolle
 1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.

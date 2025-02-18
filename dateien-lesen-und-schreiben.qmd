@@ -161,7 +161,7 @@ for zeile in daten_maya:
 Dies ist jedoch für größere Dateien nicht sonderlich praktikabel. Die Ausgabe einzelner Zeilen mit der Funktion `print()` kann aber nützlich sein, um die genaue Formatierung der Zeichenkette zu prüfen. In diesem Fall hat Maya ihre Daten in Anführungszeichen gesetzt und mit einem Komma voneinander getrennt.
 
 ## Dateien einlesen
-Um den gesamten Inhalt einer Datei einzulesen, kann die Methode [datenobjekt.read()](https://docs.python.org/3/tutorial/inputoutput.html) verwendet werden. Die Methode hat als optionales Argument `.read(size)`. size wird als Ganzzahl übergeben und entsprechend viele Zeichen (im Binärmodus entsprechend viele Bytes) werden ggf. bis zum Dateiende ausgelesen.
+Um den gesamten Inhalt einer Datei einzulesen, kann die Methode [datenobjekt.read()](https://docs.python.org/3/tutorial/inputoutput.html) verwendet werden. Die Methode hat als optionalen Parameter `.read(size)`. size wird als Ganzzahl übergeben und entsprechend viele Zeichen (im Binärmodus entsprechend viele Bytes) werden ggf. bis zum Dateiende ausgelesen. Der Parameter `size` ist nützlich, um die Formatierung des Inhalts einer großen Datei zu prüfen und dabei die Ausgabe auf eine überschaubare Anzahl von Zeichen zu begrenzen.
 
 ``` {python}
 
@@ -233,14 +233,14 @@ print(daten_maya.read(1))
 
 ::::
 
-Um Mayas Würfelergebnisse zu addieren, müssen die Zahlen extrahiert und in Ganzzahlen umgewandelt werden, da im Textmodus stets strings zurückgegeben werden.
+Um Mayas Würfelergebnisse zu addieren, müssen die Zahlen extrahiert und in Ganzzahlen umgewandelt werden, da im Textmodus stets eine Zeichenfolge zurückgegeben wird.
 
 ``` {python}
 
 print(type(augen_maya))
 ```
 
-Dazu werden mit der Methode `str.strip(")` das führende und abschließende Anführungszeichen entfernt sowie anschließend mit der Methode `str.split('", "')` der String in eine Liste aufgeteilt. Anschließend werden die Listenelemente in Ganzzahlen umgewandelt und summiert. (Methoden der string-Bearbeitung werden im nächsten Abschnitt ausführlich behandelt.)
+Dazu werden mit der Methode `str.strip(")` das führende und abschließende Anführungszeichen entfernt sowie anschließend mit der Methode `str.split('", "')` die Zeichenfolge über das Trennzeichen in eine Liste aufgeteilt. Anschließend werden die Listenelemente in Ganzzahlen umgewandelt und summiert. (Methoden der string-Bearbeitung werden im nächsten Abschnitt ausführlich behandelt.)
 
 ``` {python}
 #| results: hold
@@ -311,8 +311,8 @@ Musterlösung von Marc Sönnecken.
 
 [@Arnold-2023-funktionen-module-dateien]
 
-## Datensätze einlesen
-Datensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d. h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion `open(datei)` gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel `dateiobjekt.read()` als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshablb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.
+## Daten interpretieren
+Datensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d. h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion `open(datei)` gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel `dateiobjekt.read()` als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshalb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.
 
 Für die Bearbeitung von Zeichenfolgen bietet Python eine Reihe von [String-Methoden](https://docs.python.org/3/library/stdtypes.html#string-methods). Einige davon werden in diesem Kapitel exemplarisch verwendet. String-Methoden werden in der Regel mit einem führenden 'str' in der Form `str.methode()` genannt.
 
@@ -324,7 +324,7 @@ Beispielsweise soll eine Datei mit den Einwohnerzahlen der europäischen Länder
 
 &nbsp;
 
-Zunächst geben wir die ersten drei Zeilen der Datei aus. Dafür kann die Datei zeilenweise mit einer for-Schleife durchlaufen werden, die mit dem Schlüsselwort `break` abgebrochen wird, wenn die Laufvariable den Wert 3 erreicht hat. Eine andere Möglichkeit ist die Methode `dateiobjekt.readline()`, die eine einzelne Zeile ausliest.
+Um einen Überblick über den Aufbau der Datei zu erhalten, werden die ersten drei Zeilen der Datei ausgegeben. Dafür kann die Datei zeilenweise mit einer for-Schleife durchlaufen werden, die mit dem Schlüsselwort `break` abgebrochen wird, wenn die Laufvariable den Wert 3 erreicht hat. Eine andere Möglichkeit ist die Methode `dateiobjekt.readline()`, die eine einzelne Zeile ausliest. Hier wird die Häufigkeit der Schleifenausführung über die Laufvariable mit `for i in range(3):` gesteuert.
 
 ::: {.panel-tabset}
 
@@ -366,7 +366,6 @@ dateiobjekt_einwohner.close()
 
 Die Datei hat also zwei Spalten. In der ersten Spalte sind die Ländernamen eingetragen, in der zweiten Spalte die Werte. Als Trennzeichen wird das Komma verwendet. In der ersten Zeile sind die Spaltenbeschriftungen eingetragen.
 
-### vollständiges Einlesen
 Im vorherigen Abschnitt haben wir die Methode `dateiobjekt.read()` kennengelernt, mit der eine Datei vollständig als string eingelesen wird. 
 Zunächst wird die Datei mit der Methode `dateiobjekt.read()` in das Objekt einwohner eingelesen und wieder geschlossen.
 
@@ -396,10 +395,7 @@ spaltennamen = spaltennamen.split(',')
 print(f"Überschrift Spalte 0: {spaltennamen[0]}\tÜberschrift Spalte 1: {spaltennamen[1]}")
 ```
 
-Anschließend kann die Liste mit der Methode `str.split(',')` nach Ländern und Werten aufgeteilt werden. Der Vorgang bricht allerdings mit einer Fehlermeldung ab. Die Fehlermeldung wird im folgenden Code-Block per error handling mit der Konstruktion aus `try:` und `except:` abgefangen, um dieser hier im Skript darzustellen.
-
-**error handling ergänzen - bei Funktionen - und hier Querverweis setzen**
-**Die Datei von der Frau Vol.. war ein gutes Beispiel, wo Zeile 127 plötzlich eingerückt war.**
+Anschließend kann die Liste mit der Methode `str.split(',')` nach Ländern und Werten aufgeteilt werden. Der Vorgang bricht allerdings mit einer Fehlermeldung ab. Die Fehlermeldung wird im folgenden Code-Block per Ausnahmebehandlung abgefangen. Neben der Fehlermeldung werden der verursachende Listeneintrag und dessen Indexposition ausgegeben.
 
 ```{python}
 # Leere Listen vor der Schleife anlegen
@@ -418,30 +414,16 @@ try:
   print(spaltennamen[1])
   print(einwohnerzahl)
 
-except IndexError as error:
-  print(error)
+except Exception as error:
+  # print Fehlermeldung
+  print(f"Fehlermeldung: {error}")
+  
+  # print Eintrag und Index
+  print(f"Eintrag: {eintrag}\t Zeilenindex: {liste_einwohner_zeilenweise.index(zeile)}")
+
 ```
 
 Die Fehlermeldung ist so zu deuten, dass eine der Listenoperationen mit dem Slice Operator einen ungültigen Index anspricht. Leicht angepasst, liefert der Code-Block auch die Ursache der Fehlermeldung. 
-
-```{python}
-# Leere Listen vor der Schleife anlegen
-geo = []
-einwohnerzahl = []
-indexzähler = 0
-
-for zeile in liste_einwohner_zeilenweise:
-  try:
-    eintrag = zeile.split(',')
-    geo.append(eintrag[0])
-    einwohnerzahl.append(eintrag[1])
-    indexzähler += 1
-
-  except IndexError as error:
-    print(error)
-    print("Eintrag:", eintrag, "\tIndexposition:", indexzähler)
-
-```
 
 Wird die leere Zeile aus der Liste entfernt, klappt das Aufteilen der Ländernamen und der Werte.
 
@@ -469,7 +451,7 @@ except IndexError as error:
   print(error)
 ```
 
-### Aufgabe Einwohnerzahl
+## Aufgabe Daten interpretieren
 1. Bestimmen Sie das Minimum und das Maximum der Einwohnerzahl und die dazugehörigen Länder.
 
 2. Bereinigen Sie ggf. fehlerhafte Werte. 
@@ -487,8 +469,8 @@ except IndexError as error:
 
 :::
 
-## .readlines() und list()
-Die Methode `dateiobjekt.readlines()` gibt eine Liste zurück, in der jede Zeile einen Eintrag darstellt. Ebenso kann die Listenfunktion `list()` auf Dateiobjekte angewendet werden. Beide Vorgehensweisen liefern die gleiche Liste zurück, in der der Zeilenumbruch `\n`  mit ausgelesen wird.
+## Einlesen als Liste
+Ein Dateiobjekt kann auch direkt als Liste eingelesen werden. Die Methode `dateiobjekt.readlines()` gibt eine Liste zurück, in der jede Zeile einen Eintrag darstellt. Ebenso kann die Listenfunktion `list()` auf Dateiobjekte angewendet werden. Beide Vorgehensweisen liefern die gleiche Liste zurück, in der der Zeilenumbruch `\n`  mit ausgelesen wird.
 
 ```{python}
 dateipfad = "skript/01-daten/einwohner_europa_2019.csv"
@@ -509,7 +491,9 @@ print(einwohner)
 dateiobjekt_einwohner.close();
 ```
 
-Um den Zeilenumbruch zu entfernen, könnte mit dem Slice Operator das letzte Zeichen jedes Listeneintrags entfernt werden. Eine andere Möglichkeit ist die Methode `str.replace(old, new, count=-1)`, mit der Zeichen ersetzt oder gelöscht werden können. Die Parameter `old` und `new` geben die zu ersetzende bzw. die einzusetzende Zeichenfolge an und müssen positional übergeben werden. Über den Parameter `count` kann eingestellt werden, wie oft die Zeichenfolge `old` ersetzt werden soll, standmäßig wird jedes Vorkommen ersetzt.
+Um den Zeilenumbruch zu entfernen, könnte mit dem Slice Operator das letzte Zeichen jedes Listeneintrags entfernt werden.
+
+Eine andere Möglichkeit ist die Methode `str.replace(old, new, count=-1)`, mit der Zeichen ersetzt oder gelöscht werden können. Die Parameter `old` und `new` geben die zu ersetzende bzw. die einzusetzende Zeichenfolge an und *müssen positional* übergeben werden. Über den Parameter `count` kann eingestellt werden, wie oft die Zeichenfolge `old` ersetzt werden soll. Standardmäßig wird jedes Vorkommen ersetzt.
 
 ```{python}
 print('Hund'.replace('Hu', 'Mu'))
@@ -522,33 +506,59 @@ print(zeichenfolge.replace('  ', ' '))
 Die Methode `str.replace()` kann auch zum Löschen verwendet werden. Wird für den Parameter `new` eine leere Zeichenfolge übergeben, wird die in `old` übergebene Zeichenfolge gelöscht.
 
 ```{python}
-print(zeichenfolge.replace(' ', ''))
+print(zeichenfolge.replace(' ', '').replace('doppelte', ''))
 ```
 
-**Rest aus SA: 03**
+Mit der Methode `str.replace()` kann die eingelesene Liste um den Zeilenumbruch bereinigt werden.
 
+```{python}
+dateipfad = "skript/01-daten/einwohner_europa_2019.csv"
+dateiobjekt_einwohner = open(dateipfad, 'r')
 
-Von unschätzbaren Wert beim Einlesen von Datensätzen (Querverweis auf m-EsD)
-str.replace(old, new, count=-1) # wird new als '' übergeben, entspricht die Funktion dem Löschen von Zeichenfolgen
+# Methode readlines
+einwohner = dateiobjekt_einwohner.readlines()
+einwohner_neu = []
 
-str.split(), str.rsplit(), str.splitlines(keepends=False)
+for element in einwohner:
+  einwohner_neu.append(element.replace('\n', ''))
 
+einwohner = einwohner_neu
+print(einwohner)
 
-nicht von mir verwendet, aber nützlich:  
-str.count(sub[, start[, end]])
-str.find(sub[, start[, end]]) # return the lowest index in the string where substring sub is foun
-str.index(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
-str.rfind(sub[, start[, end]]) # return the highest index in the string where substring sub is foun
-str.rindex(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.
-
-str.join(iterable) # das nutze ich einmal im m-EsD (glaube ich)
-
-str.lstrip([chars]), str.rstrip([chars]), str.strip([chars]) --> default ist whitespace
-
-## Aufgaben string methods
-
+# Datei schließen
+dateiobjekt_einwohner.close();
+```
 
 ## Dateien schreiben
+Um Dateien zu schreiben, müssen diese mit der `write`-Methode eines Dateiobjekts verwendet werden. Dieser Methode wird als Argument die zu schreibende Zeichenfolge übergeben.
+
+```{python}
+dateipfad = "skript/01-daten/neue_datei.txt"
+
+# Öffne Datei zum Schreiben öffnen
+datei = open(dateipfad, mode = 'w')
+
+# Inhalt in die Datei schreiben
+datei.write("Prokrastination an Hochschulen\n\n".upper())
+datei.write("KAPITEL 1: Aller Anfang ist schwer\nPlatzhalter: Den Rest schreibe ich später.")
+
+# Datei schließen
+
+datei.close()
+```
+
+Die Datei kann nun ausgelesen werden.
+
+```{python}
+dateiinhalt = open(dateipfad, mode = 'r')
+text = dateiinhalt.read()
+print(text)
+
+dateiinhalt.close()
+```
+
+## Aufgabe Dateien schreiben
+1.  Erzeugen Sie eine neue Datei mit der Endung `.txt`, die den Namen ihrer Heimatstadt hat. Schreiben Sie in diese Datei 10 Zeilen mit Informationen zur Stadt.
 
 &nbsp;
 (@Arnold-2023-funktionen-module-dateien)

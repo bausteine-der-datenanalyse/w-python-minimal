@@ -1,14 +1,14 @@
 # Eigene Funktionen definieren
-Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten und gehören zu den mächtigsten Werkzeugen in Python:
+Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten in Python:
 
   - Komplexe Programme können mit einer einzigen Zeile Code aufgerufen und ausgeführt werden.
 
   - Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.
 
-  - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gint es nur eine Stelle, welche bei Änderungen angepasst werden muss.
+  - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gibt es nur eine Stelle, welche bei Änderungen angepasst werden muss.
 
 ## Syntax
-Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird.  `return` beendet die Ausführung der Schleife.
+Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird.  `return` beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.
 
 ``` {python}
 #| output: false
@@ -17,7 +17,7 @@ def Funktionsname(Argument1, Argument2):
     return Rückgabewert
 ```
 
-Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden.
+Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden. In der Funktion ist nach dem Schlüsselwort `return` eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.
 
 ```{python}
 # Beispiel 1: Summe der Quadrate
@@ -29,6 +29,7 @@ def sum_quadrate(a, b):
     print(18 * '=')
     summe = a**2 + b**2
     return summe
+    print("Anweisungen nach dem Schlüsselwort return werden nicht mehr ausgeführt.")
 
 print(sum_quadrate(6, 7))
 ```
@@ -82,7 +83,7 @@ print(sum_potenzen(42, 7, ausgabe = True, p = 4))
 ```
 
 ## Rückgabewert(e)
-Funktionen können in Python nur genau einen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.
+Funktionen können in Python nur einen einzigen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.
 
 ```{python}
 # Beispiel 4: mehrere Rückgabewerte

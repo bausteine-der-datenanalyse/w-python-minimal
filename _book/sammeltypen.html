@@ -279,7 +279,7 @@ div.csl-indent {
 <section id="listen" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.1</span> Listen</h2>
 <p>Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste, werden die Elemente durch <code>[]</code> eingeklammert und mit Kommata <code>,</code> getrennt. Listen können mit dem <code>+</code>-Operator verkettet werden. <code>*</code> verkettet eine Liste n-mal.</p>
-<div id="0ff856bf" class="cell" data-execution_count="1">
+<div id="6a996822" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'abc'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
@@ -300,7 +300,7 @@ div.csl-indent {
 </div>
 </div>
 <p>Eine leere Liste kann durch Zuweisung von <code>[]</code> erstellt werden.</p>
-<div id="9bf664c6" class="cell" data-execution_count="2">
+<div id="1f7c79d3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>leere_liste <span class="op">=</span> []</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leere_liste)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -313,7 +313,7 @@ div.csl-indent {
 <section id="zugriff-auf-einzelne-elemente" class="level4">
 <h4 class="anchored" data-anchor-id="zugriff-auf-einzelne-elemente">Zugriff auf einzelne Elemente</h4>
 <p>Elemente werden über ihren Index, bei 0 beginnend, angesprochen.</p>
-<div id="2ec409aa" class="cell" data-execution_count="3">
+<div id="59ea7a43" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">0</span>])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -324,7 +324,7 @@ abc</code></pre>
 </div>
 </div>
 <p>Auf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste <code>liste2</code> enthält an Indexposition 1 eine Liste mit 4 Elementen.</p>
-<div id="d7d94956" class="cell" data-execution_count="4">
+<div id="297616cf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>][<span class="dv">0</span>], liste2[<span class="dv">1</span>][<span class="dv">1</span>], liste2[<span class="dv">1</span>][<span class="dv">2</span>], liste2[<span class="dv">1</span>][<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -335,7 +335,7 @@ abc</code></pre>
 </div>
 </div>
 <p>Mit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.</p>
-<div id="8bc05f6b" class="cell" data-execution_count="5">
+<div id="dcb9297a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="op">-</span><span class="dv">1</span>], liste1[<span class="op">-</span><span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -427,7 +427,7 @@ abc xy</code></pre>
 <section id="zeichenfolgen" class="level4">
 <h4 class="anchored" data-anchor-id="zeichenfolgen">Zeichenfolgen</h4>
 <p>Auch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.</p>
-<div id="f88de244" class="cell" data-execution_count="6">
+<div id="8080c97d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Ich bin ein string'</span>[::<span class="dv">2</span>])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hallo Welt'</span>[<span class="dv">0</span>:<span class="dv">6</span>])</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'abc'</span>[::<span class="op">-</span><span class="dv">1</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -450,7 +450,7 @@ cba</code></pre>
 <li><p><code>list.reverse()</code> kehrt die Reihenfolge der Listenelemente um (die Liste wird dadurch verändert!).</p></li>
 <li><p><code>list.sort(reverse = False)</code> sortiert die Liste, mit dem optionalen Argument reverse = True absteigend (die Liste wird dadurch verändert!). Die Datentypen innerhalb der Liste müssen sortierbar sein (d.&nbsp;h. alle Elemente sind numerisch oder Zeichen).</p></li>
 </ul>
-<div id="00853d72" class="cell" data-execution_count="7">
+<div id="644f886d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>liste1.reverse()</span>
@@ -472,7 +472,7 @@ True wird als 1 gezählt: 1 2</code></pre>
 <li><p><code>list.extend(sammeltyp)</code> hängt alle mit <code>sammeltyp</code> übergebenen Elemente an das Ende der Liste an. Der Sammeltyp kann eine Liste, ein Tupel, eine Menge oder ein Dictionary sein.</p></li>
 <li><p><code>list.insert(i, x)</code> fügt an der Position i Element x ein.</p></li>
 </ul>
-<div id="08112663" class="cell" data-execution_count="8">
+<div id="f179a31d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>liste1.append(<span class="st">'Hallo'</span>)</span>
@@ -494,7 +494,7 @@ True wird als 1 gezählt: 1 2</code></pre>
 <li><p><code>liste.pop(i)</code> entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode <code>liste.pop([i])</code> gibt die entfernten Elemente zurück.</p></li>
 <li><p><code>liste.clear()</code> entfernt alle Elemente einer Liste.</p></li>
 </ul>
-<div id="e0d72a93" class="cell" data-execution_count="9">
+<div id="d40de443" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>liste1.remove(<span class="st">'Hallo'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -510,7 +510,7 @@ True wird als 1 gezählt: 1 2</code></pre>
 <section id="listen-und-listenelemente-kopieren" class="level4">
 <h4 class="anchored" data-anchor-id="listen-und-listenelemente-kopieren">Listen und Listenelemente kopieren</h4>
 <p>In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. In Python werden Listen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode <code>liste.copy()</code> verwendet werden. Auch durch die Verwendung des Zugriffsoperators <code>[:]</code> wird eine neue Liste im Speicher angelegt.</p>
-<div id="2185534c" class="cell" data-execution_count="10">
+<div id="391e7170" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"liste1:"</span>, liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
@@ -546,7 +546,7 @@ liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']
 </div>
 </div>
 <p>Die Kopie von Listenelementen ist in dieser Hinsicht unproblematisch.</p>
-<div id="7f779fdd" class="cell" data-execution_count="11">
+<div id="1a811e5a" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwendung des Slice Operators</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1[<span class="dv">0</span>:<span class="dv">2</span>]</span>
@@ -559,7 +559,7 @@ liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']
 </div>
 </div>
 <p>Um zu überprüfen, ob sich zwei Objekte den Speicherbereich teilen, kann die Objekt-ID mit der Funktion <code>id()</code> verglichen oder die Operatoren <code>is</code> bzw. <code>is not</code> verwendet werden, die die Funktion <code>id()</code> aufrufen.</p>
-<div id="53f9157e" class="cell" data-execution_count="12">
+<div id="8edec64b" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -567,8 +567,8 @@ liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ID liste2:"</span>, <span class="bu">id</span>(liste2))</span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ID liste1 gleich ID list2:"</span>, liste1 <span class="kw">is</span> liste2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>ID liste1: 2212509543808
-ID liste2: 2212509543808
+<pre><code>ID liste1: 2324568329728
+ID liste2: 2324568329728
 ID liste1 gleich ID list2: True</code></pre>
 </div>
 </div>
@@ -585,7 +585,7 @@ Identität vs.&nbsp;Wertgleichheit
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Der Operator <code>is</code> prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator <code>==</code>, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts verdeutlicht werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).</p>
-<div id="9b946964" class="cell" data-execution_count="13">
+<div id="ceb444b2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wertgleichheit</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">==</span> <span class="fl">1.0</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1 <span class="op">==</span> liste2, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
@@ -637,7 +637,7 @@ Tipp&nbsp;4.1: Musterlösung
 <h2 data-number="4.2" class="anchored" data-anchor-id="tupel"><span class="header-section-number">4.2</span> Tupel</h2>
 <p>Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.</p>
 <p>Tupel werdem mit runden Klammern <code>()</code> erzeugt, die Elemente werden mit einem Komma <code>,</code> getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form <code>(wert, )</code> angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator <code>[start:stop:step]</code> möglich. Tupel können mit den Operatoren <code>+</code> und <code>*</code> verkettet werden.</p>
-<div id="4007ad25" class="cell" data-execution_count="14">
+<div id="cfbc9f60" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">2</span>, <span class="fl">7.8</span>, <span class="st">'Feuer'</span>, <span class="va">True</span>, text_variable)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>tupel2 <span class="op">=</span> (<span class="dv">1</span>, )</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -659,7 +659,7 @@ abc
 <section id="tupel-kopieren" class="level3">
 <h3 class="anchored" data-anchor-id="tupel-kopieren">Tupel kopieren</h3>
 <p>Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode <code>.copy()</code> nicht definiert. Tupel (bzw. die in diesen gespeicherten Werte) können durch Zuweisung kopiert werden. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator <code>[:]</code> zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python jedoch ein neues Objekt im Speicher an.</p>
-<div id="3731024f" class="cell" data-execution_count="15">
+<div id="f3c1c8ce" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>tupel2 <span class="op">=</span> tupel1</span>
@@ -689,7 +689,7 @@ True
 <section id="mengen" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="mengen"><span class="header-section-number">4.3</span> Mengen</h2>
 <p>In Python können Mengen mit der <code>set()</code> Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern <code>{}</code> erstellt werden (eine leere Menge kann nur mit <code>set()</code> erzeugt werden, da <code>{}</code> ein leeres Dictionary anlegt).</p>
-<div id="ab3718f1" class="cell" data-execution_count="16">
+<div id="16168ee1" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="st">'a'</span>, <span class="dv">123</span>, <span class="dv">1000</span>, (<span class="st">'tupel'</span>, <span class="dv">5</span>)]</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Das Objekt liste als Menge:</span><span class="ch">\n</span><span class="st">"</span>, <span class="bu">set</span>(liste))</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -697,12 +697,12 @@ True
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Menge kann auch mit geschweiften Klammern erzeugt werden:"</span>, menge)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Das Objekt liste als Menge:
- {1, 2, 3, 4, 5, 1000, 'a', ('tupel', 5), 123}
-Die Menge kann auch mit geschweiften Klammern erzeugt werden: {1, 2, 3, 4, 5, 1000, ('tupel', 5), 'a', 123}</code></pre>
+ {1, 2, 3, 4, 5, 'a', 1000, ('tupel', 5), 123}
+Die Menge kann auch mit geschweiften Klammern erzeugt werden: {1, 2, 3, 4, 5, 'a', 1000, ('tupel', 5), 123}</code></pre>
 </div>
 </div>
 <p>Mengen können beispielsweise für Vergleichsoperationen verwendet werden.</p>
-<div id="85916538" class="cell" data-execution_count="17">
+<div id="a8364564" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>menge_a <span class="op">=</span> <span class="bu">set</span>(<span class="st">'Python'</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>menge_b <span class="op">=</span> <span class="bu">set</span>(<span class="st">'ist super'</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -721,17 +721,17 @@ Die Menge kann auch mit geschweiften Klammern erzeugt werden: {1, 2, 3, 4, 5, 10
 <span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeichen in a oder b, aber nicht in beiden (XOR)</span></span>
 <span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a ^ b:"</span>, menge_a <span class="op">^</span> menge_b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Menge a: {'y', 't', 'n', 'P', 'o', 'h'}
-Menge a - b: {'y', 'n', 'P', 'o', 'h'}
-Menge a | b: {'i', ' ', 'y', 't', 'r', 'n', 'p', 'P', 'e', 'u', 'o', 's', 'h'}
+<pre><code>Menge a: {'t', 'o', 'n', 'h', 'P', 'y'}
+Menge a - b: {'o', 'n', 'h', 'P', 'y'}
+Menge a | b: {'i', 'u', 't', 'o', 'n', 'h', 'r', 'e', 'P', 's', ' ', 'y', 'p'}
 Menge a &amp; b: {'t'}
-Menge a ^ b: {'i', ' ', 'y', 'r', 'p', 'n', 'P', 'e', 'u', 'o', 's', 'h'}</code></pre>
+Menge a ^ b: {'i', 'u', 'o', 'n', 'r', 'h', 'e', 's', 'P', ' ', 'y', 'p'}</code></pre>
 </div>
 </div>
 <section id="mengen-kopieren" class="level3">
 <h3 class="anchored" data-anchor-id="mengen-kopieren">Mengen kopieren</h3>
-<p>Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode <code>.copy()</code> für Mengen definiert ist. Allerdings kann der Zugriffsoperator <code>[:]</code> nicht auf Mengen angewendet werden.</p>
-<div id="e2f5899a" class="cell" data-execution_count="18">
+<p>Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode <code>.copy()</code> für Mengen definiert ist. Allerdings kann der Zugriffsoperator <code>[]</code> nicht auf Mengen angewendet werden.</p>
+<div id="9707b96c" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>set2 <span class="op">=</span> set1</span>
@@ -763,7 +763,7 @@ Die in set2 gespeicherten Werte sind unverändert:
 <section id="dictionaries" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">4.4</span> Dictionaries</h2>
 <p>Dictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern <code>{}</code> definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt <code>:</code> getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator <code>[]</code>, welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.</p>
-<div id="f1244597" class="cell" data-execution_count="19">
+<div id="73324d62" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dictionary1 <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'abc'</span>, <span class="st">'b'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'c'</span>: (<span class="st">'tupel'</span>, <span class="dv">5</span>, <span class="dv">6</span>)}</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -777,7 +777,7 @@ Werte des Schlüssels 'b': [1, 2, 3]</code></pre>
 </div>
 </div>
 <p>Auf die Schlüssel eines Dictionaries kann über die Methode <code>dictionary.keys()</code>, auf die Werte mittels der Methode <code>dictionary.values()</code> zugegriffen werden.</p>
-<div id="588321b7" class="cell" data-execution_count="20">
+<div id="667456a9" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Schlüssel:"</span>, dictionary1.keys(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Werte:"</span>, dictionary1.values())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -789,7 +789,7 @@ Werte: dict_values(['abc', [1, 2, 3], ('tupel', 5, 6)])</code></pre>
 <section id="dictionaries-kopieren" class="level3">
 <h3 class="anchored" data-anchor-id="dictionaries-kopieren">Dictionaries kopieren</h3>
 <p>Dictionaries verhalten sich beim Kopieren wie Listen, das heißt beim Kopieren durch Zuweisung teilen sich Dictionaries den Speicherbereich.</p>
-<div id="17b2bccd" class="cell" data-execution_count="21">
+<div id="80bbc158" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary:"</span>, dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>dictionary2 <span class="op">=</span> dictionary1</span>
@@ -850,8 +850,8 @@ dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:
 <tr class="even">
 <td>Speicherbereich bei Zuweisung geteilt</td>
 <td>ja</td>
-<td>Aufhebung bei Neuzuweisung</td>
-<td>Aufhebung bei Neuzuweisung</td>
+<td>ja (aber unveränderlich)</td>
+<td>ja (aber Zugriffsoperator nicht anwendbar)</td>
 <td>ja</td>
 </tr>
 <tr class="odd">
@@ -875,7 +875,7 @@ dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:
 <section id="löschen-das-schlüsselwort-del" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="löschen-das-schlüsselwort-del"><span class="header-section-number">4.6</span> Löschen: das Schlüsselwort del</h2>
 <p>Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort <code>del</code> verwendet werden.</p>
-<div id="a6327953" class="cell" data-execution_count="22">
+<div id="40906b7c" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Löschen einer Liste</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> liste1</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -899,7 +899,7 @@ Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
 <section id="funktionen" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="funktionen"><span class="header-section-number">4.7</span> Funktionen</h2>
 <p>Die Sammeltypen können ineinander umgewandelt werden.</p>
-<div id="dbe47bd8" class="cell" data-execution_count="23">
+<div id="febe469b" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Kater'</span>, <span class="dv">2</span>: <span class="st">'Fähre'</span>, <span class="dv">3</span>: <span class="st">'Ricke'</span>}</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( (liste <span class="op">:=</span> <span class="bu">list</span>(dictionary)) )</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( (menge <span class="op">:=</span> <span class="bu">set</span>(liste)) )</span>
@@ -922,7 +922,7 @@ Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
 <div id="lst-quadratzahlen" class="listing quarto-float">
 <figure class="quarto-float quarto-float-lst figure">
 <div aria-describedby="lst-quadratzahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="01d49ee2" class="cell" data-execution_count="24">
+<div id="5f6e3169" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>zahlen <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>quadratzahlen <span class="op">=</span> [] <span class="co"># die Liste muss vor der Schleife angelegt werden</span></span>
@@ -951,7 +951,7 @@ Code-Block&nbsp;4.1
 <h2 data-number="4.9" class="anchored" data-anchor-id="listennotation"><span class="header-section-number">4.9</span> Listennotation</h2>
 <div class="border">
 <p>Die sogenannte Listennotation ist eine Kurzschreibweise für for-Schleifen. In Listennotation geschriebene Schleifen müssen in einer Zeile stehen und haben die folgende Syntax:</p>
-<div id="a1a328a6" class="cell" data-execution_count="25">
+<div id="f84aa6e4" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>quadratzahlen <span class="op">=</span> [wert <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> wert <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>)]</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quadratzahlen)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -991,7 +991,7 @@ Tipp&nbsp;4.2: Musterlösung Aufgaben Sammeltypen
 <ol type="1">
 <li>Ganzzahlig durch 3 teilbare Quadratzahlen</li>
 </ol>
-<div id="8cbee817" class="cell" data-execution_count="26">
+<div id="291a02c7" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>zahlen <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>quadratzahlen <span class="op">=</span> [] <span class="co"># die Liste muss vor der Schleife angelegt werden</span></span>
@@ -1010,7 +1010,7 @@ Tipp&nbsp;4.2: Musterlösung Aufgaben Sammeltypen
 <ol start="2" type="1">
 <li>Umrechnung von Geschwindigkeiten</li>
 </ol>
-<div id="ac648e68" class="cell" data-execution_count="27">
+<div id="ae951e20" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Freie Eingabe</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co">## start = int(input("Startwert in Kilometer pro Stunde eingeben."))</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">## ende = int(input("Endwert in Kilometer pro Stunde eingeben."))</span></span>
@@ -1051,7 +1051,7 @@ Meter pro Sekunde
 <ol start="3" type="1">
 <li>Sortieren: Bubble Sort Algorithmus</li>
 </ol>
-<div id="201d6dae" class="cell" data-execution_count="28">
+<div id="76d86216" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># statische Liste, Textausgabe</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>meine_liste <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">9</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>

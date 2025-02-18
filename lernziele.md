@@ -11,3 +11,7 @@ In diesem Bausteine werden die Grundzüge der Programmierung mit Python vermitte
   - den Unterschied zwischen Funktionen und Methoden kennen und wie eigene Funktionen geschrieben werden.
 
   - Module und Pakete laden
+
+Querverweis auf:
+
+  - Methodenbaustein Einlesen strukturierter Datensätze

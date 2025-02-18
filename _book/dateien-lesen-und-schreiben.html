@@ -84,6 +84,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./module-und-pakete-importieren.html" rel="next">
 <link href="./funktionen-definieren.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -206,6 +207,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">module-und-pakete-importieren.html</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -224,14 +231,11 @@ div.csl-indent {
   </ul></li>
   <li><a href="#dateien-einlesen" id="toc-dateien-einlesen" class="nav-link" data-scroll-target="#dateien-einlesen"><span class="header-section-number">6.2</span> Dateien einlesen</a></li>
   <li><a href="#aufgabe-dateien-einlesen" id="toc-aufgabe-dateien-einlesen" class="nav-link" data-scroll-target="#aufgabe-dateien-einlesen"><span class="header-section-number">6.3</span> Aufgabe Dateien einlesen</a></li>
-  <li><a href="#datensätze-einlesen" id="toc-datensätze-einlesen" class="nav-link" data-scroll-target="#datensätze-einlesen"><span class="header-section-number">6.4</span> Datensätze einlesen</a>
-  <ul class="collapse">
-  <li><a href="#vollständiges-einlesen" id="toc-vollständiges-einlesen" class="nav-link" data-scroll-target="#vollständiges-einlesen">vollständiges Einlesen</a></li>
-  <li><a href="#aufgabe-einwohnerzahl" id="toc-aufgabe-einwohnerzahl" class="nav-link" data-scroll-target="#aufgabe-einwohnerzahl">Aufgabe Einwohnerzahl</a></li>
-  </ul></li>
-  <li><a href="#readlines-und-list" id="toc-readlines-und-list" class="nav-link" data-scroll-target="#readlines-und-list"><span class="header-section-number">6.5</span> .readlines() und list()</a></li>
-  <li><a href="#aufgaben-string-methods" id="toc-aufgaben-string-methods" class="nav-link" data-scroll-target="#aufgaben-string-methods"><span class="header-section-number">6.6</span> Aufgaben string methods</a></li>
+  <li><a href="#daten-interpretieren" id="toc-daten-interpretieren" class="nav-link" data-scroll-target="#daten-interpretieren"><span class="header-section-number">6.4</span> Daten interpretieren</a></li>
+  <li><a href="#aufgabe-daten-interpretieren" id="toc-aufgabe-daten-interpretieren" class="nav-link" data-scroll-target="#aufgabe-daten-interpretieren"><span class="header-section-number">6.5</span> Aufgabe Daten interpretieren</a></li>
+  <li><a href="#einlesen-als-liste" id="toc-einlesen-als-liste" class="nav-link" data-scroll-target="#einlesen-als-liste"><span class="header-section-number">6.6</span> Einlesen als Liste</a></li>
   <li><a href="#dateien-schreiben" id="toc-dateien-schreiben" class="nav-link" data-scroll-target="#dateien-schreiben"><span class="header-section-number">6.7</span> Dateien schreiben</a></li>
+  <li><a href="#aufgabe-dateien-schreiben" id="toc-aufgabe-dateien-schreiben" class="nav-link" data-scroll-target="#aufgabe-dateien-schreiben"><span class="header-section-number">6.8</span> Aufgabe Dateien schreiben</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +287,7 @@ div.csl-indent {
 <section id="dateipfad" class="level3">
 <h3 class="anchored" data-anchor-id="dateipfad">Dateipfad</h3>
 <p>Der lokale Dateipfad wird ausgehend vom aktuellen Arbeitsverzeichnis angegeben.</p>
-<div id="349a0efa" class="cell" data-execution_count="1">
+<div id="6c1f9fd0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pfad_maya <span class="op">=</span> <span class="st">"skript/01-daten/dice-maya.txt"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pfad_hans <span class="op">=</span> <span class="st">"skript/01-daten/dice-hans.txt"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -300,7 +304,7 @@ Tipp&nbsp;6.1: Arbeitsverzeichnis in Python ermitteln und wechseln
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Der Pfad des aktuellen Arbeitsverzeichnisses kann mit dem Modul os mittels <code>os.getcwd()</code> ermittelt werden (hier ohne Ausgabe). Mit <code>os.chdir('neuer_pfad')</code> kann das Arbeitsverzeichnis ggf. gewechselt werden. Die korrekte Formatierung des Pfads erkennen Sie an der Ausgabe von <code>os.getcwd()</code>.</p>
-<div id="dd1aeb97" class="cell" data-execution_count="2">
+<div id="040b97f6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(os.getcwd())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -353,7 +357,7 @@ Tipp&nbsp;6.1: Arbeitsverzeichnis in Python ermitteln und wechseln
 <p>&nbsp;</p>
 <p>Die Zugriffsmodi können auch kombiniert werden. Weitere Informationen dazu finden Sie in der <a href="https://docs.python.org/3/library/functions.html#open">Dokumentation</a>. Sofern nicht im Binärmodus auf Dateien zugegriffen wird, liefert die Funktion <code>open()</code> den Dateiinhalt als string zurück.</p>
 <p>Im Lesemodus wird ein Datenobjekt erzeugt.</p>
-<div id="7f65cc72" class="cell" data-execution_count="3">
+<div id="ffd0dfbb" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>daten_maya <span class="op">=</span> <span class="bu">open</span>(pfad_maya, mode <span class="op">=</span> <span class="st">'r'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(daten_maya)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -361,7 +365,7 @@ Tipp&nbsp;6.1: Arbeitsverzeichnis in Python ermitteln und wechseln
 </div>
 </div>
 <p>Wenn das Datenobjekt <code>daten_maya</code> der Funktion <code>print()</code> übergeben wird, gibt Python die Klasse des Objekts zurück, in diesem Fall also _io.TextIOWrapper. Diese Klasse stammt aus dem Modul io und ist für das Lesen und Schreiben von Textdateien zuständig. Ebenfalls werden als Attribute des Dateiobjekts der Dateipfad, der Zugriffsmodus und die Enkodierung der Datei ausgegeben (siehe <a href="#nte-attribute" class="quarto-xref">Beispiel&nbsp;<span>6.1</span></a>). Sollte die Enkodierung nicht automatisch als UTF-8 erkannt werden, kann diese mit dem Argument <code>encoding = 'UTF-8'</code> übergeben werden.</p>
-<div id="7f4df83e" class="cell" data-execution_count="4">
+<div id="b32584fd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>daten_maya <span class="op">=</span> <span class="bu">open</span>(pfad_maya, mode <span class="op">=</span> <span class="st">'r'</span>, encoding <span class="op">=</span> <span class="st">'UTF-8'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(daten_maya)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -381,14 +385,14 @@ Beispiel&nbsp;6.1: Attribute eines Objekts bestimmen
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Mit der Funktion <code>dir(objekt)</code> können die verfügbaren Attribute eines Objekts ausgegeben werden. Dabei werden jedoch auch die vererbten Attribute und Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:</p>
-<div id="1fe4e07c" class="cell" data-execution_count="5">
+<div id="d6e20dc5" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dir</span>(<span class="dv">1</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_count', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'is_integer', 'numerator', 'real', 'to_bytes']</code></pre>
 </div>
 </div>
 <p>Um die Ausgabe auf Attribute einzugrenzen, kann folgende Funktion verwendet werden:</p>
-<div id="365d6cff" class="cell" data-execution_count="6">
+<div id="b2ab892e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> <span class="kw">not</span> <span class="bu">callable</span> (<span class="bu">getattr</span>(objekt, attr))]</span>
@@ -398,7 +402,7 @@ Beispiel&nbsp;6.1: Attribute eines Objekts bestimmen
 </div>
 </div>
 <p>Mit doppelten Unterstrichen umschlossene Attribute sind für Python reserviert und nicht für den:die Nutzer:in gedacht. Folgende Funktion entfernt Attribute mit doppelten Unterstrichen aus der Ausgabe:</p>
-<div id="c74e00d1" class="cell" data-execution_count="7">
+<div id="1d8b1444" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(objekt, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'__'</span>))]</span>
@@ -408,14 +412,14 @@ Beispiel&nbsp;6.1: Attribute eines Objekts bestimmen
 </div>
 </div>
 <p>Im Fall einer Ganzzahl können Attribute (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:</p>
-<div id="1d9d3223" class="cell" data-execution_count="8">
+<div id="9c39f4ea" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>).numerator</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="72">
 <pre><code>1</code></pre>
 </div>
 </div>
 <p>Wenn wir uns die Attribute des Dateiobjekts ‘daten_maya’ ansehen, fallen Attribute mit einem einzelnen führenden Unterstrich auf.</p>
-<div id="f6de3231" class="cell" data-execution_count="9">
+<div id="6b040e6e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> daten_maya</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(objekt, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'__'</span>))]</span>
@@ -425,7 +429,7 @@ Beispiel&nbsp;6.1: Attribute eines Objekts bestimmen
 </div>
 </div>
 <p>Hierbei handelt es sich um Attribute, die nicht durch den:die Nutzer:in aufgerufen werden sollen (weitere Informationen dazu finden Sie <a href="https://dbader.org/blog/meaning-of-underscores-in-python">hier</a>). Folgender Programmcode gibt alle Attribute ohne führende Unterstriche aus:</p>
-<div id="26ae86d4" class="cell" data-execution_count="10">
+<div id="cd9e8fa5" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> daten_maya</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(objekt, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'_'</span>))]</span>
@@ -438,7 +442,7 @@ Beispiel&nbsp;6.1: Attribute eines Objekts bestimmen
 </div>
 </div>
 <p>Die Attribute der Datei können mit entsprechenden Befehlen abgerufen werden.</p>
-<div id="23f44dd3" class="cell" data-execution_count="11">
+<div id="9cb9d6ac" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dateipfad: </span><span class="sc">{</span>daten_maya<span class="sc">.</span>name<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Dateiname: </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(daten_maya.name)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Datei ist geschlossen: </span><span class="sc">{</span>daten_maya<span class="sc">.</span>closed<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
@@ -475,7 +479,7 @@ Tipp&nbsp;6.2: Enkodierung ausgeben
 <section id="sec-dateiinhalt" class="level3">
 <h3 class="anchored" data-anchor-id="sec-dateiinhalt">Dateiinhalt ausgeben</h3>
 <p>Um den Dateiinhalt auszugeben, kann das Datenobjekt mit einer Schleife zeilenweise durchlaufen und ausgegeben werden. (Die Datei dice-maya hat nur eine Zeile.)</p>
-<div id="03b24e57" class="cell" data-execution_count="12">
+<div id="8af0dd41" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zeile <span class="kw">in</span> daten_maya:</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Inhalt Zeile </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, mit </span><span class="sc">{</span><span class="bu">len</span>(zeile)<span class="sc">}</span><span class="ss"> Zeichen:"</span>)</span>
@@ -491,8 +495,8 @@ Tipp&nbsp;6.2: Enkodierung ausgeben
 </section>
 <section id="dateien-einlesen" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="dateien-einlesen"><span class="header-section-number">6.2</span> Dateien einlesen</h2>
-<p>Um den gesamten Inhalt einer Datei einzulesen, kann die Methode <a href="https://docs.python.org/3/tutorial/inputoutput.html">datenobjekt.read()</a> verwendet werden. Die Methode hat als optionales Argument <code>.read(size)</code>. size wird als Ganzzahl übergeben und entsprechend viele Zeichen (im Binärmodus entsprechend viele Bytes) werden ggf. bis zum Dateiende ausgelesen.</p>
-<div id="a6c4e270" class="cell" data-execution_count="13">
+<p>Um den gesamten Inhalt einer Datei einzulesen, kann die Methode <a href="https://docs.python.org/3/tutorial/inputoutput.html">datenobjekt.read()</a> verwendet werden. Die Methode hat als optionalen Parameter <code>.read(size)</code>. size wird als Ganzzahl übergeben und entsprechend viele Zeichen (im Binärmodus entsprechend viele Bytes) werden ggf. bis zum Dateiende ausgelesen. Der Parameter <code>size</code> ist nützlich, um die Formatierung des Inhalts einer großen Datei zu prüfen und dabei die Ausgabe auf eine überschaubare Anzahl von Zeichen zu begrenzen.</p>
+<div id="c267f8ba" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>augen_maya <span class="op">=</span> daten_maya.read()</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"len(augen_maya): </span><span class="sc">{</span><span class="bu">len</span>(augen_maya)<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
@@ -544,7 +548,7 @@ Abbildung&nbsp;6.1: Bewegung des Dateizeigers beim Auslesen von drei Zeichen
 </div>
 </div>
 <p>Wird der Dateizeiger mit der Methode <code>datenobjekt.seek(0)</code> an den Dateianfang gestellt, gelingt das Auslesen der Datei.</p>
-<div id="0e2cbbb2" class="cell" data-results="hold" data-execution_count="14">
+<div id="124eac0e" class="cell" data-results="hold" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Position des Dateizeigers vor dem Zurücksetzen auf 0: </span><span class="sc">{</span>daten_maya<span class="sc">.</span>tell()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>daten_maya.seek(<span class="dv">0</span>)<span class="op">;</span></span>
@@ -573,7 +577,7 @@ Tipp&nbsp;6.3: Musterlösung Dateizeiger bewegen
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="1445a4d0" class="cell" data-execution_count="15">
+<div id="ca0de22f" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>daten_maya.seek(<span class="dv">6</span>, <span class="dv">0</span>)<span class="op">;</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(daten_maya.read(<span class="dv">1</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -587,15 +591,15 @@ Tipp&nbsp;6.3: Musterlösung Dateizeiger bewegen
 </div>
 </div>
 </div>
-<p>Um Mayas Würfelergebnisse zu addieren, müssen die Zahlen extrahiert und in Ganzzahlen umgewandelt werden, da im Textmodus stets strings zurückgegeben werden.</p>
-<div id="6599b18f" class="cell" data-execution_count="16">
+<p>Um Mayas Würfelergebnisse zu addieren, müssen die Zahlen extrahiert und in Ganzzahlen umgewandelt werden, da im Textmodus stets eine Zeichenfolge zurückgegeben wird.</p>
+<div id="6e282673" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(augen_maya))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'str'&gt;</code></pre>
 </div>
 </div>
-<p>Dazu werden mit der Methode <code>str.strip(")</code> das führende und abschließende Anführungszeichen entfernt sowie anschließend mit der Methode <code>str.split('", "')</code> der String in eine Liste aufgeteilt. Anschließend werden die Listenelemente in Ganzzahlen umgewandelt und summiert. (Methoden der string-Bearbeitung werden im nächsten Abschnitt ausführlich behandelt.)</p>
-<div id="4a8eda4b" class="cell" data-results="hold" data-execution_count="17">
+<p>Dazu werden mit der Methode <code>str.strip(")</code> das führende und abschließende Anführungszeichen entfernt sowie anschließend mit der Methode <code>str.split('", "')</code> die Zeichenfolge über das Trennzeichen in eine Liste aufgeteilt. Anschließend werden die Listenelemente in Ganzzahlen umgewandelt und summiert. (Methoden der string-Bearbeitung werden im nächsten Abschnitt ausführlich behandelt.)</p>
+<div id="6d4f9752" class="cell" data-results="hold" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"augen_maya:</span><span class="ch">\n</span><span class="sc">{</span>augen_maya<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>augen_maya <span class="op">=</span> augen_maya.strip(<span class="st">'"'</span>)</span>
@@ -628,7 +632,7 @@ Summe Augen: 23</code></pre>
 <section id="datei-schließen" class="level4">
 <h4 class="anchored" data-anchor-id="datei-schließen">Datei schließen</h4>
 <p>Nach dem Zugriff auf die Datei, muss diese wieder geschlossen werden, um diese für andere Programme freizugeben.</p>
-<div id="7a35d8f7" class="cell" data-execution_count="18">
+<div id="31444537" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>daten_maya.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="wrn-Schreiboperationen" class="callout callout-style-simple callout-warning callout-titled">
@@ -662,7 +666,7 @@ Tipp&nbsp;6.4: Musterlösung Augenzahlvergleich
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="border">
-<div id="7f183c3c" class="cell" data-execution_count="19">
+<div id="036e16b7" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Erst Einlesen der Datei:</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>daten_hans <span class="op">=</span> <span class="bu">open</span>(pfad_hans, mode <span class="op">=</span> <span class="st">'r'</span>, encoding <span class="op">=</span> <span class="st">'UTF-8'</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>augen_hans <span class="op">=</span> daten_hans.read()</span>
@@ -694,9 +698,9 @@ Summe Augenzahl von Hans: 19</code></pre>
 </div>
 <p><span class="citation" data-cites="Arnold-2023-funktionen-module-dateien">(<a href="#ref-Arnold-2023-funktionen-module-dateien" role="doc-biblioref">Arnold 2023</a>)</span></p>
 </section>
-<section id="datensätze-einlesen" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="datensätze-einlesen"><span class="header-section-number">6.4</span> Datensätze einlesen</h2>
-<p>Datensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d.&nbsp;h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion <code>open(datei)</code> gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel <code>dateiobjekt.read()</code> als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshablb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.</p>
+<section id="daten-interpretieren" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="daten-interpretieren"><span class="header-section-number">6.4</span> Daten interpretieren</h2>
+<p>Datensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d.&nbsp;h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion <code>open(datei)</code> gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel <code>dateiobjekt.read()</code> als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshalb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.</p>
 <p>Für die Bearbeitung von Zeichenfolgen bietet Python eine Reihe von <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">String-Methoden</a>. Einige davon werden in diesem Kapitel exemplarisch verwendet. String-Methoden werden in der Regel mit einem führenden ‘str’ in der Form <code>str.methode()</code> genannt.</p>
 <p>Beispielsweise soll eine Datei mit den Einwohnerzahlen der europäischen Länder eingelesen werden.</p>
 <table class="table">
@@ -714,12 +718,12 @@ Summe Augenzahl von Hans: 19</code></pre>
 </tbody>
 </table>
 <p>&nbsp;</p>
-<p>Zunächst geben wir die ersten drei Zeilen der Datei aus. Dafür kann die Datei zeilenweise mit einer for-Schleife durchlaufen werden, die mit dem Schlüsselwort <code>break</code> abgebrochen wird, wenn die Laufvariable den Wert 3 erreicht hat. Eine andere Möglichkeit ist die Methode <code>dateiobjekt.readline()</code>, die eine einzelne Zeile ausliest.</p>
+<p>Um einen Überblick über den Aufbau der Datei zu erhalten, werden die ersten drei Zeilen der Datei ausgegeben. Dafür kann die Datei zeilenweise mit einer for-Schleife durchlaufen werden, die mit dem Schlüsselwort <code>break</code> abgebrochen wird, wenn die Laufvariable den Wert 3 erreicht hat. Eine andere Möglichkeit ist die Methode <code>dateiobjekt.readline()</code>, die eine einzelne Zeile ausliest. Hier wird die Häufigkeit der Schleifenausführung über die Laufvariable mit <code>for i in range(3):</code> gesteuert.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">for-Schleife mit break</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Methode dateiobjekt.readline()</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="295b4914" class="cell" data-execution_count="20">
+<div id="2cdb383b" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -746,7 +750,7 @@ Bulgarien,7000039
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Mit der Methode <code>dateiobjekt.readline()</code> kann eine einzelne Zeile eingelesen werden.</p>
-<div id="31530069" class="cell" data-execution_count="21">
+<div id="8027ba85" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -768,10 +772,8 @@ Bulgarien,7000039
 </div>
 </div>
 <p>Die Datei hat also zwei Spalten. In der ersten Spalte sind die Ländernamen eingetragen, in der zweiten Spalte die Werte. Als Trennzeichen wird das Komma verwendet. In der ersten Zeile sind die Spaltenbeschriftungen eingetragen.</p>
-<section id="vollständiges-einlesen" class="level3">
-<h3 class="anchored" data-anchor-id="vollständiges-einlesen">vollständiges Einlesen</h3>
 <p>Im vorherigen Abschnitt haben wir die Methode <code>dateiobjekt.read()</code> kennengelernt, mit der eine Datei vollständig als string eingelesen wird. Zunächst wird die Datei mit der Methode <code>dateiobjekt.read()</code> in das Objekt einwohner eingelesen und wieder geschlossen.</p>
-<div id="3a9fa941" class="cell" data-execution_count="22">
+<div id="d5819695" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -815,7 +817,7 @@ Vereinigtes Koenigreich,66647112
 </div>
 </div>
 <p>Anschließend können die eingelesenen Daten mit der Methode <code>str.split('\n')</code> zeilweise aufgeteilt werden. Mit <code>'\n'</code> wird als Argument der Zeilenumbruch übergeben. Die Methode liefert eine Liste zurück.</p>
-<div id="ec937cba" class="cell" data-execution_count="23">
+<div id="fc873443" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>liste_einwohner_zeilenweise <span class="op">=</span> einwohner.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste_einwohner_zeilenweise[<span class="dv">0</span>:<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -823,7 +825,7 @@ Vereinigtes Koenigreich,66647112
 </div>
 </div>
 <p>Die Liste enthält an der Indexposition die Spaltenbeschriftungen. Diese können mit der Methode <code>liste.pop(index)</code> aus der Liste entfernt und zugleich in einem neuen Objekt gespeichert werden.</p>
-<div id="25b3390d" class="cell" data-execution_count="24">
+<div id="8666af69" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>spaltennamen <span class="op">=</span> liste_einwohner_zeilenweise.pop(<span class="dv">0</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>spaltennamen <span class="op">=</span> spaltennamen.split(<span class="st">','</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Überschrift Spalte 0: </span><span class="sc">{</span>spaltennamen[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\t</span><span class="ss">Überschrift Spalte 1: </span><span class="sc">{</span>spaltennamen[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -831,9 +833,8 @@ Vereinigtes Koenigreich,66647112
 <pre><code>Überschrift Spalte 0: GEO   Überschrift Spalte 1: Value</code></pre>
 </div>
 </div>
-<p>Anschließend kann die Liste mit der Methode <code>str.split(',')</code> nach Ländern und Werten aufgeteilt werden. Der Vorgang bricht allerdings mit einer Fehlermeldung ab. Die Fehlermeldung wird im folgenden Code-Block per error handling mit der Konstruktion aus <code>try:</code> und <code>except:</code> abgefangen, um dieser hier im Skript darzustellen.</p>
-<p><strong>error handling ergänzen - eventuell bei Funktionen definieren - und hier Querverweis setzen</strong></p>
-<div id="ffe4bbd0" class="cell" data-execution_count="25">
+<p>Anschließend kann die Liste mit der Methode <code>str.split(',')</code> nach Ländern und Werten aufgeteilt werden. Der Vorgang bricht allerdings mit einer Fehlermeldung ab. Die Fehlermeldung wird im folgenden Code-Block per Ausnahmebehandlung abgefangen. Neben der Fehlermeldung werden der verursachende Listeneintrag und dessen Indexposition ausgegeben.</p>
+<div id="9cffa68e" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leere Listen vor der Schleife anlegen</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> []</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>einwohnerzahl <span class="op">=</span> []</span>
@@ -850,57 +851,41 @@ Vereinigtes Koenigreich,66647112
 <span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(spaltennamen[<span class="dv">1</span>])</span>
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(einwohnerzahl)</span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> error:</span>
-<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print Fehlermeldung</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"Fehlermeldung: </span><span class="sc">{</span>error<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print Eintrag und Index</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"Eintrag: </span><span class="sc">{</span>eintrag<span class="sc">}</span><span class="ch">\t</span><span class="ss"> Zeilenindex: </span><span class="sc">{</span>liste_einwohner_zeilenweise<span class="sc">.</span>index(zeile)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>list index out of range</code></pre>
+<pre><code>Fehlermeldung: list index out of range
+Eintrag: ['']    Zeilenindex: 29</code></pre>
 </div>
 </div>
 <p>Die Fehlermeldung ist so zu deuten, dass eine der Listenoperationen mit dem Slice Operator einen ungültigen Index anspricht. Leicht angepasst, liefert der Code-Block auch die Ursache der Fehlermeldung.</p>
-<div id="53877a8b" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leere Listen vor der Schleife anlegen</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> []</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>einwohnerzahl <span class="op">=</span> []</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>indexzähler <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zeile <span class="kw">in</span> liste_einwohner_zeilenweise:</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    eintrag <span class="op">=</span> zeile.split(<span class="st">','</span>)</span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    geo.append(eintrag[<span class="dv">0</span>])</span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    einwohnerzahl.append(eintrag[<span class="dv">1</span>])</span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    indexzähler <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> error:</span>
-<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(error)</span>
-<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Eintrag:"</span>, eintrag, <span class="st">"</span><span class="ch">\t</span><span class="st">Indexposition:"</span>, indexzähler)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>list index out of range
-Eintrag: ['']   Indexposition: 29</code></pre>
-</div>
-</div>
 <p>Wird die leere Zeile aus der Liste entfernt, klappt das Aufteilen der Ländernamen und der Werte.</p>
-<div id="f8053fef" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># leere Zeile entfernen</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>liste_einwohner_zeilenweise.remove(<span class="st">''</span>)</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leere Listen vor der Schleife anlegen</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> []</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>einwohnerzahl <span class="op">=</span> []</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> zeile <span class="kw">in</span> liste_einwohner_zeilenweise:</span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>    eintrag <span class="op">=</span> zeile.split(<span class="st">','</span>)</span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    geo.append(eintrag[<span class="dv">0</span>])</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>    einwohnerzahl.append(eintrag[<span class="dv">1</span>])</span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(spaltennamen[<span class="dv">0</span>])</span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(geo, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(spaltennamen[<span class="dv">1</span>])</span>
-<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(einwohnerzahl)</span>
-<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> error:</span>
-<span id="cb50-21"><a href="#cb50-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="08e6a08e" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># leere Zeile entfernen</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>liste_einwohner_zeilenweise.remove(<span class="st">''</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leere Listen vor der Schleife anlegen</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> []</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>einwohnerzahl <span class="op">=</span> []</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> zeile <span class="kw">in</span> liste_einwohner_zeilenweise:</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    eintrag <span class="op">=</span> zeile.split(<span class="st">','</span>)</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    geo.append(eintrag[<span class="dv">0</span>])</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    einwohnerzahl.append(eintrag[<span class="dv">1</span>])</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(spaltennamen[<span class="dv">0</span>])</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(geo, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(spaltennamen[<span class="dv">1</span>])</span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(einwohnerzahl)</span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> error:</span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GEO
 ['Belgien', 'Bulgarien', 'Tschechien', 'Daenemark', 'Deutschland einschliesslich ehemalige DDR', 'Estland', 'Irland', 'Griechenland', 'Spanien', 'Frankreich', 'Kroatien', 'Italien', 'Zypern', 'Lettland', 'Litauen', 'Luxemburg', 'Uganda', 'Ungarn', 'Malta', 'Niederlande', 'Oesterreich', 'Polen', 'Portugal', 'Rumaenien', 'Slowenien', 'Slowakei', 'Finnland', 'Schweden', 'Vereinigtes Koenigreich'] 
@@ -910,8 +895,8 @@ Value
 </div>
 </div>
 </section>
-<section id="aufgabe-einwohnerzahl" class="level3">
-<h3 class="anchored" data-anchor-id="aufgabe-einwohnerzahl">Aufgabe Einwohnerzahl</h3>
+<section id="aufgabe-daten-interpretieren" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="aufgabe-daten-interpretieren"><span class="header-section-number">6.5</span> Aufgabe Daten interpretieren</h2>
 <ol type="1">
 <li><p>Bestimmen Sie das Minimum und das Maximum der Einwohnerzahl und die dazugehörigen Länder.</p></li>
 <li><p>Bereinigen Sie ggf. fehlerhafte Werte.</p></li>
@@ -939,64 +924,110 @@ Musterlösung vollständiges Einlesen
 </div>
 </div>
 </section>
-</section>
-<section id="readlines-und-list" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="readlines-und-list"><span class="header-section-number">6.5</span> .readlines() und list()</h2>
-<p>Die Methode <code>dateiobjekt.readlines()</code> gibt eine Liste zurück, in der jede Zeile einen Eintrag darstellt. Ebenso kann die Listenfunktion <code>list()</code> auf Dateiobjekte angewendet werden. Beide Vorgehensweisen liefern die gleiche Liste zurück, in der der Zeilenumbruch <code>\n</code> mit ausgelesen wird.</p>
-<div id="6f26ad12" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Methode readlines</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> dateiobjekt_einwohner.readlines()</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(einwohner)</span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="co">## Dateizeiger zurücksetzen</span></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner.seek(<span class="dv">0</span>)<span class="op">;</span></span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion list</span></span>
-<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> <span class="bu">list</span>(dateiobjekt_einwohner)</span>
-<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(einwohner)</span>
-<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Datei schließen</span></span>
-<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner.close()<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="einlesen-als-liste" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="einlesen-als-liste"><span class="header-section-number">6.6</span> Einlesen als Liste</h2>
+<p>Ein Dateiobjekt kann auch direkt als Liste eingelesen werden. Die Methode <code>dateiobjekt.readlines()</code> gibt eine Liste zurück, in der jede Zeile einen Eintrag darstellt. Ebenso kann die Listenfunktion <code>list()</code> auf Dateiobjekte angewendet werden. Beide Vorgehensweisen liefern die gleiche Liste zurück, in der der Zeilenumbruch <code>\n</code> mit ausgelesen wird.</p>
+<div id="69450375" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Methode readlines</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> dateiobjekt_einwohner.readlines()</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(einwohner)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co">## Dateizeiger zurücksetzen</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner.seek(<span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Funktion list</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> <span class="bu">list</span>(dateiobjekt_einwohner)</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(einwohner)</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Datei schließen</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner.close()<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['GEO,Value\n', 'Belgien,11467923\n', 'Bulgarien,7000039\n', 'Tschechien,10528984\n', 'Daenemark,5799763\n', 'Deutschland einschliesslich ehemalige DDR,82940663\n', 'Estland,1324820\n', 'Irland,4904240\n', 'Griechenland,10722287\n', 'Spanien,46934632\n', 'Frankreich,67028048\n', 'Kroatien,4076246\n', 'Italien,61068437\n', 'Zypern,875898\n', 'Lettland,1919968\n', 'Litauen,2794184\n', 'Luxemburg,612179\n', 'Uganda,-1\n', 'Ungarn,9772756\n', 'Malta,493559\n', 'Niederlande,17423013\n', 'Oesterreich,8842000\n', 'Polen,37972812\n', 'Portugal,10276617\n', 'Rumaenien,19405156\n', 'Slowenien,2080908\n', 'Slowakei,5450421\n', 'Finnland,5512119\n', 'Schweden,10243000\n', 'Vereinigtes Koenigreich,66647112\n']
 ['GEO,Value\n', 'Belgien,11467923\n', 'Bulgarien,7000039\n', 'Tschechien,10528984\n', 'Daenemark,5799763\n', 'Deutschland einschliesslich ehemalige DDR,82940663\n', 'Estland,1324820\n', 'Irland,4904240\n', 'Griechenland,10722287\n', 'Spanien,46934632\n', 'Frankreich,67028048\n', 'Kroatien,4076246\n', 'Italien,61068437\n', 'Zypern,875898\n', 'Lettland,1919968\n', 'Litauen,2794184\n', 'Luxemburg,612179\n', 'Uganda,-1\n', 'Ungarn,9772756\n', 'Malta,493559\n', 'Niederlande,17423013\n', 'Oesterreich,8842000\n', 'Polen,37972812\n', 'Portugal,10276617\n', 'Rumaenien,19405156\n', 'Slowenien,2080908\n', 'Slowakei,5450421\n', 'Finnland,5512119\n', 'Schweden,10243000\n', 'Vereinigtes Koenigreich,66647112\n']</code></pre>
 </div>
 </div>
-<p>Um den Zeilenumbruch zu entfernen, könnte mit dem Slice Operator das letzte Zeichen jedes Listeneintrags entfernt werden. Eine andere Möglichkeit ist die Methode <code>str.replace(old, new, count=-1)</code>, mit der Zeichen ersetzt oder gelöscht werden können. Die Parameter <code>old</code> und <code>new</code> geben die zu ersetzende bzw. die einzusetzende Zeichenfolge an und müssen positional übergeben werden. Über den Parameter <code>count</code> kann eingestellt werden, wie oft die Zeichenfolge <code>old</code> ersetzt werden soll, standmäßig wird jedes Vorkommen ersetzt.</p>
-<div id="fa6badf4" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hund'</span>.replace(<span class="st">'Hu'</span>, <span class="st">'Mu'</span>))</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>zeichenfolge <span class="op">=</span> <span class="st">'Ein  kurzer Text ohne  doppelte Leerzeichen.'</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeichenfolge.replace(<span class="st">'  '</span>, <span class="st">' '</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Um den Zeilenumbruch zu entfernen, könnte mit dem Slice Operator das letzte Zeichen jedes Listeneintrags entfernt werden.</p>
+<p>Eine andere Möglichkeit ist die Methode <code>str.replace(old, new, count=-1)</code>, mit der Zeichen ersetzt oder gelöscht werden können. Die Parameter <code>old</code> und <code>new</code> geben die zu ersetzende bzw. die einzusetzende Zeichenfolge an und <em>müssen positional</em> übergeben werden. Über den Parameter <code>count</code> kann eingestellt werden, wie oft die Zeichenfolge <code>old</code> ersetzt werden soll. Standardmäßig wird jedes Vorkommen ersetzt.</p>
+<div id="2caaad1d" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hund'</span>.replace(<span class="st">'Hu'</span>, <span class="st">'Mu'</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>zeichenfolge <span class="op">=</span> <span class="st">'Ein  kurzer Text ohne  doppelte Leerzeichen.'</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeichenfolge.replace(<span class="st">'  '</span>, <span class="st">' '</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mund
 Ein kurzer Text ohne doppelte Leerzeichen.</code></pre>
 </div>
 </div>
 <p>Die Methode <code>str.replace()</code> kann auch zum Löschen verwendet werden. Wird für den Parameter <code>new</code> eine leere Zeichenfolge übergeben, wird die in <code>old</code> übergebene Zeichenfolge gelöscht.</p>
-<div id="6c588f9a" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeichenfolge.replace(<span class="st">' '</span>, <span class="st">''</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5d3afc73" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeichenfolge.replace(<span class="st">' '</span>, <span class="st">''</span>).replace(<span class="st">'doppelte'</span>, <span class="st">''</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>EinkurzerTextohnedoppelteLeerzeichen.</code></pre>
+<pre><code>EinkurzerTextohneLeerzeichen.</code></pre>
 </div>
 </div>
-<p><strong>Rest aus SA: 03</strong></p>
-<p>Von unschätzbaren Wert beim Einlesen von Datensätzen (Querverweis auf m-EsD) str.replace(old, new, count=-1) # wird new als ’’ übergeben, entspricht die Funktion dem Löschen von Zeichenfolgen</p>
-<p>str.split(), str.rsplit(), str.splitlines(keepends=False)</p>
-<p>nicht von mir verwendet, aber nützlich:<br>
-str.count(sub[, start[, end]]) str.find(sub[, start[, end]]) # return the lowest index in the string where substring sub is foun str.index(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found. str.rfind(sub[, start[, end]]) # return the highest index in the string where substring sub is foun str.rindex(sub[, start[, end]]) # Like find(), but raise ValueError when the substring is not found.</p>
-<p>str.join(iterable) # das nutze ich einmal im m-EsD (glaube ich)</p>
-<p>str.lstrip([chars]), str.rstrip([chars]), str.strip([chars]) –&gt; default ist whitespace</p>
-</section>
-<section id="aufgaben-string-methods" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="aufgaben-string-methods"><span class="header-section-number">6.6</span> Aufgaben string methods</h2>
+<p>Mit der Methode <code>str.replace()</code> kann die eingelesene Liste um den Zeilenumbruch bereinigt werden.</p>
+<div id="115f7779" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/einwohner_europa_2019.csv"</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner <span class="op">=</span> <span class="bu">open</span>(dateipfad, <span class="st">'r'</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Methode readlines</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> dateiobjekt_einwohner.readlines()</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>einwohner_neu <span class="op">=</span> []</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> element <span class="kw">in</span> einwohner:</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  einwohner_neu.append(element.replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">''</span>))</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> einwohner_neu</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(einwohner)</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Datei schließen</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>dateiobjekt_einwohner.close()<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['GEO,Value', 'Belgien,11467923', 'Bulgarien,7000039', 'Tschechien,10528984', 'Daenemark,5799763', 'Deutschland einschliesslich ehemalige DDR,82940663', 'Estland,1324820', 'Irland,4904240', 'Griechenland,10722287', 'Spanien,46934632', 'Frankreich,67028048', 'Kroatien,4076246', 'Italien,61068437', 'Zypern,875898', 'Lettland,1919968', 'Litauen,2794184', 'Luxemburg,612179', 'Uganda,-1', 'Ungarn,9772756', 'Malta,493559', 'Niederlande,17423013', 'Oesterreich,8842000', 'Polen,37972812', 'Portugal,10276617', 'Rumaenien,19405156', 'Slowenien,2080908', 'Slowakei,5450421', 'Finnland,5512119', 'Schweden,10243000', 'Vereinigtes Koenigreich,66647112']</code></pre>
+</div>
+</div>
 </section>
 <section id="dateien-schreiben" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="dateien-schreiben"><span class="header-section-number">6.7</span> Dateien schreiben</h2>
+<p>Um Dateien zu schreiben, müssen diese mit der <code>write</code>-Methode eines Dateiobjekts verwendet werden. Dieser Methode wird als Argument die zu schreibende Zeichenfolge übergeben.</p>
+<div id="cc9387c0" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"skript/01-daten/neue_datei.txt"</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Öffne Datei zum Schreiben öffnen</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>datei <span class="op">=</span> <span class="bu">open</span>(dateipfad, mode <span class="op">=</span> <span class="st">'w'</span>)</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Inhalt in die Datei schreiben</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>datei.write(<span class="st">"Prokrastination an Hochschulen</span><span class="ch">\n\n</span><span class="st">"</span>.upper())</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>datei.write(<span class="st">"KAPITEL 1: Aller Anfang ist schwer</span><span class="ch">\n</span><span class="st">Platzhalter: Den Rest schreibe ich später."</span>)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Datei schließen</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>datei.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Die Datei kann nun ausgelesen werden.</p>
+<div id="edb70c1d" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>dateiinhalt <span class="op">=</span> <span class="bu">open</span>(dateipfad, mode <span class="op">=</span> <span class="st">'r'</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> dateiinhalt.read()</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>dateiinhalt.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>PROKRASTINATION AN HOCHSCHULEN
+
+KAPITEL 1: Aller Anfang ist schwer
+Platzhalter: Den Rest schreibe ich später.</code></pre>
+</div>
+</div>
+</section>
+<section id="aufgabe-dateien-schreiben" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="aufgabe-dateien-schreiben"><span class="header-section-number">6.8</span> Aufgabe Dateien schreiben</h2>
+<ol type="1">
+<li>Erzeugen Sie eine neue Datei mit der Endung <code>.txt</code>, die den Namen ihrer Heimatstadt hat. Schreiben Sie in diese Datei 10 Zeilen mit Informationen zur Stadt.</li>
+</ol>
 <p>&nbsp; (<span class="citation" data-cites="Arnold-2023-funktionen-module-dateien">Arnold (<a href="#ref-Arnold-2023-funktionen-module-dateien" role="doc-biblioref">2023</a>)</span>)</p>
 
 
@@ -1424,6 +1455,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./module-und-pakete-importieren.html" class="pagination-link" aria-label="module-und-pakete-importieren.html">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">module-und-pakete-importieren.html</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

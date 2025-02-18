@@ -22,6 +22,7 @@ book:
     - sammeltypen.qmd
     - funktionen-definieren.qmd
     - dateien-lesen-und-schreiben.qmd
+    - module-und-pakete-importieren.qmd
 
   sidebar:
     title: "Werkzeugbaustein Python"

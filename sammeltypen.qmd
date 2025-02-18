@@ -323,7 +323,7 @@ print("Menge a ^ b:", menge_a ^ menge_b)
 ```
 
 ### Mengen kopieren
-Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist. Allerdings kann der Zugriffsoperator `[:]` nicht auf Mengen angewendet werden.
+Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode `.copy()` für Mengen definiert ist. Allerdings kann der Zugriffsoperator `[]` nicht auf Mengen angewendet werden.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -392,7 +392,7 @@ print("dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n",
 | Merkmal                                        | Listen | Tupel | Mengen | Dictionary |
 |------------------------------------------------|--------|-------|--------|------------|
 | Beschreibung                            | flexible Anzahl von Elementen beliebigen Typs | Elemente beliebigen Typs, unveränderlich | ungeordnete Sammlung, jedes Element nur einmal enthalten | Zuordnungstabelle aus Schlüssel-Wert-Paaren |
-| Speicherbereich bei Zuweisung geteilt          | ja     | Aufhebung bei Neuzuweisung  | Aufhebung bei Neuzuweisung   | ja         |
+| Speicherbereich bei Zuweisung geteilt          | ja     | ja (aber unveränderlich)  | ja (aber Zugriffsoperator nicht anwendbar)   | ja         |
 | Methode .copy() definiert                      | ja     | nein  | ja     | ja         |
 | Slice-Operator anwendbar                       | ja     | ja    | nein   | ja (nach Schlüssel) |
 
