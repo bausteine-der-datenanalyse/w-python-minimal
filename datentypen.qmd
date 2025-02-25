@@ -4,7 +4,7 @@ Objekte, die Daten speichern, haben einen Datentyp. Der Datentyp gibt an, wie di
 In diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.
 
 ## Zahlen
-Zu den Zahlen gehören Ganzzahlen, boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen.
+Zu den Zahlen gehören Ganzzahlen, boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen (die hier nicht näher vorgestellt werden).
 
 ### Ganzzahlen
 Ganzzahlen werden standardmäßig im Dezimalsystem eingegeben und können positiv oder negativ sein.
@@ -15,19 +15,19 @@ print(12, -8)
 
 Darüber hinaus können Ganzzahlen auch in anderen Basen angegeben werden:
 
-* Dualsystem: Ziffern `0` und `1` mit einem `0b` Prefix
+* Dualsystem: Ziffern `0` und `1` mit dem Präfix `0b` 
 ```{python}
 print(0b1000, "plus", 0b0000, "plus", 0b0010, \
       "plus", 0b0001, "ist", 0b1011)
 ```
 
-* Oktalsystem: Ziffern `0` bis `7` mit einem `0o` Prefix
+* Oktalsystem: Ziffern `0` bis `7` mit dem Präfix `0o` 
 ```{python}
 print(0o7000, "plus", 0o0700, "plus", 0o0020, \
       "plus", 0o0000, "ist", 0o7720)
 ```
 
-* Hexadezimalsystem: Ziffern `0` bis `F` mit einem `0x` Prefix
+* Hexadezimalsystem: Ziffern `0` bis `F` mit dem Präfix `0x`
 ```{python}
 print(0xF000, "plus", 0x0200, "plus", 0x00A0, \
       "plus", 0x0001, "ist", 0xF2A1)
@@ -73,7 +73,9 @@ Mit arithmetischen Operatoren können die Grundrechenarten verwendet werden. Das
 | `//`, `%` | Ganzzahlige Division / Rest | 
 | `**`| Potenzieren |
 
-Werden mehrere Operatoren kombiniert, so muss deren Reihenfolge beachtet bzw. durch die Verwendung von Klammern `(1 + 2) * 3` hergestellt werden. Grundsätzlich gelten die gleichen Regeln wie beim schriftlichen Rechen. Die vollständige Übersicht der Reihenfolge der Ausführung ist in der [Pythondokumentation](https://docs.python.org/3/reference/expressions.html#operator-precedence) aufgeführt. Für die arithmethischen Operatoren gilt folgende, absteigende Reihenfolge.
+&nbsp;
+
+Werden mehrere Operatoren kombiniert, so muss deren Reihenfolge beachtet bzw. durch die Verwendung von Klammern `(1 + 2) * 3` hergestellt werden. Es gelten die gleichen Regeln wie beim schriftlichen Rechen. Die vollständige Übersicht der Reihenfolge der Ausführung ist in der [Pythondokumentation](https://docs.python.org/3/reference/expressions.html#operator-precedence) aufgeführt. Für die arithmethischen Operatoren gilt folgende, absteigende Reihenfolge.
 
 | Operator |
 | :--: |
@@ -170,7 +172,7 @@ Zu den logischen Operatoren gehören die logischen Verknüpfungen `and`, `or` un
 
 ::: {#wrn-bitwise .callout-warning appearance="simple" collapse="false"}
 ## Bitweise Operatoren
-Besondere Vorsicht ist mit den [bitweisen Operatoren](https://wiki.python.org/moin/BitwiseOperators) geboten. Diese vergleichen Zahlen, allerdings nicht als Ganzes, sondern stellenweise (im Binärsystem). Zu beachten ist, dass die bitweisen Operatoren  Ausführungspriorität vor Vergleichsoperationen haben.
+Besondere Vorsicht ist mit den [bitweisen Operatoren](https://wiki.python.org/moin/BitwiseOperators) geboten. Diese vergleichen Zahlen nicht als Ganzes, sondern stellenweise (im Binärsystem). Zu beachten ist, dass die bitweisen Operatoren  Ausführungspriorität vor Vergleichsoperationen haben.
 
 ```{python}
 print(10 > 5 and 10 > 6)
@@ -197,6 +199,12 @@ Die Operatoren `&`, `^` und `|` haben jedoch für Mengen (die wir später kennen
 4. Sind die Zahlen 3, 4 und 5 ganzzahlig durch 2 teilbar ODER ungleich 10?
 5. Prüfen Sie, ob eine Person den Vollpreis bezahlen muss, wenn Sie Ihr Alter angibt.  
 Kinder unter 14 Jahren fahren kostenlos, Jugendliche zwischen 14 und 18 Jahren und Senior:innen ab 65 Jahren erhalten einen Rabatt.
+
+**Die Musterlösung kann Marc machen**
+
+::: {#tip-musterlösung-bool .callout-tip collapse="true"}
+
+:::
 
 ## Zeichenfolgen
 Zeichenfolgen (Englisch string) werden in Python in einfache oder doppelte Anführungszeichen gesetzt.
@@ -233,11 +241,9 @@ Einige Operatoren funktionieren auch mit Daten vom Typ string.
 
 # string + string
 print('a' + 'b')
-print("\n")
 
 # string + Zahl
 print(15 * 'a')
-print("\n")
 
 # logische Operatoren
 print('a' < 'b', 'a' >= 'b', 'a' != 'b')
@@ -361,7 +367,20 @@ Deshalb empfiehlt es sich "sprechende", das heißt selbsterklärende, Variablenn
 ::: {.callout-warning}
 ## Schlüsselwörter und Funktionsnamen
 
-In Python reservierte Schlüsselwörter und Funktionsnamen sind ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion print dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung aus dem Skript entfernen und Python neu starten.  
+In Python reservierte Schlüsselwörter und Funktionsnamen sind ungeeignete Variablennamen. Während Python die Wertzuweisung zu Schlüsselwörtern wie `True` oder `break` mit einem Syntaxfehler quittiert, lassen sich Funktionsnamen neue Werte zuweisen, beispielsweise mit `print = 6`. Wenn Sie die Funktion print dann aufrufen, funktioniert diese natürlich nicht mehr. In diesem Fall müssen Sie die Zuweisung aus dem Skript entfernen und Python neu starten.
+
+Folgende Schlüsselwörter gibt es in Python:
+
+```
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+await      else       import     pass       True
+break      except     in         raise      class
+False      finally    is         return     None
+```
+
 :::
 
 ## Aufgaben Variablen

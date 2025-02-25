@@ -8,24 +8,24 @@ Das Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten in Pytho
   - Funktionen machen Programmcode kürzer und lesbarer. Außerdem gibt es nur eine Stelle, welche bei Änderungen angepasst werden muss.
 
 ## Syntax
-Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird.  `return` beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.
+Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern `()` eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt `:` beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort `return` an die aufrufende Stelle zurückgegeben wird.  `return` beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.
 
 ``` {python}
 #| output: false
-def Funktionsname(Argument1, Argument2):
+def Funktionsname(Parameter1, Parameter2):
     Anweisungsblock
     return Rückgabewert
 ```
 
-Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden. In der Funktion ist nach dem Schlüsselwort `return` eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.
+Damit die Funktion ausgeführt wird, muss der definierte Funktionsname aufgerufen werden. In der Funktion ist nach dem Schlüsselwort `return` eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.
 
 ```{python}
 # Beispiel 1: Summe der Quadrate
 
 # Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
 def sum_quadrate(a, b):
-    print('Wert Argument a:', a)
-    print('Wert Argument b:', b)
+    print('Argument a:', a)
+    print('Argument b:', b)
     print(18 * '=')
     summe = a**2 + b**2
     return summe
@@ -42,7 +42,7 @@ print(ergebnis)
 ```
 
 ## Optionale Parameter
-Dabei kann die in der Funktion enthaltene Ausgabe mit `print()` unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. 
+Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. In diesem Beispiel wird die print-Ausgabe der Funktion mit dem Parameter `ausgabe` gesteuert.
 
 ```{python}
 # Beispiel 2: optionale Argumente
@@ -68,9 +68,9 @@ Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten pos
 # Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
 def sum_potenzen(a, b, p = 2, ausgabe = False):
     if ausgabe:
-      print('Wert Argument a:', a)
-      print('Wert Argument b:', b)
-      print('Wert Argument p:', p)
+      print('Argument a:', a)
+      print('Argument b:', b)
+      print('Argument p:', p)
       print(18 * '=')
     summe = a**p + b**p
     return summe
@@ -91,9 +91,9 @@ Funktionen können in Python nur einen einzigen Rückgabewert haben. Trotzdem k�
 # Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten
 def sum_potenzen(a, b, p = 2, ausgabe = False):
     if ausgabe:
-      print('Wert Argument a:', a)
-      print('Wert Argument b:', b)
-      print('Wert Argument p:', p)
+      print('Argument a:', a)
+      print('Argument b:', b)
+      print('Argument p:', p)
       print(18 * '=')
     summe = a**p + b**p
     return a, b, summe
@@ -114,10 +114,6 @@ print(summe_potenzen, type(summe_potenzen))
 <!-- ggf. ergänzen
 ## anonyme Funktionen Lambdas
 <https://docs.python.org/3/reference/expressions.html#lambda> -->
-
-<!-- ggf. ergänzen
-return beendet die Ausführung des gesamten Anweisungsblocks
--->
 
 ## Aufgaben Funktionen definieren
 1. Palindrom  

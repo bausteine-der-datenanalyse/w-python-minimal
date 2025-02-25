@@ -222,8 +222,8 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#kleine-modulübersicht" id="toc-kleine-modulübersicht" class="nav-link active" data-scroll-target="#kleine-modulübersicht"><span class="header-section-number">7.1</span> Kleine Modulübersicht</a></li>
-  <li><a href="#import-as" id="toc-import-as" class="nav-link" data-scroll-target="#import-as"><span class="header-section-number">7.2</span> import as</a></li>
+  <li><a href="#import-as" id="toc-import-as" class="nav-link active" data-scroll-target="#import-as"><span class="header-section-number">7.1</span> import as</a></li>
+  <li><a href="#kleine-modulübersicht" id="toc-kleine-modulübersicht" class="nav-link" data-scroll-target="#kleine-modulübersicht"><span class="header-section-number">7.2</span> Kleine Modulübersicht</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +249,7 @@ div.csl-indent {
 </header>
 
 
-<p>Die Pythonbasis bringt eine begrenzte Anzahl von Funktion mit. Der Funktionsumfang von Python kann jedoch erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.</p>
+<p>Der Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.</p>
 <div id="imp-module-und-pakete" class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -279,16 +279,16 @@ In Paketen enthaltene Module werden durch das Schlüsselwort <code>import</code>
 </div>
 </div>
 <p>Module und Pakete werden mit dem Schlüsselwort <code>import</code> in Python geladen. Beispielsweise kann das für die Erzeugung (pseudo-)zufälliger Zahlen zuständige Modul random mit dem Befehl <code>import random</code> eingebunden werden. Anschließend stehen die Funktionen des Moduls unter dem Modulnamen in der Schreibweise <code>modul.funktion()</code> zur Verfügung.</p>
-<div id="a2712efe" class="cell" data-execution_count="1">
+<div id="94eb596e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random.randint(<span class="dv">1</span>, <span class="dv">10</span>)) <span class="co"># Zufällige Ganzzahl zwischen 1 und 10</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1</code></pre>
+<pre><code>10</code></pre>
 </div>
 </div>
 <p>Das Paket Matplotlib bringt viele Funktionen zur grafischen Darstellung von Daten mit. Das Modul <code>matplotlib.pyplot</code> stellt eine Schnittstelle zu den enthaltenen Funktionen dar.</p>
-<div id="ce53bacd" class="cell" data-execution_count="2">
+<div id="dd9619ac" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>zufallsdaten <span class="op">=</span> [] <span class="co"># leere Liste anlegen</span></span>
@@ -300,7 +300,7 @@ In Paketen enthaltene Module werden durch das Schlüsselwort <code>import</code>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="module-und-pakete-importieren_files/figure-html/cell-3-output-1.png" width="558" height="411" class="figure-img"></p>
+<p><img src="module-und-pakete-importieren_files/figure-html/cell-3-output-1.png" width="566" height="411" class="figure-img"></p>
 <figcaption>Grafik mit dem Modul pyplot aus dem Paket matplotlib</figcaption>
 </figure>
 </div>
@@ -317,44 +317,28 @@ Hinweis&nbsp;7.1: Namensraum direkt einbinden
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese direkt aufgerufen werden können. Dies ist mit dem Schlüsselwort <code>from</code> möglich.</p>
-<div id="f330b9de" class="cell" data-execution_count="3">
+<p>In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese ohne die Schreibweise <code>modul.funktion()</code> aufgerufen werden können. Dies ist mit dem Schlüsselwort <code>from</code> möglich.</p>
+<div id="7643ccb5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die Funktion randint steht nun direkt zur Verfügung: </span><span class="sc">{</span>randint(<span class="dv">1</span>, <span class="dv">100</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Die Funktion randint steht nun direkt zur Verfügung: 46</code></pre>
+<pre><code>Die Funktion randint steht nun direkt zur Verfügung: 37</code></pre>
 </div>
 </div>
 <p>Durch <code>from modulname import *</code> ist es sogar möglich, alle Funktionen aus einem Modul in den Namensraum von Python zu importieren. Im Allgemeinen sollte das direkte Importieren von Funktionen oder eines ganzen Moduls in den Namensraum von Python jedoch unterlassen werden. Einerseits wird damit eine Namensraumkollision riskiert, beispielsweise gibt es die Funktion <code>sum()</code> in der Pythonbasis, in NumPy und in Pandas. Andererseits wird der Programmcode dadurch weniger nachvollziehbar, da nicht mehr überall ersichtlich ist, aus welchem Modul eine verwendete Funktion stammt.</p>
 </div>
 </div>
-<section id="kleine-modulübersicht" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="kleine-modulübersicht"><span class="header-section-number">7.1</span> Kleine Modulübersicht</h2>
-<p>Da es nicht möglich ist auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben. In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.</p>
-<ul>
-<li><strong>math</strong>: Mathematische Funktionen und Konstanten</li>
-<li><strong>sys</strong>: Interaktion mit dem Python-Interpreter</li>
-<li><strong>os</strong>: Interaktion mit dem Betriebssystem</li>
-<li><strong>time</strong>: Zeitfunktionen</li>
-<li><strong>glob</strong>: Durchsuchen von Dateisystempfaden</li>
-<li><strong>multiprocessing / threading</strong>: Parallelprogramierung mit Prozessen / Threads</li>
-<li><strong>matplotlib</strong>: Visualisierung von Daten und Erstellen von Abbildungen</li>
-<li><strong>numpy</strong>: Numerische Operationen und Funktionen</li>
-<li><strong>scipy</strong>: Wissenschaftliche Funktionen</li>
-<li><strong>pandas</strong>: Daten einlesen und auswerten</li>
-</ul>
-</section>
-<section id="import-as" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="import-as"><span class="header-section-number">7.2</span> import as</h2>
+<section id="import-as" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="import-as"><span class="header-section-number">7.1</span> import as</h2>
 <p>Um lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort <code>as</code> verwendet werden, um dem Modul einen neuen Namen zuzuweisen.</p>
-<div id="d5578da4" class="cell" data-execution_count="4">
+<div id="b7a6656d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.plot(zufallsdaten)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="module-und-pakete-importieren_files/figure-html/cell-5-output-1.png" width="558" height="411" class="figure-img"></p>
+<p><img src="module-und-pakete-importieren_files/figure-html/cell-5-output-1.png" width="566" height="411" class="figure-img"></p>
 <figcaption>Grafik mit dem Modul pyplot aus dem Paket matplotlib</figcaption>
 </figure>
 </div>
@@ -388,6 +372,22 @@ Hinweis&nbsp;7.1: Namensraum direkt einbinden
 </tr>
 </tbody>
 </table>
+</section>
+<section id="kleine-modulübersicht" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="kleine-modulübersicht"><span class="header-section-number">7.2</span> Kleine Modulübersicht</h2>
+<p>Da es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. <em>Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben.</em> In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.</p>
+<ul>
+<li><strong>math</strong>: mathematische Funktionen und Konstanten</li>
+<li><strong>scipy</strong>: wissenschaftliche Funktionen</li>
+<li><strong>sys</strong>: Interaktion mit dem Python-Interpreter</li>
+<li><strong>os</strong>: Interaktion mit dem Betriebssystem</li>
+<li><strong>glob</strong>: Durchsuchen von Dateisystempfaden</li>
+<li><strong>multiprocessing / threading</strong>: Parallelprogramierung mit Prozessen / Threads</li>
+<li><strong>matplotlib</strong>: Visualisierung von Daten und Erstellen von Abbildungen</li>
+<li><strong>numpy</strong>: numerische Operationen und Funktionen</li>
+<li><strong>pandas</strong>: Daten einlesen und auswerten</li>
+<li><strong>time</strong>: Zeitfunktionen</li>
+</ul>
 <p>&nbsp; (<span class="citation" data-cites="Arnold-2023-funktionen-module-dateien">Arnold (<a href="#ref-Arnold-2023-funktionen-module-dateien" role="doc-biblioref">2023</a>)</span>)</p>
 
 

@@ -134,15 +134,10 @@ print(f"Dateipfad: {daten_maya.name}\n"
 
 ```
 
-::: {#tip-enkodierung .callout-tip collapse="false"}
-## Enkodierung ausgeben
+::: {#tip-rückfalloption .callout-tip collapse="false"}
+## Rückfalloption
 
-In der Datenanalyse werden in der Regel spezialisierte Pakete wie NumPy oder Pandas verwendet. Diese vereinfachen das Einlesen von Dateien gegenüber der Pythonbasis erheblich. Dennoch ist es sinnvoll, sich mit den Methoden der Pythonbasis zum Einlesen von Dateien vertraut zu machen:
-
-  a) Klappt das Einlesen mit der Funktion `open()` so gut wie immer - es ist eine gute Rückfalloption.
-
-  b) Ist die Funktion `open()` eine schnelle Methode, die Enkodierung einer Datei zu bestimmen. Beim Einlesen von Dateien mit NumPy und Pandas muss die Enkodierung für eine korrekte Zeichenverarbeitung häufig mit dem Parameter `encoding` übergeben werden.
-
+In der Datenanalyse werden in der Regel spezialisierte Pakete wie NumPy oder Pandas verwendet. Diese vereinfachen das Einlesen von Dateien gegenüber der Pythonbasis erheblich. Dennoch ist es sinnvoll, sich mit den Methoden der Pythonbasis zum Einlesen von Dateien vertraut zu machen. Denn das Einlesen mit der Funktion `open()` klappt so gut wie immer - es ist eine gute Rückfalloption.
 :::
 
 ### Dateiinhalt ausgeben {#sec-dateiinhalt}
@@ -308,8 +303,6 @@ print(f"Summe Augenzahl von Hans: {sum(augen_hans_int)}")
 Musterlösung von Marc Sönnecken.
 :::::
 ::::
-
-[@Arnold-2023-funktionen-module-dateien]
 
 ## Daten interpretieren
 Datensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d. h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion `open(datei)` gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel `dateiobjekt.read()` als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshalb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.

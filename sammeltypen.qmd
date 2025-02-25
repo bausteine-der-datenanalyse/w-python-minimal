@@ -11,11 +11,8 @@ Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und
   
 In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.
 
-**Dieses Kapitel leidet an den Ausnahmen: geteilter Speicherbereich (betrifft Listen und Dictionaries), Zugriffsoperator nicht für Mengen definiert, Methode `.copy()` nicht für Tupel definiert.**  
-**Der Slice-Operator ist unnatürlich platziert.**
-
 ## Listen
-Wie alle Typen in Python, werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste, werden die Elemente durch `[]` eingeklammert und mit Kommata `,` getrennt. Listen können mit dem `+`-Operator verkettet werden. `*` verkettet eine Liste n-mal.
+Wie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern `[]` eingeklammert und mit Kommata `,` getrennt. Listen können mit dem `+`-Operator verkettet werden. `*` verkettet eine Liste n-mal.
 
 ```{python}
 text_variable = 'abc'
@@ -67,19 +64,21 @@ print(liste1[-1], liste1[-3])
 ```
 
 #### Zugriff auf mehrere Elemente
-Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `start` ist das erste adressierte Element, `stop` **das erste nicht mehr adressierte Element** und `step` die Schrittweite.
+Indexbereiche können in der Form `[start:stop:step]` angesprochen werden. `start` ist das erste adressierte Element, `stop` *das erste nicht mehr adressierte Element* und `step` die Schrittweite.
+
+::: {.border}
 
 | Zugriffsoperator | Ausschnitt |
 |---|---|
 | liste[start:stop] | Elemente von start bis stop - 1 |
-| liste[:] | Alle Elemente der Liste (entspricht einer Kopie) |
+| liste[:] | Alle Elemente der Liste |
 | liste[start:] | Elemente von start bis zum Ende der Liste |
 | liste[:stop] | Elemente vom Anfang der Liste bis stop - 1 |
 | liste[::3] | Auswahl jedes dritten Elements |
 
 &nbsp;
 
-Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl von Elementen.
+Negative Werte für `start`, `stop` oder `step` bewirken eine Rückwärtsauswahl von Elementen.
 
 | Zugriffsoperator | Ausschnitt |
 |---|---|
@@ -94,6 +93,7 @@ Negative Werte für `start`, `stop` oder'step' bewirken eine Rückwärtsauswahl 
 &nbsp;
 
 (Beispiele von Greg Hewgill unter der Lizenz [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de) verfügbar auf [stackoverflow](https://stackoverflow.com/a/509295). 2009)
+:::
 
 #### Zeichenfolgen
 Auch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.
@@ -109,7 +109,7 @@ Für den Listentyp sind verschiedene Methoden definiert.
 
 #### Elemente bestimmen
 
-- `list.index(x, start, stop)` gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente start und stop erlauben es, den Suchbereich einzuschränken.
+- `list.index(x, start, stop)` gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente `start` und `stop` erlauben es, den Suchbereich einzuschränken.
 
 - `list.count(x)` gibt die Häufigkeit von x in der Liste aus.
 
@@ -149,7 +149,7 @@ print(liste1)
 
 - `list.remove(x)` entfernt *das erste* Element x in der Liste und gibt einen ValueError zurück, wenn x nicht in der Liste enthalten ist.
 
-- `liste.pop(i)` entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode `liste.pop([i])` gibt die entfernten Elemente zurück.
+- `liste.pop(i)` entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode `liste.pop(i)` gibt die entfernten Elemente zurück.
 
 - `liste.clear()` entfernt alle Elemente einer Liste.
 
@@ -161,7 +161,7 @@ liste1.pop(2)
 ```
 
 #### Listen und Listenelemente kopieren
-In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. In Python werden Listen nicht durch Zuweisung kopiert, sondern greifen dann auf den selben Speicherort zu. Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
+In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Wird eine Liste durch Zuweisung einer anderen Liste angelegt, dann werden nicht die Elemente der Liste kopiert, sondern beide Listen  greifen dann auf den selben Speicherort zu.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -173,6 +173,11 @@ liste2 = liste1
 liste2[0] = 'ABC'
 print("Auch liste1 hat sich durch die Zuweisung in liste2 verändert:", liste1, "\n")
 
+```
+
+Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode `liste.copy()` verwendet werden. Auch durch die Verwendung des Zugriffsoperators `[:]` wird eine neue Liste im Speicher angelegt.
+
+```{python}
 # Verwendung der Methode liste.copy()
 liste1 = [1, 'xy', True, text_variable]
 liste2 = liste1.copy()
@@ -236,7 +241,7 @@ print(liste1 is liste2)
 
 1. Erstellen Sie eine Liste 'wochentage', die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste 'wochenende' mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste 'wochentage'.
 
-2. 4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste 'wochentage' zu entfernen und der Liste 'wochenende' hinzuzufügen.
+2. 4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste 'wochentage' zu entfernen und der Liste 'wochenende' vor dem Samstag hinzuzufügen.
 
 3. Bestimmen Sie in der Liste `zahlen = [34, 12, 0, 67, 23]` die Position des Werts 0. Entfernen Sie den Wert aus der Liste und geben Sie die Liste aufsteigend sortiert aus. 
 
@@ -267,7 +272,7 @@ print(3 * tupel2)
 ```
 
 ### Tupel kopieren
-Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode `.copy()` nicht definiert. Tupel (bzw. die in diesen gespeicherten Werte) können durch Zuweisung kopiert werden. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator `[:]` zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python jedoch ein neues Objekt im Speicher an.
+Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode `.copy()` nicht definiert. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator `[:]` zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python, wie für jedes Objekt, ein neues Objekt im Speicher an.
 
 ```{python}
 # Kopieren durch Zuweisung
@@ -289,7 +294,7 @@ print(tupel1, tupel2)
 ```
 
 ## Mengen
-In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt).
+In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.
 
 ```{python}
 liste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]
@@ -429,8 +434,8 @@ print( (tupel := tuple(menge)) )
 
 Einige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:
 
-* `len()` liefert die Länge eines Sammeltyps zurück
-* `min()`, `max()`, `sum()` gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt)
+* `len()` gibt die Anzahl der Elemente in einem Sammeltyp zurück.
+* `min()`, `max()`, `sum()` gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt).
 
 ## Operationen: Verwendung von Schleifen
 Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste 'zahlen' durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste 'quadratzahlen' angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste 'modulo_3' gespeichert.
@@ -451,19 +456,6 @@ print(quadratzahlen)
 print(modulo_3)
 ```
 
-:::
-
-## Listennotation
-
-::: {.border}
-Die sogenannte Listennotation ist eine Kurzschreibweise für for-Schleifen. In Listennotation geschriebene Schleifen müssen in einer Zeile stehen und haben die folgende Syntax:
-
-```{python}
-quadratzahlen = [wert ** 2 for wert in range(10, 0, -1)]
-print(quadratzahlen)
-```
-
-(@matthes2017python, S. 71)
 :::
 
 ## Aufgaben Sammeltypen

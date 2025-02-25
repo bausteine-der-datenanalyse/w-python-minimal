@@ -207,6 +207,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -254,20 +260,20 @@ div.csl-indent {
 </ul>
 <section id="syntax" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">5.1</span> Syntax</h2>
-<p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsargumenten, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird. <code>return</code> beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.</p>
-<div id="97f45f51" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Funktionsname(Argument1, Argument2):</span>
+<p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird. <code>return</code> beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.</p>
+<div id="c31259a0" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Funktionsname(Parameter1, Parameter2):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    Anweisungsblock</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Rückgabewert</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Damit die Funktion ausfgeführt wird, muss der definierte Funktionsname aufgerufen und werden. In der Funktion ist nach dem Schlüsselwort <code>return</code> eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.</p>
-<div id="bcec918e" class="cell" data-execution_count="2">
+<p>Damit die Funktion ausgeführt wird, muss der definierte Funktionsname aufgerufen werden. In der Funktion ist nach dem Schlüsselwort <code>return</code> eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.</p>
+<div id="26652218" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 1: Summe der Quadrate</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_quadrate(a, b):</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Wert Argument a:'</span>, a)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Wert Argument b:'</span>, b)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Argument a:'</span>, a)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Argument b:'</span>, b)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="dv">18</span> <span class="op">*</span> <span class="st">'='</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    summe <span class="op">=</span> a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> summe</span>
@@ -275,19 +281,19 @@ div.csl-indent {
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_quadrate(<span class="dv">6</span>, <span class="dv">7</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wert Argument a: 6
-Wert Argument b: 7
+<pre><code>Argument a: 6
+Argument b: 7
 ==================
 85</code></pre>
 </div>
 </div>
 <p>Der Rückgabewert kann in einer Variablen gespeichert werden.</p>
-<div id="c88680d7" class="cell" data-execution_count="3">
+<div id="a2998d56" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> sum_quadrate(<span class="dv">6</span>, <span class="dv">7</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wert Argument a: 6
-Wert Argument b: 7
+<pre><code>Argument a: 6
+Argument b: 7
 ==================
 85</code></pre>
 </div>
@@ -295,8 +301,8 @@ Wert Argument b: 7
 </section>
 <section id="optionale-parameter" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="optionale-parameter"><span class="header-section-number">5.2</span> Optionale Parameter</h2>
-<p>Dabei kann die in der Funktion enthaltene Ausgabe mit <code>print()</code> unnötig sein. Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden.</p>
-<div id="6d83229d" class="cell" data-execution_count="4">
+<p>Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. In diesem Beispiel wird die print-Ausgabe der Funktion mit dem Parameter <code>ausgabe</code> gesteuert.</p>
+<div id="128f1c00" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 2: optionale Argumente</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
@@ -320,15 +326,15 @@ Wert Argument b: 7
 </div>
 </div>
 <p>Gibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.</p>
-<div id="b311df04" class="cell" data-execution_count="5">
+<div id="cdde33d6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 3: mehrere optionale Argumente</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_potenzen(a, b, p <span class="op">=</span> <span class="dv">2</span>, ausgabe <span class="op">=</span> <span class="va">False</span>):</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ausgabe:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument a:'</span>, a)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument b:'</span>, b)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument p:'</span>, p)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument a:'</span>, a)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument b:'</span>, b)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument p:'</span>, p)</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="dv">18</span> <span class="op">*</span> <span class="st">'='</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    summe <span class="op">=</span> a<span class="op">**</span>p <span class="op">+</span> b<span class="op">**</span>p</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> summe</span>
@@ -339,15 +345,15 @@ Wert Argument b: 7
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Übergabe per Schlüsselwort</span></span>
 <span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_potenzen(<span class="dv">42</span>, <span class="dv">7</span>, ausgabe <span class="op">=</span> <span class="va">True</span>, p <span class="op">=</span> <span class="dv">4</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wert Argument a: 42
-Wert Argument b: 7
-Wert Argument p: 3
+<pre><code>Argument a: 42
+Argument b: 7
+Argument p: 3
 ==================
 74431 
 
-Wert Argument a: 42
-Wert Argument b: 7
-Wert Argument p: 4
+Argument a: 42
+Argument b: 7
+Argument p: 4
 ==================
 3114097</code></pre>
 </div>
@@ -356,15 +362,15 @@ Wert Argument p: 4
 <section id="rückgabewerte" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="rückgabewerte"><span class="header-section-number">5.3</span> Rückgabewert(e)</h2>
 <p>Funktionen können in Python nur einen einzigen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.</p>
-<div id="482a2f9a" class="cell" data-execution_count="6">
+<div id="b697bffc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 4: mehrere Rückgabewerte</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_potenzen(a, b, p <span class="op">=</span> <span class="dv">2</span>, ausgabe <span class="op">=</span> <span class="va">False</span>):</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ausgabe:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument a:'</span>, a)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument b:'</span>, b)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Wert Argument p:'</span>, p)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument a:'</span>, a)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument b:'</span>, b)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">'Argument p:'</span>, p)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="dv">18</span> <span class="op">*</span> <span class="st">'='</span>)</span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    summe <span class="op">=</span> a<span class="op">**</span>p <span class="op">+</span> b<span class="op">**</span>p</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a, b, summe</span>
@@ -376,7 +382,7 @@ Wert Argument p: 4
 </div>
 </div>
 <p>Mit dem Slice Operator kann ein bestimmter Rückgabewert ausgewählt werden.</p>
-<div id="8332e8d2" class="cell" data-execution_count="7">
+<div id="9e49d566" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis[<span class="dv">2</span>])</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>summe_potenzen <span class="op">=</span> sum_potenzen(<span class="dv">2</span>, <span class="dv">7</span>, ausgabe <span class="op">=</span> <span class="va">False</span>, p <span class="op">=</span> <span class="dv">4</span>)[<span class="dv">2</span>]</span>
@@ -389,9 +395,6 @@ Wert Argument p: 4
 <!-- ggf. ergänzen
 ## anonyme Funktionen Lambdas
 <https://docs.python.org/3/reference/expressions.html#lambda> -->
-<!-- ggf. ergänzen
-return beendet die Ausführung des gesamten Anweisungsblocks
--->
 </section>
 <section id="aufgaben-funktionen-definieren" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="aufgaben-funktionen-definieren"><span class="header-section-number">5.4</span> Aufgaben Funktionen definieren</h2>

@@ -1,5 +1,5 @@
 # Module und Pakete importieren
-Die Pythonbasis bringt eine begrenzte Anzahl von Funktion mit. Der Funktionsumfang von Python kann jedoch erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.
+Der Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.
 
 :::{#imp-module-und-pakete .callout-important}
 # Module und Pakete
@@ -43,7 +43,7 @@ matplotlib.pyplot.plot(zufallsdaten)
 
 :::{#wrn-fromimport .callout-warning appearance="simple"}
 # Namensraum direkt einbinden
-In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese direkt aufgerufen werden können. Dies ist mit dem Schlüsselwort `from` möglich.
+In Python ist es auch möglich, Funktionen direkt in den Namensraum von Python zu importieren, sodass diese ohne die Schreibweise `modul.funktion()` aufgerufen werden können. Dies ist mit dem Schlüsselwort `from` möglich.
 
 ```{python}
 from random import randint
@@ -52,20 +52,6 @@ print(f"Die Funktion randint steht nun direkt zur Verfügung: {randint(1, 100)}"
 
 Durch `from modulname import *` ist es sogar möglich, alle Funktionen aus einem Modul in den Namensraum von Python zu importieren. Im Allgemeinen sollte das direkte Importieren von Funktionen oder eines ganzen Moduls in den Namensraum von Python jedoch unterlassen werden. Einerseits wird damit eine Namensraumkollision riskiert, beispielsweise gibt es die Funktion `sum()` in der Pythonbasis, in NumPy und in Pandas. Andererseits wird der Programmcode dadurch weniger nachvollziehbar, da nicht mehr überall ersichtlich ist, aus welchem Modul eine verwendete Funktion stammt.
 :::
-
-## Kleine Modulübersicht
-Da es nicht möglich ist auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben. In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.
-
-* **math**: Mathematische Funktionen und Konstanten
-* **sys**: Interaktion mit dem Python-Interpreter
-* **os**: Interaktion mit dem Betriebssystem
-* **time**: Zeitfunktionen
-* **glob**: Durchsuchen von Dateisystempfaden
-* **multiprocessing / threading**: Parallelprogramierung mit Prozessen / Threads
-* **matplotlib**: Visualisierung von Daten und Erstellen von Abbildungen
-* **numpy**: Numerische Operationen und Funktionen
-* **scipy**: Wissenschaftliche Funktionen
-* **pandas**: Daten einlesen und auswerten 
 
 ## import as
 Um lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort `as` verwendet werden, um dem Modul einen neuen Namen zuzuweisen.
@@ -88,6 +74,20 @@ Für häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Ba
 | NumPy | np | import numpy as np |
 | Pandas | pd | import pandas as pd |
 | matplotlib.pyplot | plt | import matplotlib.pyplot as plt |
+
+## Kleine Modulübersicht
+Da es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. *Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben.* In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.
+
+* **math**: mathematische Funktionen und Konstanten
+* **scipy**: wissenschaftliche Funktionen
+* **sys**: Interaktion mit dem Python-Interpreter
+* **os**: Interaktion mit dem Betriebssystem
+* **glob**: Durchsuchen von Dateisystempfaden
+* **multiprocessing / threading**: Parallelprogramierung mit Prozessen / Threads
+* **matplotlib**: Visualisierung von Daten und Erstellen von Abbildungen
+* **numpy**: numerische Operationen und Funktionen
+* **pandas**: Daten einlesen und auswerten 
+* **time**: Zeitfunktionen
 
 &nbsp;
 (@Arnold-2023-funktionen-module-dateien)

@@ -29,7 +29,7 @@ Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.g
 
 Python kommt als schlichte Konsole daher. Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Der Programmcode wird von einem sogenannten Interpreter ausgeführt. Der Interpreter übersetzt die Programmanweisungen des Skripts in Maschinencode für das jeweilige Computersystem. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem Format [UTF-8](https://de.wikipedia.org/wiki/UTF-8) umgehen, das das ASCII-Format z. B. um deutsche Sonderzeichen erweitert.
 
-Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung (integrated development environment, IDE) bereitgestellt.
+Zahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung (Integrated Development Environment, IDE) bereitgestellt.
 
 ``` {python}
 #| echo: false
@@ -64,8 +64,6 @@ with schemdraw.Drawing() as d:
 ## Grundbegriffe der objektorientierten Programmierung
 Python ist eine objektorientierte Programmiersprache. Die objektorientierte Programmierung ist ein System, um Ordnung in komplexe Computerprogramme zu bringen. In diesem Abschnitt werden die Grundbegriffe der objektorientierten Programmierung mit Python vermittelt. Sie erfahren, was der Unterschied zwischen einem Objekt, einer Klasse und dem Datentyp ist.
 
-**Überarbeiten: den Aufklapper Attribute könnte man in dieses Kapitel verschieben und auch ergänzen, wie man sich mit dir() die verfügbaren Methoden eines Objekts ausgeben lassen kann. Eine gute Vorlage ist das Skript von Lukas**
-
 ### Klassen, Typen, Objekte, Attribute
 Ein Pythonprogramm besteht aus verschiedenen Elementen: Operatoren und Operanden, Funktionen und Methoden, Werten und Variablen und vielem mehr. Alles in Python ist ein Objekt.
 
@@ -73,11 +71,11 @@ Jedes Objekt gehört zu einer Klasse, beispielsweise zur Klasse der Ganzzahlen. 
 
 ```{python}
 print(type(2), 2 + 2, "Ganzzahlen werden addiert.")
-print(type('a'), 'a' + '2', "Zeichen werden verkettet.")
-print(type(True), True + True, "Logische Werte werden addiert.")
+print(type('a' and '2'), 'a' + '2', "Zeichen werden verkettet.")
+print(type(True), True + True, "Wahrheitswerte werden addiert.")
 ```
 
-Das liegt daran, dass das Verhalten des Operators + für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. 
+Das liegt daran, dass das Verhalten des Operators `+` für die Klassen Ganzzahlen ('int'), Zeichenfolgen ('str') und Boolesche Werte ('bool') definiert ist. 
 Anders verhält es sich mit `None`, einer Klasse, mit der nicht existente Werte verarbeitet werden:
 
 ```{python}
@@ -111,12 +109,12 @@ Zu welcher Klasse bzw. zu welchem Typ ein Objekt gehört, kann mit der Funktion 
 print(type(print))
 ```
 
-Attribute speichern Eigenschaften eines Objekts. Sie treten in der Form `objekt.attribut` auf und werden ohne nachfolgende Klammern aufgerufen. Attribute haben an dieser Stelle der Einführung keine praktische Bedeutung, werden uns aber später wieder begegnen. Eine zweite Form der Attribute ist die Methode. Methoden sind Funktionen, die zu einer bestimmten Klasse gehören. Methoden haben die Form `objekt.methode()`, werden also mit nachfolgenden Klammern aufgerufen. Methoden werden in Kapitel **Querverweis** behandelt. Der Themenbereich wird an dieser Stelle deshalb nicht weiter vertieft. Wie Sie die verfügbaren Attribute und Methoden eines Objekts bestimmen erfahren Sie in **Querverweis** und **Querverweis**.
+Attribute speichern Eigenschaften eines Objekts. Sie treten in der Form `objekt.attribut` auf und werden ohne nachfolgende Klammern aufgerufen. Attribute haben an dieser Stelle der Einführung keine praktische Bedeutung, werden uns aber später wieder begegnen. Eine zweite Form der Attribute ist die Methode. Methoden sind Funktionen, die zu einer bestimmten Klasse gehören. Methoden haben die Form `objekt.methode()`, werden also mit nachfolgenden Klammern aufgerufen. Die Benutzung von Funktionen und Methoden lernen wir in den kommenden Kapiteln kennen. Wie Sie die verfügbaren Attribute und Methoden eines Objekts bestimmen, erfahren Sie in @nte-attribute und @nte-methods.
 
 ## Programmcode formatieren
-Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden. Um in den ersten Beispielen eine Ausgabe mit Python zu erzeugen, wird der Aufruf einer Funktion, hier `print(eingabe)`, vorweggenommen. Diese Funktion gibt das Argument eingabe aus.
+Bei der Formatierung von Python-Code müssen nur wenige Punkte beachtet werden. Um mit Python eine Ausgabe zu erzeugen, wird die Funktion `print(eingabe)` verwendet.  Diese Funktion gibt das Argument eingabe aus.
 
-1. Zahlen und Operatoren können direkt eingegeben werden. Text (genauer: eine Zeichenfolge) muss in einfache oder doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen einer Funktion oder eines Objekts. Zeichenfolgen können neben Buchstaben, Sonderzeichen und Zahlen enthalten.
+1. Zahlen und Operatoren können direkt eingegeben werden. Text, genauer eine Zeichenfolge, muss in einfache oder doppelte Anführungszeichen gesetzt werden, andernfalls interpretiert Python diesen als Namen eines Objekts. Zeichenfolgen können neben Buchstaben, Sonderzeichen und Zahlen enthalten.
 
 ```{python}
 print(1 + 2)
@@ -260,8 +258,10 @@ Eine Auflistung aller verfügbaren Ausgabetypen findet sich in der [Python Dokum
 ## Musterlösung Ausgabe
 :::
 
-**Quelle SA Datenanalyse mit Python. Idee des Kurses 'Datenanalyse mit Python'.**
+&nbsp;  
 
 [@Arnold-2023-datentypen-und-grundlagen]
 
 [@Arnold-2023-funktionen-module-dateien]
+
+[@Arnold-2023-datenanalyse-python]
