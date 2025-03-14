@@ -6,6 +6,7 @@ book:
     - skript/einleitung.qmd
     - skript/datentypen.qmd
     - skript/funktionen.qmd
+    - skript/flusskontrolle.qmd
     - skript/sammeltypen.qmd
     - skript/funktionen-definieren.qmd
     - skript/dateien-lesen-und-schreiben.qmd

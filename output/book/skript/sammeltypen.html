@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Sammeltypen – Bausteine Computergestützter Datenanalyse</title>
+<title>5&nbsp; Sammeltypen – Bausteine Computergestützter Datenanalyse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../skript/funktionen-definieren.html" rel="next">
-<link href="../skript/funktionen.html" rel="prev">
+<link href="../skript/flusskontrolle.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -137,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/sammeltypen.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/sammeltypen.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -191,26 +191,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flusskontrolle</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../skript/sammeltypen.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
   </div>
 </li>
     </ul>
@@ -223,29 +229,29 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#listen" id="toc-listen" class="nav-link active" data-scroll-target="#listen"><span class="header-section-number">4.1</span> Listen</a>
+  <li><a href="#listen" id="toc-listen" class="nav-link active" data-scroll-target="#listen"><span class="header-section-number">5.1</span> Listen</a>
   <ul class="collapse">
   <li><a href="#slicing-der-zugriffsoperator" id="toc-slicing-der-zugriffsoperator" class="nav-link" data-scroll-target="#slicing-der-zugriffsoperator">Slicing: der Zugriffsoperator []</a></li>
   <li><a href="#listenmethoden" id="toc-listenmethoden" class="nav-link" data-scroll-target="#listenmethoden">Listenmethoden</a></li>
   <li><a href="#aufgaben-listen" id="toc-aufgaben-listen" class="nav-link" data-scroll-target="#aufgaben-listen">Aufgaben Listen</a></li>
   </ul></li>
-  <li><a href="#tupel" id="toc-tupel" class="nav-link" data-scroll-target="#tupel"><span class="header-section-number">4.2</span> Tupel</a>
+  <li><a href="#tupel" id="toc-tupel" class="nav-link" data-scroll-target="#tupel"><span class="header-section-number">5.2</span> Tupel</a>
   <ul class="collapse">
   <li><a href="#tupel-kopieren" id="toc-tupel-kopieren" class="nav-link" data-scroll-target="#tupel-kopieren">Tupel kopieren</a></li>
   </ul></li>
-  <li><a href="#mengen" id="toc-mengen" class="nav-link" data-scroll-target="#mengen"><span class="header-section-number">4.3</span> Mengen</a>
+  <li><a href="#mengen" id="toc-mengen" class="nav-link" data-scroll-target="#mengen"><span class="header-section-number">5.3</span> Mengen</a>
   <ul class="collapse">
   <li><a href="#mengen-kopieren" id="toc-mengen-kopieren" class="nav-link" data-scroll-target="#mengen-kopieren">Mengen kopieren</a></li>
   </ul></li>
-  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries"><span class="header-section-number">4.4</span> Dictionaries</a>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries"><span class="header-section-number">5.4</span> Dictionaries</a>
   <ul class="collapse">
   <li><a href="#dictionaries-kopieren" id="toc-dictionaries-kopieren" class="nav-link" data-scroll-target="#dictionaries-kopieren">Dictionaries kopieren</a></li>
   </ul></li>
-  <li><a href="#übersicht-sammeltypen" id="toc-übersicht-sammeltypen" class="nav-link" data-scroll-target="#übersicht-sammeltypen"><span class="header-section-number">4.5</span> Übersicht Sammeltypen</a></li>
-  <li><a href="#löschen-das-schlüsselwort-del" id="toc-löschen-das-schlüsselwort-del" class="nav-link" data-scroll-target="#löschen-das-schlüsselwort-del"><span class="header-section-number">4.6</span> Löschen: das Schlüsselwort del</a></li>
-  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen"><span class="header-section-number">4.7</span> Funktionen</a></li>
-  <li><a href="#operationen-verwendung-von-schleifen" id="toc-operationen-verwendung-von-schleifen" class="nav-link" data-scroll-target="#operationen-verwendung-von-schleifen"><span class="header-section-number">4.8</span> Operationen: Verwendung von Schleifen</a></li>
-  <li><a href="#aufgaben-sammeltypen" id="toc-aufgaben-sammeltypen" class="nav-link" data-scroll-target="#aufgaben-sammeltypen"><span class="header-section-number">4.9</span> Aufgaben Sammeltypen</a></li>
+  <li><a href="#übersicht-sammeltypen" id="toc-übersicht-sammeltypen" class="nav-link" data-scroll-target="#übersicht-sammeltypen"><span class="header-section-number">5.5</span> Übersicht Sammeltypen</a></li>
+  <li><a href="#löschen-das-schlüsselwort-del" id="toc-löschen-das-schlüsselwort-del" class="nav-link" data-scroll-target="#löschen-das-schlüsselwort-del"><span class="header-section-number">5.6</span> Löschen: das Schlüsselwort del</a></li>
+  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen"><span class="header-section-number">5.7</span> Funktionen</a></li>
+  <li><a href="#operationen-verwendung-von-schleifen" id="toc-operationen-verwendung-von-schleifen" class="nav-link" data-scroll-target="#operationen-verwendung-von-schleifen"><span class="header-section-number">5.8</span> Operationen: Verwendung von Schleifen</a></li>
+  <li><a href="#aufgaben-sammeltypen" id="toc-aufgaben-sammeltypen" class="nav-link" data-scroll-target="#aufgaben-sammeltypen"><span class="header-section-number">5.9</span> Aufgaben Sammeltypen</a></li>
   </ul>
 </nav>
     </div>
@@ -254,7 +260,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></h1>
 </div>
 
 
@@ -279,8 +285,8 @@ div.csl-indent {
 <li><p><a href="https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29">assoziative Arrays</a> oder Dictionaries sind Zuordnungstabellen, d.&nbsp;h. sie bestehen aus Schlüssel-Wert-Paaren.</p></li>
 </ul>
 <p>In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.</p>
-<section id="listen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.1</span> Listen</h2>
+<section id="listen" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="listen"><span class="header-section-number">5.1</span> Listen</h2>
 <p>Wie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern <code>[]</code> eingeklammert und mit Kommata <code>,</code> getrennt. Listen können mit dem <code>+</code>-Operator verkettet werden. <code>*</code> verkettet eine Liste n-mal.</p>
 <div id="05ec0c31" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'abc'</span></span>
@@ -630,7 +636,7 @@ True</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;4.1: Musterlösung
+Tipp&nbsp;5.1: Musterlösung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -642,8 +648,8 @@ Tipp&nbsp;4.1: Musterlösung
 </div>
 </section>
 </section>
-<section id="tupel" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="tupel"><span class="header-section-number">4.2</span> Tupel</h2>
+<section id="tupel" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="tupel"><span class="header-section-number">5.2</span> Tupel</h2>
 <p>Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.</p>
 <p>Tupel werdem mit runden Klammern <code>()</code> erzeugt, die Elemente werden mit einem Komma <code>,</code> getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form <code>(wert, )</code> angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator <code>[start:stop:step]</code> möglich. Tupel können mit den Operatoren <code>+</code> und <code>*</code> verkettet werden.</p>
 <div id="fec97b05" class="cell" data-execution_count="15">
@@ -695,8 +701,8 @@ True
 </div>
 </section>
 </section>
-<section id="mengen" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="mengen"><span class="header-section-number">4.3</span> Mengen</h2>
+<section id="mengen" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="mengen"><span class="header-section-number">5.3</span> Mengen</h2>
 <p>In Python können Mengen mit der <code>set()</code> Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern <code>{}</code> erstellt werden (eine leere Menge kann nur mit <code>set()</code> erzeugt werden, da <code>{}</code> ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.</p>
 <div id="8351b03f" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="st">'a'</span>, <span class="dv">123</span>, <span class="dv">1000</span>, (<span class="st">'tupel'</span>, <span class="dv">5</span>)]</span>
@@ -769,8 +775,8 @@ Die in set2 gespeicherten Werte sind unverändert:
 </div>
 </section>
 </section>
-<section id="dictionaries" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">4.4</span> Dictionaries</h2>
+<section id="dictionaries" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">5.4</span> Dictionaries</h2>
 <p>Dictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern <code>{}</code> definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt <code>:</code> getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator <code>[]</code>, welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.</p>
 <div id="1a0a05ad" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dictionary1 <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'abc'</span>, <span class="st">'b'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'c'</span>: (<span class="st">'tupel'</span>, <span class="dv">5</span>, <span class="dv">6</span>)}</span>
@@ -829,8 +835,8 @@ dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:
 </div>
 </section>
 </section>
-<section id="übersicht-sammeltypen" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="übersicht-sammeltypen"><span class="header-section-number">4.5</span> Übersicht Sammeltypen</h2>
+<section id="übersicht-sammeltypen" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="übersicht-sammeltypen"><span class="header-section-number">5.5</span> Übersicht Sammeltypen</h2>
 <table class="table">
 <colgroup>
 <col style="width: 57%">
@@ -881,8 +887,8 @@ dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:
 </table>
 <p>&nbsp;</p>
 </section>
-<section id="löschen-das-schlüsselwort-del" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="löschen-das-schlüsselwort-del"><span class="header-section-number">4.6</span> Löschen: das Schlüsselwort del</h2>
+<section id="löschen-das-schlüsselwort-del" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="löschen-das-schlüsselwort-del"><span class="header-section-number">5.6</span> Löschen: das Schlüsselwort del</h2>
 <p>Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort <code>del</code> verwendet werden.</p>
 <div id="4d6970aa" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Löschen einer Liste</span></span>
@@ -905,8 +911,8 @@ Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
 </div>
 </div>
 </section>
-<section id="funktionen" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="funktionen"><span class="header-section-number">4.7</span> Funktionen</h2>
+<section id="funktionen" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="funktionen"><span class="header-section-number">5.7</span> Funktionen</h2>
 <p>Die Sammeltypen können ineinander umgewandelt werden.</p>
 <div id="55fbc278" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Kater'</span>, <span class="dv">2</span>: <span class="st">'Fähre'</span>, <span class="dv">3</span>: <span class="st">'Ricke'</span>}</span>
@@ -925,8 +931,8 @@ Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
 <li><code>min()</code>, <code>max()</code>, <code>sum()</code> gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt).</li>
 </ul>
 </section>
-<section id="operationen-verwendung-von-schleifen" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="operationen-verwendung-von-schleifen"><span class="header-section-number">4.8</span> Operationen: Verwendung von Schleifen</h2>
+<section id="operationen-verwendung-von-schleifen" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="operationen-verwendung-von-schleifen"><span class="header-section-number">5.8</span> Operationen: Verwendung von Schleifen</h2>
 <p>Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste ‘zahlen’ durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste ‘quadratzahlen’ angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste ‘modulo_3’ gespeichert.</p>
 <div id="lst-quadratzahlen" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
@@ -951,15 +957,15 @@ Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-quadratzahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Code-Block&nbsp;4.1
+Code-Block&nbsp;5.1
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="aufgaben-sammeltypen" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="aufgaben-sammeltypen"><span class="header-section-number">4.9</span> Aufgaben Sammeltypen</h2>
+<section id="aufgaben-sammeltypen" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="aufgaben-sammeltypen"><span class="header-section-number">5.9</span> Aufgaben Sammeltypen</h2>
 <ol type="1">
-<li><p>Modifizieren Sie den Programmcode in <a href="#lst-quadratzahlen" class="quarto-xref">Code-Block&nbsp;<span>4.1</span></a> so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.</p></li>
+<li><p>Modifizieren Sie den Programmcode in <a href="#lst-quadratzahlen" class="quarto-xref">Code-Block&nbsp;<span>5.1</span></a> so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.</p></li>
 <li><p>Umrechnung von Geschwindigkeiten Erstellen Sie ein Skript, welches eine Umrechnungstabelle für Geschwindigkeiten erzeugt. Folgende Randbedingungen sollen beachtet werden:</p></li>
 </ol>
 <ul>
@@ -977,7 +983,7 @@ Code-Block&nbsp;4.1
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;4.2: Musterlösung Aufgaben Sammeltypen
+Tipp&nbsp;5.2: Musterlösung Aufgaben Sammeltypen
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1521,13 +1527,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../skript/funktionen.html" class="pagination-link" aria-label="Funktionen: Grundlagen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span>
+      <a href="../skript/flusskontrolle.html" class="pagination-link" aria-label="Flusskontrolle">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flusskontrolle</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../skript/funktionen-definieren.html" class="pagination-link" aria-label="Eigene Funktionen definieren">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

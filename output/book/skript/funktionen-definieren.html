@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Eigene Funktionen definieren – Bausteine Computergestützter Datenanalyse</title>
+<title>6&nbsp; Eigene Funktionen definieren – Bausteine Computergestützter Datenanalyse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/funktionen-definieren.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/funktionen-definieren.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -191,26 +191,32 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Flusskontrolle</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../skript/sammeltypen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
   </div>
 </li>
     </ul>
@@ -223,10 +229,10 @@ div.csl-indent {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#syntax" id="toc-syntax" class="nav-link active" data-scroll-target="#syntax"><span class="header-section-number">5.1</span> Syntax</a></li>
-  <li><a href="#optionale-parameter" id="toc-optionale-parameter" class="nav-link" data-scroll-target="#optionale-parameter"><span class="header-section-number">5.2</span> Optionale Parameter</a></li>
-  <li><a href="#rückgabewerte" id="toc-rückgabewerte" class="nav-link" data-scroll-target="#rückgabewerte"><span class="header-section-number">5.3</span> Rückgabewert(e)</a></li>
-  <li><a href="#aufgaben-funktionen-definieren" id="toc-aufgaben-funktionen-definieren" class="nav-link" data-scroll-target="#aufgaben-funktionen-definieren"><span class="header-section-number">5.4</span> Aufgaben Funktionen definieren</a></li>
+  <li><a href="#syntax" id="toc-syntax" class="nav-link active" data-scroll-target="#syntax"><span class="header-section-number">6.1</span> Syntax</a></li>
+  <li><a href="#optionale-parameter" id="toc-optionale-parameter" class="nav-link" data-scroll-target="#optionale-parameter"><span class="header-section-number">6.2</span> Optionale Parameter</a></li>
+  <li><a href="#rückgabewerte" id="toc-rückgabewerte" class="nav-link" data-scroll-target="#rückgabewerte"><span class="header-section-number">6.3</span> Rückgabewert(e)</a></li>
+  <li><a href="#aufgaben-funktionen-definieren" id="toc-aufgaben-funktionen-definieren" class="nav-link" data-scroll-target="#aufgaben-funktionen-definieren"><span class="header-section-number">6.4</span> Aufgaben Funktionen definieren</a></li>
   </ul>
 </nav>
     </div>
@@ -235,7 +241,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></h1>
 </div>
 
 
@@ -258,8 +264,8 @@ div.csl-indent {
 <li><p>Funktionen können praktisch beliebig oft aufgerufen werden und sind durch den Einsatz von Parametern und Methoden der Flusskontrolle gleichzeitig in der Lage, flexibel auf wechselnde Bedingungen zu reagieren.</p></li>
 <li><p>Funktionen machen Programmcode kürzer und lesbarer. Außerdem gibt es nur eine Stelle, welche bei Änderungen angepasst werden muss.</p></li>
 </ul>
-<section id="syntax" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">5.1</span> Syntax</h2>
+<section id="syntax" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">6.1</span> Syntax</h2>
 <p>Das Schlüsselwort <code>def</code> leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern <code>()</code> eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt <code>:</code> beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort <code>return</code> an die aufrufende Stelle zurückgegeben wird. <code>return</code> beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.</p>
 <div id="904680a9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Funktionsname(Parameter1, Parameter2):</span>
@@ -299,8 +305,8 @@ Argument b: 7
 </div>
 </div>
 </section>
-<section id="optionale-parameter" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="optionale-parameter"><span class="header-section-number">5.2</span> Optionale Parameter</h2>
+<section id="optionale-parameter" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="optionale-parameter"><span class="header-section-number">6.2</span> Optionale Parameter</h2>
 <p>Mit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. In diesem Beispiel wird die print-Ausgabe der Funktion mit dem Parameter <code>ausgabe</code> gesteuert.</p>
 <div id="bb3148f0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 2: optionale Argumente</span></span>
@@ -359,8 +365,8 @@ Argument p: 4
 </div>
 </div>
 </section>
-<section id="rückgabewerte" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="rückgabewerte"><span class="header-section-number">5.3</span> Rückgabewert(e)</h2>
+<section id="rückgabewerte" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="rückgabewerte"><span class="header-section-number">6.3</span> Rückgabewert(e)</h2>
 <p>Funktionen können in Python nur einen einzigen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.</p>
 <div id="7a5e7d3a" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel 4: mehrere Rückgabewerte</span></span>
@@ -396,8 +402,8 @@ Argument p: 4
 ## anonyme Funktionen Lambdas
 <https://docs.python.org/3/reference/expressions.html#lambda> -->
 </section>
-<section id="aufgaben-funktionen-definieren" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="aufgaben-funktionen-definieren"><span class="header-section-number">5.4</span> Aufgaben Funktionen definieren</h2>
+<section id="aufgaben-funktionen-definieren" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="aufgaben-funktionen-definieren"><span class="header-section-number">6.4</span> Aufgaben Funktionen definieren</h2>
 <ol type="1">
 <li>Palindrom<br>
 Schreiben Sie eine Funktion is_palindrome(), die prüft, ob es sich bei einer übergebenen Zeichenkette um ein Palindrom handelt.</li>
@@ -886,12 +892,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../skript/sammeltypen.html" class="pagination-link" aria-label="Sammeltypen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../skript/dateien-lesen-und-schreiben.html" class="pagination-link" aria-label="Dateien lesen und schreiben">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
