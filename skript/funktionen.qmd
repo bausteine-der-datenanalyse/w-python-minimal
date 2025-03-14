@@ -1,0 +1,635 @@
+# Funktionen: Grundlagen
+Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der [Dokumentation](https://docs.python.org/3/library/functions.html) entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. In diesem Kapitel wird die allgemeine Verwendung der in Python enthaltenen Funktionen vermittelt.
+
+Python wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist. Dies erfolgt auch in Hinblick auf die Möglichkeit, Python umfangreich durch Module zu erweitern. So haben beispielsweise die Funktionen des Moduls Pandas nicht selten dutzende dokumentierte Parameter.
+
+::: {#tip-dokumentation .callout-tip collapse="false"}
+## Dokumentation
+Der wichtigste Tipp zuerst: **Benutzen Sie die Dokumentation!** Auch wenn Sie eine Funktion kennen: Vergewissern Sie sich regelmäßig, dass Sie noch auf dem neuesten Stand sind. Auf diese Weise erhalten Sie einen vollständigen Überblick über standardmäßig gesetzte und optional verfügbare Parameter. Außerdem erkennen Sie Änderungen in der Programmausführung und vermeiden so unerwartete Fehler.
+
+:::: {layout="[1, 1]"}
+
+![Neuerung in Python](00-bilder/added-in-pyhton.png){fig-alt="Hinweis auf eine Neuerung in Python"}
+
+![Abkündigung in Python](00-bilder/deprecated-in-python.png){fig-alt="Hinweis auf eine Abkündigung in Python"}
+
+::::
+
+Achten Sie auf die korrekte Version der Dokumentation.
+
+![Versionsauswahl der Dokumentation](00-bilder/python-documentation-version.png){fig-alt="Auswahlmenü der Dokumentationsversion" width="80%"}
+
+:::
+
+## Funktionen und Methoden
+In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.
+
+### Funktionen
+Funktionen können Objekte unabhängig von ihrem Datentyp übergeben werden.
+Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern `()` aufgerufen. Ein Beispiel ist die Funktion `print()`:
+
+```{python}
+var_str = 'ABC'
+var_int = 26
+var_bool = True
+
+print("Die Variable var_1 hat den Typ", type(var_str))
+print("Die Variable var_2 hat den Typ", type(var_int))
+print("Die Variable var_3 hat den Typ", type(var_bool))
+```
+
+Funktionen müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert `None` zurückgegeben, der nicht existente Werte kennzeichnet.
+
+```{python}
+res = print( 15 )
+print(res)
+```
+
+Funktionen können verschachtelt und so von innen nach außen nacheinander ausgeführt werden. In diesem Code-Beispiel wird zunächst die Summe zweier Zahlen und anschließend der Wahrheitswert des Ergebnisses gebildet. Dieser wird anschließend mit der Funktion print ausgegeben.
+
+```{python}
+print(bool(sum([1, 2])))
+```
+
+### Methoden
+Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Objekte zu einem bestimmten Typ bzw. zu einer Klasse gehören und abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einer bestimmten Klasse gehören und nur für Objekte dieser Klasse verfügbar sind. Methoden können auch für mehrere Klassen definiert sein. Methoden werden getrennt durch einen Punkt `.` hinter Objekten mit ihrem Namen aufgerufen: `variable.methode` bzw. `(wert).methode`. Beispielsweise sind `.upper()`, `.lower()` und `.title` für Zeichenfolgen definierte Methoden.
+
+```{python}
+toller_text = "Python 3.12 ist großartig."
+
+print(toller_text.upper())
+print(toller_text.lower())
+print(toller_text.title(), "\n")
+
+print(("Mit in Klammern gesetzten Werten klappt es auch.").upper())
+```
+
+Für Objekte mit einem unpassenden Datentyp sind Methoden wie `.lower()` nicht verfügbar.
+
+```{python}
+#| eval: false
+
+print((1).upper())
+```
+
+```{python}
+#| echo: false
+try:
+  print((1).upper())
+except AttributeError as error:
+  print(error)
+```
+
+Methoden können verkettet und so nacheinander ausgeführt werden. In diesem Beispiel wird die Zeichenfolge 'Katze' klein geschrieben, dann die Häufigkeit des Buchstabens 'k' gezählt.
+
+```{python}
+print('Katze'.lower().count('k'))
+```
+
+Welche Methoden für ein Objekt verfügbar sind, kann mit der Funktion `dir(objekt)` bestimmt werden. Die Ausgabe der Funktion ist aber häufig sehr umfangreich. Um die relevanten Einträge auszuwählen, muss die Ausgabe gefiltert werden. Notwendig ist das aber nicht - Interessierte schauen in @nte-methods.
+
+::: {#nte-methods .callout-note collapse="true"}
+## Methoden eines Objekts bestimmen
+
+Mit der Funktion `dir(objekt)` können die verfügbaren Methoden eines Objekts ausgegeben werden. Dabei werden jedoch auch die Attribute und die Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:
+
+```{python}
+print(dir(1))
+```
+
+Um die Ausgabe auf Methoden einzugrenzen, kann folgende Funktion in Listenschreibweise verwendet werden:
+
+```{python}
+objekt = 1
+
+attribute = [attr for attr in dir(objekt) if callable (getattr(objekt, attr))]
+print(attribute)
+```
+
+Mit doppelten Unterstrichen umschlossene Methoden sind für die Klasse definierte Methoden. Folgende Funktion entfernt Methoden mit doppelten Unterstrichen aus der Ausgabe:
+
+```{python}
+objekt = 1
+
+attribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]
+print(attribute)
+```
+
+Im Fall einer Ganzzahl können Methoden (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:
+
+```{python}
+(1).as_integer_ratio()
+```
+
+Die Methoden des Objekts 'toller_text':
+
+```{python}
+objekt = toller_text
+
+attribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]
+print(attribute)
+```
+
+:::
+
+## Parameter
+Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Parameter übergeben werden. Die Werte, die als Parameter übergeben werden, werden Argumente genannt ([Python-Dokumentation](https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter)). [Parameter](https://docs.python.org/3/glossary.html#term-parameter) steuern die Programmausführung. Die für die Funktion `print()` verfügbaren Parameter stehen in der [Dokumentation der Funktion](https://docs.python.org/3/library/functions.html#print):
+
+```
+print(*objects, sep=' ', end='\n', file=None, flush=False)
+```
+
+`*objects`, `sep`, `end`, `file` und `flush` sind die Parameter der Funktion `print()`. 
+
+  - Parameter ohne Gleichheitszeichen `=` müssen beim Funktions- bzw. Methodenaufruf übergeben werden. Parameter mit Gleichheitszeichen `=` können beim Aufruf übergeben werden, es handelt sich um optionale Parameter.
+
+  - Die Werte hinter dem Gleichheitszeichen zeigen die Standardwerte (default value) der Parameter an. Diese werden verwendet, wenn ein Argument nicht explizit beim Aufruf übergeben wird.
+
+::: {#tip-standardwerte .callout-tip collapse="true"}
+## Ausnahmen bei Standardwerten
+Bei den in der Funktionsdefinition genannten Werten handelt es sich nicht immer um die tatsächlichen Standardwerte. Es empfiehlt sich deshalb, wenn eine Funktion verwendet wird, die Beschreibung der Parameter zu lesen.
+
+Einige Funktionen verwenden das Schlüsselwort `None` zur Kennzeichnung des Standardwerts. Der Wert `None` dient dabei als Platzhalter.
+Ein Beispiel ist die NumPy-Funktion [numpy.loadtxt()](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html). 
+
+```
+numpy.loadtxt(fname, dtype=<class 'float'>, comments='#', delimiter=None, converters=None, /
+              skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None, max_rows=None, /
+              *, quotechar=None, like=None)
+```
+
+  - Für den Parameter `delimiter` ist als Standardwert das Schlüsselwort `None` eingetragen. Wie der Funktionsbeschreibung zu entnehmen ist, ist der Standartwert tatsächlich das Leerzeichen: "The default is whitespace."
+
+  - Auch der Parameter `usecols` hat den Standarwert `None`: "The default, None, results in all columns being read."
+
+Ein weiteres Beispiel ist die Funktion [pandas.read_csv()](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv). Einige Argumente haben den Standardwert `<no_default>`. (Im Folgenden werden nur ausgewählte Parameter gezeigt).
+
+```
+pandas.read_csv(sep=<no_default>, verbose=<no_default>)
+```
+
+Aus der Beschreibung können die tatsächlichen Standardwerte abgelesen werden:  
+sep : str, default ‘,’  
+verbose : bool, default False  
+
+:::
+
+  - Argumente können in Python entweder als positionales Argument übergeben werden Das heißt, Python erwartet Argumente in einer feststehenden Reihenfolge entsprechend der Parameter der Funktionsdefinition. Alternativ können Argumente als Schlüsselwort übergeben werden, die Zuordnung von Eingaben erfolgt über den Namen des Parameters. Standardmäßig können Argumente positional oder per Schlüsselwort übergeben werden. Abweichungen davon werden durch die Symbole `*` und `/` gekennzeichnet (siehe folgenden Tipp).
+
+::: {#tip-sonderzeichen .callout-tip collapse="true"}
+## Positionale und Schlüsselwortargumente, *args und **kwargs
+Die Symbole `*` und `/` zeigen an, welche Parameter positional und welche per Schlüsselwort übergeben werden können bzw. müssen.
+
+:::: {.border}
+
+| Linke Seite | Trennzeichen | Rechte Seite |
+|:---:|:---:|:---:|
+| nur positionale Argumente | / | positionale oder Schlüsselwortargumente |
+| positionale oder Schlüsselwortargumente | * | nur Schlüsselwortargumente |
+
+(<https://realpython.com/python-asterisk-and-slash-special-parameters/>)
+::::
+
+&nbsp;
+
+Ein Beispiel für das Trennzeichen `*` ist die Funktion `glob` aus dem gleichnamigen Modul. Der Parameter `pathname` kann positional (an erster Stelle) oder als Schlüsselwort übergeben werden. Die übrigen Parameter müssen als Schlüsselwortargumente übergeben werden.
+
+```
+glob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)
+```
+
+Beide Steuerzeichen können innerhalb einer Funktionsdefinition vorkommen, allerdings nur in der Reihenfolge `/` und `*`. Im umgekehrten Fall wäre es unmöglich, Argumente zu übergeben. Ein Beispiel ist die Funktion `sorted`. Der erste Parameter muss positional übergeben werden, die Parameter `key` und `reverse` müssen als Schlüsselworte übergeben werden.
+
+```
+sorted(iterable, /, *, key=None, reverse=False)¶
+```
+
+:::: {.callout-warning appearance="simple"}
+## Ausnahmen
+Einige Funktionen weichen von der Systematik ab, beispielsweise die Funktionen `min()` und `max()`. Diese sind (u. a.) in der Form definiert:
+
+```
+min(iterable, *, key=None)
+max(iterable, *, key=None)
+```
+
+Beide Funktionen akzeptieren den Parameter `iterable` aber nicht als Schlüsselwort.
+::::
+
+Vielen Funktionen können beliebig viele Argumente positional oder als Schlüsselwort übergeben werden. Im Allgemeinen wird dies durch die Schlüsselwörter `*args` (positionale Argumente) und `**kwargs` (key word arguments, Schlüsselwortargumente) angezeigt. Der Unterschied wird durch das eine bzw. die beiden Sternchen markiert, die Schlüsselwörter selbst sind austauschbar (wie bei der Funktion `print(*objects)`). Das Schlüsselwort `*args` entspricht zugleich dem Symbol `*` in der Funktionsdefinition, d. h. rechts davon dürfen nur Schlüsselwortargumente stehen. Weitere Informationen dazu finden Sie [hier](https://book.pythontips.com/en/latest/args_and_kwargs.html).
+:::
+
+In der Funktionsdefinition von `print()` ist `*objects` also ein positionaler Parameter (dieser steht immer an erster Stelle), der keinen Standardwert hat und dem beliebig viele Argumente übergeben werden können (n Eingaben stehen an den ersten n-Stellen). Die weiteren Parameter der Funktion `print()` sind optional und müssen als Schlüsselwort übergeben werden.
+
+## Aufgaben Funktionen
+1. Richtig oder falsch: Methoden stehen abhängig vom Datentyp eines Werts oder eines Objekts zur Verfügung.
+
+2. Geben Sie die drei Werte 1, 2 und 3 mit `print()` aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:
+
+```{python}
+#| echo: false
+
+print(1, 2, 3, sep = "_x_")
+```
+
+3. Schlagen Sie in der Dokumentation die Funktion [bool()](https://docs.python.org/3/library/functions.html#bool) nach.
+
+  - Welche Parameter nimmt die Funktion entgegen und welche davon sind optional?
+
+  - Welche Argumente werden positional und welche als Schlüsselübergeben? Ist die Art der Übergabe wählbar oder festgelegt?
+
+::: {.callout-tip collapse="true"}
+## Lösungen
+Aufgabe 1: richtig
+
+Aufgabe 2
+```{python}
+#| output: false
+
+print(1, 2, 3, sep = "_x_")
+```
+
+Aufgabe 3: Die Funktion bool() hat ein optionales Argument object mit dem Standardwert False. Das Argument muss positional übergeben werden.
+:::
+
+## Flusskontrolle
+Die Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder mehrfach ausgeführt werden.
+
+### Abzweigungen
+Abzweigungen ermöglichen eine Fallunterscheidung, bei der abhängig von einer oder mehreren Bedingungen verschiedene Teile des Skripts ausgeführt werden.
+
+In Python werden Abzweigungen mit dem Schlüsselwort `if` eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt `:` abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.
+
+```
+if Bedingung:
+    Anweisungsblock
+```
+
+``` {python}
+# Beispiel: Zahl kleiner als ein Schwellwert
+
+a = 7
+if a < 10:
+    print( 'Die Zahl', a, 'ist kleiner als 10.')
+```
+
+Es ist auch möglich einen alternativen Anweisungsblock zu definieren, welcher ausgeführt wird, wenn die Bedingung falsch ist. Dieser wird mit dem `else` Schlüsselwort umgesetzt.
+
+```
+if Bedingung:
+    # Bedingung ist wahr
+    Anweisungsblock
+else:
+    # Bedingung ist falsch
+    Anweisungsblock
+```
+
+``` {python}
+# Beispiel: Zahl kleiner als ein Schwellwert mit alternativer Ausgabe
+
+a = 13
+if a < 10:
+    print( 'Die Zahl', a, 'ist kleiner als 10.')
+else:
+    print( 'Die Zahl', a, 'ist nicht kleiner als 10.')
+```
+
+Es können auch mehrere Bedingungen übergeben werden.
+``` {python}
+# Beispiel: Zahl im Wertebereich zwischen 10 und 20
+
+a = 1
+if a < 20 and a > 10:
+    print( 'Die Zahl', a, 'liegt zwischen 10 und 20.')
+else:
+    print( 'Die Zahl', a, 'liegt nicht zwischen 10 und 20.')
+```
+
+Schließlich können mehrere alternative Bedingungen geprüft werden. Dies ist zum einen durch das Verschachteln von Abzweigungen möglich.
+```{python}
+# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit verschachtelten Abzweigungen
+
+a = 12
+if a > 10:
+    print( 'Die Zahl', a, 'ist größer als 10.' )
+    
+    if a < 20:
+        print( 'Die Zahl', a, 'ist kleiner als 20.' )
+        print( 'Damit liegt die Zahl zwischen 10 und 20.')
+    else:
+        print( 'Die Zahl', a, 'ist größer als 20 und liegt nicht im gesuchten Wertebereich.' )
+else:
+        print( 'Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )
+```
+
+Zum anderen ist dies mit dem Schlüsselwort `elif` möglich.
+```{python}
+# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit elif
+
+a = 112
+if a < 20 and a > 10:
+  print('Die Zahl', a, 'liegt zwischen 10 und 20.')
+elif a < 10:
+  print('Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )
+elif a > 20 and a <= 100:
+  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 100.')
+elif a > 20 and a <= 1000:
+  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 1000.')
+else:
+  print('Die Zahl', a, 'liegt nicht zwischen 10 und 20 und ist größer als 1000.')
+```
+
+### Schleifen
+Schleifen ermöglichen es, Anweisungen zu wiederholen. In Python können `while`- und `for`-Schleifen definiert werden. Beide benötigen:
+
+  - einen **Schleifenkopf**, welcher die Ausführung des Anweisungsblocks steuert, und
+  
+  - einen **Anweisungsblock**, also eine Gruppe von Anweisungen, welche bei jedem Schleifendurchlauf ausgeführt werden.
+
+Die `while`-Schleife kommt mit nur einer Bedingung im Schleifenkopf aus und ist die allgemeinere von beiden. Jede `for`-Schleife kann zu einer `while`-Schleife umgeschrieben werden (indem ein Zähler in den Anweisungsblock integriert wird.) 
+Welcher der beiden Typen verwendet wird, hängt von der jeweiligen Aufgabe ab.
+
+#### while-Schleifen
+Eine `while`-Schleife führt den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort `while` eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt `:` abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.
+
+```
+while Bedingung:
+    Anweisungsblock
+```
+
+Beim Beginn der Schleife und nach jedem Durchlauf wird die Bedingung geprüft. Ist sie wahr, so wird der Anweisungsblock ausgeführt, wenn nicht, ist die Schleife beendet und die nächste Anweisung außerhalb der Schleife wird ausgeführt.
+
+```{python}
+# Beispiel: Erhöhen eines Variablenwertes
+
+# Setze Startwert
+a = 5
+
+# Definiere Schleife, welche solange ausgeführt 
+# wird, wie a kleiner als oder gleich 10 ist
+while a <= 10:
+    # Anweisungsblock der Schleife:
+    
+    # 1. Ausgabe des aktuellen Werts von a 
+    print('aktueller Wert von a', a)
+    
+    # 2. Erhöhung von a um Eins
+    a += 1
+
+# Ausgabe des Wertes nach der Schleife
+print('Wert von a nach der Schleife', a)
+```
+
+::: {#wrn-endlosschleife .callout-warning appearance="simple" collapse="false"}
+## Endlosschleife
+
+`while`-Schleifen führen zu einer Endlosschleife, wenn die Abbruchbedingung nicht erreicht werden kann. Beispielsweise fehlt in der folgenden Schleife eine Möglichkeit für die Laufvariable x den Wert 5 zu erreichen.
+
+``` {python}
+#| eval: false
+
+x = 1
+
+while x < 5:
+  print(x)
+```
+
+In diesem Fall können Sie die Programmausführung durch Drücken von `Strg`+ `C` beenden.
+
+:::
+
+#### for-Schleifen
+Während die `while`-Schleife ausgeführt wird, solange eine Bedingung erfüllt ist, wird die `for`-Schleife über eine Laufvariable gesteuert, die eine Sequenz durchläuft. Die Syntax sieht wie folgt aus:
+
+```
+for Laufvariable in Sequenz:
+  Anweisungsblock
+```
+
+Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte `for` und `in` und der Kopf wird mit einem Doppelpunkt `:` abgeschlossen. Auch hier wird der Anweisungsblock eingerückt.
+
+Die Sequenz wird mit einem range-Objekt erstellt, das mit der Funktion `range(start = 0, stop, step = 1)` erzeugt wird. `range()` nimmt ganzzahlige Werte als *positionale Argumente* entgegen und erzeugt Ganzzahlen von `start` bis *nicht einschließlich* `stop` mit der Schrittweite `step`. Dabei ist wichtig, dass Python **exklusiv zählt**, das heißt, Python beginnt standarmäßig bei `0` zu zählen und der als Argument `stop` übergebene Wert wird nicht mitgezählt.
+
+Die Funktion `range()` gibt ein range-Objekt zurück, das mit `print()` nicht unmittelbar die erwartete Ausgabe erzeugt.
+
+```{python}
+# range(start = 1, stop = 5) - step wird nicht übergeben, es gilt der Standardwert step = 1
+print(range(1, 5), type(range(1, 5)))
+```
+
+Dieses Verhalten wird faule Auswertung ([lazy evaluation](https://de.wikipedia.org/wiki/Lazy_Evaluation)) genannt: Die Werte des range-Objekts werden erst erzeugt, wenn Sie benötigt werden. Im Folgenden Code wird das range-Objekt mit einer Schleife durchlaufen und für jeden Durchlauf der Wert der Laufvariable `i` ausgegeben.
+
+```{python}
+for i in range(1, 5):
+  print(i)
+```
+
+Mit dem Parameter `step` kann die Schrittweite gesteuert werden.
+
+```{python}
+for i in range(1, 15, 3):
+  print(i)
+```
+
+Nützlich ist die Ausgabe des range-Objekts in eine Liste oder in ein Tupel, Sammeltypen, die im nächsten Kapitel behandelt werden.
+
+```{python}
+# Ausgabe der geraden Zahlen 1-10 in eine Liste
+print("Liste:", list(range(2, 11, 2)))
+
+# Ausgabe der ungeraden Zahlen 1-10 in ein Tupel
+print("Tupel:", tuple(range(1, 11, 2)))
+```
+
+`start` und `stop` können auch negativ sein, `step` muss immer größer 0 sein.
+
+```{python}
+for i in range(-5, -1):
+  print(i)
+```
+
+`stop` muss immer größer als `start` sein. Um eine absteigende Zahlenfolge zu erzeugen, wird die Funktion `reversed(sequenz)` verwendet.
+
+```{python}
+# Die Ausgabe bleibt leer
+print(list(range(5, 0)))
+
+# Mit der Funktion reversed geht es
+print(list(reversed(range(0, 5))))
+```
+
+##### Listennotation
+
+::: {.border}
+Die sogenannte Listennotation ist eine Kurzschreibweise für for-Schleifen. In Listennotation geschriebene Schleifen müssen in einer Zeile stehen und haben die folgende Syntax:
+
+```{python}
+quadratzahlen = [wert ** 2 for wert in range(10, 0, -1)]
+print(quadratzahlen)
+```
+
+(@matthes2017python, S. 71)
+:::
+
+#### Die Schlüsselwörter break und continue
+Manchmal kann es notwendig sein, den Anweisungsblock einer Schleife vorzeitig zu verlassen. Dafür können die Schlüsselwörter `break` und `continue` benutzt werden. Das Schlüsselwort `break` bewirkt, dass die Schleife sofort verlassen wird. Dagegen führt das Schlüsselwort `continue` dazu, dass der aktuelle Schleifendurchlauf beendet und der nächste Durchlauf begonnen wird.
+
+``` {python}
+x = 0
+while x < 10:
+
+  x += 1
+
+  # keine geraden Zahlen ausgeben
+  if x % 2 == 0:
+    continue
+
+  # Schleife bei x == 7 beenden
+  if x == 7:
+    break
+
+  print(x)
+
+```
+
+### Ausnahmebehandlung
+
+Die Ausnahmebehandlung erlaubt es, Python alternative Anweisungen zu geben, die beim Auftreten eines Fehlers ausgeführt werden sollen. Dies ist beispielsweise beim Einlesen von Datensätzen nützlich, um sich die Ursache von Fehlermeldungen ausgeben zu lassen - eine Technik, die im [Methodenbaustein Einlesen strukturierter Datensätze](https://bausteine-der-datenanalyse.github.io/m-einlesen-strukturierter-datens-tze/einlesen-strukturierter-datens%C3%A4tze.html) vorgestellt wird. 
+
+In Python gibt es zwei Arten von Fehlern. Dies sind erstens Syntaxfehler, die Python mit einer Fehlermeldung ähnlich wie der folgenden quitiert. Syntaxfehler werden durch das Schreiben von syntaktisch korrektem Programmcode behoben.
+```{python}
+#| eval: false
+
+print(1}
+```
+
+```{python}
+#| echo: false
+
+try:
+  eval('print(1}')
+except SyntaxError as error:
+  print(str(error)[:58])
+```
+
+Die zweite Art von Fehlern sind Ausnahmen (exceptions), die auch bei syntaktisch korrektem Programmcode auftreten können. Ausnahmen führen auch zu Fehlermeldungen.
+
+```{python}
+#| eval: false
+
+# Beispiel 1: Division durch Null
+print(1 / 0)
+```
+
+```{python}
+#| echo: false
+
+try:
+  print(1 / 0)
+except ZeroDivisionError as error:
+  print(error)
+```
+
+```{python}
+#| eval: false
+
+# Beispiel 2: undefinierte Variable
+print(undefinierte_variable)
+```
+
+```{python}
+#| echo: false
+
+try:
+  print(undefinierte_variable)
+except NameError as error:
+  print(error)
+```
+
+Fehlermeldungen wie diese können in Python mit der [Ausnahmebehandlung](https://docs.python.org/3/tutorial/errors.html) abgefangen werden. Diese wird mit dem Schlüsselwort `try` eingeleitet, das mit dem Doppeltpunkt `:` abgeschlossen wird. In der nächsten Zeile folgt eingrückt der Anweisungblock, der auf Ausnahmen getestet werden soll. *Hinweis: Der Anweisungsblock wird tatsächlich ausgeführt, Änderungen an Daten oder Dateien sind also möglich.* Anschließend wird mit dem Schlüsselwort `except`, das von einem Doppelpunkt `:` und in der nächsten Zeile von einem eingerückten Anweisungsblock gefolgt wird, festgelegt, was beim Aufkommen einer Ausnahme passieren soll. Optional kann mit dem Schlüsselwort `else` nach dem gleichen Schema ein weiterer Anweisungsblock definiert werden, der bei einer erfolgreichen Ausführung des Anweisungsblocks unter `try` *zusätzlich* ausgeführt wird. Der allgemeiner Aufbau lautet wie folgt:
+
+```
+try:
+  Anweisungsblock_1 
+except:
+  Anweisungsblock falls Anweisungblock_1 eine Ausnahme erzeugt
+else:
+  optionaler Anweisungsblock falls Anweisungsblock_1 keine Ausnahme erzeugt
+```
+
+Mithilfe der Ausnahmebehandlungen können die Elemente angezeigt werden, die zu einer Fehlermeldung führen.
+
+```{python}
+a = 1
+b = 2
+
+try:
+  differenz = a - b
+except:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
+
+```{python}
+a = 1
+b = 'abc'
+
+try:
+  differenz = a - b
+except:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
+
+Auch ist es möglich, die Fehlermeldung abzufangen und auszugeben. Dafür wird die Zeile `except:` wie folgt modifiziert `except Exception as error:`
+
+```{python}
+a = 1
+b = 'abc'
+
+try:
+  differenz = a - b
+except Exception as error:
+  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
+  print(error)
+else:
+  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
+
+```
+
+## Aufgaben Flusskontrolle
+1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.
+
+2. Roulette: Schreiben Sie ein Programm, dass für eine Zahl prüft, ob diese im Wertebereich des Spieltischs liegt. Falls nein, soll eine Fehlermeldung ausgegeben werden. Falls ja, soll das Programm ausgeben, ob die Zahl
+
+  - gerade oder ungerade ist,
+
+  - rot oder schwarz ist,
+
+  - niedrig (1-18) oder hoch (19-36) ist und
+
+  - im 1., 2. oder 3. Dutzend liegt.
+
+:::: {.border}
+
+![Roulette Tableau](00-bilder/European_roulette_cc-by-sa.png){fig-alt="Roulettetisch: Roulette-Scheibe mit Zahlenfeld." width="90%"}
+
+European roulette von Betzaar.com ist lizensiert unter [CC 3.0 BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en) und verfügbar auf 
+[wikimedia.org](https://commons.wikimedia.org/wiki/File:European_roulette.svg). 2010
+::::
+
+&nbsp;
+
+**Die Musterlösung kann Marc machen.**
+
+::: {.callout-tip collapse="true"}
+## Musterlösung Aufgaben Flusskontrolle
+
+:::
+
+&nbsp;  
+(@Arnold-2023-schleifen-abzweigungen)

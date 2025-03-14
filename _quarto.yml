@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: output/book/
 
 book:
   # Metadaten / meta data
@@ -16,13 +17,13 @@ book:
   date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
   chapters:
     - index.qmd
-    - einleitung.qmd
-    - datentypen.qmd
-    - funktionen.qmd
-    - sammeltypen.qmd
-    - funktionen-definieren.qmd
-    - dateien-lesen-und-schreiben.qmd
-    - module-und-pakete-importieren.qmd
+    - skript/einleitung.qmd
+    - skript/datentypen.qmd
+    - skript/funktionen.qmd
+    - skript/sammeltypen.qmd
+    - skript/funktionen-definieren.qmd
+    - skript/dateien-lesen-und-schreiben.qmd
+    - skript/module-und-pakete-importieren.qmd
 
   sidebar:
     title: "Werkzeugbaustein Python"
@@ -78,3 +79,5 @@ fig-align: center
 mermaid: 
   theme: neutral 
 
+execute:
+  freeze: auto

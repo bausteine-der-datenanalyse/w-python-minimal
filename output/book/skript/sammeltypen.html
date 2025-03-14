@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Sammeltypen – Bausteine Computergestützter Datenanalyse</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../skript/funktionen-definieren.html" rel="next">
+<link href="../skript/funktionen.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg">
+<link rel="icon" type="image/x-icon" href="logo.ico">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/sammeltypen.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Werkzeugbaustein Python</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/funktionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/sammeltypen.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#listen" id="toc-listen" class="nav-link active" data-scroll-target="#listen"><span class="header-section-number">4.1</span> Listen</a>
+  <ul class="collapse">
+  <li><a href="#slicing-der-zugriffsoperator" id="toc-slicing-der-zugriffsoperator" class="nav-link" data-scroll-target="#slicing-der-zugriffsoperator">Slicing: der Zugriffsoperator []</a></li>
+  <li><a href="#listenmethoden" id="toc-listenmethoden" class="nav-link" data-scroll-target="#listenmethoden">Listenmethoden</a></li>
+  <li><a href="#aufgaben-listen" id="toc-aufgaben-listen" class="nav-link" data-scroll-target="#aufgaben-listen">Aufgaben Listen</a></li>
+  </ul></li>
+  <li><a href="#tupel" id="toc-tupel" class="nav-link" data-scroll-target="#tupel"><span class="header-section-number">4.2</span> Tupel</a>
+  <ul class="collapse">
+  <li><a href="#tupel-kopieren" id="toc-tupel-kopieren" class="nav-link" data-scroll-target="#tupel-kopieren">Tupel kopieren</a></li>
+  </ul></li>
+  <li><a href="#mengen" id="toc-mengen" class="nav-link" data-scroll-target="#mengen"><span class="header-section-number">4.3</span> Mengen</a>
+  <ul class="collapse">
+  <li><a href="#mengen-kopieren" id="toc-mengen-kopieren" class="nav-link" data-scroll-target="#mengen-kopieren">Mengen kopieren</a></li>
+  </ul></li>
+  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries"><span class="header-section-number">4.4</span> Dictionaries</a>
+  <ul class="collapse">
+  <li><a href="#dictionaries-kopieren" id="toc-dictionaries-kopieren" class="nav-link" data-scroll-target="#dictionaries-kopieren">Dictionaries kopieren</a></li>
+  </ul></li>
+  <li><a href="#übersicht-sammeltypen" id="toc-übersicht-sammeltypen" class="nav-link" data-scroll-target="#übersicht-sammeltypen"><span class="header-section-number">4.5</span> Übersicht Sammeltypen</a></li>
+  <li><a href="#löschen-das-schlüsselwort-del" id="toc-löschen-das-schlüsselwort-del" class="nav-link" data-scroll-target="#löschen-das-schlüsselwort-del"><span class="header-section-number">4.6</span> Löschen: das Schlüsselwort del</a></li>
+  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen"><span class="header-section-number">4.7</span> Funktionen</a></li>
+  <li><a href="#operationen-verwendung-von-schleifen" id="toc-operationen-verwendung-von-schleifen" class="nav-link" data-scroll-target="#operationen-verwendung-von-schleifen"><span class="header-section-number">4.8</span> Operationen: Verwendung von Schleifen</a></li>
+  <li><a href="#aufgaben-sammeltypen" id="toc-aufgaben-sammeltypen" class="nav-link" data-scroll-target="#aufgaben-sammeltypen"><span class="header-section-number">4.9</span> Aufgaben Sammeltypen</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sammeltypen</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Sammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:</p>
+<ul>
+<li><p><a href="https://de.wikipedia.org/wiki/Liste_(Datenstruktur)">Listen</a> enthalten eine flexible Anzahl von Elementen beliebigen Typs.</p></li>
+<li><p><a href="https://de.wikipedia.org/wiki/Tupel_%28Informatik%29">Tupel</a> können wie Listen Elemente beliebigen Typs enthalten, sind aber unveränderlich.</p></li>
+<li><p><a href="https://de.wikipedia.org/wiki/Menge_%28Datenstruktur%29">Mengen</a> sind ungeordnete Sammlungen, die jedes Element nur einmal enthalten können.</p></li>
+<li><p><a href="https://de.wikipedia.org/wiki/Zuordnungstabelle_%28Datenstruktur%29">assoziative Arrays</a> oder Dictionaries sind Zuordnungstabellen, d.&nbsp;h. sie bestehen aus Schlüssel-Wert-Paaren.</p></li>
+</ul>
+<p>In diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.</p>
+<section id="listen" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="listen"><span class="header-section-number">4.1</span> Listen</h2>
+<p>Wie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern <code>[]</code> eingeklammert und mit Kommata <code>,</code> getrennt. Listen können mit dem <code>+</code>-Operator verkettet werden. <code>*</code> verkettet eine Liste n-mal.</p>
+<div id="05ec0c31" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>text_variable <span class="op">=</span> <span class="st">'abc'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Listen können auch Listen enthalten</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> [<span class="va">None</span>, liste1]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Listen können mit + und * verkettet werden</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1 <span class="op">+</span> liste2)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1 <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+[None, [1, 'xy', True, 'abc']]
+[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]
+[1, 'xy', True, 'abc', 1, 'xy', True, 'abc']</code></pre>
+</div>
+</div>
+<p>Eine leere Liste kann durch Zuweisung von <code>[]</code> erstellt werden.</p>
+<div id="e3e1ffe4" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>leere_liste <span class="op">=</span> []</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leere_liste)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<section id="slicing-der-zugriffsoperator" class="level3">
+<h3 class="anchored" data-anchor-id="slicing-der-zugriffsoperator">Slicing: der Zugriffsoperator []</h3>
+<p>Der Zugriff auf einzelne oder mehrere Elemente einer Liste (und andere Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.</p>
+<section id="zugriff-auf-einzelne-elemente" class="level4">
+<h4 class="anchored" data-anchor-id="zugriff-auf-einzelne-elemente">Zugriff auf einzelne Elemente</h4>
+<p>Elemente werden über ihren Index, bei 0 beginnend, angesprochen.</p>
+<div id="ee584b57" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">0</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+1
+abc</code></pre>
+</div>
+</div>
+<p>Auf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste <code>liste2</code> enthält an Indexposition 1 eine Liste mit 4 Elementen.</p>
+<div id="e1b672e4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste2[<span class="dv">1</span>][<span class="dv">0</span>], liste2[<span class="dv">1</span>][<span class="dv">1</span>], liste2[<span class="dv">1</span>][<span class="dv">2</span>], liste2[<span class="dv">1</span>][<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[None, [1, 'xy', True, 'abc']]
+[1, 'xy', True, 'abc']
+1 xy True abc</code></pre>
+</div>
+</div>
+<p>Mit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.</p>
+<div id="ab933463" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1[<span class="op">-</span><span class="dv">1</span>], liste1[<span class="op">-</span><span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+abc xy</code></pre>
+</div>
+</div>
+</section>
+<section id="zugriff-auf-mehrere-elemente" class="level4">
+<h4 class="anchored" data-anchor-id="zugriff-auf-mehrere-elemente">Zugriff auf mehrere Elemente</h4>
+<p>Indexbereiche können in der Form <code>[start:stop:step]</code> angesprochen werden. <code>start</code> ist das erste adressierte Element, <code>stop</code> <em>das erste nicht mehr adressierte Element</em> und <code>step</code> die Schrittweite.</p>
+<div class="border">
+<table class="table">
+<thead>
+<tr class="header">
+<th>Zugriffsoperator</th>
+<th>Ausschnitt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>liste[start:stop]</td>
+<td>Elemente von start bis stop - 1</td>
+</tr>
+<tr class="even">
+<td>liste[:]</td>
+<td>Alle Elemente der Liste</td>
+</tr>
+<tr class="odd">
+<td>liste[start:]</td>
+<td>Elemente von start bis zum Ende der Liste</td>
+</tr>
+<tr class="even">
+<td>liste[:stop]</td>
+<td>Elemente vom Anfang der Liste bis stop - 1</td>
+</tr>
+<tr class="odd">
+<td>liste[::3]</td>
+<td>Auswahl jedes dritten Elements</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Negative Werte für <code>start</code>, <code>stop</code> oder <code>step</code> bewirken eine Rückwärtsauswahl von Elementen.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Zugriffsoperator</th>
+<th>Ausschnitt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>liste[-1]</td>
+<td>das letzte Element der Liste</td>
+</tr>
+<tr class="even">
+<td>liste[-2:]</td>
+<td>die letzten beiden Elemente der Liste</td>
+</tr>
+<tr class="odd">
+<td>liste[:-2]</td>
+<td>alle bis auf die beiden letzten Elemente</td>
+</tr>
+<tr class="even">
+<td>liste[::-1]</td>
+<td>alle Elemente in umgekehrter Reihenfolge</td>
+</tr>
+<tr class="odd">
+<td>liste[1::-1]</td>
+<td>die ersten beiden Elemente in umgekehrter Reihenfolge</td>
+</tr>
+<tr class="even">
+<td>liste[:-3:-1]</td>
+<td>die letzten beiden Elemente in umgekehrter Reihenfolge</td>
+</tr>
+<tr class="odd">
+<td>liste[-3::-1]</td>
+<td>alle außer die letzten beiden Elemente in umgekehrter Reihenfolge</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>(Beispiele von Greg Hewgill unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a> verfügbar auf <a href="https://stackoverflow.com/a/509295">stackoverflow</a>. 2009)</p>
+</div>
+</section>
+<section id="zeichenfolgen" class="level4">
+<h4 class="anchored" data-anchor-id="zeichenfolgen">Zeichenfolgen</h4>
+<p>Auch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.</p>
+<div id="71d59b76" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Ich bin ein string'</span>[::<span class="dv">2</span>])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hallo Welt'</span>[<span class="dv">0</span>:<span class="dv">6</span>])</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'abc'</span>[::<span class="op">-</span><span class="dv">1</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ihbnensrn
+Hallo 
+cba</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="listenmethoden" class="level3">
+<h3 class="anchored" data-anchor-id="listenmethoden">Listenmethoden</h3>
+<p>Für den Listentyp sind verschiedene Methoden definiert.</p>
+<section id="elemente-bestimmen" class="level4">
+<h4 class="anchored" data-anchor-id="elemente-bestimmen">Elemente bestimmen</h4>
+<ul>
+<li><p><code>list.index(x, start, stop)</code> gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente <code>start</code> und <code>stop</code> erlauben es, den Suchbereich einzuschränken.</p></li>
+<li><p><code>list.count(x)</code> gibt die Häufigkeit von x in der Liste aus.</p></li>
+<li><p><code>list.reverse()</code> kehrt die Reihenfolge der Listenelemente um (die Liste wird dadurch verändert!).</p></li>
+<li><p><code>list.sort(reverse = False)</code> sortiert die Liste, mit dem optionalen Argument reverse = True absteigend (die Liste wird dadurch verändert!). Die Datentypen innerhalb der Liste müssen sortierbar sein (d.&nbsp;h. alle Elemente sind numerisch oder Zeichen).</p></li>
+</ul>
+<div id="5e671ef1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>liste1.reverse()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># True wird als 1 gezählt</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"True wird als 1 gezählt:"</span>, liste1.index(<span class="dv">1</span>), liste1.count(<span class="dv">1</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 'xy', True, 'abc']
+['abc', True, 'xy', 1]
+True wird als 1 gezählt: 1 2</code></pre>
+</div>
+</div>
+</section>
+<section id="elemente-einfügen" class="level4">
+<h4 class="anchored" data-anchor-id="elemente-einfügen">Elemente einfügen</h4>
+<ul>
+<li><p><code>list.append(x)</code> hängt ein einzelnes Element an das Ende der Liste an.</p></li>
+<li><p><code>list.extend(sammeltyp)</code> hängt alle mit <code>sammeltyp</code> übergebenen Elemente an das Ende der Liste an. Der Sammeltyp kann eine Liste, ein Tupel, eine Menge oder ein Dictionary sein.</p></li>
+<li><p><code>list.insert(i, x)</code> fügt an der Position i Element x ein.</p></li>
+</ul>
+<div id="f35bc47b" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>liste1.append(<span class="st">'Hallo'</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>liste1.extend([<span class="st">'Hallo'</span>, <span class="st">'Welt!'</span>])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>liste1.insert(<span class="dv">2</span>, <span class="st">'12345'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['abc', True, 'xy', 1] 
+
+['abc', True, '12345', 'xy', 1, 'Hallo', 'Hallo', 'Welt!']</code></pre>
+</div>
+</div>
+</section>
+<section id="elemente-entfernen" class="level4">
+<h4 class="anchored" data-anchor-id="elemente-entfernen">Elemente entfernen</h4>
+<ul>
+<li><p><code>list.remove(x)</code> entfernt <em>das erste</em> Element x in der Liste und gibt einen ValueError zurück, wenn x nicht in der Liste enthalten ist.</p></li>
+<li><p><code>liste.pop(i)</code> entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode <code>liste.pop(i)</code> gibt die entfernten Elemente zurück.</p></li>
+<li><p><code>liste.clear()</code> entfernt alle Elemente einer Liste.</p></li>
+</ul>
+<div id="07d54c19" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>liste1.remove(<span class="st">'Hallo'</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>liste1.pop(<span class="dv">2</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['abc', True, '12345', 'xy', 1, 'Hallo', 'Welt!']</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'12345'</code></pre>
+</div>
+</div>
+</section>
+<section id="listen-und-listenelemente-kopieren" class="level4">
+<h4 class="anchored" data-anchor-id="listen-und-listenelemente-kopieren">Listen und Listenelemente kopieren</h4>
+<p>In Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Wird eine Liste durch Zuweisung einer anderen Liste angelegt, dann werden nicht die Elemente der Liste kopiert, sondern beide Listen greifen dann auf den selben Speicherort zu.</p>
+<div id="3f0a7356" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"liste1:"</span>, liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Ändern eines Elements in liste2</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>liste2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Auch liste1 hat sich durch die Zuweisung in liste2 verändert:"</span>, liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>liste1: [1, 'xy', True, 'abc'] 
+
+Auch liste1 hat sich durch die Zuweisung in liste2 verändert: ['ABC', 'xy', True, 'abc'] 
+</code></pre>
+</div>
+</div>
+<p>Um eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode <code>liste.copy()</code> verwendet werden. Auch durch die Verwendung des Zugriffsoperators <code>[:]</code> wird eine neue Liste im Speicher angelegt.</p>
+<div id="5829549e" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwendung der Methode liste.copy()</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1.copy()</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Ändern eines Elements in liste2</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>liste2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"liste1 bleibt durch die Zuweisung in liste2 unverändert:"</span>, liste1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwendung des Slice Operators</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1[:]</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">## Ändern eines Elements in liste2</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>liste2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"liste1 bleibt durch die Zuweisung in liste2 unverändert:"</span>, liste1)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc'] 
+
+liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']</code></pre>
+</div>
+</div>
+<p>Die Kopie von Listenelementen ist in dieser Hinsicht unproblematisch.</p>
+<div id="cbb119a6" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwendung des Slice Operators</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1[<span class="dv">0</span>:<span class="dv">2</span>]</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ändern eines Elements in liste2</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>liste2[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"liste1 bleibt durch die Zuweisung in liste2 unverändert:"</span>, liste1)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']</code></pre>
+</div>
+</div>
+<p>Um zu überprüfen, ob sich zwei Objekte den Speicherbereich teilen, kann die Objekt-ID mit der Funktion <code>id()</code> verglichen oder die Operatoren <code>is</code> bzw. <code>is not</code> verwendet werden, die die Funktion <code>id()</code> aufrufen.</p>
+<div id="a7290a34" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>liste1 <span class="op">=</span> [<span class="dv">1</span>, <span class="st">'xy'</span>, <span class="va">True</span>, text_variable]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>liste2 <span class="op">=</span> liste1</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ID liste1:"</span>, <span class="bu">id</span>(liste1))</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ID liste2:"</span>, <span class="bu">id</span>(liste2))</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ID liste1 gleich ID list2:"</span>, liste1 <span class="kw">is</span> liste2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ID liste1: 4355438848
+ID liste2: 4355438848
+ID liste1 gleich ID list2: True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Identität vs.&nbsp;Wertgleichheit
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Der Operator <code>is</code> prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator <code>==</code>, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts verdeutlicht werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).</p>
+<div id="429a1e54" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wertgleichheit</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">==</span> <span class="fl">1.0</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1 <span class="op">==</span> liste2, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Identität</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="kw">is</span> <span class="fl">1.0</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste1 <span class="kw">is</span> liste2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+True 
+
+False
+True</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="aufgaben-listen" class="level3">
+<h3 class="anchored" data-anchor-id="aufgaben-listen">Aufgaben Listen</h3>
+<ol type="1">
+<li><p>Erstellen Sie eine Liste ‘wochentage’, die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste ‘wochenende’ mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste ‘wochentage’.</p></li>
+<li><p>4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste ‘wochentage’ zu entfernen und der Liste ‘wochenende’ vor dem Samstag hinzuzufügen.</p></li>
+<li><p>Bestimmen Sie in der Liste <code>zahlen = [34, 12, 0, 67, 23]</code> die Position des Werts 0. Entfernen Sie den Wert aus der Liste und geben Sie die Liste aufsteigend sortiert aus.</p></li>
+<li><p>Geben Sie nun mit Hilfe des Zugriffsoperators <code>[]</code> die Indexpositionen 1 und 3 der sortierten Liste ‘zahlen’ aus.</p></li>
+</ol>
+<p><strong>Musterlösung kann Marc machen.</strong></p>
+<div id="tip-listen" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp&nbsp;4.1: Musterlösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tupel" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tupel"><span class="header-section-number">4.2</span> Tupel</h2>
+<p>Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.</p>
+<p>Tupel werdem mit runden Klammern <code>()</code> erzeugt, die Elemente werden mit einem Komma <code>,</code> getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form <code>(wert, )</code> angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator <code>[start:stop:step]</code> möglich. Tupel können mit den Operatoren <code>+</code> und <code>*</code> verkettet werden.</p>
+<div id="fec97b05" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">2</span>, <span class="fl">7.8</span>, <span class="st">'Feuer'</span>, <span class="va">True</span>, text_variable)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>tupel2 <span class="op">=</span> (<span class="dv">1</span>, )</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1[<span class="dv">2</span>:<span class="dv">4</span>])</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1[::<span class="dv">2</span>])</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1[<span class="dv">2</span>:<span class="dv">4</span>] <span class="op">+</span> tupel2)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">*</span> tupel2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(2, 7.8, 'Feuer', True, 'abc')
+('Feuer', True)
+(2, 'Feuer', 'abc')
+abc
+('Feuer', True, 1)
+(1, 1, 1)</code></pre>
+</div>
+</div>
+<section id="tupel-kopieren" class="level3">
+<h3 class="anchored" data-anchor-id="tupel-kopieren">Tupel kopieren</h3>
+<p>Tupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode <code>.copy()</code> nicht definiert. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator <code>[:]</code> zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python, wie für jedes Objekt, ein neues Objekt im Speicher an.</p>
+<div id="931424eb" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>tupel2 <span class="op">=</span> tupel1</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Neuzuweisung der Werte von tupel1</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die in tupel2 gespeicherten Werte sind unverändert:</span><span class="ch">\n</span><span class="sc">{</span>tupel1<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>tupel2<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren mit Slice Operator</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>tupel2 <span class="op">=</span> tupel1[:]</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel2 <span class="kw">is</span> tupel1)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co">## Neuzuweisung der Werte von tupel1</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>tupel1 <span class="op">=</span> (<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupel1, tupel2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die in tupel2 gespeicherten Werte sind unverändert:
+(4, 5, 6) (1, 2, 3)
+
+True
+(4, 5, 6) (1, 2, 3)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="mengen" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="mengen"><span class="header-section-number">4.3</span> Mengen</h2>
+<p>In Python können Mengen mit der <code>set()</code> Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern <code>{}</code> erstellt werden (eine leere Menge kann nur mit <code>set()</code> erzeugt werden, da <code>{}</code> ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.</p>
+<div id="8351b03f" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="st">'a'</span>, <span class="dv">123</span>, <span class="dv">1000</span>, (<span class="st">'tupel'</span>, <span class="dv">5</span>)]</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Das Objekt liste als Menge:</span><span class="ch">\n</span><span class="st">"</span>, <span class="bu">set</span>(liste))</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>menge <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">1000</span>, (<span class="st">'tupel'</span>, <span class="dv">5</span>), <span class="st">'a'</span>, <span class="dv">123</span>}</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Menge kann auch mit geschweiften Klammern erzeugt werden:"</span>, menge)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Das Objekt liste als Menge:
+ {1, 2, 3, 4, 5, ('tupel', 5), 1000, 'a', 123}
+Die Menge kann auch mit geschweiften Klammern erzeugt werden: {1, 2, 3, 4, 5, ('tupel', 5), 1000, 'a', 123}</code></pre>
+</div>
+</div>
+<p>Mengen können beispielsweise für Vergleichsoperationen verwendet werden.</p>
+<div id="324dfdc7" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>menge_a <span class="op">=</span> <span class="bu">set</span>(<span class="st">'Python'</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>menge_b <span class="op">=</span> <span class="bu">set</span>(<span class="st">'ist super'</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># einzigartige Zeichen in a</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a:"</span>, menge_a)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeichen in a, aber nicht in b</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a - b:"</span>, menge_a <span class="op">-</span> menge_b)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeichen in a oder b</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a | b:"</span>, menge_a <span class="op">|</span> menge_b)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeichen in a und b</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a &amp; b:"</span>, menge_a <span class="op">&amp;</span> menge_b)</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeichen in a oder b, aber nicht in beiden (XOR)</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Menge a ^ b:"</span>, menge_a <span class="op">^</span> menge_b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Menge a: {'y', 't', 'o', 'n', 'h', 'P'}
+Menge a - b: {'y', 'o', 'n', 'h', 'P'}
+Menge a | b: {'y', 's', 't', 'u', 'o', 'n', 'p', ' ', 'h', 'e', 'i', 'r', 'P'}
+Menge a &amp; b: {'t'}
+Menge a ^ b: {'s', 'y', 'u', 'o', 'n', 'p', 'r', 'h', 'e', 'i', ' ', 'P'}</code></pre>
+</div>
+</div>
+<section id="mengen-kopieren" class="level3">
+<h3 class="anchored" data-anchor-id="mengen-kopieren">Mengen kopieren</h3>
+<p>Mengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode <code>.copy()</code> für Mengen definiert ist. Allerdings kann der Zugriffsoperator <code>[]</code> nicht auf Mengen angewendet werden.</p>
+<div id="2b04be96" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>set2 <span class="op">=</span> set1</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(set1 <span class="kw">is</span> set2)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Neuzuweisen von set1</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>}</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die in set2 gespeicherten Werte sind unverändert:</span><span class="ch">\n</span><span class="sc">{</span>set1<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>set2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Methode .copy()</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>set2 <span class="op">=</span> set1.copy()</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(set1 <span class="kw">is</span> set2)</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co">## Neuzuweisen von set1</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>set1 <span class="op">=</span> {<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>}</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Die in set2 gespeicherten Werte sind unverändert:</span><span class="ch">\n</span><span class="sc">{</span>set1<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>set2<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+Die in set2 gespeicherten Werte sind unverändert:
+{4, 5, 6} {1, 2, 3}
+False
+Die in set2 gespeicherten Werte sind unverändert:
+{4, 5, 6} {1, 2, 3}</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="dictionaries" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">4.4</span> Dictionaries</h2>
+<p>Dictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern <code>{}</code> definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt <code>:</code> getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator <code>[]</code>, welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.</p>
+<div id="1a0a05ad" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dictionary1 <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'abc'</span>, <span class="st">'b'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'c'</span>: (<span class="st">'tupel'</span>, <span class="dv">5</span>, <span class="dv">6</span>)}</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Werte des Schlüssels 1:"</span>, dictionary1[<span class="dv">1</span>])</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Werte des Schlüssels 'b':"</span>,  dictionary1[<span class="st">'b'</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} 
+
+Werte des Schlüssels 1: abc
+Werte des Schlüssels 'b': [1, 2, 3]</code></pre>
+</div>
+</div>
+<p>Auf die Schlüssel eines Dictionaries kann über die Methode <code>dictionary.keys()</code>, auf die Werte mittels der Methode <code>dictionary.values()</code> zugegriffen werden.</p>
+<div id="9c1d7e6c" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Schlüssel:"</span>, dictionary1.keys(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Werte:"</span>, dictionary1.values())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Schlüssel: dict_keys([1, 'b', 'c']) 
+
+Werte: dict_values(['abc', [1, 2, 3], ('tupel', 5, 6)])</code></pre>
+</div>
+</div>
+<section id="dictionaries-kopieren" class="level3">
+<h3 class="anchored" data-anchor-id="dictionaries-kopieren">Dictionaries kopieren</h3>
+<p>Dictionaries verhalten sich beim Kopieren wie Listen, das heißt beim Kopieren durch Zuweisung teilen sich Dictionaries den Speicherbereich.</p>
+<div id="ea7cdd0d" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kopieren durch Zuweisung</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary:"</span>, dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>dictionary2 <span class="op">=</span> dictionary1</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Ändern eines Elements in dictionary2</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>dictionary2[<span class="dv">1</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Auch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>       dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Verwendung der Methode dictionary.copy()</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>dictionary1 <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'abc'</span>, <span class="st">'b'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'c'</span>: (<span class="st">'tupel'</span>, <span class="dv">5</span>, <span class="dv">6</span>)}</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>dictionary2 <span class="op">=</span> dictionary1.copy()</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="co">## Ändern eines Elements in dictionary2</span></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>dictionary2[<span class="dv">1</span>] <span class="op">=</span> <span class="st">'ABC'</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>       dictionary1, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dictionary: {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} 
+
+Auch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:
+ {1: 'ABC', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} 
+
+dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:
+ {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} 
+</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="übersicht-sammeltypen" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="übersicht-sammeltypen"><span class="header-section-number">4.5</span> Übersicht Sammeltypen</h2>
+<table class="table">
+<colgroup>
+<col style="width: 57%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Merkmal</th>
+<th>Listen</th>
+<th>Tupel</th>
+<th>Mengen</th>
+<th>Dictionary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Beschreibung</td>
+<td>flexible Anzahl von Elementen beliebigen Typs</td>
+<td>Elemente beliebigen Typs, unveränderlich</td>
+<td>ungeordnete Sammlung, jedes Element nur einmal enthalten</td>
+<td>Zuordnungstabelle aus Schlüssel-Wert-Paaren</td>
+</tr>
+<tr class="even">
+<td>Speicherbereich bei Zuweisung geteilt</td>
+<td>ja</td>
+<td>ja (aber unveränderlich)</td>
+<td>ja (aber Zugriffsoperator nicht anwendbar)</td>
+<td>ja</td>
+</tr>
+<tr class="odd">
+<td>Methode .copy() definiert</td>
+<td>ja</td>
+<td>nein</td>
+<td>ja</td>
+<td>ja</td>
+</tr>
+<tr class="even">
+<td>Slice-Operator anwendbar</td>
+<td>ja</td>
+<td>ja</td>
+<td>nein</td>
+<td>ja (nach Schlüssel)</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</section>
+<section id="löschen-das-schlüsselwort-del" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="löschen-das-schlüsselwort-del"><span class="header-section-number">4.6</span> Löschen: das Schlüsselwort del</h2>
+<p>Um Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort <code>del</code> verwendet werden.</p>
+<div id="4d6970aa" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Löschen einer Liste</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> liste1</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Löschen eines Indexbereichs aus einer Liste</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Liste vor dem Löschen:"</span>, liste2)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> liste2[<span class="dv">1</span>:<span class="dv">3</span>]</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Liste nach dem Löschen:"</span>, liste2)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Löschen eines Schlüsselworts aus einem Dictionary</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dictionary vor dem Löschen"</span>, dictionary1)</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> dictionary1[<span class="dv">1</span>]</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dictionary nach dem Löschen"</span>, dictionary1)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Liste vor dem Löschen: [1, 'xy', True, 'abc']
+Liste nach dem Löschen: [1, 'abc']
+Dictionary vor dem Löschen {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}
+Dictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}</code></pre>
+</div>
+</div>
+</section>
+<section id="funktionen" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="funktionen"><span class="header-section-number">4.7</span> Funktionen</h2>
+<p>Die Sammeltypen können ineinander umgewandelt werden.</p>
+<div id="55fbc278" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>dictionary <span class="op">=</span> {<span class="dv">1</span>: <span class="st">'Kater'</span>, <span class="dv">2</span>: <span class="st">'Fähre'</span>, <span class="dv">3</span>: <span class="st">'Ricke'</span>}</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( (liste <span class="op">:=</span> <span class="bu">list</span>(dictionary)) )</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( (menge <span class="op">:=</span> <span class="bu">set</span>(liste)) )</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( (tupel <span class="op">:=</span> <span class="bu">tuple</span>(menge)) )</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]
+{1, 2, 3}
+(1, 2, 3)</code></pre>
+</div>
+</div>
+<p>Einige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:</p>
+<ul>
+<li><code>len()</code> gibt die Anzahl der Elemente in einem Sammeltyp zurück.</li>
+<li><code>min()</code>, <code>max()</code>, <code>sum()</code> gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt).</li>
+</ul>
+</section>
+<section id="operationen-verwendung-von-schleifen" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="operationen-verwendung-von-schleifen"><span class="header-section-number">4.8</span> Operationen: Verwendung von Schleifen</h2>
+<p>Um arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste ‘zahlen’ durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste ‘quadratzahlen’ angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste ‘modulo_3’ gespeichert.</p>
+<div id="lst-quadratzahlen" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<div aria-describedby="lst-quadratzahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="c0346f14" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>zahlen <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>quadratzahlen <span class="op">=</span> [] <span class="co"># die Liste muss vor der Schleife angelegt werden</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>modulo_3 <span class="op">=</span> [] <span class="co"># leere Liste vor der Schleife anlegen</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zahl <span class="kw">in</span> zahlen:</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  quadratzahl <span class="op">=</span> zahl <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>  quadratzahlen.append(quadratzahl)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  modulo_3.append(quadratzahl <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quadratzahlen)</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modulo_3)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[False, False, True, False, False, True, False, False, True, False]</code></pre>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-quadratzahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Code-Block&nbsp;4.1
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="aufgaben-sammeltypen" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="aufgaben-sammeltypen"><span class="header-section-number">4.9</span> Aufgaben Sammeltypen</h2>
+<ol type="1">
+<li><p>Modifizieren Sie den Programmcode in <a href="#lst-quadratzahlen" class="quarto-xref">Code-Block&nbsp;<span>4.1</span></a> so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.</p></li>
+<li><p>Umrechnung von Geschwindigkeiten Erstellen Sie ein Skript, welches eine Umrechnungstabelle für Geschwindigkeiten erzeugt. Folgende Randbedingungen sollen beachtet werden:</p></li>
+</ol>
+<ul>
+<li><p>Die Umrechnung soll von km/h in m/s erfolgen.</p></li>
+<li><p>Der Start- und Endwert soll in km/h frei wählbar sein, wobei beide ganzzahlig sein sollen.</p></li>
+<li><p>Die Anzahl der Umrechnungspunkte soll definiert werden können und die Zwischenschritte (in km/h) immer als ganze Zahlen ausgegeben werden.</p></li>
+</ul>
+<p><em>Tipp: In Ihrem Skript können Sie die Funktion <a href="https://docs.python.org/3/library/functions.html#input">input()</a> verwenden, um Werte per Eingabe zu erfassen.</em></p>
+<ol start="3" type="1">
+<li>Sortieren: Gegeben ist die Liste <code>meine_liste = list(range(9, 0, -1))</code>. Diese soll mittels for-Schleifen sortiert werden.</li>
+</ol>
+<div id="tip-musterlösungsammeltypen" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp&nbsp;4.2: Musterlösung Aufgaben Sammeltypen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Ganzzahlig durch 3 teilbare Quadratzahlen</li>
+</ol>
+<div id="4f790e61" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>zahlen <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>quadratzahlen <span class="op">=</span> [] <span class="co"># die Liste muss vor der Schleife angelegt werden</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>modulo_3 <span class="op">=</span> [] <span class="co"># leere Liste vor der Schleife anlegen</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zahl <span class="kw">in</span> zahlen:</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  quadratzahl <span class="op">=</span> zahl <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> quadratzahl <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>    quadratzahlen.append(quadratzahl)</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quadratzahlen)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[9, 36, 81]</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Umrechnung von Geschwindigkeiten</li>
+</ol>
+<div id="04640c11" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Freie Eingabe</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co">## start = int(input("Startwert in Kilometer pro Stunde eingeben."))</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">## ende = int(input("Endwert in Kilometer pro Stunde eingeben."))</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">## ausgabeschritte =  int(input("Anzahl auszugebener Schritte ein geben."))</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixe Werte für die Lösung</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>ende <span class="op">=</span> <span class="dv">107</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>ausgabeschritte <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Liste für km erstellen</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>schrittweite <span class="op">=</span> (ende <span class="op">-</span> start) <span class="op">/</span> (ausgabeschritte <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>liste_km <span class="op">=</span> []</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ausgabeschritte):</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    liste_km.append(<span class="bu">round</span>(start <span class="op">+</span> i <span class="op">*</span> schrittweite))</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Umrechnung</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="co"># meter = 1000 * kilometer</span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Sekunde = Stunde * 60 * 60</span></span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>liste_m <span class="op">=</span> []</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> wert <span class="kw">in</span> liste_km:</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>    liste_m.append(<span class="bu">round</span>((wert <span class="op">*</span> <span class="dv">1000</span>) <span class="op">/</span> (<span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>), <span class="dv">2</span>))</span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausgabe</span></span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Schrittweite: </span><span class="sc">{</span>schrittweite<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kilometer pro Stunde"</span>)</span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste_km)</span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Meter pro Sekunde"</span>)</span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(liste_m)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Schrittweite: 14.57
+Kilometer pro Stunde
+[5, 20, 34, 49, 63, 78, 92, 107]
+Meter pro Sekunde
+[1.39, 5.56, 9.44, 13.61, 17.5, 21.67, 25.56, 29.72]</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Sortieren: Bubble Sort Algorithmus</li>
+</ol>
+<div id="2b58a5e0" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># statische Liste, Textausgabe</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>meine_liste <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">9</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(meine_liste) <span class="op">&gt;</span> <span class="dv">1</span>: </span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Liste zu Beginn</span><span class="ch">\t\t</span><span class="st">  :"</span>, meine_liste)</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># äußere Schleife</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>    Schritt <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(meine_liste) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># innere Schleife</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(meine_liste) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> meine_liste[j] <span class="op">&gt;</span> meine_liste[j <span class="op">+</span> <span class="dv">1</span>]:</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>                meine_liste[j], meine_liste[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">=</span> meine_liste[j <span class="op">+</span> <span class="dv">1</span>], meine_liste[j]</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>        Schritt <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Liste nach Schritt "</span>, Schritt, <span class="st">":"</span>, meine_liste)</span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-20"><a href="#cb56-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Liste sortiert:"</span>, <span class="op">*</span>meine_liste) <span class="co"># * unterdrückt die Kommas zwischen den Listenelementen</span></span>
+<span id="cb56-21"><a href="#cb56-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-22"><a href="#cb56-22" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb56-23"><a href="#cb56-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Die Liste muss mindenstens zwei Elemente enthalten!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Liste zu Beginn       : [9, 8, 7, 6, 5, 4, 3, 2, 1]
+Liste nach Schritt  1 : [8, 7, 6, 5, 4, 3, 2, 1, 9]
+Liste nach Schritt  2 : [7, 6, 5, 4, 3, 2, 1, 8, 9]
+Liste nach Schritt  3 : [6, 5, 4, 3, 2, 1, 7, 8, 9]
+Liste nach Schritt  4 : [5, 4, 3, 2, 1, 6, 7, 8, 9]
+Liste nach Schritt  5 : [4, 3, 2, 1, 5, 6, 7, 8, 9]
+Liste nach Schritt  6 : [3, 2, 1, 4, 5, 6, 7, 8, 9]
+Liste nach Schritt  7 : [2, 1, 3, 4, 5, 6, 7, 8, 9]
+Liste nach Schritt  8 : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+Liste sortiert: 1 2 3 4 5 6 7 8 9</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;<br>
+(<span class="citation" data-cites="Arnold-2023-schleifen-abzweigungen">Arnold (<a href="#ref-Arnold-2023-schleifen-abzweigungen" role="doc-biblioref">2023</a>)</span>)</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Arnold-2023-schleifen-abzweigungen" class="csl-entry" role="listitem">
+Arnold, Simone. 2023. <span>„Datenanalyse mit Python. Schleifen und Abzweigungen.“</span> Fachhochschule Dortmund.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../skript/funktionen.html" class="pagination-link" aria-label="Funktionen: Grundlagen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../skript/funktionen-definieren.html" class="pagination-link" aria-label="Eigene Funktionen definieren">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
