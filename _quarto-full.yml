@@ -1,0 +1,12 @@
+project:  
+  output-dir: output/book/
+book:
+  chapters:
+    - index.qmd
+    - skript/einleitung.qmd
+    - skript/datentypen.qmd
+    - skript/funktionen.qmd
+    - skript/sammeltypen.qmd
+    - skript/funktionen-definieren.qmd
+    - skript/dateien-lesen-und-schreiben.qmd
+    - skript/module-und-pakete-importieren.qmd

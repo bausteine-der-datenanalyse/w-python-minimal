@@ -1,6 +1,5 @@
 project:
   type: book
-  output-dir: output/book/
 
 book:
   # Metadaten / meta data
@@ -15,15 +14,6 @@ book:
     - Maik Poetzsch
     - Sebastian Seipel
   date: today # "2024-03-05" Jahr-Monat-Tag / year-month-day
-  chapters:
-    - index.qmd
-    - skript/einleitung.qmd
-    - skript/datentypen.qmd
-    - skript/funktionen.qmd
-    - skript/sammeltypen.qmd
-    - skript/funktionen-definieren.qmd
-    - skript/dateien-lesen-und-schreiben.qmd
-    - skript/module-und-pakete-importieren.qmd
 
   sidebar:
     title: "Werkzeugbaustein Python"
@@ -81,3 +71,8 @@ mermaid:
 
 execute:
   freeze: auto
+
+profile:
+  default: full
+  group: 
+    - [full]
