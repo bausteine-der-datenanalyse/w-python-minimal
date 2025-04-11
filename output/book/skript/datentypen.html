@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e5d0946404fea248ad03a8e556b7a03b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,6 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#was-sind-booleans-bool" id="toc-was-sind-booleans-bool" class="nav-link" data-scroll-target="#was-sind-booleans-bool"><span class="header-section-number">2.5</span> 🔍 Was sind Booleans (<code>bool</code>)?</a></li>
   <li><a href="#rechnen-mit-zahlen" id="toc-rechnen-mit-zahlen" class="nav-link" data-scroll-target="#rechnen-mit-zahlen"><span class="header-section-number">2.6</span> Rechnen mit Zahlen</a></li>
   <li><a href="#arbeiten-mit-text" id="toc-arbeiten-mit-text" class="nav-link" data-scroll-target="#arbeiten-mit-text"><span class="header-section-number">2.7</span> Arbeiten mit Text</a></li>
+  <li><a href="#umwandlung-von-datentypen-typecasting" id="toc-umwandlung-von-datentypen-typecasting" class="nav-link" data-scroll-target="#umwandlung-von-datentypen-typecasting"><span class="header-section-number">2.8</span> 🔁 Umwandlung von Datentypen (Typecasting)</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Sie können den Typ einer Variable mit der Funktion <code>type(...)</code> herausfinden:</p>
-<div id="ae61124b" class="cell" data-execution_count="1">
+<div id="031c8dd4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wert <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(wert))  <span class="co"># Ausgabe: &lt;class 'int'&gt;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -305,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>int</code> steht für „integer“ – also ganze Zahlen wie <code>1</code>, <code>0</code>, <code>-10</code></li>
 <li><code>float</code> steht für „floating point number“ – also Zahlen mit Dezimalstellen wie <code>3.14</code>, <code>0.5</code>, <code>-2.0</code></li>
 </ul>
-<div id="0e6ec9dc" class="cell" data-execution_count="2">
+<div id="eaf6c28f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span>       <span class="co"># int</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">2.5</span>      <span class="co"># float</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -331,7 +332,7 @@ b: 2.5 | Typ: &lt;class 'float'&gt;</code></pre>
 <li>Hat die Datei einen bestimmten Namen?</li>
 <li>Ist die Liste leer?</li>
 </ul>
-<div id="d5eb5da0" class="cell" data-execution_count="3">
+<div id="a72509d7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ist_sonnig <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>hat_regenschirm <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -376,7 +377,7 @@ Typ von 'ist_sonnig': &lt;class 'bool'&gt;</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="1f936acb" class="cell" data-execution_count="4">
+<div id="0dc819c1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -403,7 +404,7 @@ Division mit Rest: 1</code></pre>
 <section id="arbeiten-mit-text" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="arbeiten-mit-text"><span class="header-section-number">2.7</span> Arbeiten mit Text</h2>
 <p>Texte (Strings) können miteinander kombiniert werden:</p>
-<div id="789698e9" class="cell" data-execution_count="5">
+<div id="e38593dd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>vorname <span class="op">=</span> <span class="st">"Anna"</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>nachname <span class="op">=</span> <span class="st">"Beispiel"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Willkommen, "</span> <span class="op">+</span> vorname <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> nachname <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -412,14 +413,59 @@ Division mit Rest: 1</code></pre>
 </div>
 </div>
 <p>Wenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:</p>
-<div id="cd6feaf7" class="cell" data-execution_count="6">
+<div id="4e2a8f84" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>punkte <span class="op">=</span> <span class="dv">95</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie haben "</span> <span class="op">+</span> <span class="bu">str</span>(punkte) <span class="op">+</span> <span class="st">" Punkte erreicht."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sie haben 95 Punkte erreicht.</code></pre>
 </div>
 </div>
-<hr>
+</section>
+<section id="umwandlung-von-datentypen-typecasting" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="umwandlung-von-datentypen-typecasting"><span class="header-section-number">2.8</span> 🔁 Umwandlung von Datentypen (Typecasting)</h2>
+<p>Manchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.</p>
+<p>Das nennt man <strong>Typecasting</strong>. Hier sind die wichtigsten Funktionen dafür:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Funktion</th>
+<th>Beschreibung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>str(...)</code></td>
+<td>Zahl → Text</td>
+<td><code>str(42)</code> → <code>"42"</code></td>
+</tr>
+<tr class="even">
+<td><code>int(...)</code></td>
+<td>Text/Zahl → ganze Zahl</td>
+<td><code>int("10")</code> → <code>10</code></td>
+</tr>
+<tr class="odd">
+<td><code>float(...)</code></td>
+<td>Text/Zahl → Kommazahl</td>
+<td><code>float("3.14")</code> → <code>3.14</code></td>
+</tr>
+</tbody>
+</table>
+<div id="4f00e20c" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Zahl als Text anzeigen</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>punkte <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie haben "</span> <span class="op">+</span> <span class="bu">str</span>(punkte) <span class="op">+</span> <span class="st">" Punkte."</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: String in Zahl umwandeln und berechnen</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>eingabe <span class="op">=</span> <span class="st">"3.5"</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>wert <span class="op">=</span> <span class="bu">float</span>(eingabe) <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Doppelt so viel:"</span>, wert)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sie haben 100 Punkte.
+Doppelt so viel: 7.0</code></pre>
+</div>
+</div>
+<p>💡 Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – <code>int("abc")</code> führt zu einem Fehler.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -433,10 +479,10 @@ Division mit Rest: 1</code></pre>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Berechnen Sie, wie alt eine Person in Tagen ist.</p>
-<div id="0fe979b0" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alter_jahre <span class="op">=</span> <span class="dv">32</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tage <span class="op">=</span> alter_jahre <span class="op">*</span> <span class="dv">365</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie sind ungefähr "</span> <span class="op">+</span> <span class="bu">str</span>(tage) <span class="op">+</span> <span class="st">" Tage alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a97089e4" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alter_jahre <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tage <span class="op">=</span> alter_jahre <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie sind ungefähr "</span> <span class="op">+</span> <span class="bu">str</span>(tage) <span class="op">+</span> <span class="st">" Tage alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sie sind ungefähr 11680 Tage alt.</code></pre>
 </div>
@@ -454,10 +500,10 @@ Lösung
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="de00ffc2" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tage <span class="op">=</span> alter <span class="op">*</span> <span class="dv">365</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie sind ungefähr "</span> <span class="op">+</span> <span class="bu">str</span>(tage) <span class="op">+</span> <span class="st">" Tage alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="5c482c3e" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tage <span class="op">=</span> alter <span class="op">*</span> <span class="dv">365</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sie sind ungefähr "</span> <span class="op">+</span> <span class="bu">str</span>(tage) <span class="op">+</span> <span class="st">" Tage alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sie sind ungefähr 11680 Tage alt.</code></pre>
 </div>
@@ -555,6 +601,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -665,6 +713,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

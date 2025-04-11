@@ -128,7 +128,33 @@ punkte = 95
 print("Sie haben " + str(punkte) + " Punkte erreicht.")
 ```
 
----
+## 🔁 Umwandlung von Datentypen (Typecasting)
+
+Manchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – 
+z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.
+
+Das nennt man **Typecasting**. Hier sind die wichtigsten Funktionen dafür:
+
+| Funktion | Beschreibung | Beispiel |
+|----------|--------------|----------|
+| `str(...)` | Zahl → Text | `str(42)` → `"42"` |
+| `int(...)` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
+| `float(...)` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
+
+```{python}
+# Beispiel: Zahl als Text anzeigen
+punkte = 100
+print("Sie haben " + str(punkte) + " Punkte.")
+
+# Beispiel: String in Zahl umwandeln und berechnen
+eingabe = "3.5"
+wert = float(eingabe) * 2
+print("Doppelt so viel:", wert)
+```
+
+💡 Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – 
+`int("abc")` führt zu einem Fehler.
+
 
 ::: {.callout-tip collapse="true"}
 ## ✏️ Aufgabe: Alter in Tagen
