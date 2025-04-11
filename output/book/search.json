@@ -34,7 +34,7 @@
     "href": "skript/einleitung.html",
     "title": "1  Einleitung: Datenanalyse mit Python",
     "section": "",
-    "text": "1.1 Grundbegriffe der objektorientierten Programmierung\nDie Erzeugung und Auswertung von Daten ist ein zentraler Bestandteil wissenschaftlicher Forschung. Die computergestützte Datenanalyse ermöglicht es, große Datenmengen (teil-)automatisiert auszuwerten. Gut lesbare Skriptsprachen wie Python sorgen für eine nachvollziehbare Datenverarbeitung und ermöglichen es, Analysen “auf Knopfdruck” zu wiederholen oder anzupassen.\nPython kommt als schlichte Konsole daher. Python-Code wird in die Konsole eingegeben oder in einer reinen Textdatei, dem Skript, gespeichert. Der Programmcode wird von einem sogenannten Interpreter ausgeführt. Der Interpreter übersetzt die Programmanweisungen des Skripts in Maschinencode für das jeweilige Computersystem. Dadurch kann das Skript auf verschiedenen Computersystemen ausgeführt werden. Moderne Python-Interpreter sind nicht auf durch ASCII darstellbare Zeichen limitiert und können auch mit Zeichen aus dem Format UTF-8 umgehen, das das ASCII-Format z. B. um deutsche Sonderzeichen erweitert.\nZahlreiche Funktionen wie Codeformatierung, Codevervollständigung und Fehleranalyse werden durch eine sogenannte integrierte Entwicklungsumgebung (Integrated Development Environment, IDE) bereitgestellt.\nPython ist eine objektorientierte Programmiersprache. Die objektorientierte Programmierung ist ein System, um Ordnung in komplexe Computerprogramme zu bringen. In diesem Abschnitt werden die Grundbegriffe der objektorientierten Programmierung mit Python vermittelt. Sie erfahren, was der Unterschied zwischen einem Objekt, einer Klasse und dem Datentyp ist.",
+    "text": "2 Willkommen bei Python!\nPython ist eine moderne Programmiersprache, die sich besonders gut für Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur Webentwicklung.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
     ]
@@ -82,11 +82,11 @@
   {
     "objectID": "skript/datentypen.html",
     "href": "skript/datentypen.html",
-    "title": "2  Datentypen",
+    "title": "2  Einführung: Datentypen verstehen",
     "section": "",
-    "text": "2.1 Zahlen\nObjekte, die Daten speichern, haben einen Datentyp. Der Datentyp gibt an, wie die gespeicherten Werte von Python interpretiert werden sollen. Beispielsweise kann der Wert “1” in Python ein Zeichen, eine Ganzzahl, einen Wahrheitswert, den Monat Januar, den Wochentag Dienstag oder die Ausprägung einer kategorialen Variablen repräsentieren.\nIn diesem Abschnitt werden die für die Datenanalyse wichtigsten Datentypen vorgestellt.\nZu den Zahlen gehören Ganzzahlen, boolsche Werte (Wahrheitswerte), Gleitkommazahlen sowie komplexe Zahlen (die hier nicht näher vorgestellt werden).",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - die wichtigsten Datentypen unterscheiden, - mit Zahlen und Texten rechnen bzw. arbeiten, - einfache Berechnungen und Ausgaben erstellen.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
     ]
   },
   {
@@ -517,6 +517,126 @@
     "text": "8.2 Kleine Modulübersicht\nDa es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben. In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.\n\nmath: mathematische Funktionen und Konstanten\nscipy: wissenschaftliche Funktionen\nsys: Interaktion mit dem Python-Interpreter\nos: Interaktion mit dem Betriebssystem\nglob: Durchsuchen von Dateisystempfaden\nmultiprocessing / threading: Parallelprogramierung mit Prozessen / Threads\nmatplotlib: Visualisierung von Daten und Erstellen von Abbildungen\nnumpy: numerische Operationen und Funktionen\npandas: Daten einlesen und auswerten\ntime: Zeitfunktionen\n\n  (Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Funktionen Module Dateien.“ Fachhochschule Dortmund.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Module und Pakete importieren</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "href": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "title": "2  Kapitel 2 – Datentypen und einfache Operationen",
+    "section": "3.1 Lernziele dieses Kapitels",
+    "text": "3.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - die wichtigsten Datentypen unterscheiden, - mit Zahlen und Texten rechnen bzw. arbeiten, - einfache Berechnungen und Ausgaben erstellen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Kapitel 2 – Datentypen und einfache Operationen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#die-wichtigsten-datentypen",
+    "href": "skript/datentypen.html#die-wichtigsten-datentypen",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.3 Die wichtigsten Datentypen",
+    "text": "2.3 Die wichtigsten Datentypen\nHier sind die grundlegenden Datentypen in Python:\n\n\n\nTyp\nBeispiel\nBedeutung\n\n\n\n\nint\n10\nGanze Zahl\n\n\nfloat\n3.14\nKommazahl\n\n\nstr\n\"Hallo\"\nText (String)\n\n\nbool\nTrue, False\nWahrheitswert (Ja/Nein)\n\n\n\nSie können den Typ einer Variable mit der Funktion type(...) herausfinden:\n\nwert = 42\nprint(type(wert))  # Ausgabe: &lt;class 'int'&gt;\n\n&lt;class 'int'&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#rechnen-mit-zahlen",
+    "href": "skript/datentypen.html#rechnen-mit-zahlen",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.6 Rechnen mit Zahlen",
+    "text": "2.6 Rechnen mit Zahlen\nPython kann wie ein Taschenrechner verwendet werden:\n\n\n\nOperator\nBeschreibung\n\n\n\n\n+, -\nAddition / Subtraktion\n\n\n*, /\nMultiplikation / Division\n\n\n//, %\nGanzzahlige Division / Rest\n\n\n**\nPotenzieren\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraktion:\", a - b)\nprint(\"Multiplikation:\", a * b)\nprint(\"Potenzieren\", a**b)\nprint(\"Division:\", a / b)\nprint(\"Ganzzahlige Division:\", a // b)\nprint(\"Division mit Rest:\", a % b)\n\nAddition: 13\nSubtraktion: 7\nMultiplikation: 30\nPotenzieren 1000\nDivision: 3.3333333333333335\nGanzzahlige Division: 3\nDivision mit Rest: 1\n\n\n💡 // bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es auch %. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#arbeiten-mit-text",
+    "href": "skript/datentypen.html#arbeiten-mit-text",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.7 Arbeiten mit Text",
+    "text": "2.7 Arbeiten mit Text\nTexte (Strings) können miteinander kombiniert werden:\n\nvorname = \"Anna\"\nnachname = \"Beispiel\"\nprint(\"Willkommen, \" + vorname + \" \" + nachname + \"!\")\n\nWillkommen, Anna Beispiel!\n\n\nWenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:\n\npunkte = 95\nprint(\"Sie haben \" + str(punkte) + \" Punkte erreicht.\")\n\nSie haben 95 Punkte erreicht.\n\n\n\n\n\n\n\n\n\n✏️ Aufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#lernziele-dieses-kapitels",
+    "href": "skript/einleitung.html#lernziele-dieses-kapitels",
+    "title": "1  Einleitung: Datenanalyse mit Python",
+    "section": "2.1 Lernziele dieses Kapitels",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - einfache Python-Programme schreiben, - Text auf dem Bildschirm ausgeben, - erste Variablen definieren und verwenden.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#ihr-erstes-programm",
+    "href": "skript/einleitung.html#ihr-erstes-programm",
+    "title": "1  Einleitung: Datenanalyse mit Python",
+    "section": "2.2 Ihr erstes Programm",
+    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl print(...):\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print(...) ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hello World!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+    ]
+  },
+  {
+    "objectID": "skript/einleitung.html#variablen-namen-für-werte",
+    "href": "skript/einleitung.html#variablen-namen-für-werte",
+    "title": "1  Einleitung: Datenanalyse mit Python",
+    "section": "2.3 Variablen – Namen für Werte",
+    "text": "2.3 Variablen – Namen für Werte\nVariablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.\n\nname = \"Frau Müller\"\nalter = 32\n\nSie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:\n\nprint(name + \" ist \" + str(alter) + \" Jahre alt.\")\n\nFrau Müller ist 32 Jahre alt.\n\n\nZu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion ‘str()’ die Zahl in Text umwandeln.\n\n\n\n\n\n\n✏️ Aufgabe: Begrüßung mit Alter\n\n\n\n\n\nSchreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:\nHallo Frau Müller!\nTipp: In Python können Sie Texte mit + zusammenfügen. Denken Sie daran, dass Strings in Anführungszeichen stehen müssen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nmein_name = \"Ihr Name hier\"\nprint(\"Hallo \" + mein_name + \"!\")\n\nHallo Ihr Name hier!\n\n\n\n\n\nErweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:\nHallo Frau Müller!\nSie sind 32 Jahre alt.\nTipp: Verwenden Sie print(...) mehrmals oder fügen Sie Texte zusammen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nname = \"Frau Müller\"\nalter = 32\n\nprint(\"Hallo \" + name + \"!\")\nprint(\"Sie sind \" + str(alter) + \" Jahre alt.\")\n\nHallo Frau Müller!\nSie sind 32 Jahre alt.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
+    "href": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.4 🔍 Unterschiede zwischen int und float",
+    "text": "2.4 🔍 Unterschiede zwischen int und float\nIn Python unterscheidet man zwischen ganzen Zahlen (int) und Kommazahlen (float):\n\nint steht für „integer“ – also ganze Zahlen wie 1, 0, -10\nfloat steht für „floating point number“ – also Zahlen mit Dezimalstellen wie 3.14, 0.5, -2.0\n\n\na = 10       # int\nb = 2.5      # float\n\nprint(\"a:\", a, \"| Typ:\", type(a))\nprint(\"b:\", b, \"| Typ:\", type(b))\n\na: 10 | Typ: &lt;class 'int'&gt;\nb: 2.5 | Typ: &lt;class 'float'&gt;\n\n\n💡 Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#übersicht-mathematische-operatoren",
+    "href": "skript/datentypen.html#übersicht-mathematische-operatoren",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.5 ✅ Übersicht: Mathematische Operatoren",
+    "text": "2.5 ✅ Übersicht: Mathematische Operatoren\n\n\n\nOperator\nBeschreibung\n\n\n\n\n+, -\nAddition / Subtraktion\n\n\n*, /\nMultiplikation / Division\n\n\n//, %\nGanzzahlige Division / Rest\n\n\n**\nPotenzieren",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#was-sind-booleans-bool",
+    "href": "skript/datentypen.html#was-sind-booleans-bool",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.5 🔍 Was sind Booleans (bool)?",
+    "text": "2.5 🔍 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 4 genauer kennenlernen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#vorschau",
+    "href": "skript/datentypen.html#vorschau",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.9 Vorschau",
+    "text": "2.9 Vorschau\nIm nächsten Kapitel lernen Sie: - wie man mehrere Werte gleichzeitig speichert (z. B. in Listen), - wie man mit Schleifen Aufgaben automatisch wiederholen kann.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#einleitung",
+    "href": "skript/datentypen.html#einleitung",
+    "title": "2  Einführung: Datentypen verstehen",
+    "section": "2.2 Einleitung",
+    "text": "2.2 Einleitung\nIn Python gibt es verschiedene Datentypen. Diese beschreiben, welche Art von Daten Sie in Variablen speichern. Das ist wichtig, weil viele Operationen – wie zum Beispiel + – je nach Datentyp etwas anderes bedeuten:\n\n+ bei Zahlen bedeutet Addition,\n+ bei Text bedeutet Zusammenfügen (Konkatenation).\n\nBevor wir also mit komplexeren Programmen arbeiten, sollten wir verstehen, welche Datentypen es gibt und wie man mit ihnen umgeht.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
     ]
   }
 ]
