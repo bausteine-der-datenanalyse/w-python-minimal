@@ -1,381 +1,149 @@
-## Flusskontrolle
-Die Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder mehrfach ausgeführt werden.
+# Einführung: Entscheidungen und Wiederholungen
 
-### Abzweigungen
-Abzweigungen ermöglichen eine Fallunterscheidung, bei der abhängig von einer oder mehreren Bedingungen verschiedene Teile des Skripts ausgeführt werden.
+Programme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.
 
-In Python werden Abzweigungen mit dem Schlüsselwort `if` eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt `:` abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.
+Dafür gibt es zwei zentrale Elemente in Python:
 
-```
-if Bedingung:
-    Anweisungsblock
-```
+- **Kontrollstrukturen**: `if`, `elif`, `else`
+- **Schleifen**: `while` und `for`
 
-``` {python}
-# Beispiel: Zahl kleiner als ein Schwellwert
+---
 
-a = 7
-if a < 10:
-    print( 'Die Zahl', a, 'ist kleiner als 10.')
-```
+## Lernziele dieses Kapitels
 
-Es ist auch möglich einen alternativen Anweisungsblock zu definieren, welcher ausgeführt wird, wenn die Bedingung falsch ist. Dieser wird mit dem `else` Schlüsselwort umgesetzt.
+Am Ende dieses Kapitels können Sie:
+- Bedingungen formulieren und mit `if`, `elif`, `else` nutzen,
+- Vergleichsoperatoren verwenden (`==`, `<`, `!=`, …),
+- Wiederholungen mit `while` und `for` umsetzen.
 
-```
-if Bedingung:
-    # Bedingung ist wahr
-    Anweisungsblock
+---
+
+## Bedingungen mit `if`, `elif`, `else`
+
+```{python}
+alter = 17
+
+if alter >= 18:
+    print("Sie sind volljährig.")
 else:
-    # Bedingung ist falsch
-    Anweisungsblock
+    print("Sie sind minderjährig.")
 ```
 
-``` {python}
-# Beispiel: Zahl kleiner als ein Schwellwert mit alternativer Ausgabe
+Mehrere Fälle unterscheiden:
 
-a = 13
-if a < 10:
-    print( 'Die Zahl', a, 'ist kleiner als 10.')
+```{python}
+note = 2.3
+
+if note <= 1.5:
+    print("Sehr gut")
+elif note <= 2.5:
+    print("Gut")
+elif note <= 3.5:
+    print("Befriedigend")
 else:
-    print( 'Die Zahl', a, 'ist nicht kleiner als 10.')
+    print("Ausreichend oder schlechter")
 ```
 
-Es können auch mehrere Bedingungen übergeben werden.
-``` {python}
-# Beispiel: Zahl im Wertebereich zwischen 10 und 20
+---
 
-a = 1
-if a < 20 and a > 10:
-    print( 'Die Zahl', a, 'liegt zwischen 10 und 20.')
-else:
-    print( 'Die Zahl', a, 'liegt nicht zwischen 10 und 20.')
-```
+## Vergleichsoperatoren
 
-Schließlich können mehrere alternative Bedingungen geprüft werden. Dies ist zum einen durch das Verschachteln von Abzweigungen möglich.
-```{python}
-# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit verschachtelten Abzweigungen
+| Ausdruck | Bedeutung |
+|----------|-----------|
+| `a == b` | gleich |
+| `a != b` | ungleich |
+| `a < b`  | kleiner als |
+| `a > b`  | größer als |
+| `a <= b` | kleiner oder gleich |
+| `a >= b` | größer oder gleich |
 
-a = 12
-if a > 10:
-    print( 'Die Zahl', a, 'ist größer als 10.' )
-    
-    if a < 20:
-        print( 'Die Zahl', a, 'ist kleiner als 20.' )
-        print( 'Damit liegt die Zahl zwischen 10 und 20.')
-    else:
-        print( 'Die Zahl', a, 'ist größer als 20 und liegt nicht im gesuchten Wertebereich.' )
-else:
-        print( 'Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )
-```
+---
 
-Zum anderen ist dies mit dem Schlüsselwort `elif` möglich.
-```{python}
-# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit elif
-
-a = 112
-if a < 20 and a > 10:
-  print('Die Zahl', a, 'liegt zwischen 10 und 20.')
-elif a < 10:
-  print('Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )
-elif a > 20 and a <= 100:
-  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 100.')
-elif a > 20 and a <= 1000:
-  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 1000.')
-else:
-  print('Die Zahl', a, 'liegt nicht zwischen 10 und 20 und ist größer als 1000.')
-```
-
-### Schleifen
-Schleifen ermöglichen es, Anweisungen zu wiederholen. In Python können `while`- und `for`-Schleifen definiert werden. Beide benötigen:
-
-  - einen **Schleifenkopf**, welcher die Ausführung des Anweisungsblocks steuert, und
-  
-  - einen **Anweisungsblock**, also eine Gruppe von Anweisungen, welche bei jedem Schleifendurchlauf ausgeführt werden.
-
-Die `while`-Schleife kommt mit nur einer Bedingung im Schleifenkopf aus und ist die allgemeinere von beiden. Jede `for`-Schleife kann zu einer `while`-Schleife umgeschrieben werden (indem ein Zähler in den Anweisungsblock integriert wird.) 
-Welcher der beiden Typen verwendet wird, hängt von der jeweiligen Aufgabe ab.
-
-#### while-Schleifen
-Eine `while`-Schleife führt den Anweisungsblock immer wieder aus, solange die Ausführbedingung wahr ist. Die Schleife wird mit dem Schlüsselwort `while` eingeleitet, gefolgt von der Ausführbedingung. Dieser Schleifenkopf wird mit einem Doppelpunkt `:` abgeschlossen. Darunter wird der eingerückte Anweisungsblock definiert.
-
-```
-while Bedingung:
-    Anweisungsblock
-```
-
-Beim Beginn der Schleife und nach jedem Durchlauf wird die Bedingung geprüft. Ist sie wahr, so wird der Anweisungsblock ausgeführt, wenn nicht, ist die Schleife beendet und die nächste Anweisung außerhalb der Schleife wird ausgeführt.
+## Wiederholungen mit `while`
 
 ```{python}
-# Beispiel: Erhöhen eines Variablenwertes
+zähler = 0
 
-# Setze Startwert
-a = 5
-
-# Definiere Schleife, welche solange ausgeführt 
-# wird, wie a kleiner als oder gleich 10 ist
-while a <= 10:
-    # Anweisungsblock der Schleife:
-    
-    # 1. Ausgabe des aktuellen Werts von a 
-    print('aktueller Wert von a', a)
-    
-    # 2. Erhöhung von a um Eins
-    a += 1
-
-# Ausgabe des Wertes nach der Schleife
-print('Wert von a nach der Schleife', a)
+while zähler < 5:
+    print("Zähler ist:", zähler)
+    zähler += 1
 ```
 
-::: {#wrn-endlosschleife .callout-warning appearance="simple" collapse="false"}
-## Endlosschleife
+💡 Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!
 
-`while`-Schleifen führen zu einer Endlosschleife, wenn die Abbruchbedingung nicht erreicht werden kann. Beispielsweise fehlt in der folgenden Schleife eine Möglichkeit für die Laufvariable x den Wert 5 zu erreichen.
+---
 
-``` {python}
-#| eval: false
+## Schleifen mit `for` und `range(...)`
 
-x = 1
-
-while x < 5:
-  print(x)
-```
-
-In diesem Fall können Sie die Programmausführung durch Drücken von `Strg`+ `C` beenden.
-
-:::
-
-#### for-Schleifen
-Während die `while`-Schleife ausgeführt wird, solange eine Bedingung erfüllt ist, wird die `for`-Schleife über eine Laufvariable gesteuert, die eine Sequenz durchläuft. Die Syntax sieht wie folgt aus:
-
-```
-for Laufvariable in Sequenz:
-  Anweisungsblock
-```
-
-Zur Definition des Schleifenkopf gehören die beiden Schlüsselworte `for` und `in` und der Kopf wird mit einem Doppelpunkt `:` abgeschlossen. Auch hier wird der Anweisungsblock eingerückt.
-
-Die Sequenz wird mit einem range-Objekt erstellt, das mit der Funktion `range(start = 0, stop, step = 1)` erzeugt wird. `range()` nimmt ganzzahlige Werte als *positionale Argumente* entgegen und erzeugt Ganzzahlen von `start` bis *nicht einschließlich* `stop` mit der Schrittweite `step`. Dabei ist wichtig, dass Python **exklusiv zählt**, das heißt, Python beginnt standarmäßig bei `0` zu zählen und der als Argument `stop` übergebene Wert wird nicht mitgezählt.
-
-Die Funktion `range()` gibt ein range-Objekt zurück, das mit `print()` nicht unmittelbar die erwartete Ausgabe erzeugt.
+Wenn Sie eine Schleife **genau eine bestimmte Anzahl von Malen** durchlaufen möchten, nutzen Sie `for` mit `range(...)`:
 
 ```{python}
-# range(start = 1, stop = 5) - step wird nicht übergeben, es gilt der Standardwert step = 1
-print(range(1, 5), type(range(1, 5)))
+for i in range(5):
+    print("Durchlauf:", i)
 ```
 
-Dieses Verhalten wird faule Auswertung ([lazy evaluation](https://de.wikipedia.org/wiki/Lazy_Evaluation)) genannt: Die Werte des range-Objekts werden erst erzeugt, wenn Sie benötigt werden. Im Folgenden Code wird das range-Objekt mit einer Schleife durchlaufen und für jeden Durchlauf der Wert der Laufvariable `i` ausgegeben.
+Start- und Endwert festlegen:
 
 ```{python}
-for i in range(1, 5):
-  print(i)
+for i in range(1, 6):
+    print(i)
 ```
 
-Mit dem Parameter `step` kann die Schrittweite gesteuert werden.
+## Was macht `range(...)` genau?
 
-```{python}
-for i in range(1, 15, 3):
-  print(i)
+Die Funktion `range(...)` erzeugt eine Abfolge von Zahlen, über die Sie mit einer `for`-Schleife iterieren können.
+
+### 🔢 Varianten:
+
+```python
+range(5)
 ```
+➡️ ergibt: `0, 1, 2, 3, 4` (startet bei 0, endet **vor** 5)
 
-Nützlich ist die Ausgabe des range-Objekts in eine Liste oder in ein Tupel, Sammeltypen, die im nächsten Kapitel behandelt werden.
-
-```{python}
-# Ausgabe der geraden Zahlen 1-10 in eine Liste
-print("Liste:", list(range(2, 11, 2)))
-
-# Ausgabe der ungeraden Zahlen 1-10 in ein Tupel
-print("Tupel:", tuple(range(1, 11, 2)))
+```python
+range(2, 6)
 ```
+➡️ ergibt: `2, 3, 4, 5` (startet bei 2, endet **vor** 6)
 
-`start` und `stop` können auch negativ sein, `step` muss immer größer 0 sein.
-
-```{python}
-for i in range(-5, -1):
-  print(i)
+```python
+range(1, 10, 2)
 ```
+➡️ ergibt: `1, 3, 5, 7, 9` (Schrittweite = 2)
 
-`stop` muss immer größer als `start` sein. Um eine absteigende Zahlenfolge zu erzeugen, wird die Funktion `reversed(sequenz)` verwendet.
-
-```{python}
-# Die Ausgabe bleibt leer
-print(list(range(5, 0)))
-
-# Mit der Funktion reversed geht es
-print(list(reversed(range(0, 5))))
-```
-
-##### Listennotation
-
-::: {.border}
-Die sogenannte Listennotation ist eine Kurzschreibweise für for-Schleifen. In Listennotation geschriebene Schleifen müssen in einer Zeile stehen und haben die folgende Syntax:
-
-```{python}
-quadratzahlen = [wert ** 2 for wert in range(10, 0, -1)]
-print(quadratzahlen)
-```
-
-(@matthes2017python, S. 71)
-:::
-
-#### Die Schlüsselwörter break und continue
-Manchmal kann es notwendig sein, den Anweisungsblock einer Schleife vorzeitig zu verlassen. Dafür können die Schlüsselwörter `break` und `continue` benutzt werden. Das Schlüsselwort `break` bewirkt, dass die Schleife sofort verlassen wird. Dagegen führt das Schlüsselwort `continue` dazu, dass der aktuelle Schleifendurchlauf beendet und der nächste Durchlauf begonnen wird.
-
-``` {python}
-x = 0
-while x < 10:
-
-  x += 1
-
-  # keine geraden Zahlen ausgeben
-  if x % 2 == 0:
-    continue
-
-  # Schleife bei x == 7 beenden
-  if x == 7:
-    break
-
-  print(x)
-
-```
-
-### Ausnahmebehandlung
-
-Die Ausnahmebehandlung erlaubt es, Python alternative Anweisungen zu geben, die beim Auftreten eines Fehlers ausgeführt werden sollen. Dies ist beispielsweise beim Einlesen von Datensätzen nützlich, um sich die Ursache von Fehlermeldungen ausgeben zu lassen - eine Technik, die im [Methodenbaustein Einlesen strukturierter Datensätze](https://bausteine-der-datenanalyse.github.io/m-einlesen-strukturierter-datens-tze/einlesen-strukturierter-datens%C3%A4tze.html) vorgestellt wird. 
-
-In Python gibt es zwei Arten von Fehlern. Dies sind erstens Syntaxfehler, die Python mit einer Fehlermeldung ähnlich wie der folgenden quitiert. Syntaxfehler werden durch das Schreiben von syntaktisch korrektem Programmcode behoben.
-```{python}
-#| eval: false
-
-print(1}
-```
-
-```{python}
-#| echo: false
-
-try:
-  eval('print(1}')
-except SyntaxError as error:
-  print(str(error)[:58])
-```
-
-Die zweite Art von Fehlern sind Ausnahmen (exceptions), die auch bei syntaktisch korrektem Programmcode auftreten können. Ausnahmen führen auch zu Fehlermeldungen.
-
-```{python}
-#| eval: false
-
-# Beispiel 1: Division durch Null
-print(1 / 0)
-```
-
-```{python}
-#| echo: false
-
-try:
-  print(1 / 0)
-except ZeroDivisionError as error:
-  print(error)
-```
-
-```{python}
-#| eval: false
-
-# Beispiel 2: undefinierte Variable
-print(undefinierte_variable)
-```
-
-```{python}
-#| echo: false
-
-try:
-  print(undefinierte_variable)
-except NameError as error:
-  print(error)
-```
-
-Fehlermeldungen wie diese können in Python mit der [Ausnahmebehandlung](https://docs.python.org/3/tutorial/errors.html) abgefangen werden. Diese wird mit dem Schlüsselwort `try` eingeleitet, das mit dem Doppeltpunkt `:` abgeschlossen wird. In der nächsten Zeile folgt eingrückt der Anweisungblock, der auf Ausnahmen getestet werden soll. *Hinweis: Der Anweisungsblock wird tatsächlich ausgeführt, Änderungen an Daten oder Dateien sind also möglich.* Anschließend wird mit dem Schlüsselwort `except`, das von einem Doppelpunkt `:` und in der nächsten Zeile von einem eingerückten Anweisungsblock gefolgt wird, festgelegt, was beim Aufkommen einer Ausnahme passieren soll. Optional kann mit dem Schlüsselwort `else` nach dem gleichen Schema ein weiterer Anweisungsblock definiert werden, der bei einer erfolgreichen Ausführung des Anweisungsblocks unter `try` *zusätzlich* ausgeführt wird. Der allgemeiner Aufbau lautet wie folgt:
-
-```
-try:
-  Anweisungsblock_1 
-except:
-  Anweisungsblock falls Anweisungblock_1 eine Ausnahme erzeugt
-else:
-  optionaler Anweisungsblock falls Anweisungsblock_1 keine Ausnahme erzeugt
-```
-
-Mithilfe der Ausnahmebehandlungen können die Elemente angezeigt werden, die zu einer Fehlermeldung führen.
-
-```{python}
-a = 1
-b = 2
-
-try:
-  differenz = a - b
-except:
-  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
-else:
-  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
-
-```
-
-```{python}
-a = 1
-b = 'abc'
-
-try:
-  differenz = a - b
-except:
-  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
-else:
-  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
-
-```
-
-Auch ist es möglich, die Fehlermeldung abzufangen und auszugeben. Dafür wird die Zeile `except:` wie folgt modifiziert `except Exception as error:`
-
-```{python}
-a = 1
-b = 'abc'
-
-try:
-  differenz = a - b
-except Exception as error:
-  print(f"Die Differenz aus {a} und {b} konnte nicht gebildet werden.")
-  print(error)
-else:
-  print(f"Die Differenz aus {a} und {b} ist {differenz}.")
-
-```
-
-## Aufgaben Flusskontrolle
-1. Schreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit `print()` ausgibt.
-
-2. Roulette: Schreiben Sie ein Programm, dass für eine Zahl prüft, ob diese im Wertebereich des Spieltischs liegt. Falls nein, soll eine Fehlermeldung ausgegeben werden. Falls ja, soll das Programm ausgeben, ob die Zahl
-
-  - gerade oder ungerade ist,
-
-  - rot oder schwarz ist,
-
-  - niedrig (1-18) oder hoch (19-36) ist und
-
-  - im 1., 2. oder 3. Dutzend liegt.
-
-:::: {.border}
-
-![Roulette Tableau](00-bilder/European_roulette_cc-by-sa.png){fig-alt="Roulettetisch: Roulette-Scheibe mit Zahlenfeld." width="90%"}
-
-European roulette von Betzaar.com ist lizensiert unter [CC 3.0 BY-SA](https://creativecommons.org/licenses/by-sa/3.0/deed.en) und verfügbar auf 
-[wikimedia.org](https://commons.wikimedia.org/wiki/File:European_roulette.svg). 2010
-::::
-
-&nbsp;
-
-**Die Musterlösung kann Marc machen.**
+💡 `range(...)` erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.
 
 ::: {.callout-tip collapse="true"}
-## Musterlösung Aufgaben Flusskontrolle
+## ✏️ Aufgabe: Zähle von 1 bis 10
 
+Nutzen Sie eine `for`-Schleife, um die Zahlen von 1 bis 10 auszugeben.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+for i in range(1, 11):
+    print(i)
+```
+:::
 :::
 
-&nbsp;  
-(@Arnold-2023-schleifen-abzweigungen)
+---
+
+::: {.callout-tip collapse="true"}
+## ✏️ Aufgabe: Gerade Zahlen ausgeben
+
+Geben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn `zahl % 2 == 0`.
+
+::: {.callout-caution icon="false" collapse="true"}
+## Lösung
+```{python}
+for zahl in range(0, 21):
+    if zahl % 2 == 0:
+        print(zahl)
+```
+:::
+:::
+
+
+
+
+
