@@ -154,7 +154,7 @@
     "href": "skript/funktionen.html",
     "title": "3  Funktionen: Grundlagen",
     "section": "",
-    "text": "3.1 Funktionen und Methoden\nFunktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der Dokumentation entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. In diesem Kapitel wird die allgemeine Verwendung der in Python enthaltenen Funktionen vermittelt.\nPython wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist. Dies erfolgt auch in Hinblick auf die Möglichkeit, Python umfangreich durch Module zu erweitern. So haben beispielsweise die Funktionen des Moduls Pandas nicht selten dutzende dokumentierte Parameter.\nIn Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.",
+    "text": "3.1 Funktionen und Methoden\nIn Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funktionen: Grundlagen</span>"
     ]
@@ -192,21 +192,61 @@
   {
     "objectID": "skript/flusskontrolle.html",
     "href": "skript/flusskontrolle.html",
-    "title": "4  Flusskontrolle",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
     "section": "",
-    "text": "Abzweigungen\nDie Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder mehrfach ausgeführt werden.\nAbzweigungen ermöglichen eine Fallunterscheidung, bei der abhängig von einer oder mehreren Bedingungen verschiedene Teile des Skripts ausgeführt werden.\nIn Python werden Abzweigungen mit dem Schlüsselwort if eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt : abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.\n# Beispiel: Zahl kleiner als ein Schwellwert\n\na = 7\nif a &lt; 10:\n    print( 'Die Zahl', a, 'ist kleiner als 10.')\n\nDie Zahl 7 ist kleiner als 10.\nEs ist auch möglich einen alternativen Anweisungsblock zu definieren, welcher ausgeführt wird, wenn die Bedingung falsch ist. Dieser wird mit dem else Schlüsselwort umgesetzt.\n# Beispiel: Zahl kleiner als ein Schwellwert mit alternativer Ausgabe\n\na = 13\nif a &lt; 10:\n    print( 'Die Zahl', a, 'ist kleiner als 10.')\nelse:\n    print( 'Die Zahl', a, 'ist nicht kleiner als 10.')\n\nDie Zahl 13 ist nicht kleiner als 10.\nEs können auch mehrere Bedingungen übergeben werden.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20\n\na = 1\nif a &lt; 20 and a &gt; 10:\n    print( 'Die Zahl', a, 'liegt zwischen 10 und 20.')\nelse:\n    print( 'Die Zahl', a, 'liegt nicht zwischen 10 und 20.')\n\nDie Zahl 1 liegt nicht zwischen 10 und 20.\nSchließlich können mehrere alternative Bedingungen geprüft werden. Dies ist zum einen durch das Verschachteln von Abzweigungen möglich.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit verschachtelten Abzweigungen\n\na = 12\nif a &gt; 10:\n    print( 'Die Zahl', a, 'ist größer als 10.' )\n    \n    if a &lt; 20:\n        print( 'Die Zahl', a, 'ist kleiner als 20.' )\n        print( 'Damit liegt die Zahl zwischen 10 und 20.')\n    else:\n        print( 'Die Zahl', a, 'ist größer als 20 und liegt nicht im gesuchten Wertebereich.' )\nelse:\n        print( 'Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )\n\nDie Zahl 12 ist größer als 10.\nDie Zahl 12 ist kleiner als 20.\nDamit liegt die Zahl zwischen 10 und 20.\nZum anderen ist dies mit dem Schlüsselwort elif möglich.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit elif\n\na = 112\nif a &lt; 20 and a &gt; 10:\n  print('Die Zahl', a, 'liegt zwischen 10 und 20.')\nelif a &lt; 10:\n  print('Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )\nelif a &gt; 20 and a &lt;= 100:\n  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 100.')\nelif a &gt; 20 and a &lt;= 1000:\n  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 1000.')\nelse:\n  print('Die Zahl', a, 'liegt nicht zwischen 10 und 20 und ist größer als 1000.')\n\nDie Zahl 112 ist größer als 20, aber nicht größer als 1000.",
+    "text": "4.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - Bedingungen formulieren und mit if, elif, else nutzen, - Vergleichsoperatoren verwenden (==, &lt;, !=, …), - Wiederholungen mit while und for umsetzen.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flusskontrolle</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
-    "objectID": "skript/flusskontrolle.html#aufgaben-flusskontrolle",
-    "href": "skript/flusskontrolle.html#aufgaben-flusskontrolle",
-    "title": "4  Flusskontrolle",
-    "section": "4.1 Aufgaben Flusskontrolle",
-    "text": "4.1 Aufgaben Flusskontrolle\n\nSchreiben Sie ein Programm, dass von 1 bis 25 und von 38 bis 50 zählt und jeden Wert, der ganzzahlig durch 7 teilbar ist, mit print() ausgibt.\nRoulette: Schreiben Sie ein Programm, dass für eine Zahl prüft, ob diese im Wertebereich des Spieltischs liegt. Falls nein, soll eine Fehlermeldung ausgegeben werden. Falls ja, soll das Programm ausgeben, ob die Zahl\n\n\ngerade oder ungerade ist,\nrot oder schwarz ist,\nniedrig (1-18) oder hoch (19-36) ist und\nim 1., 2. oder 3. Dutzend liegt.\n\n\n\n\n\nRoulette Tableau\n\n\nEuropean roulette von Betzaar.com ist lizensiert unter CC 3.0 BY-SA und verfügbar auf wikimedia.org. 2010\n\n \nDie Musterlösung kann Marc machen.\n\n\n\n\n\n\nMusterlösung Aufgaben Flusskontrolle\n\n\n\n\n\n\n\n\n\n \n(Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Schleifen und Abzweigungen.“ Fachhochschule Dortmund.\n\n\nMatthes, Eric. 2017. Python Crashkurs: Eine praktische, projektbasierte Programmiereinführung. 1. Aufl. Heidelberg: dpunkt.verlag.",
+    "objectID": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
+    "href": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "section": "4.2 Bedingungen mit if, elif, else",
+    "text": "4.2 Bedingungen mit if, elif, else\n\nalter = 17\n\nif alter &gt;= 18:\n    print(\"Sie sind volljährig.\")\nelse:\n    print(\"Sie sind minderjährig.\")\n\nSie sind minderjährig.\n\n\nMehrere Fälle unterscheiden:\n\nnote = 2.3\n\nif note &lt;= 1.5:\n    print(\"Sehr gut\")\nelif note &lt;= 2.5:\n    print(\"Gut\")\nelif note &lt;= 3.5:\n    print(\"Befriedigend\")\nelse:\n    print(\"Ausreichend oder schlechter\")\n\nGut",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Flusskontrolle</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#vergleichsoperatoren",
+    "href": "skript/flusskontrolle.html#vergleichsoperatoren",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "section": "4.3 Vergleichsoperatoren",
+    "text": "4.3 Vergleichsoperatoren\n\n\n\nAusdruck\nBedeutung\n\n\n\n\na == b\ngleich\n\n\na != b\nungleich\n\n\na &lt; b\nkleiner als\n\n\na &gt; b\ngrößer als\n\n\na &lt;= b\nkleiner oder gleich\n\n\na &gt;= b\ngrößer oder gleich",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#wiederholungen-mit-while",
+    "href": "skript/flusskontrolle.html#wiederholungen-mit-while",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "section": "4.4 Wiederholungen mit while",
+    "text": "4.4 Wiederholungen mit while\n\nzähler = 0\n\nwhile zähler &lt; 5:\n    print(\"Zähler ist:\", zähler)\n    zähler += 1\n\nZähler ist: 0\nZähler ist: 1\nZähler ist: 2\nZähler ist: 3\nZähler ist: 4\n\n\n💡 Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#schleifen-mit-for-und-range...",
+    "href": "skript/flusskontrolle.html#schleifen-mit-for-und-range...",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "section": "4.5 Schleifen mit for und range(...)",
+    "text": "4.5 Schleifen mit for und range(...)\nWenn Sie eine Schleife genau eine bestimmte Anzahl von Malen durchlaufen möchten, nutzen Sie for mit range(...):\n\nfor i in range(5):\n    print(\"Durchlauf:\", i)\n\nDurchlauf: 0\nDurchlauf: 1\nDurchlauf: 2\nDurchlauf: 3\nDurchlauf: 4\n\n\nStart- und Endwert festlegen:\n\nfor i in range(1, 6):\n    print(i)\n\n1\n2\n3\n4\n5",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#was-macht-range...-genau",
+    "href": "skript/flusskontrolle.html#was-macht-range...-genau",
+    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "section": "4.6 Was macht range(...) genau?",
+    "text": "4.6 Was macht range(...) genau?\nDie Funktion range(...) erzeugt eine Abfolge von Zahlen, über die Sie mit einer for-Schleife iterieren können.\n\n🔢 Varianten:\nrange(5)\n➡️ ergibt: 0, 1, 2, 3, 4 (startet bei 0, endet vor 5)\nrange(2, 6)\n➡️ ergibt: 2, 3, 4, 5 (startet bei 2, endet vor 6)\nrange(1, 10, 2)\n➡️ ergibt: 1, 3, 5, 7, 9 (Schrittweite = 2)\n💡 range(...) erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.\n\n\n\n\n\n\n✏️ Aufgabe: Zähle von 1 bis 10\n\n\n\n\n\nNutzen Sie eine for-Schleife, um die Zahlen von 1 bis 10 auszugeben.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor i in range(1, 11):\n    print(i)\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n✏️ Aufgabe: Gerade Zahlen ausgeben\n\n\n\n\n\nGeben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn zahl % 2 == 0.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor zahl in range(0, 21):\n    if zahl % 2 == 0:\n        print(zahl)\n\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
@@ -214,7 +254,7 @@
     "href": "skript/sammeltypen.html",
     "title": "5  Sammeltypen",
     "section": "",
-    "text": "5.1 Listen\nSammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:\nIn diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.\nWie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern [] eingeklammert und mit Kommata , getrennt. Listen können mit dem +-Operator verkettet werden. * verkettet eine Liste n-mal.\ntext_variable = 'abc'\n\nliste1 = [1, 'xy', True, text_variable]\nprint(liste1)\n\n# Listen können auch Listen enthalten\nliste2 = [None, liste1]\nprint(liste2)\n\n# Listen können mit + und * verkettet werden\nprint(liste1 + liste2)\nprint(liste1 * 2)\n\n[1, 'xy', True, 'abc']\n[None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', 1, 'xy', True, 'abc']\nEine leere Liste kann durch Zuweisung von [] erstellt werden.\nleere_liste = []\nprint(leere_liste)\n\n[]",
+    "text": "5.1 Listen\nWie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern [] eingeklammert und mit Kommata , getrennt. Listen können mit dem +-Operator verkettet werden. * verkettet eine Liste n-mal.\ntext_variable = 'abc'\n\nliste1 = [1, 'xy', True, text_variable]\nprint(liste1)\n\n# Listen können auch Listen enthalten\nliste2 = [None, liste1]\nprint(liste2)\n\n# Listen können mit + und * verkettet werden\nprint(liste1 + liste2)\nprint(liste1 * 2)\n\n[1, 'xy', True, 'abc']\n[None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', 1, 'xy', True, 'abc']\nEine leere Liste kann durch Zuweisung von [] erstellt werden.\nleere_liste = []\nprint(leere_liste)\n\n[]",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
     ]
@@ -314,7 +354,7 @@
     "href": "skript/funktionen-definieren.html",
     "title": "6  Eigene Funktionen definieren",
     "section": "",
-    "text": "6.1 Syntax\nDas Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten in Python:\nDas Schlüsselwort def leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern () eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt : beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort return an die aufrufende Stelle zurückgegeben wird. return beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.\ndef Funktionsname(Parameter1, Parameter2):\n    Anweisungsblock\n    return Rückgabewert\nDamit die Funktion ausgeführt wird, muss der definierte Funktionsname aufgerufen werden. In der Funktion ist nach dem Schlüsselwort return eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.\n# Beispiel 1: Summe der Quadrate\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_quadrate(a, b):\n    print('Argument a:', a)\n    print('Argument b:', b)\n    print(18 * '=')\n    summe = a**2 + b**2\n    return summe\n    print(\"Anweisungen nach dem Schlüsselwort return werden nicht mehr ausgeführt.\")\n\nprint(sum_quadrate(6, 7))\n\nArgument a: 6\nArgument b: 7\n==================\n85\nDer Rückgabewert kann in einer Variablen gespeichert werden.\nergebnis = sum_quadrate(6, 7)\nprint(ergebnis)\n\nArgument a: 6\nArgument b: 7\n==================\n85",
+    "text": "6.1 Syntax\nDas Schlüsselwort def leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern () eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt : beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort return an die aufrufende Stelle zurückgegeben wird. return beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.\ndef Funktionsname(Parameter1, Parameter2):\n    Anweisungsblock\n    return Rückgabewert\nDamit die Funktion ausgeführt wird, muss der definierte Funktionsname aufgerufen werden. In der Funktion ist nach dem Schlüsselwort return eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.\n# Beispiel 1: Summe der Quadrate\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_quadrate(a, b):\n    print('Argument a:', a)\n    print('Argument b:', b)\n    print(18 * '=')\n    summe = a**2 + b**2\n    return summe\n    print(\"Anweisungen nach dem Schlüsselwort return werden nicht mehr ausgeführt.\")\n\nprint(sum_quadrate(6, 7))\n\nArgument a: 6\nArgument b: 7\n==================\n85\nDer Rückgabewert kann in einer Variablen gespeichert werden.\nergebnis = sum_quadrate(6, 7)\nprint(ergebnis)\n\nArgument a: 6\nArgument b: 7\n==================\n85",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Eigene Funktionen definieren</span>"
     ]
@@ -354,7 +394,7 @@
     "href": "skript/dateien-lesen-und-schreiben.html",
     "title": "7  Dateien lesen und schreiben",
     "section": "",
-    "text": "7.1 Dateiobjekte\nMaya und Hans haben je sechs Mal einen Würfel geworfen und ihre Wurfergebnisse in einer .txt-Datei protokolliert. Wir wollen mit die Dateien mit Python auswerten, um zu bestimmen, wer von beiden in Summe die höchste Augenzahl erreicht hat.\nUm mit Python auf eine Datei zuzugreifen, muss diese fürs Lesen oder Schreiben geöffnet werden. Dazu wird in Python die Funktion open verwendet. Diese nimmt zwei Argumente, den Pfad der Datei und den Zugriffsmodus, an und liefert ein Dateiobjekt zurück. Aus dem Dateiobjekt werden dann die Inhalte der Datei ausgelesen.",
+    "text": "7.1 Dateiobjekte\nUm mit Python auf eine Datei zuzugreifen, muss diese fürs Lesen oder Schreiben geöffnet werden. Dazu wird in Python die Funktion open verwendet. Diese nimmt zwei Argumente, den Pfad der Datei und den Zugriffsmodus, an und liefert ein Dateiobjekt zurück. Aus dem Dateiobjekt werden dann die Inhalte der Datei ausgelesen.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
     ]
@@ -444,7 +484,7 @@
     "href": "skript/module-und-pakete-importieren.html",
     "title": "8  Module und Pakete importieren",
     "section": "",
-    "text": "8.1 import as\nDer Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.\nModule und Pakete werden mit dem Schlüsselwort import in Python geladen. Beispielsweise kann das für die Erzeugung (pseudo-)zufälliger Zahlen zuständige Modul random mit dem Befehl import random eingebunden werden. Anschließend stehen die Funktionen des Moduls unter dem Modulnamen in der Schreibweise modul.funktion() zur Verfügung.\nDas Paket Matplotlib bringt viele Funktionen zur grafischen Darstellung von Daten mit. Das Modul matplotlib.pyplot stellt eine Schnittstelle zu den enthaltenen Funktionen dar.\nUm lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort as verwendet werden, um dem Modul einen neuen Namen zuzuweisen.\nimport matplotlib.pyplot as plt\n\nplt.plot(zufallsdaten)\n\n\n\n\nGrafik mit dem Modul pyplot aus dem Paket matplotlib\nFür häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Bausteinen werden häufig die folgenden Pakete und Kürzel genutzt:",
+    "text": "8.1 import as\nUm lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort as verwendet werden, um dem Modul einen neuen Namen zuzuweisen.\nimport matplotlib.pyplot as plt\n\nplt.plot(zufallsdaten)\n\n\n\n\nGrafik mit dem Modul pyplot aus dem Paket matplotlib\nFür häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Bausteinen werden häufig die folgenden Pakete und Kürzel genutzt:",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Module und Pakete importieren</span>"
     ]
