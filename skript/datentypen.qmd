@@ -37,8 +37,6 @@ wert = 42
 print(type(wert))  # Ausgabe: <class 'int'>
 ```
 
----
-
 ## 🔍 Unterschiede zwischen `int` und `float`
 
 In Python unterscheidet man zwischen **ganzen Zahlen** (`int`) und **Kommazahlen** (`float`):
@@ -80,8 +78,6 @@ print("Typ von 'ist_sonnig':", type(ist_sonnig))
 
 Booleans werden besonders in **Bedingungen** und **Vergleichen** verwendet, was Sie in Kapitel 4 genauer kennenlernen.
 
----
-
 ## Rechnen mit Zahlen
 
 Python kann wie ein Taschenrechner verwendet werden:
@@ -108,8 +104,6 @@ print("Division mit Rest:", a % b)
 
 💡 `//` bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es 
 auch `%`. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.
-
----
 
 ## Arbeiten mit Text
 

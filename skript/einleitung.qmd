@@ -15,16 +15,12 @@ Webentwicklung.
 
 > In diesem Kurs lernen Sie Python Schritt für Schritt anhand praktischer Beispiele.
 
----
-
 ## Lernziele dieses Kapitels
 
 Am Ende dieses Kapitels können Sie:
 - einfache Python-Programme schreiben,
 - Text auf dem Bildschirm ausgeben,
 - erste Variablen definieren und verwenden.
-
----
 
 ## Ihr erstes Programm
 

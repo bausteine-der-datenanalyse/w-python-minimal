@@ -1,16 +1,8 @@
----
-title: "Kapitel 4 – Listen und Iteration"
-format: html
-jupyter: python3
----
-
 # Einführung: Mehrere Werte speichern
 
 Bisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?
 
 Dafür gibt es in Python **Listen**. In diesem Kapitel lernen Sie außerdem, wie man mit `for`-Schleifen über Listen iteriert.
-
----
 
 ## Was ist eine Liste?
 
@@ -27,9 +19,6 @@ Auf Elemente greifen Sie mit eckigen Klammern zu:
 print(namen[0])  # erstes Element
 print(noten[-1]) # letztes Element
 ```
-
----
-
 
 ## Teile aus Listen ausschneiden – Slicing
 
@@ -60,11 +49,6 @@ print(zahlen[:])    # vollständige Kopie
 print(zahlen[-3:])  # [40, 50, 60]
 ```
 
----
-
-
-
-
 ## Über Listen iterieren
 
 Mit einer `for`-Schleife können Sie über jedes Element in einer Liste iterieren:
@@ -75,9 +59,6 @@ namen = ["Ali", "Bente", "Carlos"]
 for name in namen:
     print("Hallo", name + "!")
 ```
-
----
-
 
 ## Erweiterung: Bedingte Ausgaben
 
@@ -91,12 +72,6 @@ for t in temperaturen:
         print(t, "ist ein warmer Tag")
 ```
 
----
-
-
----
-
-
 ## Durchschnitt berechnen
 
 Python stellt nützliche Funktionen bereit, z. B. `sum()` und `len()`:
@@ -107,8 +82,6 @@ noten = [1.7, 2.3, 1.3, 2.0]
 durchschnitt = sum(noten) / len(noten)
 print("Durchschnittsnote:", round(durchschnitt, 2))
 ```
-
----
 
 ::: {.callout-tip collapse="true"}
 
@@ -126,9 +99,6 @@ print(namen)
 ```
 
 💡 Die Methode `.append(...)` hängt einen neuen Wert an das Ende der Liste.
-
----
-
 
 ## Verschachtelte Schleifen
 
@@ -153,9 +123,6 @@ Di, Stunde 1
 ...
 ```
 
----
-
-
 ## Listen sortieren
 
 Mit `sorted(...)` können Sie Listen **alphabetisch oder numerisch sortieren**:
@@ -173,20 +140,3 @@ Wenn Sie die Liste direkt verändern möchten, geht das mit:
 ```{python}
 namen.sort()
 ```
-
----
-
-
-
-
----
-
-
-
-## Vorschau
-
-Im nächsten Kapitel lernen Sie:
-- eigene Funktionen zu definieren und zu verwenden,
-- wie Sie Programme strukturieren und wiederverwendbar machen.
-
----
