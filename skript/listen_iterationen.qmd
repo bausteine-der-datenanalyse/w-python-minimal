@@ -1,0 +1,192 @@
+---
+title: "Kapitel 4 – Listen und Iteration"
+format: html
+jupyter: python3
+---
+
+# Einführung: Mehrere Werte speichern
+
+Bisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?
+
+Dafür gibt es in Python **Listen**. In diesem Kapitel lernen Sie außerdem, wie man mit `for`-Schleifen über Listen iteriert.
+
+---
+
+## Was ist eine Liste?
+
+Eine Liste ist eine geordnete Sammlung von Werten.
+
+```{python}
+namen = ["Ali", "Bente", "Carlos"]
+noten = [1.7, 2.3, 1.3, 2.0]
+```
+
+Auf Elemente greifen Sie mit eckigen Klammern zu:
+
+```{python}
+print(namen[0])  # erstes Element
+print(noten[-1]) # letztes Element
+```
+
+---
+
+
+## Teile aus Listen ausschneiden – Slicing
+
+Mit dem sogenannten **Slicing** können Sie gezielt Ausschnitte aus einer Liste entnehmen. Dabei geben Sie an, **wo der Ausschnitt beginnt und wo er endet** (der Endwert wird **nicht** mehr mitgenommen):
+
+```{python}
+zahlen = [10, 20, 30, 40, 50, 60]
+print(zahlen[1:4])  # Ausgabe: [20, 30, 40]
+```
+
+### 🔢 Syntax: `liste[start:stop]`
+
+- **start**: Index, bei dem das Slicing beginnt (inklusive)
+- **stop**: Index, an dem es endet (exklusive)
+- Der Startwert kann auch weggelassen werden: `[:3]` → erstes bis drittes Element
+- Ebenso der Endwert: `[3:]` → ab dem vierten Element bis zum Ende
+- Ganze Kopie: `[:]`
+
+```{python}
+print(zahlen[:3])   # [10, 20, 30]
+print(zahlen[3:])   # [40, 50, 60]
+print(zahlen[:])    # vollständige Kopie
+```
+
+💡 Sie können auch mit negativen Indizes arbeiten (`-1` ist das letzte Element):
+
+```{python}
+print(zahlen[-3:])  # [40, 50, 60]
+```
+
+---
+
+
+
+
+## Über Listen iterieren
+
+Mit einer `for`-Schleife können Sie über jedes Element in einer Liste iterieren:
+
+```{python}
+namen = ["Ali", "Bente", "Carlos"]
+
+for name in namen:
+    print("Hallo", name + "!")
+```
+
+---
+
+
+## Erweiterung: Bedingte Ausgaben
+
+Sie können in der Schleife mit `if` filtern:
+
+```{python}
+temperaturen = [14.2, 17.5, 19.0, 21.3, 18.4]
+
+for t in temperaturen:
+    if t > 18:
+        print(t, "ist ein warmer Tag")
+```
+
+---
+
+
+---
+
+
+## Durchschnitt berechnen
+
+Python stellt nützliche Funktionen bereit, z. B. `sum()` und `len()`:
+
+```{python}
+noten = [1.7, 2.3, 1.3, 2.0]
+
+durchschnitt = sum(noten) / len(noten)
+print("Durchschnittsnote:", round(durchschnitt, 2))
+```
+
+---
+
+::: {.callout-tip collapse="true"}
+
+## Listen erweitern: `.append()`
+
+Manchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte **nachträglich hinzufügen**:
+
+```{python}
+namen = []
+
+namen.append("Ali")
+namen.append("Bente")
+
+print(namen)
+```
+
+💡 Die Methode `.append(...)` hängt einen neuen Wert an das Ende der Liste.
+
+---
+
+
+## Verschachtelte Schleifen
+
+Wenn Sie mit **mehrdimensionalen Daten** arbeiten – z. B. eine Tabelle mit mehreren Zeilen – können Sie Schleifen **ineinander verschachteln**:
+
+```{python}
+wochentage = ["Mo", "Di", "Mi"]
+stunden = [1, 2, 3]
+
+for tag in wochentage:
+    for stunde in stunden:
+        print(f"{tag}, Stunde {stunde}")
+```
+
+Das ergibt:
+
+```
+Mo, Stunde 1
+Mo, Stunde 2
+Mo, Stunde 3
+Di, Stunde 1
+...
+```
+
+---
+
+
+## Listen sortieren
+
+Mit `sorted(...)` können Sie Listen **alphabetisch oder numerisch sortieren**:
+
+```{python}
+namen = ["Zoe", "Anna", "Ben"]
+sortiert = sorted(namen)
+
+print(sortiert)
+```
+
+💡 Die Original-Liste bleibt **unverändert**.  
+Wenn Sie die Liste direkt verändern möchten, geht das mit:
+
+```{python}
+namen.sort()
+```
+
+---
+
+
+
+
+---
+
+
+
+## Vorschau
+
+Im nächsten Kapitel lernen Sie:
+- eigene Funktionen zu definieren und zu verwenden,
+- wie Sie Programme strukturieren und wiederverwendbar machen.
+
+---
