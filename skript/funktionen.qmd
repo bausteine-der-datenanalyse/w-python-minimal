@@ -1,8 +1,9 @@
-# Einführung: Wiederverwendbarer Code mit Funktionen
+# Wiederverwendbarer Code mit Funktionen
 
 Stellen Sie sich vor, Sie müssen eine bestimmte Berechnung mehrfach im Programm durchführen. Anstatt den Code jedes Mal neu zu schreiben, können Sie ihn in einer **Funktion** bündeln.
 
 Funktionen sind ein zentrales Werkzeug, um Code:
+
 - übersichtlich,
 - wiederverwendbar und
 - testbar zu machen.
@@ -10,13 +11,32 @@ Funktionen sind ein zentrales Werkzeug, um Code:
 ## Lernziele dieses Kapitels
 
 Am Ende dieses Kapitels können Sie:
+
 - eigene Funktionen mit `def` erstellen,
 - Parameter übergeben und Rückgabewerte nutzen,
 - Funktionen sinnvoll in Programmen einsetzen.
 
 ## Eine Funktion definieren
 
-Funktionen werden mit `def` definiert und können beliebig oft aufgerufen werden:
+Eine Funktion besteht aus folgenden Teilen:
+
+1. **Definition** mit `def`
+2. **Funktionsname**
+3. **Parameter in Klammern (optional)**
+4. **Einrückung** für den Funktionskörper
+5. (optional) **`return`-Anweisung**
+
+Beispiel:
+
+```{python}
+def hallo(name="Gast"):
+    begruessung = "Hallo " + name + "!"
+    return begruessung
+```
+
+
+Fangen wir mit dem ersten Stichwort an. Funktionen werden mit `def` definiert 
+und können beliebig oft aufgerufen werden:
 
 ```{python}
 def begruessung():
@@ -52,9 +72,9 @@ ergebnis = quadrat(5)
 print(ergebnis)
 ```
 
-## Weitere Beispiele: Umrechnungen
+## Beispiel: Umrechnungen
 
-### 💱 Euro zu US-Dollar
+### Euro zu US-Dollar
 
 ```{python}
 def euro_zu_usd(betrag_euro):
@@ -64,17 +84,8 @@ def euro_zu_usd(betrag_euro):
 print("20 € sind", euro_zu_usd(20), "US-Dollar.")
 ```
 
-### 📏 Zoll (inch) zu Zentimeter
-
-```{python}
-def inch_zu_cm(inch):
-    return inch * 2.54
-
-print("10 inch sind", inch_zu_cm(10), "cm.")
-```
-
 ::: {.callout-tip collapse="true"}
-## ✏️ Aufgabe: Begrüßung mit Name
+## Aufgabe: Begrüßung mit Name
 
 Erstellen Sie eine Funktion `begruesse(name)`, die den Namen in einem Begrüßungstext verwendet:
 
@@ -94,13 +105,13 @@ begruesse("Fatima")
 :::
 
 ::: {.callout-tip collapse="true"}
-## ✏️ Aufgabe: Temperaturumrechnung
+## Aufgabe: Temperaturumrechnung
 
 Schreiben Sie eine Funktion, die Celsius in Fahrenheit umrechnet:
 
 Formel:
 \[
-F = C 	imes 1.8 + 32
+F = C \times 1.8 + 32
 \]
 
 ::: {.callout-caution icon="false" collapse="true"}
@@ -116,7 +127,8 @@ print(celsius_zu_fahrenheit(20))
 
 ## Parameter mit Standardwerten
 
-Sie können Parametern **Standardwerte** zuweisen. So kann die Funktion auch ohne Angabe eines Werts aufgerufen werden:
+Sie können Parametern **Standardwerte** zuweisen. So kann die Funktion auch ohne 
+Angabe eines Werts aufgerufen werden:
 
 ```{python}
 def begruessung(name="Gast"):
@@ -126,14 +138,15 @@ begruessung()         # Hallo Gast!
 begruessung("Maria")  # Hallo Maria!
 ```
 
+::: {.callout-note collapse="false"}
 ## `print()` vs. `return`
 
 Diese beiden Begriffe werden oft verwechselt:
 
 | Ausdruck | Bedeutung |
 |----------|-----------|
-| `print(...)` | zeigt einen Text auf dem Bildschirm |
-| `return ...` | gibt einen Wert an den Aufrufer zurück |
+| `print()` | zeigt einen Text auf dem Bildschirm |
+| `return ` | gibt einen Wert an den Aufrufer zurück |
 
 Beispiel:
 
@@ -144,28 +157,4 @@ def verdoppeln(x):
 # Ausgabe sichtbar machen
 print(verdoppeln(5))  # Ausgabe: 10
 ```
-
-## 🔄 Zusammenfassung: Aufbau einer Funktion
-
-Eine Funktion besteht aus folgenden Teilen:
-
-1. **Definition** mit `def`
-2. **Funktionsname**
-3. **Parameter in Klammern (optional)**
-4. **Einrückung** für den Funktionskörper
-5. (optional) **`return`-Anweisung**
-
-Beispiel:
-
-```{python}
-def hallo(name="Gast"):
-    begruessung = "Hallo " + name + "!"
-    return begruessung
-```
-
-## Vorschau
-
-Im nächsten Kapitel lernen Sie:
-- wie Sie einfache Texte verarbeiten,
-- mit Zeichenketten arbeiten,
-- Zeichen aus Strings gezielt auswählen und manipulieren.
+:::

@@ -1,4 +1,4 @@
-# Einführung: Mehrere Werte speichern
+# Mehrere Werte speichern
 
 Bisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?
 
@@ -6,7 +6,7 @@ Dafür gibt es in Python **Listen**. In diesem Kapitel lernen Sie außerdem, wie
 
 ## Was ist eine Liste?
 
-Eine Liste ist eine geordnete Sammlung von Werten.
+Eine Liste ist eine geordnete Sammlung von Werten eines Datentyps.
 
 ```{python}
 namen = ["Ali", "Bente", "Carlos"]
@@ -22,14 +22,16 @@ print(noten[-1]) # letztes Element
 
 ## Teile aus Listen ausschneiden – Slicing
 
-Mit dem sogenannten **Slicing** können Sie gezielt Ausschnitte aus einer Liste entnehmen. Dabei geben Sie an, **wo der Ausschnitt beginnt und wo er endet** (der Endwert wird **nicht** mehr mitgenommen):
+Mit dem sogenannten **Slicing** können Sie gezielt Ausschnitte aus einer Liste entnehmen. 
+Dabei geben Sie an, **wo der Ausschnitt beginnt und wo er endet** (der Endwert 
+wird **nicht** mehr mitgenommen):
 
 ```{python}
 zahlen = [10, 20, 30, 40, 50, 60]
 print(zahlen[1:4])  # Ausgabe: [20, 30, 40]
 ```
 
-### 🔢 Syntax: `liste[start:stop]`
+### Syntax: `liste[start:stop]`
 
 - **start**: Index, bei dem das Slicing beginnt (inklusive)
 - **stop**: Index, an dem es endet (exklusive)
@@ -43,11 +45,12 @@ print(zahlen[3:])   # [40, 50, 60]
 print(zahlen[:])    # vollständige Kopie
 ```
 
-💡 Sie können auch mit negativen Indizes arbeiten (`-1` ist das letzte Element):
-
+::: {.callout-note icon="false" collapse="false"}
+Sie können auch mit negativen Indizes arbeiten (`-1` ist das letzte Element):
 ```{python}
 print(zahlen[-3:])  # [40, 50, 60]
 ```
+:::
 
 ## Über Listen iterieren
 
@@ -83,8 +86,6 @@ durchschnitt = sum(noten) / len(noten)
 print("Durchschnittsnote:", round(durchschnitt, 2))
 ```
 
-::: {.callout-tip collapse="true"}
-
 ## Listen erweitern: `.append()`
 
 Manchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte **nachträglich hinzufügen**:
@@ -98,7 +99,9 @@ namen.append("Bente")
 print(namen)
 ```
 
-💡 Die Methode `.append(...)` hängt einen neuen Wert an das Ende der Liste.
+::: {.callout-note icon="false" collapse="false"}
+Die Methode `.append())` hängt einen neuen Wert an das Ende der Liste.
+:::
 
 ## Verschachtelte Schleifen
 
@@ -125,7 +128,7 @@ Di, Stunde 1
 
 ## Listen sortieren
 
-Mit `sorted(...)` können Sie Listen **alphabetisch oder numerisch sortieren**:
+Mit `sorted()` können Sie Listen **alphabetisch oder numerisch sortieren**:
 
 ```{python}
 namen = ["Zoe", "Anna", "Ben"]
@@ -134,9 +137,11 @@ sortiert = sorted(namen)
 print(sortiert)
 ```
 
-💡 Die Original-Liste bleibt **unverändert**.  
-Wenn Sie die Liste direkt verändern möchten, geht das mit:
 
+::: {.callout-important icon="false" collapse="false"}
+Die Original-Liste bleibt **unverändert**.  
+Wenn Sie die Liste direkt verändern möchten, geht das mit:
 ```{python}
 namen.sort()
 ```
+:::

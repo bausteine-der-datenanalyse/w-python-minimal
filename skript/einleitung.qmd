@@ -1,4 +1,4 @@
-# Einleitung: Datenanalyse mit Python
+# Einführung
 
 ::: {.border}
 ![Logo der Programmiersprache Python](00-bilder/python-logo-and-wordmark-cc0-tm.png)
@@ -26,7 +26,7 @@ Am Ende dieses Kapitels können Sie:
 
 Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. 
 WIr lassen uns die Worte 'Hello World' ausgeben. Dazu nutzen wir den print-Befehl
- `print(...)`:
+ `print()`:
 
 ```{python}
 print("Hallo Welt!")
@@ -34,7 +34,7 @@ print("Hallo Welt!")
 
 
 **Was passiert hier?**
-- `print(...)` ist eine sogenannte **Funktion**, die etwas auf dem Bildschirm ausgibt.
+- `print()` ist eine sogenannte **Funktion**, die etwas auf dem Bildschirm ausgibt.
 - Der Text `"Hello World!"` wird angezeigt.
 - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.
 
@@ -83,7 +83,7 @@ Hallo Frau Müller!
 Sie sind 32 Jahre alt.
 ```
 
-Tipp: Verwenden Sie `print(...)` mehrmals oder fügen Sie Texte zusammen.
+Tipp: Verwenden Sie `print()` mehrmals oder fügen Sie Texte zusammen.
 
 ::: {.callout-caution icon="false" collapse="true"}
 ## Lösung

@@ -1,8 +1,9 @@
-# Einführung: Datentypen verstehen
+# Datentypen verstehen
 
 ## Lernziele dieses Kapitels
 
 Am Ende dieses Kapitels können Sie:
+
 - die wichtigsten Datentypen unterscheiden,
 - mit Zahlen und Texten rechnen bzw. arbeiten,
 - einfache Berechnungen und Ausgaben erstellen.
@@ -30,14 +31,14 @@ Hier sind die grundlegenden Datentypen in Python:
 | `str` | `"Hallo"` | Text (String) |
 | `bool` | `True`, `False` | Wahrheitswert (Ja/Nein) |
 
-Sie können den Typ einer Variable mit der Funktion `type(...)` herausfinden:
+Sie können den Typ einer Variable mit der Funktion `type()` herausfinden:
 
 ```{python}
 wert = 42
 print(type(wert))  # Ausgabe: <class 'int'>
 ```
 
-## 🔍 Unterschiede zwischen `int` und `float`
+## Unterschiede zwischen `int` und `float`
 
 In Python unterscheidet man zwischen **ganzen Zahlen** (`int`) und **Kommazahlen** (`float`):
 
@@ -52,9 +53,11 @@ print("a:", a, "| Typ:", type(a))
 print("b:", b, "| Typ:", type(b))
 ```
 
-💡 Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.
+::: {.callout-important icon="false" collapse="false"}
+Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.
+:::
 
-## 🔍 Was sind Booleans (`bool`)?
+## Was sind Booleans (`bool`)?
 
 Ein **Boolean** ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:
 
@@ -102,8 +105,10 @@ print("Ganzzahlige Division:", a // b)
 print("Division mit Rest:", a % b)
 ```
 
-💡 `//` bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es 
+::: {.callout-note collapse="false"}
+`//` bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es 
 auch `%`. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.
+:::
 
 ## Arbeiten mit Text
 
@@ -122,7 +127,7 @@ punkte = 95
 print("Sie haben " + str(punkte) + " Punkte erreicht.")
 ```
 
-## 🔁 Umwandlung von Datentypen (Typecasting)
+## Umwandlung von Datentypen (Typecasting)
 
 Manchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – 
 z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.
@@ -131,9 +136,9 @@ Das nennt man **Typecasting**. Hier sind die wichtigsten Funktionen dafür:
 
 | Funktion | Beschreibung | Beispiel |
 |----------|--------------|----------|
-| `str(...)` | Zahl → Text | `str(42)` → `"42"` |
-| `int(...)` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
-| `float(...)` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
+| `str())` | Zahl → Text | `str(42)` → `"42"` |
+| `int()` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
+| `float()` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
 
 ```{python}
 # Beispiel: Zahl als Text anzeigen
@@ -146,12 +151,12 @@ wert = float(eingabe) * 2
 print("Doppelt so viel:", wert)
 ```
 
-💡 Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – 
+Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – 
 `int("abc")` führt zu einem Fehler.
 
 
 ::: {.callout-tip collapse="true"}
-## ✏️ Aufgabe: Alter in Tagen
+## Aufgabe: Alter in Tagen
 
 Berechnen Sie, wie alt eine Person in Tagen ist.
 
