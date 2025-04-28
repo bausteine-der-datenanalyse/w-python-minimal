@@ -5,9 +5,7 @@ book:
     - index.qmd
     - skript/einleitung.qmd
     - skript/datentypen.qmd
-    - skript/funktionen.qmd
     - skript/flusskontrolle.qmd
-    - skript/sammeltypen.qmd
-    - skript/funktionen-definieren.qmd
-    - skript/dateien-lesen-und-schreiben.qmd
-    - skript/module-und-pakete-importieren.qmd
+    - skript/listen_iterationen.qmd
+    - skript/funktionen.qmd
+    - skript/lesen_und_schreiben.qmd
