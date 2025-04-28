@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Funktionen: Grundlagen – Bausteine Computergestützter Datenanalyse</title>
+<title>5&nbsp; Wiederverwendbarer Code mit Funktionen – Bausteine Computergestützter Datenanalyse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../skript/flusskontrolle.html" rel="next">
-<link href="../skript/datentypen.html" rel="prev">
+<link href="../skript/lesen_schreiben.html" rel="next">
+<link href="../skript/listen_iterationen.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e5d0946404fea248ad03a8e556b7a03b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e018ad72096c98ab8170000a0dfe2dea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/funktionen.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/funktionen.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Wiederverwendbarer Code mit Funktionen</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -154,49 +154,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/datentypen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung: Datentypen verstehen</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../skript/funktionen.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Datentypen verstehen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung: Entscheidungen und Wiederholungen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Entscheidungen und Wiederholungen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../skript/sammeltypen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+  <a href="../skript/listen_iterationen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mehrere Werte speichern</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+  <a href="../skript/funktionen.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Wiederverwendbarer Code mit Funktionen</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+  <a href="../skript/lesen_schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Arbeiten mit Dateien</span></span></a>
   </div>
 </li>
     </ul>
@@ -209,13 +197,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#funktionen-und-methoden" id="toc-funktionen-und-methoden" class="nav-link active" data-scroll-target="#funktionen-und-methoden"><span class="header-section-number">3.1</span> Funktionen und Methoden</a>
+  <li><a href="#lernziele-dieses-kapitels" id="toc-lernziele-dieses-kapitels" class="nav-link active" data-scroll-target="#lernziele-dieses-kapitels"><span class="header-section-number">5.1</span> Lernziele dieses Kapitels</a></li>
+  <li><a href="#eine-funktion-definieren" id="toc-eine-funktion-definieren" class="nav-link" data-scroll-target="#eine-funktion-definieren"><span class="header-section-number">5.2</span> Eine Funktion definieren</a></li>
+  <li><a href="#parameter-übergeben" id="toc-parameter-übergeben" class="nav-link" data-scroll-target="#parameter-übergeben"><span class="header-section-number">5.3</span> Parameter übergeben</a></li>
+  <li><a href="#rückgabewerte-mit-return" id="toc-rückgabewerte-mit-return" class="nav-link" data-scroll-target="#rückgabewerte-mit-return"><span class="header-section-number">5.4</span> Rückgabewerte mit <code>return</code></a></li>
+  <li><a href="#beispiel-umrechnungen" id="toc-beispiel-umrechnungen" class="nav-link" data-scroll-target="#beispiel-umrechnungen"><span class="header-section-number">5.5</span> Beispiel: Umrechnungen</a>
   <ul class="collapse">
-  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen">Funktionen</a></li>
-  <li><a href="#methoden" id="toc-methoden" class="nav-link" data-scroll-target="#methoden">Methoden</a></li>
+  <li><a href="#euro-zu-us-dollar" id="toc-euro-zu-us-dollar" class="nav-link" data-scroll-target="#euro-zu-us-dollar">Euro zu US-Dollar</a></li>
   </ul></li>
-  <li><a href="#parameter" id="toc-parameter" class="nav-link" data-scroll-target="#parameter"><span class="header-section-number">3.2</span> Parameter</a></li>
-  <li><a href="#aufgaben-funktionen" id="toc-aufgaben-funktionen" class="nav-link" data-scroll-target="#aufgaben-funktionen"><span class="header-section-number">3.3</span> Aufgaben Funktionen</a></li>
+  <li><a href="#parameter-mit-standardwerten" id="toc-parameter-mit-standardwerten" class="nav-link" data-scroll-target="#parameter-mit-standardwerten"><span class="header-section-number">5.6</span> Parameter mit Standardwerten</a></li>
   </ul>
 </nav>
     </div>
@@ -224,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Wiederverwendbarer Code mit Funktionen</span></h1>
 </div>
 
 
@@ -241,334 +231,232 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Funktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der <a href="https://docs.python.org/3/library/functions.html">Dokumentation</a> entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. In diesem Kapitel wird die allgemeine Verwendung der in Python enthaltenen Funktionen vermittelt.</p>
-<p>Python wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist. Dies erfolgt auch in Hinblick auf die Möglichkeit, Python umfangreich durch Module zu erweitern. So haben beispielsweise die Funktionen des Moduls Pandas nicht selten dutzende dokumentierte Parameter.</p>
-<div id="tip-dokumentation" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Stellen Sie sich vor, Sie müssen eine bestimmte Berechnung mehrfach im Programm durchführen. Anstatt den Code jedes Mal neu zu schreiben, können Sie ihn in einer <strong>Funktion</strong> bündeln.</p>
+<p>Funktionen sind ein zentrales Werkzeug, um Code:</p>
+<ul>
+<li>übersichtlich,</li>
+<li>wiederverwendbar und</li>
+<li>testbar zu machen.</li>
+</ul>
+<section id="lernziele-dieses-kapitels" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="lernziele-dieses-kapitels"><span class="header-section-number">5.1</span> Lernziele dieses Kapitels</h2>
+<p>Am Ende dieses Kapitels können Sie:</p>
+<ul>
+<li>eigene Funktionen mit <code>def</code> erstellen,</li>
+<li>Parameter übergeben und Rückgabewerte nutzen,</li>
+<li>Funktionen sinnvoll in Programmen einsetzen.</li>
+</ul>
+</section>
+<section id="eine-funktion-definieren" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="eine-funktion-definieren"><span class="header-section-number">5.2</span> Eine Funktion definieren</h2>
+<p>Eine Funktion besteht aus folgenden Teilen:</p>
+<ol type="1">
+<li><strong>Definition</strong> mit <code>def</code></li>
+<li><strong>Funktionsname</strong></li>
+<li><strong>Parameter in Klammern (optional)</strong></li>
+<li><strong>Einrückung</strong> für den Funktionskörper</li>
+<li>(optional) <strong><code>return</code>-Anweisung</strong></li>
+</ol>
+<p>Beispiel:</p>
+<div id="7d771fca" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hallo(name<span class="op">=</span><span class="st">"Gast"</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    begruessung <span class="op">=</span> <span class="st">"Hallo "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> begruessung</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Tipp&nbsp;3.1: Dokumentation
+<p>Fangen wir mit dem ersten Stichwort an. Funktionen werden mit <code>def</code> definiert und können beliebig oft aufgerufen werden:</p>
+<div id="6cfc6c7e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo und willkommen!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>Der wichtigste Tipp zuerst: <strong>Benutzen Sie die Dokumentation!</strong> Auch wenn Sie eine Funktion kennen: Vergewissern Sie sich regelmäßig, dass Sie noch auf dem neuesten Stand sind. Auf diese Weise erhalten Sie einen vollständigen Überblick über standardmäßig gesetzte und optional verfügbare Parameter. Außerdem erkennen Sie Änderungen in der Programmausführung und vermeiden so unerwartete Fehler.</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1, 1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="00-bilder/added-in-pyhton.png" class="img-fluid figure-img" alt="Hinweis auf eine Neuerung in Python"></p>
-<figcaption>Neuerung in Python</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="00-bilder/deprecated-in-python.png" class="img-fluid figure-img" alt="Hinweis auf eine Abkündigung in Python"></p>
-<figcaption>Abkündigung in Python</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>Achten Sie auf die korrekte Version der Dokumentation.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="00-bilder/python-documentation-version.png" class="img-fluid figure-img" style="width:80.0%" alt="Auswahlmenü der Dokumentationsversion"></p>
-<figcaption>Versionsauswahl der Dokumentation</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<section id="funktionen-und-methoden" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="funktionen-und-methoden"><span class="header-section-number">3.1</span> Funktionen und Methoden</h2>
-<p>In Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.</p>
-<section id="funktionen" class="level3">
-<h3 class="anchored" data-anchor-id="funktionen">Funktionen</h3>
-<p>Funktionen können Objekte unabhängig von ihrem Datentyp übergeben werden. Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern <code>()</code> aufgerufen. Ein Beispiel ist die Funktion <code>print()</code>:</p>
-<div id="4cf4ee3f" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>var_str <span class="op">=</span> <span class="st">'ABC'</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>var_int <span class="op">=</span> <span class="dv">26</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>var_bool <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_1 hat den Typ"</span>, <span class="bu">type</span>(var_str))</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_2 hat den Typ"</span>, <span class="bu">type</span>(var_int))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Variable var_3 hat den Typ"</span>, <span class="bu">type</span>(var_bool))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sie wird erst ausgeführt, wenn Sie sie aufrufen:</p>
+<div id="99eda925" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>begruessung()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Die Variable var_1 hat den Typ &lt;class 'str'&gt;
-Die Variable var_2 hat den Typ &lt;class 'int'&gt;
-Die Variable var_3 hat den Typ &lt;class 'bool'&gt;</code></pre>
-</div>
-</div>
-<p>Funktionen müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert <code>None</code> zurückgegeben, der nicht existente Werte kennzeichnet.</p>
-<div id="86d976b7" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="bu">print</span>( <span class="dv">15</span> )</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>15
-None</code></pre>
-</div>
-</div>
-<p>Funktionen können verschachtelt und so von innen nach außen nacheinander ausgeführt werden. In diesem Code-Beispiel wird zunächst die Summe zweier Zahlen und anschließend der Wahrheitswert des Ergebnisses gebildet. Dieser wird anschließend mit der Funktion print ausgegeben.</p>
-<div id="946b4ae7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="bu">sum</span>([<span class="dv">1</span>, <span class="dv">2</span>])))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>True</code></pre>
+<pre><code>Hallo und willkommen!</code></pre>
 </div>
 </div>
 </section>
-<section id="methoden" class="level3">
-<h3 class="anchored" data-anchor-id="methoden">Methoden</h3>
-<p>Methoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Objekte zu einem bestimmten Typ bzw. zu einer Klasse gehören und abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einer bestimmten Klasse gehören und nur für Objekte dieser Klasse verfügbar sind. Methoden können auch für mehrere Klassen definiert sein. Methoden werden getrennt durch einen Punkt <code>.</code> hinter Objekten mit ihrem Namen aufgerufen: <code>variable.methode</code> bzw. <code>(wert).methode</code>. Beispielsweise sind <code>.upper()</code>, <code>.lower()</code> und <code>.title</code> für Zeichenfolgen definierte Methoden.</p>
-<div id="96304015" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>toller_text <span class="op">=</span> <span class="st">"Python 3.12 ist großartig."</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.upper())</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.lower())</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(toller_text.title(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="st">"Mit in Klammern gesetzten Werten klappt es auch."</span>).upper())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="parameter-übergeben" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="parameter-übergeben"><span class="header-section-number">5.3</span> Parameter übergeben</h2>
+<p>Funktionen können Eingabewerte (Parameter) erhalten:</p>
+<div id="c19806e4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung(name):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo"</span>, name <span class="op">+</span> <span class="st">"!"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>begruessung(<span class="st">"Alex"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>PYTHON 3.12 IST GROSSARTIG.
-python 3.12 ist großartig.
-Python 3.12 Ist Großartig. 
-
-MIT IN KLAMMERN GESETZTEN WERTEN KLAPPT ES AUCH.</code></pre>
+<pre><code>Hallo Alex!</code></pre>
 </div>
 </div>
-<p>Für Objekte mit einem unpassenden Datentyp sind Methoden wie <code>.lower()</code> nicht verfügbar.</p>
-<div id="e7b8cecd" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">1</span>).upper())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="82b86764" class="cell" data-execution_count="6">
+</section>
+<section id="rückgabewerte-mit-return" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="rückgabewerte-mit-return"><span class="header-section-number">5.4</span> Rückgabewerte mit <code>return</code></h2>
+<p>Eine Funktion kann auch einen Wert <strong>zurückgeben</strong>:</p>
+<div id="7bb32242" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quadrat(zahl):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zahl <span class="op">*</span> zahl</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> quadrat(<span class="dv">5</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'int' object has no attribute 'upper'</code></pre>
+<pre><code>25</code></pre>
 </div>
 </div>
-<p>Methoden können verkettet und so nacheinander ausgeführt werden. In diesem Beispiel wird die Zeichenfolge ‘Katze’ klein geschrieben, dann die Häufigkeit des Buchstabens ‘k’ gezählt.</p>
-<div id="73cd44ac" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Katze'</span>.lower().count(<span class="st">'k'</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="beispiel-umrechnungen" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="beispiel-umrechnungen"><span class="header-section-number">5.5</span> Beispiel: Umrechnungen</h2>
+<section id="euro-zu-us-dollar" class="level3">
+<h3 class="anchored" data-anchor-id="euro-zu-us-dollar">Euro zu US-Dollar</h3>
+<div id="71f6e1cf" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> euro_zu_usd(betrag_euro):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    wechselkurs <span class="op">=</span> <span class="fl">1.09</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> betrag_euro <span class="op">*</span> wechselkurs</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"20 € sind"</span>, euro_zu_usd(<span class="dv">20</span>), <span class="st">"US-Dollar."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1</code></pre>
+<pre><code>20 € sind 21.8 US-Dollar.</code></pre>
 </div>
 </div>
-<p>Welche Methoden für ein Objekt verfügbar sind, kann mit der Funktion <code>dir(objekt)</code> bestimmt werden. Die Ausgabe der Funktion ist aber häufig sehr umfangreich. Um die relevanten Einträge auszuwählen, muss die Ausgabe gefiltert werden. Notwendig ist das aber nicht - Interessierte schauen in <a href="#nte-methods" class="quarto-xref">Beispiel&nbsp;<span>3.1</span></a>.</p>
-<div id="nte-methods" class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Beispiel&nbsp;3.1: Methoden eines Objekts bestimmen
+Aufgabe: Begrüßung mit Name
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Mit der Funktion <code>dir(objekt)</code> können die verfügbaren Methoden eines Objekts ausgegeben werden. Dabei werden jedoch auch die Attribute und die Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:</p>
-<div id="8a9314b0" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dir</span>(<span class="dv">1</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Erstellen Sie eine Funktion <code>begruesse(name)</code>, die den Namen in einem Begrüßungstext verwendet:</p>
+<pre class="text"><code>Hallo Fatima, schön dich zu sehen!</code></pre>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="f74b8029" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruesse(name):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo"</span>, name <span class="op">+</span> <span class="st">", schön dich zu sehen!"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>begruesse(<span class="st">"Fatima"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']</code></pre>
-</div>
-</div>
-<p>Um die Ausgabe auf Methoden einzugrenzen, kann folgende Funktion in Listenschreibweise verwendet werden:</p>
-<div id="2cf9f43f" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> <span class="bu">callable</span> (<span class="bu">getattr</span>(objekt, attr))]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attribute)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'from_bytes', 'to_bytes']</code></pre>
-</div>
-</div>
-<p>Mit doppelten Unterstrichen umschlossene Methoden sind für die Klasse definierte Methoden. Folgende Funktion entfernt Methoden mit doppelten Unterstrichen aus der Ausgabe:</p>
-<div id="f3255bbe" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(objekt, attr)) <span class="kw">and</span> <span class="kw">not</span> attr.startswith(<span class="st">'__'</span>))]</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attribute)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['as_integer_ratio', 'bit_length', 'conjugate', 'from_bytes', 'to_bytes']</code></pre>
-</div>
-</div>
-<p>Im Fall einer Ganzzahl können Methoden (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:</p>
-<div id="a0be3eda" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>).as_integer_ratio()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>(1, 1)</code></pre>
-</div>
-</div>
-<p>Die Methoden des Objekts ‘toller_text’:</p>
-<div id="76b25b2b" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>objekt <span class="op">=</span> toller_text</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>attribute <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(objekt) <span class="cf">if</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(objekt, attr)) <span class="kw">and</span> <span class="kw">not</span> attr.startswith(<span class="st">'__'</span>))]</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attribute)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']</code></pre>
+<pre><code>Hallo Fatima, schön dich zu sehen!</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="parameter" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="parameter"><span class="header-section-number">3.2</span> Parameter</h2>
-<p>Vielen Funktionen und Methoden können getrennt durch Kommata mehrere Parameter übergeben werden. Die Werte, die als Parameter übergeben werden, werden Argumente genannt (<a href="https://docs.python.org/3/faq/programming.html#faq-argument-vs-parameter">Python-Dokumentation</a>). <a href="https://docs.python.org/3/glossary.html#term-parameter">Parameter</a> steuern die Programmausführung. Die für die Funktion <code>print()</code> verfügbaren Parameter stehen in der <a href="https://docs.python.org/3/library/functions.html#print">Dokumentation der Funktion</a>:</p>
-<pre><code>print(*objects, sep=' ', end='\n', file=None, flush=False)</code></pre>
-<p><code>*objects</code>, <code>sep</code>, <code>end</code>, <code>file</code> und <code>flush</code> sind die Parameter der Funktion <code>print()</code>.</p>
-<ul>
-<li><p>Parameter ohne Gleichheitszeichen <code>=</code> müssen beim Funktions- bzw. Methodenaufruf übergeben werden. Parameter mit Gleichheitszeichen <code>=</code> können beim Aufruf übergeben werden, es handelt sich um optionale Parameter.</p></li>
-<li><p>Die Werte hinter dem Gleichheitszeichen zeigen die Standardwerte (default value) der Parameter an. Diese werden verwendet, wenn ein Argument nicht explizit beim Aufruf übergeben wird.</p></li>
-</ul>
-<div id="tip-standardwerte" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;3.2: Ausnahmen bei Standardwerten
+Aufgabe: Temperaturumrechnung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Schreiben Sie eine Funktion, die Celsius in Fahrenheit umrechnet:</p>
+<p>Formel: [ F = C + 32 ]</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Bei den in der Funktionsdefinition genannten Werten handelt es sich nicht immer um die tatsächlichen Standardwerte. Es empfiehlt sich deshalb, wenn eine Funktion verwendet wird, die Beschreibung der Parameter zu lesen.</p>
-<p>Einige Funktionen verwenden das Schlüsselwort <code>None</code> zur Kennzeichnung des Standardwerts. Der Wert <code>None</code> dient dabei als Platzhalter. Ein Beispiel ist die NumPy-Funktion <a href="https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html">numpy.loadtxt()</a>.</p>
-<pre><code>numpy.loadtxt(fname, dtype=&lt;class 'float'&gt;, comments='#', delimiter=None, converters=None, /
-              skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None, max_rows=None, /
-              *, quotechar=None, like=None)</code></pre>
-<ul>
-<li><p>Für den Parameter <code>delimiter</code> ist als Standardwert das Schlüsselwort <code>None</code> eingetragen. Wie der Funktionsbeschreibung zu entnehmen ist, ist der Standartwert tatsächlich das Leerzeichen: “The default is whitespace.”</p></li>
-<li><p>Auch der Parameter <code>usecols</code> hat den Standarwert <code>None</code>: “The default, None, results in all columns being read.”</p></li>
-</ul>
-<p>Ein weiteres Beispiel ist die Funktion <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv">pandas.read_csv()</a>. Einige Argumente haben den Standardwert <code>&lt;no_default&gt;</code>. (Im Folgenden werden nur ausgewählte Parameter gezeigt).</p>
-<pre><code>pandas.read_csv(sep=&lt;no_default&gt;, verbose=&lt;no_default&gt;)</code></pre>
-<p>Aus der Beschreibung können die tatsächlichen Standardwerte abgelesen werden:<br>
-sep : str, default ‘,’<br>
-verbose : bool, default False</p>
+<div id="afe0699e" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_zu_fahrenheit(c):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c <span class="op">*</span> <span class="fl">1.8</span> <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(celsius_zu_fahrenheit(<span class="dv">20</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>68.0</code></pre>
 </div>
 </div>
 </div>
-<ul>
-<li>Argumente können in Python entweder als positionales Argument übergeben werden Das heißt, Python erwartet Argumente in einer feststehenden Reihenfolge entsprechend der Parameter der Funktionsdefinition. Alternativ können Argumente als Schlüsselwort übergeben werden, die Zuordnung von Eingaben erfolgt über den Namen des Parameters. Standardmäßig können Argumente positional oder per Schlüsselwort übergeben werden. Abweichungen davon werden durch die Symbole <code>*</code> und <code>/</code> gekennzeichnet (siehe folgenden Tipp).</li>
-</ul>
-<div id="tip-sonderzeichen" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="parameter-mit-standardwerten" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="parameter-mit-standardwerten"><span class="header-section-number">5.6</span> Parameter mit Standardwerten</h2>
+<p>Sie können Parametern <strong>Standardwerte</strong> zuweisen. So kann die Funktion auch ohne Angabe eines Werts aufgerufen werden:</p>
+<div id="2dfdb0d4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung(name<span class="op">=</span><span class="st">"Gast"</span>):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo"</span>, name <span class="op">+</span> <span class="st">"!"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>begruessung()         <span class="co"># Hallo Gast!</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>begruessung(<span class="st">"Maria"</span>)  <span class="co"># Hallo Maria!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo Gast!
+Hallo Maria!</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;3.3: Positionale und Schlüsselwortargumente, *args und **kwargs
+<code>print()</code> vs.&nbsp;<code>return</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Die Symbole <code>*</code> und <code>/</code> zeigen an, welche Parameter positional und welche per Schlüsselwort übergeben werden können bzw. müssen.</p>
-<div class="border">
+<p>Diese beiden Begriffe werden oft verwechselt:</p>
 <table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Linke Seite</th>
-<th style="text-align: center;">Trennzeichen</th>
-<th style="text-align: center;">Rechte Seite</th>
+<th>Ausdruck</th>
+<th>Bedeutung</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">nur positionale Argumente</td>
-<td style="text-align: center;">/</td>
-<td style="text-align: center;">positionale oder Schlüsselwortargumente</td>
+<td><code>print()</code></td>
+<td>zeigt einen Text auf dem Bildschirm</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">positionale oder Schlüsselwortargumente</td>
-<td style="text-align: center;">*</td>
-<td style="text-align: center;">nur Schlüsselwortargumente</td>
+<td><code>return</code></td>
+<td>gibt einen Wert an den Aufrufer zurück</td>
 </tr>
 </tbody>
 </table>
-<p>(<a href="https://realpython.com/python-asterisk-and-slash-special-parameters/" class="uri">https://realpython.com/python-asterisk-and-slash-special-parameters/</a>)</p>
-</div>
-<p>&nbsp;</p>
-<p>Ein Beispiel für das Trennzeichen <code>*</code> ist die Funktion <code>glob</code> aus dem gleichnamigen Modul. Der Parameter <code>pathname</code> kann positional (an erster Stelle) oder als Schlüsselwort übergeben werden. Die übrigen Parameter müssen als Schlüsselwortargumente übergeben werden.</p>
-<pre><code>glob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)</code></pre>
-<p>Beide Steuerzeichen können innerhalb einer Funktionsdefinition vorkommen, allerdings nur in der Reihenfolge <code>/</code> und <code>*</code>. Im umgekehrten Fall wäre es unmöglich, Argumente zu übergeben. Ein Beispiel ist die Funktion <code>sorted</code>. Der erste Parameter muss positional übergeben werden, die Parameter <code>key</code> und <code>reverse</code> müssen als Schlüsselworte übergeben werden.</p>
-<pre><code>sorted(iterable, /, *, key=None, reverse=False)¶</code></pre>
-<div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ausnahmen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Einige Funktionen weichen von der Systematik ab, beispielsweise die Funktionen <code>min()</code> und <code>max()</code>. Diese sind (u. a.) in der Form definiert:</p>
-<pre><code>min(iterable, *, key=None)
-max(iterable, *, key=None)</code></pre>
-<p>Beide Funktionen akzeptieren den Parameter <code>iterable</code> aber nicht als Schlüsselwort.</p>
-</div>
-</div>
-<p>Vielen Funktionen können beliebig viele Argumente positional oder als Schlüsselwort übergeben werden. Im Allgemeinen wird dies durch die Schlüsselwörter <code>*args</code> (positionale Argumente) und <code>**kwargs</code> (key word arguments, Schlüsselwortargumente) angezeigt. Der Unterschied wird durch das eine bzw. die beiden Sternchen markiert, die Schlüsselwörter selbst sind austauschbar (wie bei der Funktion <code>print(*objects)</code>). Das Schlüsselwort <code>*args</code> entspricht zugleich dem Symbol <code>*</code> in der Funktionsdefinition, d.&nbsp;h. rechts davon dürfen nur Schlüsselwortargumente stehen. Weitere Informationen dazu finden Sie <a href="https://book.pythontips.com/en/latest/args_and_kwargs.html">hier</a>.</p>
-</div>
-</div>
-</div>
-<p>In der Funktionsdefinition von <code>print()</code> ist <code>*objects</code> also ein positionaler Parameter (dieser steht immer an erster Stelle), der keinen Standardwert hat und dem beliebig viele Argumente übergeben werden können (n Eingaben stehen an den ersten n-Stellen). Die weiteren Parameter der Funktion <code>print()</code> sind optional und müssen als Schlüsselwort übergeben werden.</p>
-</section>
-<section id="aufgaben-funktionen" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="aufgaben-funktionen"><span class="header-section-number">3.3</span> Aufgaben Funktionen</h2>
-<ol type="1">
-<li><p>Richtig oder falsch: Methoden stehen abhängig vom Datentyp eines Werts oder eines Objekts zur Verfügung.</p></li>
-<li><p>Geben Sie die drei Werte 1, 2 und 3 mit <code>print()</code> aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:</p></li>
-</ol>
-<div id="51ecd631" class="cell" data-execution_count="13">
+<p>Beispiel:</p>
+<div id="ecacc135" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verdoppeln(x):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausgabe sichtbar machen</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(verdoppeln(<span class="dv">5</span>))  <span class="co"># Ausgabe: 10</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>1_x_2_x_3</code></pre>
+<pre><code>10</code></pre>
 </div>
 </div>
-<ol start="3" type="1">
-<li>Schlagen Sie in der Dokumentation die Funktion <a href="https://docs.python.org/3/library/functions.html#bool">bool()</a> nach.</li>
-</ol>
-<ul>
-<li><p>Welche Parameter nimmt die Funktion entgegen und welche davon sind optional?</p></li>
-<li><p>Welche Argumente werden positional und welche als Schlüsselübergeben? Ist die Art der Übergabe wählbar oder festgelegt?</p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lösungen
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Aufgabe 1: richtig</p>
-<p>Aufgabe 2</p>
-<div id="48b77af4" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, sep <span class="op">=</span> <span class="st">"_x_"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Aufgabe 3: Die Funktion bool() hat ein optionales Argument object mit dem Standardwert False. Das Argument muss positional übergeben werden.</p>
 </div>
 </div>
 </div>
@@ -996,13 +884,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../skript/datentypen.html" class="pagination-link" aria-label="Einführung: Datentypen verstehen">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung: Datentypen verstehen</span></span>
+      <a href="../skript/listen_iterationen.html" class="pagination-link" aria-label="Mehrere Werte speichern">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mehrere Werte speichern</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../skript/flusskontrolle.html" class="pagination-link" aria-label="Einführung: Entscheidungen und Wiederholungen">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung: Entscheidungen und Wiederholungen</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../skript/lesen_schreiben.html" class="pagination-link" aria-label="Arbeiten mit Dateien">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Arbeiten mit Dateien</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

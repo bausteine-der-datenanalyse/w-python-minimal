@@ -32,485 +32,431 @@
   {
     "objectID": "skript/einleitung.html",
     "href": "skript/einleitung.html",
-    "title": "1  Einleitung: Datenanalyse mit Python",
+    "title": "1  Einführung",
     "section": "",
     "text": "2 Willkommen bei Python!\nPython ist eine moderne Programmiersprache, die sich besonders gut für Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur Webentwicklung.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
   },
   {
     "objectID": "skript/einleitung.html#lernziele-dieses-kapitels",
     "href": "skript/einleitung.html#lernziele-dieses-kapitels",
-    "title": "1  Einleitung: Datenanalyse mit Python",
+    "title": "1  Einführung",
     "section": "2.1 Lernziele dieses Kapitels",
     "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - einfache Python-Programme schreiben, - Text auf dem Bildschirm ausgeben, - erste Variablen definieren und verwenden.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
   },
   {
     "objectID": "skript/einleitung.html#ihr-erstes-programm",
     "href": "skript/einleitung.html#ihr-erstes-programm",
-    "title": "1  Einleitung: Datenanalyse mit Python",
+    "title": "1  Einführung",
     "section": "2.2 Ihr erstes Programm",
-    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl print(...):\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print(...) ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hello World!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
+    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl print():\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print() ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hello World!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
   },
   {
     "objectID": "skript/einleitung.html#variablen-namen-für-werte",
     "href": "skript/einleitung.html#variablen-namen-für-werte",
-    "title": "1  Einleitung: Datenanalyse mit Python",
+    "title": "1  Einführung",
     "section": "2.3 Variablen – Namen für Werte",
-    "text": "2.3 Variablen – Namen für Werte\nVariablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.\n\nname = \"Frau Müller\"\nalter = 32\n\nSie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:\n\nprint(name + \" ist \" + str(alter) + \" Jahre alt.\")\n\nFrau Müller ist 32 Jahre alt.\n\n\nZu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion ‘str()’ die Zahl in Text umwandeln.\n\n\n\n\n\n\n✏️ Aufgabe: Begrüßung mit Alter\n\n\n\n\n\nSchreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:\nHallo Frau Müller!\nTipp: In Python können Sie Texte mit + zusammenfügen. Denken Sie daran, dass Strings in Anführungszeichen stehen müssen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nmein_name = \"Ihr Name hier\"\nprint(\"Hallo \" + mein_name + \"!\")\n\nHallo Ihr Name hier!\n\n\n\n\n\nErweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:\nHallo Frau Müller!\nSie sind 32 Jahre alt.\nTipp: Verwenden Sie print(...) mehrmals oder fügen Sie Texte zusammen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nname = \"Frau Müller\"\nalter = 32\n\nprint(\"Hallo \" + name + \"!\")\nprint(\"Sie sind \" + str(alter) + \" Jahre alt.\")\n\nHallo Frau Müller!\nSie sind 32 Jahre alt.",
+    "text": "2.3 Variablen – Namen für Werte\nVariablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.\n\nname = \"Frau Müller\"\nalter = 32\n\nSie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:\n\nprint(name + \" ist \" + str(alter) + \" Jahre alt.\")\n\nFrau Müller ist 32 Jahre alt.\n\n\nZu beachten ist hier, dass sie versuchen sowohl eine Zahl, als auch Text auszugeben. Daher müssen wir mit der Funktion ‘str()’ die Zahl in Text umwandeln.\n\n\n\n\n\n\n✏️ Aufgabe: Begrüßung mit Alter\n\n\n\n\n\nSchreiben Sie ein Programm, das Sie mit Ihrem Namen begrüßt:\nHallo Frau Müller!\nTipp: In Python können Sie Texte mit + zusammenfügen. Denken Sie daran, dass Strings in Anführungszeichen stehen müssen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nmein_name = \"Ihr Name hier\"\nprint(\"Hallo \" + mein_name + \"!\")\n\nHallo Ihr Name hier!\n\n\n\n\n\nErweitern Sie Ihr Programm so, dass es eine Begrüßung inklusive Alter ausgibt:\nHallo Frau Müller!\nSie sind 32 Jahre alt.\nTipp: Verwenden Sie print() mehrmals oder fügen Sie Texte zusammen.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nname = \"Frau Müller\"\nalter = 32\n\nprint(\"Hallo \" + name + \"!\")\nprint(\"Sie sind \" + str(alter) + \" Jahre alt.\")\n\nHallo Frau Müller!\nSie sind 32 Jahre alt.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einleitung: Datenanalyse mit Python</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html",
     "href": "skript/datentypen.html",
-    "title": "2  Einführung: Datentypen verstehen",
+    "title": "2  Datentypen verstehen",
     "section": "",
-    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - die wichtigsten Datentypen unterscheiden, - mit Zahlen und Texten rechnen bzw. arbeiten, - einfache Berechnungen und Ausgaben erstellen.",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie:",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "href": "skript/datentypen.html#lernziele-dieses-kapitels",
+    "title": "2  Datentypen verstehen",
+    "section": "",
+    "text": "die wichtigsten Datentypen unterscheiden,\nmit Zahlen und Texten rechnen bzw. arbeiten,\neinfache Berechnungen und Ausgaben erstellen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#einleitung",
     "href": "skript/datentypen.html#einleitung",
-    "title": "2  Einführung: Datentypen verstehen",
+    "title": "2  Datentypen verstehen",
     "section": "2.2 Einleitung",
     "text": "2.2 Einleitung\nIn Python gibt es verschiedene Datentypen. Diese beschreiben, welche Art von Daten Sie in Variablen speichern. Das ist wichtig, weil viele Operationen – wie zum Beispiel + – je nach Datentyp etwas anderes bedeuten:\n\n+ bei Zahlen bedeutet Addition,\n+ bei Text bedeutet Zusammenfügen (Konkatenation).\n\nBevor wir also mit komplexeren Programmen arbeiten, sollten wir verstehen, welche Datentypen es gibt und wie man mit ihnen umgeht.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#die-wichtigsten-datentypen",
     "href": "skript/datentypen.html#die-wichtigsten-datentypen",
-    "title": "2  Einführung: Datentypen verstehen",
+    "title": "2  Datentypen verstehen",
     "section": "2.3 Die wichtigsten Datentypen",
-    "text": "2.3 Die wichtigsten Datentypen\nHier sind die grundlegenden Datentypen in Python:\n\n\n\nTyp\nBeispiel\nBedeutung\n\n\n\n\nint\n10\nGanze Zahl\n\n\nfloat\n3.14\nKommazahl\n\n\nstr\n\"Hallo\"\nText (String)\n\n\nbool\nTrue, False\nWahrheitswert (Ja/Nein)\n\n\n\nSie können den Typ einer Variable mit der Funktion type(...) herausfinden:\n\nwert = 42\nprint(type(wert))  # Ausgabe: &lt;class 'int'&gt;\n\n&lt;class 'int'&gt;",
+    "text": "2.3 Die wichtigsten Datentypen\nHier sind die grundlegenden Datentypen in Python:\n\n\n\nTyp\nBeispiel\nBedeutung\n\n\n\n\nint\n10\nGanze Zahl\n\n\nfloat\n3.14\nKommazahl\n\n\nstr\n\"Hallo\"\nText (String)\n\n\nbool\nTrue, False\nWahrheitswert (Ja/Nein)\n\n\n\nSie können den Typ einer Variable mit der Funktion type() herausfinden:\n\nwert = 42\nprint(type(wert))  # Ausgabe: &lt;class 'int'&gt;\n\n&lt;class 'int'&gt;",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
     "href": "skript/datentypen.html#unterschiede-zwischen-int-und-float",
-    "title": "2  Einführung: Datentypen verstehen",
-    "section": "2.4 🔍 Unterschiede zwischen int und float",
-    "text": "2.4 🔍 Unterschiede zwischen int und float\nIn Python unterscheidet man zwischen ganzen Zahlen (int) und Kommazahlen (float):\n\nint steht für „integer“ – also ganze Zahlen wie 1, 0, -10\nfloat steht für „floating point number“ – also Zahlen mit Dezimalstellen wie 3.14, 0.5, -2.0\n\n\na = 10       # int\nb = 2.5      # float\n\nprint(\"a:\", a, \"| Typ:\", type(a))\nprint(\"b:\", b, \"| Typ:\", type(b))\n\na: 10 | Typ: &lt;class 'int'&gt;\nb: 2.5 | Typ: &lt;class 'float'&gt;\n\n\n💡 Die Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.",
+    "title": "2  Datentypen verstehen",
+    "section": "2.4 Unterschiede zwischen int und float",
+    "text": "2.4 Unterschiede zwischen int und float\nIn Python unterscheidet man zwischen ganzen Zahlen (int) und Kommazahlen (float):\n\nint steht für „integer“ – also ganze Zahlen wie 1, 0, -10\nfloat steht für „floating point number“ – also Zahlen mit Dezimalstellen wie 3.14, 0.5, -2.0\n\n\na = 10       # int\nb = 2.5      # float\n\nprint(\"a:\", a, \"| Typ:\", type(a))\nprint(\"b:\", b, \"| Typ:\", type(b))\n\na: 10 | Typ: &lt;class 'int'&gt;\nb: 2.5 | Typ: &lt;class 'float'&gt;\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nDie Unterscheidung ist wichtig: Manche Rechenoperationen verhalten sich je nach Datentyp leicht unterschiedlich.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#was-sind-booleans-bool",
     "href": "skript/datentypen.html#was-sind-booleans-bool",
-    "title": "2  Einführung: Datentypen verstehen",
-    "section": "2.5 🔍 Was sind Booleans (bool)?",
-    "text": "2.5 🔍 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 4 genauer kennenlernen.",
+    "title": "2  Datentypen verstehen",
+    "section": "2.5 Was sind Booleans (bool)?",
+    "text": "2.5 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 4 genauer kennenlernen.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#rechnen-mit-zahlen",
     "href": "skript/datentypen.html#rechnen-mit-zahlen",
-    "title": "2  Einführung: Datentypen verstehen",
+    "title": "2  Datentypen verstehen",
     "section": "2.6 Rechnen mit Zahlen",
-    "text": "2.6 Rechnen mit Zahlen\nPython kann wie ein Taschenrechner verwendet werden:\n\n\n\nOperator\nBeschreibung\n\n\n\n\n+, -\nAddition / Subtraktion\n\n\n*, /\nMultiplikation / Division\n\n\n//, %\nGanzzahlige Division / Rest\n\n\n**\nPotenzieren\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraktion:\", a - b)\nprint(\"Multiplikation:\", a * b)\nprint(\"Potenzieren\", a**b)\nprint(\"Division:\", a / b)\nprint(\"Ganzzahlige Division:\", a // b)\nprint(\"Division mit Rest:\", a % b)\n\nAddition: 13\nSubtraktion: 7\nMultiplikation: 30\nPotenzieren 1000\nDivision: 3.3333333333333335\nGanzzahlige Division: 3\nDivision mit Rest: 1\n\n\n💡 // bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es auch %. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.",
+    "text": "2.6 Rechnen mit Zahlen\nPython kann wie ein Taschenrechner verwendet werden:\n\n\n\nOperator\nBeschreibung\n\n\n\n\n+, -\nAddition / Subtraktion\n\n\n*, /\nMultiplikation / Division\n\n\n//, %\nGanzzahlige Division / Rest\n\n\n**\nPotenzieren\n\n\n\n\na = 10\nb = 3\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraktion:\", a - b)\nprint(\"Multiplikation:\", a * b)\nprint(\"Potenzieren\", a**b)\nprint(\"Division:\", a / b)\nprint(\"Ganzzahlige Division:\", a // b)\nprint(\"Division mit Rest:\", a % b)\n\nAddition: 13\nSubtraktion: 7\nMultiplikation: 30\nPotenzieren 1000\nDivision: 3.3333333333333335\nGanzzahlige Division: 3\nDivision mit Rest: 1\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n// bedeutet: Ganzzahldivision, das Ergebnis wird abgerundet. Alternativ gibt es auch %. Hier wird eine Ganzzahldivision durchgeführt und der Rest ausgegeben.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#arbeiten-mit-text",
     "href": "skript/datentypen.html#arbeiten-mit-text",
-    "title": "2  Einführung: Datentypen verstehen",
+    "title": "2  Datentypen verstehen",
     "section": "2.7 Arbeiten mit Text",
     "text": "2.7 Arbeiten mit Text\nTexte (Strings) können miteinander kombiniert werden:\n\nvorname = \"Anna\"\nnachname = \"Beispiel\"\nprint(\"Willkommen, \" + vorname + \" \" + nachname + \"!\")\n\nWillkommen, Anna Beispiel!\n\n\nWenn Sie Text und Zahlen kombinieren wollen, müssen Sie die Zahl in einen String umwandeln:\n\npunkte = 95\nprint(\"Sie haben \" + str(punkte) + \" Punkte erreicht.\")\n\nSie haben 95 Punkte erreicht.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/datentypen.html#umwandlung-von-datentypen-typecasting",
     "href": "skript/datentypen.html#umwandlung-von-datentypen-typecasting",
-    "title": "2  Einführung: Datentypen verstehen",
-    "section": "2.8 🔁 Umwandlung von Datentypen (Typecasting)",
-    "text": "2.8 🔁 Umwandlung von Datentypen (Typecasting)\nManchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.\nDas nennt man Typecasting. Hier sind die wichtigsten Funktionen dafür:\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nstr(...)\nZahl → Text\nstr(42) → \"42\"\n\n\nint(...)\nText/Zahl → ganze Zahl\nint(\"10\") → 10\n\n\nfloat(...)\nText/Zahl → Kommazahl\nfloat(\"3.14\") → 3.14\n\n\n\n\n# Beispiel: Zahl als Text anzeigen\npunkte = 100\nprint(\"Sie haben \" + str(punkte) + \" Punkte.\")\n\n# Beispiel: String in Zahl umwandeln und berechnen\neingabe = \"3.5\"\nwert = float(eingabe) * 2\nprint(\"Doppelt so viel:\", wert)\n\nSie haben 100 Punkte.\nDoppelt so viel: 7.0\n\n\n💡 Achten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – int(\"abc\") führt zu einem Fehler.\n\n\n\n\n\n\n✏️ Aufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
+    "title": "2  Datentypen verstehen",
+    "section": "2.8 Umwandlung von Datentypen (Typecasting)",
+    "text": "2.8 Umwandlung von Datentypen (Typecasting)\nManchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.\nDas nennt man Typecasting. Hier sind die wichtigsten Funktionen dafür:\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nstr())\nZahl → Text\nstr(42) → \"42\"\n\n\nint()\nText/Zahl → ganze Zahl\nint(\"10\") → 10\n\n\nfloat()\nText/Zahl → Kommazahl\nfloat(\"3.14\") → 3.14\n\n\n\n\n# Beispiel: Zahl als Text anzeigen\npunkte = 100\nprint(\"Sie haben \" + str(punkte) + \" Punkte.\")\n\n# Beispiel: String in Zahl umwandeln und berechnen\neingabe = \"3.5\"\nwert = float(eingabe) * 2\nprint(\"Doppelt so viel:\", wert)\n\nSie haben 100 Punkte.\nDoppelt so viel: 7.0\n\n\nAchten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – int(\"abc\") führt zu einem Fehler.\n\n\n\n\n\n\nAufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Einführung: Datentypen verstehen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/funktionen.html",
-    "href": "skript/funktionen.html",
-    "title": "3  Funktionen: Grundlagen",
-    "section": "",
-    "text": "3.1 Funktionen und Methoden\nFunktionen sind Unterprogramme, die Programmanweisungen bündeln, damit Programmteile mehrfach verwendet werden können. Auf diese Weise kann ein Programm schneller geschrieben werden und ist auch leichter lesbar. Python bringt, wie Sie der Dokumentation entnehmen können, eine überschaubare Anzahl von grundlegenden Funktionen mit. In diesem Kapitel wird die allgemeine Verwendung der in Python enthaltenen Funktionen vermittelt.\nPython wird dynamisch weiterentwickelt: regelmäßig erscheinen neue Versionen mit neuen Eigenschaften. In diesem Kapitel wird deshalb mit einer Reihe von Tipps auch vermittelt, wie die Dokumentation von Python zu lesen ist. Dies erfolgt auch in Hinblick auf die Möglichkeit, Python umfangreich durch Module zu erweitern. So haben beispielsweise die Funktionen des Moduls Pandas nicht selten dutzende dokumentierte Parameter.\nIn Python gibt es zwei Arten von Funktionen: Funktionen und Methoden.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funktionen: Grundlagen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/funktionen.html#funktionen-und-methoden",
-    "href": "skript/funktionen.html#funktionen-und-methoden",
-    "title": "3  Funktionen: Grundlagen",
-    "section": "",
-    "text": "Funktionen\nFunktionen können Objekte unabhängig von ihrem Datentyp übergeben werden. Funktionen werden über ihren Funktionsnamen gefolgt von runden Klammern () aufgerufen. Ein Beispiel ist die Funktion print():\n\nvar_str = 'ABC'\nvar_int = 26\nvar_bool = True\n\nprint(\"Die Variable var_1 hat den Typ\", type(var_str))\nprint(\"Die Variable var_2 hat den Typ\", type(var_int))\nprint(\"Die Variable var_3 hat den Typ\", type(var_bool))\n\nDie Variable var_1 hat den Typ &lt;class 'str'&gt;\nDie Variable var_2 hat den Typ &lt;class 'int'&gt;\nDie Variable var_3 hat den Typ &lt;class 'bool'&gt;\n\n\nFunktionen müssen immer einen Wert zurückgeben. Wenn Funktionen keinen Wert zurückgeben können oder sollen, wird der Wert None zurückgegeben, der nicht existente Werte kennzeichnet.\n\nres = print( 15 )\nprint(res)\n\n15\nNone\n\n\nFunktionen können verschachtelt und so von innen nach außen nacheinander ausgeführt werden. In diesem Code-Beispiel wird zunächst die Summe zweier Zahlen und anschließend der Wahrheitswert des Ergebnisses gebildet. Dieser wird anschließend mit der Funktion print ausgegeben.\n\nprint(bool(sum([1, 2])))\n\nTrue\n\n\n\n\nMethoden\nMethoden sind eine Besonderheit objektorientierter Programmiersprachen. Im vorherigen Kapitel wurde erläutert, dass in Python Objekte zu einem bestimmten Typ bzw. zu einer Klasse gehören und abhängig von den in ihnen gespeicherten Werte einen passenden Datentyp erhalten. Methoden sind Funktionen, die zu einer bestimmten Klasse gehören und nur für Objekte dieser Klasse verfügbar sind. Methoden können auch für mehrere Klassen definiert sein. Methoden werden getrennt durch einen Punkt . hinter Objekten mit ihrem Namen aufgerufen: variable.methode bzw. (wert).methode. Beispielsweise sind .upper(), .lower() und .title für Zeichenfolgen definierte Methoden.\n\ntoller_text = \"Python 3.12 ist großartig.\"\n\nprint(toller_text.upper())\nprint(toller_text.lower())\nprint(toller_text.title(), \"\\n\")\n\nprint((\"Mit in Klammern gesetzten Werten klappt es auch.\").upper())\n\nPYTHON 3.12 IST GROSSARTIG.\npython 3.12 ist großartig.\nPython 3.12 Ist Großartig. \n\nMIT IN KLAMMERN GESETZTEN WERTEN KLAPPT ES AUCH.\n\n\nFür Objekte mit einem unpassenden Datentyp sind Methoden wie .lower() nicht verfügbar.\n\nprint((1).upper())\n\n\n\n'int' object has no attribute 'upper'\n\n\nMethoden können verkettet und so nacheinander ausgeführt werden. In diesem Beispiel wird die Zeichenfolge ‘Katze’ klein geschrieben, dann die Häufigkeit des Buchstabens ‘k’ gezählt.\n\nprint('Katze'.lower().count('k'))\n\n1\n\n\nWelche Methoden für ein Objekt verfügbar sind, kann mit der Funktion dir(objekt) bestimmt werden. Die Ausgabe der Funktion ist aber häufig sehr umfangreich. Um die relevanten Einträge auszuwählen, muss die Ausgabe gefiltert werden. Notwendig ist das aber nicht - Interessierte schauen in Beispiel 3.1.\n\n\n\n\n\n\nBeispiel 3.1: Methoden eines Objekts bestimmen\n\n\n\n\n\nMit der Funktion dir(objekt) können die verfügbaren Methoden eines Objekts ausgegeben werden. Dabei werden jedoch auch die Attribute und die Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:\n\nprint(dir(1))\n\n['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']\n\n\nUm die Ausgabe auf Methoden einzugrenzen, kann folgende Funktion in Listenschreibweise verwendet werden:\n\nobjekt = 1\n\nattribute = [attr for attr in dir(objekt) if callable (getattr(objekt, attr))]\nprint(attribute)\n\n['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'from_bytes', 'to_bytes']\n\n\nMit doppelten Unterstrichen umschlossene Methoden sind für die Klasse definierte Methoden. Folgende Funktion entfernt Methoden mit doppelten Unterstrichen aus der Ausgabe:\n\nobjekt = 1\n\nattribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]\nprint(attribute)\n\n['as_integer_ratio', 'bit_length', 'conjugate', 'from_bytes', 'to_bytes']\n\n\nIm Fall einer Ganzzahl können Methoden (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:\n\n(1).as_integer_ratio()\n\n(1, 1)\n\n\nDie Methoden des Objekts ‘toller_text’:\n\nobjekt = toller_text\n\nattribute = [attr for attr in dir(objekt) if (callable(getattr(objekt, attr)) and not attr.startswith('__'))]\nprint(attribute)\n\n['capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funktionen: Grundlagen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/funktionen.html#parameter",
-    "href": "skript/funktionen.html#parameter",
-    "title": "3  Funktionen: Grundlagen",
-    "section": "3.2 Parameter",
-    "text": "3.2 Parameter\nVielen Funktionen und Methoden können getrennt durch Kommata mehrere Parameter übergeben werden. Die Werte, die als Parameter übergeben werden, werden Argumente genannt (Python-Dokumentation). Parameter steuern die Programmausführung. Die für die Funktion print() verfügbaren Parameter stehen in der Dokumentation der Funktion:\nprint(*objects, sep=' ', end='\\n', file=None, flush=False)\n*objects, sep, end, file und flush sind die Parameter der Funktion print().\n\nParameter ohne Gleichheitszeichen = müssen beim Funktions- bzw. Methodenaufruf übergeben werden. Parameter mit Gleichheitszeichen = können beim Aufruf übergeben werden, es handelt sich um optionale Parameter.\nDie Werte hinter dem Gleichheitszeichen zeigen die Standardwerte (default value) der Parameter an. Diese werden verwendet, wenn ein Argument nicht explizit beim Aufruf übergeben wird.\n\n\n\n\n\n\n\nTipp 3.2: Ausnahmen bei Standardwerten\n\n\n\n\n\nBei den in der Funktionsdefinition genannten Werten handelt es sich nicht immer um die tatsächlichen Standardwerte. Es empfiehlt sich deshalb, wenn eine Funktion verwendet wird, die Beschreibung der Parameter zu lesen.\nEinige Funktionen verwenden das Schlüsselwort None zur Kennzeichnung des Standardwerts. Der Wert None dient dabei als Platzhalter. Ein Beispiel ist die NumPy-Funktion numpy.loadtxt().\nnumpy.loadtxt(fname, dtype=&lt;class 'float'&gt;, comments='#', delimiter=None, converters=None, /\n              skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None, max_rows=None, /\n              *, quotechar=None, like=None)\n\nFür den Parameter delimiter ist als Standardwert das Schlüsselwort None eingetragen. Wie der Funktionsbeschreibung zu entnehmen ist, ist der Standartwert tatsächlich das Leerzeichen: “The default is whitespace.”\nAuch der Parameter usecols hat den Standarwert None: “The default, None, results in all columns being read.”\n\nEin weiteres Beispiel ist die Funktion pandas.read_csv(). Einige Argumente haben den Standardwert &lt;no_default&gt;. (Im Folgenden werden nur ausgewählte Parameter gezeigt).\npandas.read_csv(sep=&lt;no_default&gt;, verbose=&lt;no_default&gt;)\nAus der Beschreibung können die tatsächlichen Standardwerte abgelesen werden:\nsep : str, default ‘,’\nverbose : bool, default False\n\n\n\n\nArgumente können in Python entweder als positionales Argument übergeben werden Das heißt, Python erwartet Argumente in einer feststehenden Reihenfolge entsprechend der Parameter der Funktionsdefinition. Alternativ können Argumente als Schlüsselwort übergeben werden, die Zuordnung von Eingaben erfolgt über den Namen des Parameters. Standardmäßig können Argumente positional oder per Schlüsselwort übergeben werden. Abweichungen davon werden durch die Symbole * und / gekennzeichnet (siehe folgenden Tipp).\n\n\n\n\n\n\n\nTipp 3.3: Positionale und Schlüsselwortargumente, *args und **kwargs\n\n\n\n\n\nDie Symbole * und / zeigen an, welche Parameter positional und welche per Schlüsselwort übergeben werden können bzw. müssen.\n\n\n\n\n\n\n\n\n\nLinke Seite\nTrennzeichen\nRechte Seite\n\n\n\n\nnur positionale Argumente\n/\npositionale oder Schlüsselwortargumente\n\n\npositionale oder Schlüsselwortargumente\n*\nnur Schlüsselwortargumente\n\n\n\n(https://realpython.com/python-asterisk-and-slash-special-parameters/)\n\n \nEin Beispiel für das Trennzeichen * ist die Funktion glob aus dem gleichnamigen Modul. Der Parameter pathname kann positional (an erster Stelle) oder als Schlüsselwort übergeben werden. Die übrigen Parameter müssen als Schlüsselwortargumente übergeben werden.\nglob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)\nBeide Steuerzeichen können innerhalb einer Funktionsdefinition vorkommen, allerdings nur in der Reihenfolge / und *. Im umgekehrten Fall wäre es unmöglich, Argumente zu übergeben. Ein Beispiel ist die Funktion sorted. Der erste Parameter muss positional übergeben werden, die Parameter key und reverse müssen als Schlüsselworte übergeben werden.\nsorted(iterable, /, *, key=None, reverse=False)¶\n\n\n\n\n\n\nAusnahmen\n\n\n\nEinige Funktionen weichen von der Systematik ab, beispielsweise die Funktionen min() und max(). Diese sind (u. a.) in der Form definiert:\nmin(iterable, *, key=None)\nmax(iterable, *, key=None)\nBeide Funktionen akzeptieren den Parameter iterable aber nicht als Schlüsselwort.\n\n\nVielen Funktionen können beliebig viele Argumente positional oder als Schlüsselwort übergeben werden. Im Allgemeinen wird dies durch die Schlüsselwörter *args (positionale Argumente) und **kwargs (key word arguments, Schlüsselwortargumente) angezeigt. Der Unterschied wird durch das eine bzw. die beiden Sternchen markiert, die Schlüsselwörter selbst sind austauschbar (wie bei der Funktion print(*objects)). Das Schlüsselwort *args entspricht zugleich dem Symbol * in der Funktionsdefinition, d. h. rechts davon dürfen nur Schlüsselwortargumente stehen. Weitere Informationen dazu finden Sie hier.\n\n\n\nIn der Funktionsdefinition von print() ist *objects also ein positionaler Parameter (dieser steht immer an erster Stelle), der keinen Standardwert hat und dem beliebig viele Argumente übergeben werden können (n Eingaben stehen an den ersten n-Stellen). Die weiteren Parameter der Funktion print() sind optional und müssen als Schlüsselwort übergeben werden.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funktionen: Grundlagen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/funktionen.html#aufgaben-funktionen",
-    "href": "skript/funktionen.html#aufgaben-funktionen",
-    "title": "3  Funktionen: Grundlagen",
-    "section": "3.3 Aufgaben Funktionen",
-    "text": "3.3 Aufgaben Funktionen\n\nRichtig oder falsch: Methoden stehen abhängig vom Datentyp eines Werts oder eines Objekts zur Verfügung.\nGeben Sie die drei Werte 1, 2 und 3 mit print() aus. Parametrisieren Sie die Funktion so, dass ihre Ausgabe wie folgt aussieht:\n\n\n\n1_x_2_x_3\n\n\n\nSchlagen Sie in der Dokumentation die Funktion bool() nach.\n\n\nWelche Parameter nimmt die Funktion entgegen und welche davon sind optional?\nWelche Argumente werden positional und welche als Schlüsselübergeben? Ist die Art der Übergabe wählbar oder festgelegt?\n\n\n\n\n\n\n\nLösungen\n\n\n\n\n\nAufgabe 1: richtig\nAufgabe 2\n\nprint(1, 2, 3, sep = \"_x_\")\n\nAufgabe 3: Die Funktion bool() hat ein optionales Argument object mit dem Standardwert False. Das Argument muss positional übergeben werden.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Funktionen: Grundlagen</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
   },
   {
     "objectID": "skript/flusskontrolle.html",
     "href": "skript/flusskontrolle.html",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
+    "title": "3  Entscheidungen und Wiederholungen",
     "section": "",
-<<<<<<< Updated upstream
-    "text": "4.1 Lernziele dieses Kapitels\nProgramme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.\nDafür gibt es zwei zentrale Elemente in Python:\nAm Ende dieses Kapitels können Sie: - Bedingungen formulieren und mit if, elif, else nutzen, - Vergleichsoperatoren verwenden (==, &lt;, !=, …), - Wiederholungen mit while und for umsetzen.",
-=======
-    "text": "Abzweigungen\nDie Flusskontrolle ermöglicht es, die Ausführung von Programmteilen zu steuern. Anweisungen können übersprungen oder mehrfach ausgeführt werden.\nAbzweigungen ermöglichen eine Fallunterscheidung, bei der abhängig von einer oder mehreren Bedingungen verschiedene Teile des Skripts ausgeführt werden.\nIn Python werden Abzweigungen mit dem Schlüsselwort if eingeleitet. Dieses wird von der Abzweigbedingung gefolgt und mit einem Doppelpunkt : abgeschlossen. Falls die Abzweigbedingung wahr ist, wird der eingerückte Anweisungsblock ausgeführt.\n# Beispiel: Zahl kleiner als ein Schwellwert\n\na = 7\nif a &lt; 10:\n    print( 'Die Zahl', a, 'ist kleiner als 10.')\n\nDie Zahl 7 ist kleiner als 10.\nEs ist auch möglich einen alternativen Anweisungsblock zu definieren, welcher ausgeführt wird, wenn die Bedingung falsch ist. Dieser wird mit dem else Schlüsselwort umgesetzt.\n# Beispiel: Zahl kleiner als ein Schwellwert mit alternativer Ausgabe\n\na = 13\nif a &lt; 10:\n    print( 'Die Zahl', a, 'ist kleiner als 10.')\nelse:\n    print( 'Die Zahl', a, 'ist nicht kleiner als 10.')\n\nDie Zahl 13 ist nicht kleiner als 10.\nEs können auch mehrere Bedingungen übergeben werden.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20\n\na = 1\nif a &lt; 20 and a &gt; 10:\n    print( 'Die Zahl', a, 'liegt zwischen 10 und 20.')\nelse:\n    print( 'Die Zahl', a, 'liegt nicht zwischen 10 und 20.')\n\nDie Zahl 1 liegt nicht zwischen 10 und 20.\nSchließlich können mehrere alternative Bedingungen geprüft werden. Dies ist zum einen durch das Verschachteln von Abzweigungen möglich.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit verschachtelten Abzweigungen\n\na = 12\nif a &gt; 10:\n    print( 'Die Zahl', a, 'ist größer als 10.' )\n    \n    if a &lt; 20:\n        print( 'Die Zahl', a, 'ist kleiner als 20.' )\n        print( 'Damit liegt die Zahl zwischen 10 und 20.')\n    else:\n        print( 'Die Zahl', a, 'ist größer als 20 und liegt nicht im gesuchten Wertebereich.' )\nelse:\n        print( 'Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )\n\nDie Zahl 12 ist größer als 10.\nDie Zahl 12 ist kleiner als 20.\nDamit liegt die Zahl zwischen 10 und 20.\nZum anderen ist dies mit dem Schlüsselwort elif möglich.\n# Beispiel: Zahl im Wertebereich zwischen 10 und 20 mit elif\n\na = 112\nif a &lt; 20 and a &gt; 10:\n  print('Die Zahl', a, 'liegt zwischen 10 und 20.')\nelif a &lt; 10:\n  print('Die Zahl', a, 'ist kleiner als 10 und liegt nicht im gesuchten Wertebereich.' )\nelif a &gt; 20 and a &lt;= 100:\n  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 100.')\nelif a &gt; 20 and a &lt;= 1000:\n  print('Die Zahl', a, 'ist größer als 20, aber nicht größer als 1000.')\nelse:\n  print('Die Zahl', a, 'liegt nicht zwischen 10 und 20 und ist größer als 1000.')\n\nDie Zahl 112 ist größer als 20, aber nicht größer als 1000.",
->>>>>>> Stashed changes
+    "text": "3.1 Lernziele dieses Kapitels\nProgramme müssen oft Entscheidungen treffen – zum Beispiel abhängig von einer Benutzereingabe oder einem bestimmten Wert. Ebenso müssen bestimmte Aktionen mehrfach durchgeführt werden.\nDafür gibt es zwei zentrale Elemente in Python:\nAm Ende dieses Kapitels können Sie:",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/flusskontrolle.html#lernziele-dieses-kapitels",
+    "href": "skript/flusskontrolle.html#lernziele-dieses-kapitels",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "",
+    "text": "Bedingungen formulieren und mit if, elif, else nutzen,\nVergleichsoperatoren verwenden (==, &lt;, !=, …),\nWiederholungen mit while und for umsetzen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
     "objectID": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
     "href": "skript/flusskontrolle.html#bedingungen-mit-if-elif-else",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
-    "section": "4.2 Bedingungen mit if, elif, else",
-    "text": "4.2 Bedingungen mit if, elif, else\n\nalter = 17\n\nif alter &gt;= 18:\n    print(\"Sie sind volljährig.\")\nelse:\n    print(\"Sie sind minderjährig.\")\n\nSie sind minderjährig.\n\n\nMehrere Fälle unterscheiden:\n\nnote = 2.3\n\nif note &lt;= 1.5:\n    print(\"Sehr gut\")\nelif note &lt;= 2.5:\n    print(\"Gut\")\nelif note &lt;= 3.5:\n    print(\"Befriedigend\")\nelse:\n    print(\"Ausreichend oder schlechter\")\n\nGut",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.2 Bedingungen mit if, elif, else",
+    "text": "3.2 Bedingungen mit if, elif, else\n\nalter = 17\n\nif alter &gt;= 18:\n    print(\"Sie sind volljährig.\")\nelse:\n    print(\"Sie sind minderjährig.\")\n\nSie sind minderjährig.\n\n\nMehrere Fälle unterscheiden:\n\nnote = 2.3\n\nif note &lt;= 1.5:\n    print(\"Sehr gut\")\nelif note &lt;= 2.5:\n    print(\"Gut\")\nelif note &lt;= 3.5:\n    print(\"Befriedigend\")\nelse:\n    print(\"Ausreichend oder schlechter\")\n\nGut",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
     "objectID": "skript/flusskontrolle.html#vergleichsoperatoren",
     "href": "skript/flusskontrolle.html#vergleichsoperatoren",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
-    "section": "4.3 Vergleichsoperatoren",
-    "text": "4.3 Vergleichsoperatoren\n\n\n\nAusdruck\nBedeutung\n\n\n\n\na == b\ngleich\n\n\na != b\nungleich\n\n\na &lt; b\nkleiner als\n\n\na &gt; b\ngrößer als\n\n\na &lt;= b\nkleiner oder gleich\n\n\na &gt;= b\ngrößer oder gleich",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.3 Vergleichsoperatoren",
+    "text": "3.3 Vergleichsoperatoren\n\n\n\nAusdruck\nBedeutung\n\n\n\n\na == b\ngleich\n\n\na != b\nungleich\n\n\na &lt; b\nkleiner als\n\n\na &gt; b\ngrößer als\n\n\na &lt;= b\nkleiner oder gleich\n\n\na &gt;= b\ngrößer oder gleich",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
     "objectID": "skript/flusskontrolle.html#wiederholungen-mit-while",
     "href": "skript/flusskontrolle.html#wiederholungen-mit-while",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
-    "section": "4.4 Wiederholungen mit while",
-    "text": "4.4 Wiederholungen mit while\n\nzähler = 0\n\nwhile zähler &lt; 5:\n    print(\"Zähler ist:\", zähler)\n    zähler += 1\n\nZähler ist: 0\nZähler ist: 1\nZähler ist: 2\nZähler ist: 3\nZähler ist: 4\n\n\n💡 Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.4 Wiederholungen mit while",
+    "text": "3.4 Wiederholungen mit while\n\nzähler = 0\n\nwhile zähler &lt; 5:\n    print(\"Zähler ist:\", zähler)\n    zähler += 1\n\nZähler ist: 0\nZähler ist: 1\nZähler ist: 2\nZähler ist: 3\nZähler ist: 4\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nAchten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
-    "objectID": "skript/flusskontrolle.html#schleifen-mit-for-und-range...",
-    "href": "skript/flusskontrolle.html#schleifen-mit-for-und-range...",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
-    "section": "4.5 Schleifen mit for und range(...)",
-    "text": "4.5 Schleifen mit for und range(...)\nWenn Sie eine Schleife genau eine bestimmte Anzahl von Malen durchlaufen möchten, nutzen Sie for mit range(...):\n\nfor i in range(5):\n    print(\"Durchlauf:\", i)\n\nDurchlauf: 0\nDurchlauf: 1\nDurchlauf: 2\nDurchlauf: 3\nDurchlauf: 4\n\n\nStart- und Endwert festlegen:\n\nfor i in range(1, 6):\n    print(i)\n\n1\n2\n3\n4\n5",
+    "objectID": "skript/flusskontrolle.html#schleifen-mit-for-und-range",
+    "href": "skript/flusskontrolle.html#schleifen-mit-for-und-range",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.5 Schleifen mit for und range()",
+    "text": "3.5 Schleifen mit for und range()\nWenn Sie eine Schleife genau eine bestimmte Anzahl von Malen durchlaufen möchten, nutzen Sie for mit range():\n\nfor i in range(5):\n    print(\"Durchlauf:\", i)\n\nDurchlauf: 0\nDurchlauf: 1\nDurchlauf: 2\nDurchlauf: 3\nDurchlauf: 4\n\n\nStart- und Endwert festlegen:\n\nfor i in range(1, 6):\n    print(i)\n\n1\n2\n3\n4\n5",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
-    "objectID": "skript/flusskontrolle.html#was-macht-range...-genau",
-    "href": "skript/flusskontrolle.html#was-macht-range...-genau",
-    "title": "4  Einführung: Entscheidungen und Wiederholungen",
-    "section": "4.6 Was macht range(...) genau?",
-    "text": "4.6 Was macht range(...) genau?\nDie Funktion range(...) erzeugt eine Abfolge von Zahlen, über die Sie mit einer for-Schleife iterieren können.\n\n🔢 Varianten:\nrange(5)\n➡️ ergibt: 0, 1, 2, 3, 4 (startet bei 0, endet vor 5)\nrange(2, 6)\n➡️ ergibt: 2, 3, 4, 5 (startet bei 2, endet vor 6)\nrange(1, 10, 2)\n➡️ ergibt: 1, 3, 5, 7, 9 (Schrittweite = 2)\n💡 range(...) erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.\n\n\n\n\n\n\n✏️ Aufgabe: Zähle von 1 bis 10\n\n\n\n\n\nNutzen Sie eine for-Schleife, um die Zahlen von 1 bis 10 auszugeben.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor i in range(1, 11):\n    print(i)\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n✏️ Aufgabe: Gerade Zahlen ausgeben\n\n\n\n\n\nGeben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn zahl % 2 == 0.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor zahl in range(0, 21):\n    if zahl % 2 == 0:\n        print(zahl)\n\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
+    "objectID": "skript/flusskontrolle.html#was-macht-range-genau",
+    "href": "skript/flusskontrolle.html#was-macht-range-genau",
+    "title": "3  Entscheidungen und Wiederholungen",
+    "section": "3.6 Was macht range() genau?",
+    "text": "3.6 Was macht range() genau?\nDie Funktion range() erzeugt eine Abfolge von Zahlen, über die Sie mit einer for-Schleife iterieren können.\n\nVarianten:\nrange(5)\n➡️ ergibt: 0, 1, 2, 3, 4 (startet bei 0, endet vor 5)\nrange(2, 6)\n➡️ ergibt: 2, 3, 4, 5 (startet bei 2, endet vor 6)\nrange(1, 10, 2)\n➡️ ergibt: 1, 3, 5, 7, 9 (Schrittweite = 2)\nrange() erzeugt keine echte Liste, sondern ein sogenanntes „range-Objekt“, das wie eine Liste verwendet werden kann.\n\n\n\n\n\n\n✏️ Aufgabe: Zähle von 1 bis 10\n\n\n\n\n\nNutzen Sie eine for-Schleife, um die Zahlen von 1 bis 10 auszugeben.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor i in range(1, 11):\n    print(i)\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAufgabe: Gerade Zahlen ausgeben\n\n\n\n\n\nGeben Sie alle geraden Zahlen von 0 bis 20 aus. Tipp: Eine Zahl ist gerade, wenn zahl % 2 == 0.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nfor zahl in range(0, 21):\n    if zahl % 2 == 0:\n        print(zahl)\n\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Einführung: Entscheidungen und Wiederholungen</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Entscheidungen und Wiederholungen</span>"
     ]
   },
   {
-    "objectID": "skript/sammeltypen.html",
-    "href": "skript/sammeltypen.html",
-    "title": "5  Sammeltypen",
+    "objectID": "skript/listen_iterationen.html",
+    "href": "skript/listen_iterationen.html",
+    "title": "4  Mehrere Werte speichern",
     "section": "",
-    "text": "5.1 Listen\nSammeltypen werden benutzt, um mehrere Werte in einer Variablen zu speichern und zu verarbeiten. In Python gibt es vier Sammeltypen, die jeweils eine eigene Klasse sind:\nIn diesem Kapitel werden die vier Sammeltypen zunächst kurz vorgestellt. Anschließend wird die Arbeitsweise insbesondere mit Listen erläutert.\nWie alle Typen in Python werden Listen durch Zuweisung erstellt. Bei der Definition einer Liste werden die Elemente durch eckige Klammern [] eingeklammert und mit Kommata , getrennt. Listen können mit dem +-Operator verkettet werden. * verkettet eine Liste n-mal.\ntext_variable = 'abc'\n\nliste1 = [1, 'xy', True, text_variable]\nprint(liste1)\n\n# Listen können auch Listen enthalten\nliste2 = [None, liste1]\nprint(liste2)\n\n# Listen können mit + und * verkettet werden\nprint(liste1 + liste2)\nprint(liste1 * 2)\n\n[1, 'xy', True, 'abc']\n[None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc', 1, 'xy', True, 'abc']\nEine leere Liste kann durch Zuweisung von [] erstellt werden.\nleere_liste = []\nprint(leere_liste)\n\n[]",
+    "text": "4.1 Was ist eine Liste?\nBisher haben Sie einzelne Werte in Variablen gespeichert. Doch was, wenn Sie eine ganze Reihe von Zahlen, Namen oder Werten auf einmal speichern möchten?\nDafür gibt es in Python Listen. In diesem Kapitel lernen Sie außerdem, wie man mit for-Schleifen über Listen iteriert.\nEine Liste ist eine geordnete Sammlung von Werten eines Datentyps.\nnamen = [\"Ali\", \"Bente\", \"Carlos\"]\nnoten = [1.7, 2.3, 1.3, 2.0]\nAuf Elemente greifen Sie mit eckigen Klammern zu:\nprint(namen[0])  # erstes Element\nprint(noten[-1]) # letztes Element\n\nAli\n2.0",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
     ]
   },
   {
-    "objectID": "skript/sammeltypen.html#listen",
-    "href": "skript/sammeltypen.html#listen",
-    "title": "5  Sammeltypen",
+    "objectID": "skript/listen_iterationen.html#teile-aus-listen-ausschneiden-slicing",
+    "href": "skript/listen_iterationen.html#teile-aus-listen-ausschneiden-slicing",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.2 Teile aus Listen ausschneiden – Slicing",
+    "text": "4.2 Teile aus Listen ausschneiden – Slicing\nMit dem sogenannten Slicing können Sie gezielt Ausschnitte aus einer Liste entnehmen. Dabei geben Sie an, wo der Ausschnitt beginnt und wo er endet (der Endwert wird nicht mehr mitgenommen):\n\nzahlen = [10, 20, 30, 40, 50, 60]\nprint(zahlen[1:4])  # Ausgabe: [20, 30, 40]\n\n[20, 30, 40]\n\n\n\nSyntax: liste[start:stop]\n\nstart: Index, bei dem das Slicing beginnt (inklusive)\nstop: Index, an dem es endet (exklusive)\nDer Startwert kann auch weggelassen werden: [:3] → erstes bis drittes Element\nEbenso der Endwert: [3:] → ab dem vierten Element bis zum Ende\nGanze Kopie: [:]\n\n\nprint(zahlen[:3])   # [10, 20, 30]\nprint(zahlen[3:])   # [40, 50, 60]\nprint(zahlen[:])    # vollständige Kopie\n\n[10, 20, 30]\n[40, 50, 60]\n[10, 20, 30, 40, 50, 60]\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nSie können auch mit negativen Indizes arbeiten (-1 ist das letzte Element):\n\nprint(zahlen[-3:])  # [40, 50, 60]\n\n[40, 50, 60]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#über-listen-iterieren",
+    "href": "skript/listen_iterationen.html#über-listen-iterieren",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.3 Über Listen iterieren",
+    "text": "4.3 Über Listen iterieren\nMit einer for-Schleife können Sie über jedes Element in einer Liste iterieren:\n\nnamen = [\"Ali\", \"Bente\", \"Carlos\"]\n\nfor name in namen:\n    print(\"Hallo\", name + \"!\")\n\nHallo Ali!\nHallo Bente!\nHallo Carlos!",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#erweiterung-bedingte-ausgaben",
+    "href": "skript/listen_iterationen.html#erweiterung-bedingte-ausgaben",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.4 Erweiterung: Bedingte Ausgaben",
+    "text": "4.4 Erweiterung: Bedingte Ausgaben\nSie können in der Schleife mit if filtern:\n\ntemperaturen = [14.2, 17.5, 19.0, 21.3, 18.4]\n\nfor t in temperaturen:\n    if t &gt; 18:\n        print(t, \"ist ein warmer Tag\")\n\n19.0 ist ein warmer Tag\n21.3 ist ein warmer Tag\n18.4 ist ein warmer Tag",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#durchschnitt-berechnen",
+    "href": "skript/listen_iterationen.html#durchschnitt-berechnen",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.5 Durchschnitt berechnen",
+    "text": "4.5 Durchschnitt berechnen\nPython stellt nützliche Funktionen bereit, z. B. sum() und len():\n\nnoten = [1.7, 2.3, 1.3, 2.0]\n\ndurchschnitt = sum(noten) / len(noten)\nprint(\"Durchschnittsnote:\", round(durchschnitt, 2))\n\nDurchschnittsnote: 1.82",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#listen-erweitern-.append",
+    "href": "skript/listen_iterationen.html#listen-erweitern-.append",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.6 Listen erweitern: .append()",
+    "text": "4.6 Listen erweitern: .append()\nManchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte nachträglich hinzufügen:\n\nnamen = []\n\nnamen.append(\"Ali\")\nnamen.append(\"Bente\")\n\nprint(namen)\n\n['Ali', 'Bente']\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDie Methode .append()) hängt einen neuen Wert an das Ende der Liste.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#verschachtelte-schleifen",
+    "href": "skript/listen_iterationen.html#verschachtelte-schleifen",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.7 Verschachtelte Schleifen",
+    "text": "4.7 Verschachtelte Schleifen\nWenn Sie mit mehrdimensionalen Daten arbeiten – z. B. eine Tabelle mit mehreren Zeilen – können Sie Schleifen ineinander verschachteln:\n\nwochentage = [\"Mo\", \"Di\", \"Mi\"]\nstunden = [1, 2, 3]\n\nfor tag in wochentage:\n    for stunde in stunden:\n        print(f\"{tag}, Stunde {stunde}\")\n\nMo, Stunde 1\nMo, Stunde 2\nMo, Stunde 3\nDi, Stunde 1\nDi, Stunde 2\nDi, Stunde 3\nMi, Stunde 1\nMi, Stunde 2\nMi, Stunde 3\n\n\nDas ergibt:\nMo, Stunde 1\nMo, Stunde 2\nMo, Stunde 3\nDi, Stunde 1\n...",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/listen_iterationen.html#listen-sortieren",
+    "href": "skript/listen_iterationen.html#listen-sortieren",
+    "title": "4  Mehrere Werte speichern",
+    "section": "4.8 Listen sortieren",
+    "text": "4.8 Listen sortieren\nMit sorted() können Sie Listen alphabetisch oder numerisch sortieren:\n\nnamen = [\"Zoe\", \"Anna\", \"Ben\"]\nsortiert = sorted(namen)\n\nprint(sortiert)\n\n['Anna', 'Ben', 'Zoe']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nDie Original-Liste bleibt unverändert.\nWenn Sie die Liste direkt verändern möchten, geht das mit:\n\nnamen.sort()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html",
+    "href": "skript/funktionen.html",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
     "section": "",
-    "text": "Slicing: der Zugriffsoperator []\nDer Zugriff auf einzelne oder mehrere Elemente einer Liste (und andere Sammeltypen) erfolgt über den Zugriffsoperator []. Ein Ausschnitt aus einem Objekt wird Slice genannt, der Operator heißt deshalb auch Slice Operator.\n\nZugriff auf einzelne Elemente\nElemente werden über ihren Index, bei 0 beginnend, angesprochen.\n\nprint(liste1)\nprint(liste1[0])\nprint(liste1[3])\n\n[1, 'xy', True, 'abc']\n1\nabc\n\n\nAuf verschachtelte Listen kann mit zwei aufeinanderfolgenden Zugriffsoperatoren zugegriffen werden. Die Liste liste2 enthält an Indexposition 1 eine Liste mit 4 Elementen.\n\nprint(liste2)\nprint(liste2[1])\nprint(liste2[1][0], liste2[1][1], liste2[1][2], liste2[1][3])\n\n[None, [1, 'xy', True, 'abc']]\n[1, 'xy', True, 'abc']\n1 xy True abc\n\n\nMit negativen Indizes können Elemente vom Ende aus angesprochen werden. So entspricht z. B. die -1 dem letzten Element.\n\nprint(liste1)\nprint(liste1[-1], liste1[-3])\n\n[1, 'xy', True, 'abc']\nabc xy\n\n\n\n\nZugriff auf mehrere Elemente\nIndexbereiche können in der Form [start:stop:step] angesprochen werden. start ist das erste adressierte Element, stop das erste nicht mehr adressierte Element und step die Schrittweite.\n\n\n\n\nZugriffsoperator\nAusschnitt\n\n\n\n\nliste[start:stop]\nElemente von start bis stop - 1\n\n\nliste[:]\nAlle Elemente der Liste\n\n\nliste[start:]\nElemente von start bis zum Ende der Liste\n\n\nliste[:stop]\nElemente vom Anfang der Liste bis stop - 1\n\n\nliste[::3]\nAuswahl jedes dritten Elements\n\n\n\n \nNegative Werte für start, stop oder step bewirken eine Rückwärtsauswahl von Elementen.\n\n\n\n\n\n\n\nZugriffsoperator\nAusschnitt\n\n\n\n\nliste[-1]\ndas letzte Element der Liste\n\n\nliste[-2:]\ndie letzten beiden Elemente der Liste\n\n\nliste[:-2]\nalle bis auf die beiden letzten Elemente\n\n\nliste[::-1]\nalle Elemente in umgekehrter Reihenfolge\n\n\nliste[1::-1]\ndie ersten beiden Elemente in umgekehrter Reihenfolge\n\n\nliste[:-3:-1]\ndie letzten beiden Elemente in umgekehrter Reihenfolge\n\n\nliste[-3::-1]\nalle außer die letzten beiden Elemente in umgekehrter Reihenfolge\n\n\n\n \n(Beispiele von Greg Hewgill unter der Lizenz CC BY-SA 4.0 verfügbar auf stackoverflow. 2009)\n\n\n\nZeichenfolgen\nAuch aus Zeichenfolgen können mit dem Slice Operator Ausschnitte ausgewählt werden.\n\nprint('Ich bin ein string'[::2])\nprint('Hallo Welt'[0:6])\nprint('abc'[::-1])\n\nIhbnensrn\nHallo \ncba\n\n\n\n\n\nListenmethoden\nFür den Listentyp sind verschiedene Methoden definiert.\n\nElemente bestimmen\n\nlist.index(x, start, stop) gibt die Indexposition des ersten Elements x aus. Die optionalen Argumente start und stop erlauben es, den Suchbereich einzuschränken.\nlist.count(x) gibt die Häufigkeit von x in der Liste aus.\nlist.reverse() kehrt die Reihenfolge der Listenelemente um (die Liste wird dadurch verändert!).\nlist.sort(reverse = False) sortiert die Liste, mit dem optionalen Argument reverse = True absteigend (die Liste wird dadurch verändert!). Die Datentypen innerhalb der Liste müssen sortierbar sein (d. h. alle Elemente sind numerisch oder Zeichen).\n\n\nprint(liste1)\n\nliste1.reverse()\nprint(liste1)\n\n# True wird als 1 gezählt\nprint(\"True wird als 1 gezählt:\", liste1.index(1), liste1.count(1))\n\n[1, 'xy', True, 'abc']\n['abc', True, 'xy', 1]\nTrue wird als 1 gezählt: 1 2\n\n\n\n\nElemente einfügen\n\nlist.append(x) hängt ein einzelnes Element an das Ende der Liste an.\nlist.extend(sammeltyp) hängt alle mit sammeltyp übergebenen Elemente an das Ende der Liste an. Der Sammeltyp kann eine Liste, ein Tupel, eine Menge oder ein Dictionary sein.\nlist.insert(i, x) fügt an der Position i Element x ein.\n\n\nprint(liste1, \"\\n\")\n\nliste1.append('Hallo')\nliste1.extend(['Hallo', 'Welt!'])\nliste1.insert(2, '12345')\n\nprint(liste1)\n\n['abc', True, 'xy', 1] \n\n['abc', True, '12345', 'xy', 1, 'Hallo', 'Hallo', 'Welt!']\n\n\n\n\nElemente entfernen\n\nlist.remove(x) entfernt das erste Element x in der Liste und gibt einen ValueError zurück, wenn x nicht in der Liste enthalten ist.\nliste.pop(i) entfernt das Element an der Indexposition i. Wird kein Index angegeben, wird das letzte Element entfernt. Die Methode liste.pop(i) gibt die entfernten Elemente zurück.\nliste.clear() entfernt alle Elemente einer Liste.\n\n\nliste1.remove('Hallo')\nprint(liste1)\n\nliste1.pop(2)\n\n['abc', True, '12345', 'xy', 1, 'Hallo', 'Welt!']\n\n\n'12345'\n\n\n\n\nListen und Listenelemente kopieren\nIn Python enthalten Listen Daten nicht direkt, sondern bestehen aus Zeigern auf die Speicherorte der enthaltenen Elemente. Wird eine Liste durch Zuweisung einer anderen Liste angelegt, dann werden nicht die Elemente der Liste kopiert, sondern beide Listen greifen dann auf den selben Speicherort zu.\n\n# Kopieren durch Zuweisung\nliste1 = [1, 'xy', True, text_variable]\nprint(\"liste1:\", liste1, \"\\n\")\nliste2 = liste1\n\n## Ändern eines Elements in liste2\nliste2[0] = 'ABC'\nprint(\"Auch liste1 hat sich durch die Zuweisung in liste2 verändert:\", liste1, \"\\n\")\n\nliste1: [1, 'xy', True, 'abc'] \n\nAuch liste1 hat sich durch die Zuweisung in liste2 verändert: ['ABC', 'xy', True, 'abc'] \n\n\n\nUm eine Liste zu kopieren und ein neues Objekt im Speicher anzulegen, kann die Methode liste.copy() verwendet werden. Auch durch die Verwendung des Zugriffsoperators [:] wird eine neue Liste im Speicher angelegt.\n\n# Verwendung der Methode liste.copy()\nliste1 = [1, 'xy', True, text_variable]\nliste2 = liste1.copy()\n\n## Ändern eines Elements in liste2\nliste2[0] = 'ABC'\nprint(\"liste1 bleibt durch die Zuweisung in liste2 unverändert:\", liste1, \"\\n\")\n\n# Verwendung des Slice Operators\nliste1 = [1, 'xy', True, text_variable]\nliste2 = liste1[:]\n\n## Ändern eines Elements in liste2\nliste2[0] = 'ABC'\nprint(\"liste1 bleibt durch die Zuweisung in liste2 unverändert:\", liste1)\n\nliste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc'] \n\nliste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']\n\n\nDie Kopie von Listenelementen ist in dieser Hinsicht unproblematisch.\n\n# Verwendung des Slice Operators\nliste1 = [1, 'xy', True, text_variable]\nliste2 = liste1[0:2]\n\n# Ändern eines Elements in liste2\nliste2[0] = 'ABC'\nprint(\"liste1 bleibt durch die Zuweisung in liste2 unverändert:\", liste1)\n\nliste1 bleibt durch die Zuweisung in liste2 unverändert: [1, 'xy', True, 'abc']\n\n\nUm zu überprüfen, ob sich zwei Objekte den Speicherbereich teilen, kann die Objekt-ID mit der Funktion id() verglichen oder die Operatoren is bzw. is not verwendet werden, die die Funktion id() aufrufen.\n\nliste1 = [1, 'xy', True, text_variable]\nliste2 = liste1\n\nprint(\"ID liste1:\", id(liste1))\nprint(\"ID liste2:\", id(liste2))\nprint(\"ID liste1 gleich ID list2:\", liste1 is liste2)\n\nID liste1: 4355438848\nID liste2: 4355438848\nID liste1 gleich ID list2: True\n\n\n\n\n\n\n\n\nIdentität vs. Wertgleichheit\n\n\n\n\n\nDer Operator is prüft die Identität zweier Objekte und unterscheidet sich dadurch vom logischen Operator ==, der auf Wertgleichheit prüft. Da liste1 und liste2 die gleichen Elemente enthalten, liegen sowohl Identität und Wertgleichheit vor. Der Unterschied von Identität und Wertgleichheit kann anhand eines Werts verdeutlicht werden (Im Code-Beispiel wird eine Syntax-Warnung unterdrückt.).\n\n# Wertgleichheit\nprint(1 == 1.0)\nprint(liste1 == liste2, \"\\n\")\n\n# Identität\nprint(1 is 1.0)\nprint(liste1 is liste2)\n\nTrue\nTrue \n\nFalse\nTrue\n\n\n\n\n\n\n\n\nAufgaben Listen\n\nErstellen Sie eine Liste ‘wochentage’, die die sieben Tage der Woche enthält. Verwenden Sie den Slice-Operator, um eine neue Liste ‘wochenende’ mit den Tagen des Wochenendes zu erstellen. Entfernen Sie die Tage des Wochenendes aus der Liste ‘wochentage’.\n4-Tage-Woche: Verwenden Sie Listenmethoden, um den Freitag aus der Liste ‘wochentage’ zu entfernen und der Liste ‘wochenende’ vor dem Samstag hinzuzufügen.\nBestimmen Sie in der Liste zahlen = [34, 12, 0, 67, 23] die Position des Werts 0. Entfernen Sie den Wert aus der Liste und geben Sie die Liste aufsteigend sortiert aus.\nGeben Sie nun mit Hilfe des Zugriffsoperators [] die Indexpositionen 1 und 3 der sortierten Liste ‘zahlen’ aus.\n\nMusterlösung kann Marc machen.\n\n\n\n\n\n\nTipp 5.1: Musterlösung",
+    "text": "5.1 Lernziele dieses Kapitels\nStellen Sie sich vor, Sie müssen eine bestimmte Berechnung mehrfach im Programm durchführen. Anstatt den Code jedes Mal neu zu schreiben, können Sie ihn in einer Funktion bündeln.\nFunktionen sind ein zentrales Werkzeug, um Code:\nAm Ende dieses Kapitels können Sie:",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
     ]
   },
   {
-    "objectID": "skript/sammeltypen.html#tupel",
-    "href": "skript/sammeltypen.html#tupel",
-    "title": "5  Sammeltypen",
-    "section": "5.2 Tupel",
-    "text": "5.2 Tupel\nTupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.\nTupel werdem mit runden Klammern () erzeugt, die Elemente werden mit einem Komma , getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form (wert, ) angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator [start:stop:step] möglich. Tupel können mit den Operatoren + und * verkettet werden.\n\ntupel1 = (2, 7.8, 'Feuer', True, text_variable)\ntupel2 = (1, )\n\nprint(tupel1)\nprint(tupel1[2:4])\nprint(tupel1[::2])\nprint(tupel1[-1])\nprint(tupel1[2:4] + tupel2)\nprint(3 * tupel2)\n\n(2, 7.8, 'Feuer', True, 'abc')\n('Feuer', True)\n(2, 'Feuer', 'abc')\nabc\n('Feuer', True, 1)\n(1, 1, 1)\n\n\n\nTupel kopieren\nTupel verhalten sich beim Kopieren gegensätzlich zu Listen. Für Tupel ist die Methode .copy() nicht definiert. Dagegen bewirkt die Kopie mittels dem Zugriffsoperator [:] zwar, dass zwei Tupel auf den selben Speicherplatz zugreifen. Bei der Neuzuweisung eines Tupels legt Python, wie für jedes Objekt, ein neues Objekt im Speicher an.\n\n# Kopieren durch Zuweisung\ntupel1 = (1, 2, 3)\ntupel2 = tupel1\n\n## Neuzuweisung der Werte von tupel1\ntupel1 = (4, 5, 6)\nprint(f\"Die in tupel2 gespeicherten Werte sind unverändert:\\n{tupel1} {tupel2}\\n\")\n\n# Kopieren mit Slice Operator\ntupel1 = (1, 2, 3)\ntupel2 = tupel1[:]\nprint(tupel2 is tupel1)\n\n## Neuzuweisung der Werte von tupel1\ntupel1 = (4, 5, 6)\nprint(tupel1, tupel2)\n\nDie in tupel2 gespeicherten Werte sind unverändert:\n(4, 5, 6) (1, 2, 3)\n\nTrue\n(4, 5, 6) (1, 2, 3)",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#mengen",
-    "href": "skript/sammeltypen.html#mengen",
-    "title": "5  Sammeltypen",
-    "section": "5.3 Mengen",
-    "text": "5.3 Mengen\nIn Python können Mengen mit der set() Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern {} erstellt werden (eine leere Menge kann nur mit set() erzeugt werden, da {} ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.\n\nliste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]\nprint(\"Das Objekt liste als Menge:\\n\", set(liste))\n\nmenge = {1, 2, 3, 4, 5, 1000, ('tupel', 5), 'a', 123}\nprint(\"Die Menge kann auch mit geschweiften Klammern erzeugt werden:\", menge)\n\nDas Objekt liste als Menge:\n {1, 2, 3, 4, 5, ('tupel', 5), 1000, 'a', 123}\nDie Menge kann auch mit geschweiften Klammern erzeugt werden: {1, 2, 3, 4, 5, ('tupel', 5), 1000, 'a', 123}\n\n\nMengen können beispielsweise für Vergleichsoperationen verwendet werden.\n\nmenge_a = set('Python')\nmenge_b = set('ist super')\n\n# einzigartige Zeichen in a\nprint(\"Menge a:\", menge_a)\n\n# Zeichen in a, aber nicht in b\nprint(\"Menge a - b:\", menge_a - menge_b)\n\n# Zeichen in a oder b\nprint(\"Menge a | b:\", menge_a | menge_b)\n\n# Zeichen in a und b\nprint(\"Menge a & b:\", menge_a & menge_b)\n\n# Zeichen in a oder b, aber nicht in beiden (XOR)\nprint(\"Menge a ^ b:\", menge_a ^ menge_b)\n\nMenge a: {'y', 't', 'o', 'n', 'h', 'P'}\nMenge a - b: {'y', 'o', 'n', 'h', 'P'}\nMenge a | b: {'y', 's', 't', 'u', 'o', 'n', 'p', ' ', 'h', 'e', 'i', 'r', 'P'}\nMenge a & b: {'t'}\nMenge a ^ b: {'s', 'y', 'u', 'o', 'n', 'p', 'r', 'h', 'e', 'i', ' ', 'P'}\n\n\n\nMengen kopieren\nMengen verhalten sich wie Tupel mit dem Unterschied, dass die Methode .copy() für Mengen definiert ist. Allerdings kann der Zugriffsoperator [] nicht auf Mengen angewendet werden.\n\n# Kopieren durch Zuweisung\nset1 = {1, 2, 3}\nset2 = set1\nprint(set1 is set2)\n\n## Neuzuweisen von set1\nset1 = {4, 5, 6}\nprint(f\"Die in set2 gespeicherten Werte sind unverändert:\\n{set1} {set2}\")\n\n# Kopieren durch Methode .copy()\nset1 = {1, 2, 3}\nset2 = set1.copy()\nprint(set1 is set2)\n\n## Neuzuweisen von set1\nset1 = {4, 5, 6}\nprint(f\"Die in set2 gespeicherten Werte sind unverändert:\\n{set1} {set2}\")\n\nTrue\nDie in set2 gespeicherten Werte sind unverändert:\n{4, 5, 6} {1, 2, 3}\nFalse\nDie in set2 gespeicherten Werte sind unverändert:\n{4, 5, 6} {1, 2, 3}",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#dictionaries",
-    "href": "skript/sammeltypen.html#dictionaries",
-    "title": "5  Sammeltypen",
-    "section": "5.4 Dictionaries",
-    "text": "5.4 Dictionaries\nDictionaries bestehen aus Schlüssel-Wert-Paaren. Die Schlüssel können Zahlen oder Zeichenketten sein, jeder Schlüssel darf nur einmal vorkommen. Dictionaries werden mit geschweiften Klammern {} definiert. Die Schlüssel und deren zugehörigen Werte werden mit einem Doppelpunkt : getrennt. Der Zugriff auf die Werte erfolgt mit dem Zugriffsoperator [], welcher den oder die Schlüssel beinhaltet. Ein Zugriff über die Indexposition der Schlüssel ist nicht möglich, da Zahlen als Schlüssel interpretiert werden.\n\ndictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}\nprint(dictionary1, \"\\n\")\n\nprint(\"Werte des Schlüssels 1:\", dictionary1[1])\nprint(\"Werte des Schlüssels 'b':\",  dictionary1['b'])\n\n{1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} \n\nWerte des Schlüssels 1: abc\nWerte des Schlüssels 'b': [1, 2, 3]\n\n\nAuf die Schlüssel eines Dictionaries kann über die Methode dictionary.keys(), auf die Werte mittels der Methode dictionary.values() zugegriffen werden.\n\nprint(\"Schlüssel:\", dictionary1.keys(), \"\\n\")\nprint(\"Werte:\", dictionary1.values())\n\nSchlüssel: dict_keys([1, 'b', 'c']) \n\nWerte: dict_values(['abc', [1, 2, 3], ('tupel', 5, 6)])\n\n\n\nDictionaries kopieren\nDictionaries verhalten sich beim Kopieren wie Listen, das heißt beim Kopieren durch Zuweisung teilen sich Dictionaries den Speicherbereich.\n\n# Kopieren durch Zuweisung\nprint(\"dictionary:\", dictionary1, \"\\n\")\ndictionary2 = dictionary1\n\n## Ändern eines Elements in dictionary2\ndictionary2[1] = 'ABC'\nprint(\"Auch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:\\n\",\n       dictionary1, \"\\n\")\n\n# Verwendung der Methode dictionary.copy()\ndictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}\ndictionary2 = dictionary1.copy()\n\n## Ändern eines Elements in dictionary2\ndictionary2[1] = 'ABC'\nprint(\"dictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\\n\",\n       dictionary1, \"\\n\")\n\ndictionary: {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} \n\nAuch dictionary1 hat sich durch die Zuweisung in dictionary2 verändert:\n {1: 'ABC', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)} \n\ndictionary1 bleibt durch die Zuweisung in dictionary2 unverändert:\n {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#übersicht-sammeltypen",
-    "href": "skript/sammeltypen.html#übersicht-sammeltypen",
-    "title": "5  Sammeltypen",
-    "section": "5.5 Übersicht Sammeltypen",
-    "text": "5.5 Übersicht Sammeltypen\n\n\n\n\n\n\n\n\n\n\nMerkmal\nListen\nTupel\nMengen\nDictionary\n\n\n\n\nBeschreibung\nflexible Anzahl von Elementen beliebigen Typs\nElemente beliebigen Typs, unveränderlich\nungeordnete Sammlung, jedes Element nur einmal enthalten\nZuordnungstabelle aus Schlüssel-Wert-Paaren\n\n\nSpeicherbereich bei Zuweisung geteilt\nja\nja (aber unveränderlich)\nja (aber Zugriffsoperator nicht anwendbar)\nja\n\n\nMethode .copy() definiert\nja\nnein\nja\nja\n\n\nSlice-Operator anwendbar\nja\nja\nnein\nja (nach Schlüssel)",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#löschen-das-schlüsselwort-del",
-    "href": "skript/sammeltypen.html#löschen-das-schlüsselwort-del",
-    "title": "5  Sammeltypen",
-    "section": "5.6 Löschen: das Schlüsselwort del",
-    "text": "5.6 Löschen: das Schlüsselwort del\nUm Sammeltypen, Elemente oder Slices zu löschen kann das Schlüsselwort del verwendet werden.\n\n# Löschen einer Liste\ndel liste1\n\n# Löschen eines Indexbereichs aus einer Liste\nprint(\"Liste vor dem Löschen:\", liste2)\ndel liste2[1:3]\nprint(\"Liste nach dem Löschen:\", liste2)\n\n# Löschen eines Schlüsselworts aus einem Dictionary\nprint(\"Dictionary vor dem Löschen\", dictionary1)\ndel dictionary1[1]\nprint(\"Dictionary nach dem Löschen\", dictionary1)\n\nListe vor dem Löschen: [1, 'xy', True, 'abc']\nListe nach dem Löschen: [1, 'abc']\nDictionary vor dem Löschen {1: 'abc', 'b': [1, 2, 3], 'c': ('tupel', 5, 6)}\nDictionary nach dem Löschen {'b': [1, 2, 3], 'c': ('tupel', 5, 6)}",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#funktionen",
-    "href": "skript/sammeltypen.html#funktionen",
-    "title": "5  Sammeltypen",
-    "section": "5.7 Funktionen",
-    "text": "5.7 Funktionen\nDie Sammeltypen können ineinander umgewandelt werden.\n\ndictionary = {1: 'Kater', 2: 'Fähre', 3: 'Ricke'}\nprint( (liste := list(dictionary)) )\nprint( (menge := set(liste)) )\nprint( (tupel := tuple(menge)) )\n\n[1, 2, 3]\n{1, 2, 3}\n(1, 2, 3)\n\n\nEinige praktische Funktionen lassen sich auch auf Sammeltypen anwenden:\n\nlen() gibt die Anzahl der Elemente in einem Sammeltyp zurück.\nmin(), max(), sum() gibt das Minimum, Maximum bzw. die Summe eines Sammeltyps zurück (bei Dictionaries wird die Anzahl der Schlüssel gezählt).",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#operationen-verwendung-von-schleifen",
-    "href": "skript/sammeltypen.html#operationen-verwendung-von-schleifen",
-    "title": "5  Sammeltypen",
-    "section": "5.8 Operationen: Verwendung von Schleifen",
-    "text": "5.8 Operationen: Verwendung von Schleifen\nUm arithmetische und logische Operatoren auf die in einem Sammeltyp gespeicherten Elemente anzuwenden, wird eine for-Schleife verwendet. Im folgenden Beispiel wird eine Liste ‘zahlen’ durchlaufen, die darin gespeicherten Zahlen quadriert und das jeweilige Ergebnis an die Liste ‘quadratzahlen’ angehängt. Auch wird geprüft, ob die quadrierten Zahlen ganzzahlig durch 3 teilbar sind und das Prüfergebnis in einer Liste ‘modulo_3’ gespeichert.\n\n\n\n\nzahlen = list(range(1, 11))\n\nquadratzahlen = [] # die Liste muss vor der Schleife angelegt werden\nmodulo_3 = [] # leere Liste vor der Schleife anlegen\n\nfor zahl in zahlen:\n  quadratzahl = zahl ** 2\n  quadratzahlen.append(quadratzahl)\n  modulo_3.append(quadratzahl % 3 == 0)\n\nprint(quadratzahlen)\nprint(modulo_3)\n\n[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]\n[False, False, True, False, False, True, False, False, True, False]\n\n\n\n\nCode-Block 5.1",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/sammeltypen.html#aufgaben-sammeltypen",
-    "href": "skript/sammeltypen.html#aufgaben-sammeltypen",
-    "title": "5  Sammeltypen",
-    "section": "5.9 Aufgaben Sammeltypen",
-    "text": "5.9 Aufgaben Sammeltypen\n\nModifizieren Sie den Programmcode in Code-Block 5.1 so, dass nur die Quadratzahlen gespeichert werden, die ganzzahlig durch 3 teilbar sind.\nUmrechnung von Geschwindigkeiten Erstellen Sie ein Skript, welches eine Umrechnungstabelle für Geschwindigkeiten erzeugt. Folgende Randbedingungen sollen beachtet werden:\n\n\nDie Umrechnung soll von km/h in m/s erfolgen.\nDer Start- und Endwert soll in km/h frei wählbar sein, wobei beide ganzzahlig sein sollen.\nDie Anzahl der Umrechnungspunkte soll definiert werden können und die Zwischenschritte (in km/h) immer als ganze Zahlen ausgegeben werden.\n\nTipp: In Ihrem Skript können Sie die Funktion input() verwenden, um Werte per Eingabe zu erfassen.\n\nSortieren: Gegeben ist die Liste meine_liste = list(range(9, 0, -1)). Diese soll mittels for-Schleifen sortiert werden.\n\n\n\n\n\n\n\nTipp 5.2: Musterlösung Aufgaben Sammeltypen\n\n\n\n\n\n\nGanzzahlig durch 3 teilbare Quadratzahlen\n\n\nzahlen = list(range(1, 11))\n\nquadratzahlen = [] # die Liste muss vor der Schleife angelegt werden\nmodulo_3 = [] # leere Liste vor der Schleife anlegen\n\nfor zahl in zahlen:\n  quadratzahl = zahl ** 2\n  if quadratzahl % 3 == 0:\n    quadratzahlen.append(quadratzahl)\n\nprint(quadratzahlen)\n\n[9, 36, 81]\n\n\n\nUmrechnung von Geschwindigkeiten\n\n\n# Freie Eingabe\n## start = int(input(\"Startwert in Kilometer pro Stunde eingeben.\"))\n## ende = int(input(\"Endwert in Kilometer pro Stunde eingeben.\"))\n## ausgabeschritte =  int(input(\"Anzahl auszugebener Schritte ein geben.\"))\n\n# Fixe Werte für die Lösung\nstart = 5\nende = 107\nausgabeschritte = 8\n\n# Liste für km erstellen\nschrittweite = (ende - start) / (ausgabeschritte - 1)\nliste_km = []\nfor i in range(ausgabeschritte):\n    liste_km.append(round(start + i * schrittweite))\n\n# Umrechnung\n# meter = 1000 * kilometer\n# Sekunde = Stunde * 60 * 60\nliste_m = []\nfor wert in liste_km:\n    liste_m.append(round((wert * 1000) / (60 * 60), 2))\n\n# Ausgabe\nprint(f\"Schrittweite: {schrittweite:.2f}\")\nprint(\"Kilometer pro Stunde\")\nprint(liste_km)\nprint(\"Meter pro Sekunde\")\nprint(liste_m)\n\nSchrittweite: 14.57\nKilometer pro Stunde\n[5, 20, 34, 49, 63, 78, 92, 107]\nMeter pro Sekunde\n[1.39, 5.56, 9.44, 13.61, 17.5, 21.67, 25.56, 29.72]\n\n\n\nSortieren: Bubble Sort Algorithmus\n\n\n# statische Liste, Textausgabe\nmeine_liste = list(range(9, 0, -1))\n\nif len(meine_liste) &gt; 1: \n\n    print(\"Liste zu Beginn\\t\\t  :\", meine_liste)\n\n    # äußere Schleife\n    Schritt = 0\n    for i in range(len(meine_liste) - 1):\n\n    # innere Schleife\n        for j in range(len(meine_liste) - 1):\n            if meine_liste[j] &gt; meine_liste[j + 1]:\n                meine_liste[j], meine_liste[j + 1] = meine_liste[j + 1], meine_liste[j]\n\n        Schritt += 1\n        print(\"Liste nach Schritt \", Schritt, \":\", meine_liste)\n\n    print(\"\\nListe sortiert:\", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen\n\nelse:\n    print(\"Die Liste muss mindenstens zwei Elemente enthalten!\")\n\nListe zu Beginn       : [9, 8, 7, 6, 5, 4, 3, 2, 1]\nListe nach Schritt  1 : [8, 7, 6, 5, 4, 3, 2, 1, 9]\nListe nach Schritt  2 : [7, 6, 5, 4, 3, 2, 1, 8, 9]\nListe nach Schritt  3 : [6, 5, 4, 3, 2, 1, 7, 8, 9]\nListe nach Schritt  4 : [5, 4, 3, 2, 1, 6, 7, 8, 9]\nListe nach Schritt  5 : [4, 3, 2, 1, 5, 6, 7, 8, 9]\nListe nach Schritt  6 : [3, 2, 1, 4, 5, 6, 7, 8, 9]\nListe nach Schritt  7 : [2, 1, 3, 4, 5, 6, 7, 8, 9]\nListe nach Schritt  8 : [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nListe sortiert: 1 2 3 4 5 6 7 8 9\n\n\n\n\n\n \n(Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Schleifen und Abzweigungen.“ Fachhochschule Dortmund.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Sammeltypen</span>"
-    ]
-  },
-  {
-    "objectID": "skript/funktionen-definieren.html",
-    "href": "skript/funktionen-definieren.html",
-    "title": "6  Eigene Funktionen definieren",
+    "objectID": "skript/funktionen.html#lernziele-dieses-kapitels",
+    "href": "skript/funktionen.html#lernziele-dieses-kapitels",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
     "section": "",
-    "text": "6.1 Syntax\nDas Definieren eigener Funktionen eröffnet vielfältige Möglichkeiten in Python:\nDas Schlüsselwort def leitet die Funktionsdefinition ein. Es wird gefolgt vom Funktionsnamen und den Funktionsparametern, welche in runden Klammern () eingeschlossen sind. Der Funktionskopf wird mit einem Doppelpunkt : beendet. Der Anweisungsblock der Funktion ist eingerückt. Jede Funktion liefert einen Rückgabewert, welche durch das Schlüsselwort return an die aufrufende Stelle zurückgegeben wird. return beendet die Ausführung der Schleife, auch wenn es nicht am Ende des Anweisungsblocks steht.\ndef Funktionsname(Parameter1, Parameter2):\n    Anweisungsblock\n    return Rückgabewert\nDamit die Funktion ausgeführt wird, muss der definierte Funktionsname aufgerufen werden. In der Funktion ist nach dem Schlüsselwort return eine weitere Anweisung enthalten, die nicht mehr ausgeführt wird.\n# Beispiel 1: Summe der Quadrate\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_quadrate(a, b):\n    print('Argument a:', a)\n    print('Argument b:', b)\n    print(18 * '=')\n    summe = a**2 + b**2\n    return summe\n    print(\"Anweisungen nach dem Schlüsselwort return werden nicht mehr ausgeführt.\")\n\nprint(sum_quadrate(6, 7))\n\nArgument a: 6\nArgument b: 7\n==================\n85\nDer Rückgabewert kann in einer Variablen gespeichert werden.\nergebnis = sum_quadrate(6, 7)\nprint(ergebnis)\n\nArgument a: 6\nArgument b: 7\n==================\n85",
+    "text": "eigene Funktionen mit def erstellen,\nParameter übergeben und Rückgabewerte nutzen,\nFunktionen sinnvoll in Programmen einsetzen.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Eigene Funktionen definieren</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
     ]
   },
   {
-    "objectID": "skript/funktionen-definieren.html#optionale-parameter",
-    "href": "skript/funktionen-definieren.html#optionale-parameter",
-    "title": "6  Eigene Funktionen definieren",
-    "section": "6.2 Optionale Parameter",
-    "text": "6.2 Optionale Parameter\nMit Hilfe von optionalen Parametern kann die Programmausführung gesteuert werden. Optionale Parameter müssen nach verpflichtend zu übergebenen Parametern definiert werden. In diesem Beispiel wird die print-Ausgabe der Funktion mit dem Parameter ausgabe gesteuert.\n\n# Beispiel 2: optionale Argumente\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_quadrate(a, b, ausgabe = False):\n    if ausgabe:\n      print('Wert Argument a:', a)\n      print('Wert Argument b:', b)\n      print(18 * '=')\n    summe = a**2 + b**2\n    return summe\n\nprint(sum_quadrate(42, 7), \"\\n\")\nprint(sum_quadrate(42, 7, ausgabe = True))\n\n1813 \n\nWert Argument a: 42\nWert Argument b: 7\n==================\n1813\n\n\nGibt es mehrere optionale Parameter, so erfolgt die Zuweisung von Argumenten positional oder über das Schlüsselwort.\n\n# Beispiel 3: mehrere optionale Argumente\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_potenzen(a, b, p = 2, ausgabe = False):\n    if ausgabe:\n      print('Argument a:', a)\n      print('Argument b:', b)\n      print('Argument p:', p)\n      print(18 * '=')\n    summe = a**p + b**p\n    return summe\n\n# positionale Übergabe\nprint(sum_potenzen(42, 7, 3, True), \"\\n\")\n\n# Übergabe per Schlüsselwort\nprint(sum_potenzen(42, 7, ausgabe = True, p = 4))\n\nArgument a: 42\nArgument b: 7\nArgument p: 3\n==================\n74431 \n\nArgument a: 42\nArgument b: 7\nArgument p: 4\n==================\n3114097",
+    "objectID": "skript/funktionen.html#eine-funktion-definieren",
+    "href": "skript/funktionen.html#eine-funktion-definieren",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.2 Eine Funktion definieren",
+    "text": "5.2 Eine Funktion definieren\nEine Funktion besteht aus folgenden Teilen:\n\nDefinition mit def\nFunktionsname\nParameter in Klammern (optional)\nEinrückung für den Funktionskörper\n(optional) return-Anweisung\n\nBeispiel:\n\ndef hallo(name=\"Gast\"):\n    begruessung = \"Hallo \" + name + \"!\"\n    return begruessung\n\nFangen wir mit dem ersten Stichwort an. Funktionen werden mit def definiert und können beliebig oft aufgerufen werden:\n\ndef begruessung():\n    print(\"Hallo und willkommen!\")\n\nSie wird erst ausgeführt, wenn Sie sie aufrufen:\n\nbegruessung()\n\nHallo und willkommen!",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Eigene Funktionen definieren</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
     ]
   },
   {
-    "objectID": "skript/funktionen-definieren.html#rückgabewerte",
-    "href": "skript/funktionen-definieren.html#rückgabewerte",
-    "title": "6  Eigene Funktionen definieren",
-    "section": "6.3 Rückgabewert(e)",
-    "text": "6.3 Rückgabewert(e)\nFunktionen können in Python nur einen einzigen Rückgabewert haben. Trotzdem können mehrere Rückgabewerte mit einem Komma getrennt werden. Python gibt diese als Tupel zurück.\n\n# Beispiel 4: mehrere Rückgabewerte\n\n# Definition einer Funktion zur Berechnung der Summe der Quadrate von zwei Argumenten\ndef sum_potenzen(a, b, p = 2, ausgabe = False):\n    if ausgabe:\n      print('Argument a:', a)\n      print('Argument b:', b)\n      print('Argument p:', p)\n      print(18 * '=')\n    summe = a**p + b**p\n    return a, b, summe\n\nergebnis = sum_potenzen(2, 7, ausgabe = False, p = 4)\nprint(ergebnis, type(ergebnis))\n\n(2, 7, 2417) &lt;class 'tuple'&gt;\n\n\nMit dem Slice Operator kann ein bestimmter Rückgabewert ausgewählt werden.\n\nprint(ergebnis[2])\n\nsumme_potenzen = sum_potenzen(2, 7, ausgabe = False, p = 4)[2]\nprint(summe_potenzen, type(summe_potenzen))\n\n2417\n2417 &lt;class 'int'&gt;",
+    "objectID": "skript/funktionen.html#parameter-übergeben",
+    "href": "skript/funktionen.html#parameter-übergeben",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.3 Parameter übergeben",
+    "text": "5.3 Parameter übergeben\nFunktionen können Eingabewerte (Parameter) erhalten:\n\ndef begruessung(name):\n    print(\"Hallo\", name + \"!\")\n\nbegruessung(\"Alex\")\n\nHallo Alex!",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Eigene Funktionen definieren</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
     ]
   },
   {
-    "objectID": "skript/funktionen-definieren.html#aufgaben-funktionen-definieren",
-    "href": "skript/funktionen-definieren.html#aufgaben-funktionen-definieren",
-    "title": "6  Eigene Funktionen definieren",
-    "section": "6.4 Aufgaben Funktionen definieren",
-    "text": "6.4 Aufgaben Funktionen definieren\n\nPalindrom\nSchreiben Sie eine Funktion is_palindrome(), die prüft, ob es sich bei einer übergebenen Zeichenkette um ein Palindrom handelt.\n\nHinweis: Ein Palindrom ist eine Zeichenkette, die von vorne und von hinten gelesen gleich bleibt, wie beispielsweise ‘Anna’, ‘Otto’, ‘Lagerregal’. Palindrome müssen nicht aus Buchstaben bestehen, sie können sich auch aus Zahlen oder Buchstaben und Zahlen zusammensetzen wie beispielsweise ‘345g543’.\n\nFibonacci-Zahlenreihe\n\nEntwickeln Sie eine Funktion fibonacci(n), die die ersten n Zahlen der Fibonacci-Reihe generiert und als Liste zurückgibt. Die Fibonacci-Reihe beginnt mit 0 und 1, jede weitere Zahl ist die Summe der beiden vorhergehenden Zahlen.\n\nVerschlüsselung\n\nBei Geocachen werden oft verschlüsselte Botschaften als Rätsel verwendet. Oft wird folgende Logik zur Verschlüsselung angewendet:\n\nA -&gt; Z\nB -&gt; Y\nC -&gt; X\n…\n\nSchreiben Sie eine Funktion verschluesseln(str), die einen String als Eingabewert bekommt und einen verschlüsselten String zurückgibt. Wie können Sie einen verschlüsselten String am einfachsten wieder entschlüsseln?\n\nTemperaturkonverter\n\nEntwickeln Sie eine Funktion temperatur_umrechnen(wert, von_einheit, nach_einheit), die eine Temperatur von einer Einheit in eine andere umwandelt. Die Funktion soll folgende Parameter verwenden:\n\nwert: Der Temperaturwert, der umgewandelt werden soll.\nvon_einheit / nach_einheit: Die Einheit des Ausgangs- bzw. des Zielwerts als string. Mögliche Werte sind ‘C’ für Celsius, ‘F’ für Fahrenheit und ‘K’ für Kelvin.\n\nEs gelten die folgenden Umrechnungsformeln zwischen den Einheiten:\n\nCelsius nach Fahrenheit: F = C * 9/5 + 32\nFahrenheit nach Celsius: C = (F - 32) * 5/9\nCelsius nach Kelvin: K = C + 273.15\nKelvin nach Celsius: C = K - 273.15\nFahrenheit nach Kelvin: K = (F - 32) * 5/9 + 273.15\nKelvin nach Fahrenheit: F = (K - 273.15) * 9/5 + 32\n\nDie Musterlösung kann Marc machen\n\n\n\n\n\n\nMusterlösung Aufgaben Funktionen definieren\n\n\n\n\n\n\n\n\n\n  (Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Funktionen Module Dateien.“ Fachhochschule Dortmund.",
+    "objectID": "skript/funktionen.html#rückgabewerte-mit-return",
+    "href": "skript/funktionen.html#rückgabewerte-mit-return",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.4 Rückgabewerte mit return",
+    "text": "5.4 Rückgabewerte mit return\nEine Funktion kann auch einen Wert zurückgeben:\n\ndef quadrat(zahl):\n    return zahl * zahl\n\nergebnis = quadrat(5)\nprint(ergebnis)\n\n25",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Eigene Funktionen definieren</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html",
-    "href": "skript/dateien-lesen-und-schreiben.html",
-    "title": "7  Dateien lesen und schreiben",
+    "objectID": "skript/funktionen.html#beispiel-umrechnungen",
+    "href": "skript/funktionen.html#beispiel-umrechnungen",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.5 Beispiel: Umrechnungen",
+    "text": "5.5 Beispiel: Umrechnungen\n\nEuro zu US-Dollar\n\ndef euro_zu_usd(betrag_euro):\n    wechselkurs = 1.09\n    return betrag_euro * wechselkurs\n\nprint(\"20 € sind\", euro_zu_usd(20), \"US-Dollar.\")\n\n20 € sind 21.8 US-Dollar.\n\n\n\n\n\n\n\n\nAufgabe: Begrüßung mit Name\n\n\n\n\n\nErstellen Sie eine Funktion begruesse(name), die den Namen in einem Begrüßungstext verwendet:\nHallo Fatima, schön dich zu sehen!\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\ndef begruesse(name):\n    print(\"Hallo\", name + \", schön dich zu sehen!\")\n\nbegruesse(\"Fatima\")\n\nHallo Fatima, schön dich zu sehen!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAufgabe: Temperaturumrechnung\n\n\n\n\n\nSchreiben Sie eine Funktion, die Celsius in Fahrenheit umrechnet:\nFormel: [ F = C + 32 ]\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\ndef celsius_zu_fahrenheit(c):\n    return c * 1.8 + 32\n\nprint(celsius_zu_fahrenheit(20))\n\n68.0",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/funktionen.html#parameter-mit-standardwerten",
+    "href": "skript/funktionen.html#parameter-mit-standardwerten",
+    "title": "5  Wiederverwendbarer Code mit Funktionen",
+    "section": "5.6 Parameter mit Standardwerten",
+    "text": "5.6 Parameter mit Standardwerten\nSie können Parametern Standardwerte zuweisen. So kann die Funktion auch ohne Angabe eines Werts aufgerufen werden:\n\ndef begruessung(name=\"Gast\"):\n    print(\"Hallo\", name + \"!\")\n\nbegruessung()         # Hallo Gast!\nbegruessung(\"Maria\")  # Hallo Maria!\n\nHallo Gast!\nHallo Maria!\n\n\n\n\n\n\n\n\nprint() vs. return\n\n\n\n\n\nDiese beiden Begriffe werden oft verwechselt:\n\n\n\nAusdruck\nBedeutung\n\n\n\n\nprint()\nzeigt einen Text auf dem Bildschirm\n\n\nreturn\ngibt einen Wert an den Aufrufer zurück\n\n\n\nBeispiel:\n\ndef verdoppeln(x):\n    return x * 2\n\n# Ausgabe sichtbar machen\nprint(verdoppeln(5))  # Ausgabe: 10\n\n10",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Wiederverwendbarer Code mit Funktionen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/lesen_schreiben.html",
+    "href": "skript/lesen_schreiben.html",
+    "title": "6  Arbeiten mit Dateien",
     "section": "",
-    "text": "7.1 Dateiobjekte\nMaya und Hans haben je sechs Mal einen Würfel geworfen und ihre Wurfergebnisse in einer .txt-Datei protokolliert. Wir wollen mit die Dateien mit Python auswerten, um zu bestimmen, wer von beiden in Summe die höchste Augenzahl erreicht hat.\nUm mit Python auf eine Datei zuzugreifen, muss diese fürs Lesen oder Schreiben geöffnet werden. Dazu wird in Python die Funktion open verwendet. Diese nimmt zwei Argumente, den Pfad der Datei und den Zugriffsmodus, an und liefert ein Dateiobjekt zurück. Aus dem Dateiobjekt werden dann die Inhalte der Datei ausgelesen.",
+    "text": "6.1 Lernziele dieses Kapitels\nProgramme arbeiten oft nicht nur mit Benutzereingaben, sondern auch mit Textdateien – zum Beispiel um Daten zu speichern oder zu laden.\nPython bietet einfache Funktionen, um:\nAm Ende dieses Kapitels können Sie:",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#dateiobjekte",
-    "href": "skript/dateien-lesen-und-schreiben.html#dateiobjekte",
-    "title": "7  Dateien lesen und schreiben",
+    "objectID": "skript/lesen_schreiben.html#lernziele-dieses-kapitels",
+    "href": "skript/lesen_schreiben.html#lernziele-dieses-kapitels",
+    "title": "6  Arbeiten mit Dateien",
     "section": "",
-    "text": "Dateipfad\nDer lokale Dateipfad wird ausgehend vom aktuellen Arbeitsverzeichnis angegeben.\n\npfad_maya = \"01-daten/dice-maya.txt\"\npfad_hans = \"01-daten/dice-hans.txt\"\n\n\n\n\n\n\n\nTipp 7.1: Arbeitsverzeichnis in Python ermitteln und wechseln\n\n\n\n\n\nDer Pfad des aktuellen Arbeitsverzeichnisses kann mit dem Modul os mittels os.getcwd() ermittelt werden (hier ohne Ausgabe). Mit os.chdir('neuer_pfad') kann das Arbeitsverzeichnis ggf. gewechselt werden. Die korrekte Formatierung des Pfads erkennen Sie an der Ausgabe von os.getcwd().\n\nimport os\nprint(os.getcwd())\n\nDas Importieren von Modulen wird in einem späteren Kapitel behandelt.\n\n\n\n\n\nZugriffsmodus\nAls Zugriffsmodus stehen unter anderem folgende Optionen zur Verfügung:\n\n\n\n\n\n\n\nModus\nBeschreibung\n\n\n\n\nr\nlesender Zugriff\n\n\nw\nSchreibzugriff, Datei wird überschrieben\n\n\nx\nErzeugt die Datei, Fehlermeldung, wenn die Datei bereits existiert\n\n\na\nSchreibzugriff, Inhalte werden angehängt\n\n\nb\nBinärmodus (z. B. für Grafiken)\n\n\nt\nTextmodus, default\n\n\n\n \nDie Zugriffsmodi können auch kombiniert werden. Weitere Informationen dazu finden Sie in der Dokumentation. Sofern nicht im Binärmodus auf Dateien zugegriffen wird, liefert die Funktion open() den Dateiinhalt als string zurück.\nIm Lesemodus wird ein Datenobjekt erzeugt.\n\ndaten_maya = open(pfad_maya, mode = 'r')\nprint(daten_maya)\n\n&lt;_io.TextIOWrapper name='01-daten/dice-maya.txt' mode='r' encoding='UTF-8'&gt;\n\n\nWenn das Datenobjekt daten_maya der Funktion print() übergeben wird, gibt Python die Klasse des Objekts zurück, in diesem Fall also _io.TextIOWrapper. Diese Klasse stammt aus dem Modul io und ist für das Lesen und Schreiben von Textdateien zuständig. Ebenfalls werden als Attribute des Dateiobjekts der Dateipfad, der Zugriffsmodus und die Enkodierung der Datei ausgegeben (siehe Beispiel 7.1). Sollte die Enkodierung nicht automatisch als UTF-8 erkannt werden, kann diese mit dem Argument encoding = 'UTF-8' übergeben werden.\n\ndaten_maya = open(pfad_maya, mode = 'r', encoding = 'UTF-8')\nprint(daten_maya)\n\n&lt;_io.TextIOWrapper name='01-daten/dice-maya.txt' mode='r' encoding='UTF-8'&gt;\n\n\n\n\n\n\n\n\nBeispiel 7.1: Attribute eines Objekts bestimmen\n\n\n\n\n\nMit der Funktion dir(objekt) können die verfügbaren Attribute eines Objekts ausgegeben werden. Dabei werden jedoch auch die vererbten Attribute und Methoden der Klasse des Objekts ausgegeben, sodass die Ausgabe oft sehr umfangreich ist. Zum Beispiel für die Ganzzahl 1:\n\nprint(dir(1))\n\n['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'numerator', 'real', 'to_bytes']\n\n\nUm die Ausgabe auf Attribute einzugrenzen, kann folgende Funktion verwendet werden:\n\nobjekt = 1\n\nattribute = [attr for attr in dir(objekt) if not callable (getattr(objekt, attr))]\nprint(attribute)\n\n['__doc__', 'denominator', 'imag', 'numerator', 'real']\n\n\nMit doppelten Unterstrichen umschlossene Attribute sind für Python reserviert und nicht für den:die Nutzer:in gedacht. Folgende Funktion entfernt Attribute mit doppelten Unterstrichen aus der Ausgabe:\n\nobjekt = 1\n\nattribute = [attr for attr in dir(objekt) if not (callable(getattr(objekt, attr)) or attr.startswith('__'))]\nprint(attribute)\n\n['denominator', 'imag', 'numerator', 'real']\n\n\nIm Fall einer Ganzzahl können Attribute (zur Abgrenzung von Gleitkommazahlen in umschließenden Klammern) wie folgt aufgerufen werden:\n\n(1).numerator\n\n1\n\n\nWenn wir uns die Attribute des Dateiobjekts ‘daten_maya’ ansehen, fallen Attribute mit einem einzelnen führenden Unterstrich auf.\n\nobjekt = daten_maya\n\nattribute = [attr for attr in dir(objekt) if not (callable(getattr(objekt, attr)) or attr.startswith('__'))]\nprint(attribute)\n\n['_CHUNK_SIZE', '_finalizing', 'buffer', 'closed', 'encoding', 'errors', 'line_buffering', 'mode', 'name', 'newlines', 'write_through']\n\n\nHierbei handelt es sich um Attribute, die nicht durch den:die Nutzer:in aufgerufen werden sollen (weitere Informationen dazu finden Sie hier). Folgender Programmcode gibt alle Attribute ohne führende Unterstriche aus:\n\nobjekt = daten_maya\n\nattribute = [attr for attr in dir(objekt) if not (callable(getattr(objekt, attr)) or attr.startswith('_'))]\nprint(attribute)\n\n['buffer', 'closed', 'encoding', 'errors', 'line_buffering', 'mode', 'name', 'newlines', 'write_through']\n\n\n\n\n\nDie Attribute der Datei können mit entsprechenden Befehlen abgerufen werden.\n\nprint(f\"Dateipfad: {daten_maya.name}\\n\"\n      f\"Dateiname: {os.path.basename(daten_maya.name)}\\n\"\n      f\"Datei ist geschlossen: {daten_maya.closed}\\n\"\n      f\"Zugriffsmodus: {daten_maya.mode}\"\n      f\"Enkodierung: : {daten_maya.encoding}\")\n\nDateipfad: 01-daten/dice-maya.txt\nDateiname: dice-maya.txt\nDatei ist geschlossen: False\nZugriffsmodus: rEnkodierung: : UTF-8\n\n\n\n\n\n\n\n\nTipp 7.2: Rückfalloption\n\n\n\n\n\nIn der Datenanalyse werden in der Regel spezialisierte Pakete wie NumPy oder Pandas verwendet. Diese vereinfachen das Einlesen von Dateien gegenüber der Pythonbasis erheblich. Dennoch ist es sinnvoll, sich mit den Methoden der Pythonbasis zum Einlesen von Dateien vertraut zu machen. Denn das Einlesen mit der Funktion open() klappt so gut wie immer - es ist eine gute Rückfalloption.\n\n\n\n\n\nDateiinhalt ausgeben\nUm den Dateiinhalt auszugeben, kann das Datenobjekt mit einer Schleife zeilenweise durchlaufen und ausgegeben werden. (Die Datei dice-maya hat nur eine Zeile.)\n\ni = 0\nfor zeile in daten_maya:\n    print(f\"Inhalt Zeile {i}, mit {len(zeile)} Zeichen:\")\n    print(zeile)\n    i += 1\n\nInhalt Zeile 0, mit 28 Zeichen:\n\"5\", \"6\", \"2\", \"1\", \"4\", \"5\"\n\n\nDies ist jedoch für größere Dateien nicht sonderlich praktikabel. Die Ausgabe einzelner Zeilen mit der Funktion print() kann aber nützlich sein, um die genaue Formatierung der Zeichenkette zu prüfen. In diesem Fall hat Maya ihre Daten in Anführungszeichen gesetzt und mit einem Komma voneinander getrennt.",
+    "text": "Dateien mit open() öffnen,\nInhalte aus Textdateien einlesen,\nTexte in Dateien schreiben,\nmit with-Blöcken sicher und einfach arbeiten.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#dateien-einlesen",
-    "href": "skript/dateien-lesen-und-schreiben.html#dateien-einlesen",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.2 Dateien einlesen",
-    "text": "7.2 Dateien einlesen\nUm den gesamten Inhalt einer Datei einzulesen, kann die Methode datenobjekt.read() verwendet werden. Die Methode hat als optionalen Parameter .read(size). size wird als Ganzzahl übergeben und entsprechend viele Zeichen (im Binärmodus entsprechend viele Bytes) werden ggf. bis zum Dateiende ausgelesen. Der Parameter size ist nützlich, um die Formatierung des Inhalts einer großen Datei zu prüfen und dabei die Ausgabe auf eine überschaubare Anzahl von Zeichen zu begrenzen.\n\naugen_maya = daten_maya.read()\n\nprint(f\"len(augen_maya): {len(augen_maya)}\\n\\n\"\n      f\"Inhalt der Datei augen_maya:\\n{augen_maya}\")\n\nlen(augen_maya): 0\n\nInhalt der Datei augen_maya:\n\n\n\nDas hat offensichtlich nicht geklappt, der ausgelesene Dateiinhalt ist leer! Der Grund dafür ist, dass beim Lesen (und beim Schreiben) einer Datei der Dateizeiger die Datei durchläuft. Nachdem die Datei daten_maya in Kapitel 7.1.3 zeilenweise ausgegeben wurde, steht der Dateizeiger am Ende der Datei.\n\n\n\n\n\n\nHinweis 7.1: Dateizeiger in Python\n\n\n\nWird eine Datei zeilenweise oder mit der Methode .read() ausgelesen, wird der Dateizeiger um die angegebene Zeichenzahl bzw. bis ans Ende der Datei bewegt. Wird beispielsweise ein Datensatz ‘daten’ geöffnet und mit der Methode daten.read(3) die ersten drei Zeichen ausgelesen, bewegt sich der Dateizeiger von der Indexposition 0 zur Indexposition 3 (bzw. steht jeweils davor).\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbbildung 7.1: Bewegung des Dateizeigers beim Auslesen von drei Zeichen\n\n\n\nDie Methode daten.tell() gibt zurück, an welcher Position sich der Dateizeiger befindet.\nMit der Methode daten.seek(offset, whence = 0) wird der Zeiger an eine bestimmte Position gesetzt. Die Methode akzeptiert das Argument offset (Versatz) und das optionale Argument whence (woher), dessen Standardwert 0 (Dateianfang) ist. Für Zugriffe im Binärmodus (open(pfad, mode = 'rb')) kann das Argument whence außerdem die Werte 1 (aktuelle Position) oder 2 (Dateiende) annehmen.\n\ndaten.seek(0, 0) bezeichnet den Dateianfang\ndaten.seek(0, 1) bezeichnet die aktuelle Position in der Datei\ndaten.seek(0, 2) bezeichnet das Dateiende\ndaten.seek(-3, 2) bezeichnet das dritte Zeichen vor dem Dateiende\n\n\n\nWird der Dateizeiger mit der Methode datenobjekt.seek(0) an den Dateianfang gestellt, gelingt das Auslesen der Datei.\n\nprint(f\"Position des Dateizeigers vor dem Zurücksetzen auf 0: {daten_maya.tell()}\")\n\ndaten_maya.seek(0);\nprint(f\"Position des Dateizeigers nach dem Zurücksetzen auf 0: {daten_maya.tell()}\")\n\naugen_maya = daten_maya.read()\n\nprint(f\"Inhalt des Objekts augen_maya:\\n{augen_maya}\")\n\nPosition des Dateizeigers vor dem Zurücksetzen auf 0: 28\nPosition des Dateizeigers nach dem Zurücksetzen auf 0: 0\nInhalt des Objekts augen_maya:\n\"5\", \"6\", \"2\", \"1\", \"4\", \"5\"\n\n\nGeben Sie aus dem Datenobjekt daten_maya mit den Methoden .seek() und .read() die Zahlen and zweiter und dritter Stelle, also 6 und 2, aus.\n\n\n\n\n\n\nTipp 7.3: Musterlösung Dateizeiger bewegen\n\n\n\n\n\n\ndaten_maya.seek(6, 0);\nprint(daten_maya.read(1))\n\ndaten_maya.seek(daten_maya.tell() + 4, 0);\nprint(daten_maya.read(1))\n\n6\n2\n\n\n\n\n\nUm Mayas Würfelergebnisse zu addieren, müssen die Zahlen extrahiert und in Ganzzahlen umgewandelt werden, da im Textmodus stets eine Zeichenfolge zurückgegeben wird.\n\nprint(type(augen_maya))\n\n&lt;class 'str'&gt;\n\n\nDazu werden mit der Methode str.strip(\") das führende und abschließende Anführungszeichen entfernt sowie anschließend mit der Methode str.split('\", \"') die Zeichenfolge über das Trennzeichen in eine Liste aufgeteilt. Anschließend werden die Listenelemente in Ganzzahlen umgewandelt und summiert. (Methoden der string-Bearbeitung werden im nächsten Abschnitt ausführlich behandelt.)\n\nprint(f\"augen_maya:\\n{augen_maya}\")\n\naugen_maya = augen_maya.strip('\"')\nprint(f\"\\naugen_maya.strip('\\\"'):\\n{augen_maya}\")\n\naugen_maya = augen_maya.split('\", \"')\nprint(f\"\\naugen_maya.split('\\\", \\\"'):\\n{augen_maya}\")\n\naugen_maya_int = []\nfor i in augen_maya:\n  augen_maya_int.append(int(i))\n\nprint(f\"\\naugen_maya_int:\\n{augen_maya_int}\\n\\nSumme Augen: {sum(augen_maya_int)}\")\n\naugen_maya:\n\"5\", \"6\", \"2\", \"1\", \"4\", \"5\"\n\naugen_maya.strip('\"'):\n5\", \"6\", \"2\", \"1\", \"4\", \"5\n\naugen_maya.split('\", \"'):\n['5', '6', '2', '1', '4', '5']\n\naugen_maya_int:\n[5, 6, 2, 1, 4, 5]\n\nSumme Augen: 23\n\n\n\nDatei schließen\nNach dem Zugriff auf die Datei, muss diese wieder geschlossen werden, um diese für andere Programme freizugeben.\n\ndaten_maya.close()\n\n\n\n\n\n\n\nHinweis 7.2: Schreiboperationen mit Python\n\n\n\nDas Schließen einer Datei ist besonders für Schreiboperationen auf Datenobjekten wichtig. Andernfalls kann es passieren, dass Inhalte mit datenobjekt.write() nicht vollständig auf den Datenträger geschrieben werden. Siehe dazu die Dokumentation.",
+    "objectID": "skript/lesen_schreiben.html#eine-datei-einlesen",
+    "href": "skript/lesen_schreiben.html#eine-datei-einlesen",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.2 Eine Datei einlesen",
+    "text": "6.2 Eine Datei einlesen\n\n# Beispiel: Datei lesen\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    inhalt = datei.read()\n    print(inhalt)\n\nDies ist ein Test.\n\n\n\n\"r\" steht für read (lesen).\nwith sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.\nread() liest den gesamten Inhalt der Datei als String.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#aufgabe-dateien-einlesen",
-    "href": "skript/dateien-lesen-und-schreiben.html#aufgabe-dateien-einlesen",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.3 Aufgabe Dateien einlesen",
-    "text": "7.3 Aufgabe Dateien einlesen\nWelche Augenzahl hat Hans erreicht?\n\n\n\n\n\n\nTipp 7.4: Musterlösung Augenzahlvergleich\n\n\n\n\n\n\n\n# Erst Einlesen der Datei:\ndaten_hans = open(pfad_hans, mode = 'r', encoding = 'UTF-8')\naugen_hans = daten_hans.read()\nprint(augen_hans)\n# Hier muss man erkennen, dass Hans seinen Namen an den Anfang seiner Liste gesetzt hat. Dieser String muss also entfernt werden, bevor die Summe gebildet werden kann!\n\naugen_hans = augen_hans.strip('\"Hans\", ')\naugen_hans = augen_hans.strip('\"')\naugen_hans = augen_hans.split('\", \"')\nprint(augen_hans)\n# print-Ausgabe zeigt, dass die Liste nun korrekt bereinigt wurde. Sie besteht nur noch aus Integerwerten und diese können summiert werden\n\n# Neue (leere) Liste für die Würfe von Hans anlegen:\naugen_hans_int = []\nfor i in augen_hans:\n   augen_hans_int.append(int(i))\n\nprint(f\"Summe Augenzahl von Hans: {sum(augen_hans_int)}\")\n\n\"Hans\", \"3\", \"5\", \"1\", \"3\", \"2\", \"5\"\n['3', '5', '1', '3', '2', '5']\nSumme Augenzahl von Hans: 19\n\n\nMusterlösung von Marc Sönnecken.",
+    "objectID": "skript/lesen_schreiben.html#zeilenweise-lesen",
+    "href": "skript/lesen_schreiben.html#zeilenweise-lesen",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.3 Zeilenweise lesen",
+    "text": "6.3 Zeilenweise lesen\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    for zeile in datei:\n        print(\"Zeile:\", zeile.strip())\n\nZeile: Dies ist ein Test.\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n.strip() entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.\n\n\n\n\n\n\n\n\n\nAufgabe: Datei lesen\n\n\n\n\n\nAngenommen, es gibt eine Datei gruesse.txt mit folgendem Inhalt:\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla\nSchreiben Sie ein Programm, das jede Zeile einzeln einliest und mit print(...) wiedergibt.\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nwith open(\"01-daten/gruesse.txt\", \"r\") as f:\n    for zeile in f:\n        print(zeile.strip())\n\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#daten-interpretieren",
-    "href": "skript/dateien-lesen-und-schreiben.html#daten-interpretieren",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.4 Daten interpretieren",
-    "text": "7.4 Daten interpretieren\nDatensätze liegen typischerweise wenigstens in zweidimensionaler Form vor, d. h. die Daten sind in Zeilen und Spalten organisiert. Außerdem weisen Datensätze in der Regel auch unterschiedliche Datentypen auf. Die Funktion open(datei) gibt ein Dateiobjekt zurück, das mit Methoden wie zum Beispiel dateiobjekt.read() als Zeichenfolge eingelesen wird. Um die Daten sinnvoll weiterverarbeiten zu können, ist es deshalb notwendig, die Zeichenfolge korrekt zu interpretieren und Daten von Trennzeichen zu unterscheiden.\nFür die Bearbeitung von Zeichenfolgen bietet Python eine Reihe von String-Methoden. Einige davon werden in diesem Kapitel exemplarisch verwendet. String-Methoden werden in der Regel mit einem führenden ‘str’ in der Form str.methode() genannt.\nBeispielsweise soll eine Datei mit den Einwohnerzahlen der europäischen Länder eingelesen werden.\n\n\n\nDaten\nDateiname\n\n\n\n\nEinwohner Europas\neinwohner_europa_2019.csv\n\n\n\n \nUm einen Überblick über den Aufbau der Datei zu erhalten, werden die ersten drei Zeilen der Datei ausgegeben. Dafür kann die Datei zeilenweise mit einer for-Schleife durchlaufen werden, die mit dem Schlüsselwort break abgebrochen wird, wenn die Laufvariable den Wert 3 erreicht hat. Eine andere Möglichkeit ist die Methode dateiobjekt.readline(), die eine einzelne Zeile ausliest. Hier wird die Häufigkeit der Schleifenausführung über die Laufvariable mit for i in range(3): gesteuert.\n\nfor-Schleife mit breakMethode dateiobjekt.readline()\n\n\n\ndateipfad = \"01-daten/einwohner_europa_2019.csv\"\ndateiobjekt_einwohner = open(dateipfad, 'r')\n\n# erste 3 Zeilen anschauen\ni = 0\nfor zeile in dateiobjekt_einwohner:\n  \n  print(zeile)\n  i += 1\n  if i == 3:\n    break\n\n# Datei schließen\ndateiobjekt_einwohner.close()\n\nGEO,Value\n\nBelgien,11467923\n\nBulgarien,7000039\n\n\n\n\n\nMit der Methode dateiobjekt.readline() kann eine einzelne Zeile eingelesen werden.\n\ndateipfad = \"01-daten/einwohner_europa_2019.csv\"\ndateiobjekt_einwohner = open(dateipfad, 'r')\n\nfor i in range(3):\n  print(dateiobjekt_einwohner.readline())\n\n# Datei schließen\ndateiobjekt_einwohner.close()\n\nGEO,Value\n\nBelgien,11467923\n\nBulgarien,7000039\n\n\n\n\n\n\nDie Datei hat also zwei Spalten. In der ersten Spalte sind die Ländernamen eingetragen, in der zweiten Spalte die Werte. Als Trennzeichen wird das Komma verwendet. In der ersten Zeile sind die Spaltenbeschriftungen eingetragen.\nIm vorherigen Abschnitt haben wir die Methode dateiobjekt.read() kennengelernt, mit der eine Datei vollständig als string eingelesen wird. Zunächst wird die Datei mit der Methode dateiobjekt.read() in das Objekt einwohner eingelesen und wieder geschlossen.\n\ndateipfad = \"01-daten/einwohner_europa_2019.csv\"\ndateiobjekt_einwohner = open(dateipfad, 'r')\n\neinwohner = dateiobjekt_einwohner.read()\nprint(einwohner)\n\n# Datei schließen\ndateiobjekt_einwohner.close();\n\nGEO,Value\nBelgien,11467923\nBulgarien,7000039\nTschechien,10528984\nDaenemark,5799763\nDeutschland einschliesslich ehemalige DDR,82940663\nEstland,1324820\nIrland,4904240\nGriechenland,10722287\nSpanien,46934632\nFrankreich,67028048\nKroatien,4076246\nItalien,61068437\nZypern,875898\nLettland,1919968\nLitauen,2794184\nLuxemburg,612179\nUganda,-1\nUngarn,9772756\nMalta,493559\nNiederlande,17423013\nOesterreich,8842000\nPolen,37972812\nPortugal,10276617\nRumaenien,19405156\nSlowenien,2080908\nSlowakei,5450421\nFinnland,5512119\nSchweden,10243000\nVereinigtes Koenigreich,66647112\n\n\n\nAnschließend können die eingelesenen Daten mit der Methode str.split('\\n') zeilweise aufgeteilt werden. Mit '\\n' wird als Argument der Zeilenumbruch übergeben. Die Methode liefert eine Liste zurück.\n\nliste_einwohner_zeilenweise = einwohner.split(\"\\n\")\nprint(liste_einwohner_zeilenweise[0:3])\n\n['GEO,Value', 'Belgien,11467923', 'Bulgarien,7000039']\n\n\nDie Liste enthält an der Indexposition die Spaltenbeschriftungen. Diese können mit der Methode liste.pop(index) aus der Liste entfernt und zugleich in einem neuen Objekt gespeichert werden.\n\nspaltennamen = liste_einwohner_zeilenweise.pop(0)\nspaltennamen = spaltennamen.split(',')\nprint(f\"Überschrift Spalte 0: {spaltennamen[0]}\\tÜberschrift Spalte 1: {spaltennamen[1]}\")\n\nÜberschrift Spalte 0: GEO   Überschrift Spalte 1: Value\n\n\nAnschließend kann die Liste mit der Methode str.split(',') nach Ländern und Werten aufgeteilt werden. Der Vorgang bricht allerdings mit einer Fehlermeldung ab. Die Fehlermeldung wird im folgenden Code-Block per Ausnahmebehandlung abgefangen. Neben der Fehlermeldung werden der verursachende Listeneintrag und dessen Indexposition ausgegeben.\n\n# Leere Listen vor der Schleife anlegen\ngeo = []\neinwohnerzahl = []\n\ntry:\n  for zeile in liste_einwohner_zeilenweise:\n    eintrag = zeile.split(',')\n    geo.append(eintrag[0])\n    einwohnerzahl.append(eintrag[1])\n\n  print(spaltennamen[0])\n  print(geo, \"\\n\")\n\n  print(spaltennamen[1])\n  print(einwohnerzahl)\n\nexcept Exception as error:\n  # print Fehlermeldung\n  print(f\"Fehlermeldung: {error}\")\n  \n  # print Eintrag und Index\n  print(f\"Eintrag: {eintrag}\\t Zeilenindex: {liste_einwohner_zeilenweise.index(zeile)}\")\n\nFehlermeldung: list index out of range\nEintrag: ['']    Zeilenindex: 29\n\n\nDie Fehlermeldung ist so zu deuten, dass eine der Listenoperationen mit dem Slice Operator einen ungültigen Index anspricht. Leicht angepasst, liefert der Code-Block auch die Ursache der Fehlermeldung.\nWird die leere Zeile aus der Liste entfernt, klappt das Aufteilen der Ländernamen und der Werte.\n\n# leere Zeile entfernen\nliste_einwohner_zeilenweise.remove('')\n\n# Leere Listen vor der Schleife anlegen\ngeo = []\neinwohnerzahl = []\n\ntry:\n  for zeile in liste_einwohner_zeilenweise:\n    eintrag = zeile.split(',')\n    geo.append(eintrag[0])\n    einwohnerzahl.append(eintrag[1])\n\n  print(spaltennamen[0])\n  print(geo, \"\\n\")\n\n  print(spaltennamen[1])\n  print(einwohnerzahl)\n\nexcept IndexError as error:\n  print(error)\n\nGEO\n['Belgien', 'Bulgarien', 'Tschechien', 'Daenemark', 'Deutschland einschliesslich ehemalige DDR', 'Estland', 'Irland', 'Griechenland', 'Spanien', 'Frankreich', 'Kroatien', 'Italien', 'Zypern', 'Lettland', 'Litauen', 'Luxemburg', 'Uganda', 'Ungarn', 'Malta', 'Niederlande', 'Oesterreich', 'Polen', 'Portugal', 'Rumaenien', 'Slowenien', 'Slowakei', 'Finnland', 'Schweden', 'Vereinigtes Koenigreich'] \n\nValue\n['11467923', '7000039', '10528984', '5799763', '82940663', '1324820', '4904240', '10722287', '46934632', '67028048', '4076246', '61068437', '875898', '1919968', '2794184', '612179', '-1', '9772756', '493559', '17423013', '8842000', '37972812', '10276617', '19405156', '2080908', '5450421', '5512119', '10243000', '66647112']",
+    "objectID": "skript/lesen_schreiben.html#in-eine-datei-schreiben",
+    "href": "skript/lesen_schreiben.html#in-eine-datei-schreiben",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.4 In eine Datei schreiben",
+    "text": "6.4 In eine Datei schreiben\n\nwith open(\"ausgabe.txt\", \"w\") as datei:\n    datei.write(\"Das ist eine neue Zeile.\\n\")\n    datei.write(\"Und noch eine.\")\n\n\n\"w\" steht für write (schreiben).\nAchtung: Eine vorhandene Datei wird überschrieben!",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#aufgabe-daten-interpretieren",
-    "href": "skript/dateien-lesen-und-schreiben.html#aufgabe-daten-interpretieren",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.5 Aufgabe Daten interpretieren",
-    "text": "7.5 Aufgabe Daten interpretieren\n\nBestimmen Sie das Minimum und das Maximum der Einwohnerzahl und die dazugehörigen Länder.\nBereinigen Sie ggf. fehlerhafte Werte.\nWie viele Einwohner leben in Europa insgesamt?\n\n\nWelchen Datentyp hat die Liste einwohnerzahl?\nWelchen Datentyp haben die Einträge der Liste einwohnerzahl?\n\nDie Musterlösung kann Marc machen\n\n\n\n\n\n\nMusterlösung vollständiges Einlesen",
+    "objectID": "skript/lesen_schreiben.html#zeilenweise-schreiben-mit-schleife",
+    "href": "skript/lesen_schreiben.html#zeilenweise-schreiben-mit-schleife",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.5 Zeilenweise schreiben mit Schleife",
+    "text": "6.5 Zeilenweise schreiben mit Schleife\n\ndaten = [\"Apfel\", \"Banane\", \"Kirsche\"]\n\nwith open(\"obst.txt\", \"w\") as f:\n    for eintrag in daten:\n        f.write(eintrag + \"\\n\")\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n für einen Zeilenumbruch.\n\n\n\n\n\n\n\n\n\nAufgabe: Liste in Datei schreiben\n\n\n\n\n\nGegeben ist eine Liste von Städten:\nstaedte = [\"Berlin\", \"Hamburg\", \"München\"]\n\nSchreiben Sie ein Programm, das jede Stadt in eine neue Zeile einer Datei staedte.txt schreibt.\n\n\n\n\n\n\n\nLösung\n\n\n\n\n\n\nstaedte = [\"Berlin\", \"Hamburg\", \"München\"]\n\nwith open(\"staedte.txt\", \"w\") as f:\n    for stadt in staedte:\n        f.write(stadt + \"\\n\")",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#einlesen-als-liste",
-    "href": "skript/dateien-lesen-und-schreiben.html#einlesen-als-liste",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.6 Einlesen als Liste",
-    "text": "7.6 Einlesen als Liste\nEin Dateiobjekt kann auch direkt als Liste eingelesen werden. Die Methode dateiobjekt.readlines() gibt eine Liste zurück, in der jede Zeile einen Eintrag darstellt. Ebenso kann die Listenfunktion list() auf Dateiobjekte angewendet werden. Beide Vorgehensweisen liefern die gleiche Liste zurück, in der der Zeilenumbruch \\n mit ausgelesen wird.\n\ndateipfad = \"01-daten/einwohner_europa_2019.csv\"\ndateiobjekt_einwohner = open(dateipfad, 'r')\n\n# Methode readlines\neinwohner = dateiobjekt_einwohner.readlines()\nprint(einwohner)\n\n## Dateizeiger zurücksetzen\ndateiobjekt_einwohner.seek(0);\n\n# Funktion list\neinwohner = list(dateiobjekt_einwohner)\nprint(einwohner)\n\n# Datei schließen\ndateiobjekt_einwohner.close();\n\n['GEO,Value\\n', 'Belgien,11467923\\n', 'Bulgarien,7000039\\n', 'Tschechien,10528984\\n', 'Daenemark,5799763\\n', 'Deutschland einschliesslich ehemalige DDR,82940663\\n', 'Estland,1324820\\n', 'Irland,4904240\\n', 'Griechenland,10722287\\n', 'Spanien,46934632\\n', 'Frankreich,67028048\\n', 'Kroatien,4076246\\n', 'Italien,61068437\\n', 'Zypern,875898\\n', 'Lettland,1919968\\n', 'Litauen,2794184\\n', 'Luxemburg,612179\\n', 'Uganda,-1\\n', 'Ungarn,9772756\\n', 'Malta,493559\\n', 'Niederlande,17423013\\n', 'Oesterreich,8842000\\n', 'Polen,37972812\\n', 'Portugal,10276617\\n', 'Rumaenien,19405156\\n', 'Slowenien,2080908\\n', 'Slowakei,5450421\\n', 'Finnland,5512119\\n', 'Schweden,10243000\\n', 'Vereinigtes Koenigreich,66647112\\n']\n['GEO,Value\\n', 'Belgien,11467923\\n', 'Bulgarien,7000039\\n', 'Tschechien,10528984\\n', 'Daenemark,5799763\\n', 'Deutschland einschliesslich ehemalige DDR,82940663\\n', 'Estland,1324820\\n', 'Irland,4904240\\n', 'Griechenland,10722287\\n', 'Spanien,46934632\\n', 'Frankreich,67028048\\n', 'Kroatien,4076246\\n', 'Italien,61068437\\n', 'Zypern,875898\\n', 'Lettland,1919968\\n', 'Litauen,2794184\\n', 'Luxemburg,612179\\n', 'Uganda,-1\\n', 'Ungarn,9772756\\n', 'Malta,493559\\n', 'Niederlande,17423013\\n', 'Oesterreich,8842000\\n', 'Polen,37972812\\n', 'Portugal,10276617\\n', 'Rumaenien,19405156\\n', 'Slowenien,2080908\\n', 'Slowakei,5450421\\n', 'Finnland,5512119\\n', 'Schweden,10243000\\n', 'Vereinigtes Koenigreich,66647112\\n']\n\n\nUm den Zeilenumbruch zu entfernen, könnte mit dem Slice Operator das letzte Zeichen jedes Listeneintrags entfernt werden.\nEine andere Möglichkeit ist die Methode str.replace(old, new, count=-1), mit der Zeichen ersetzt oder gelöscht werden können. Die Parameter old und new geben die zu ersetzende bzw. die einzusetzende Zeichenfolge an und müssen positional übergeben werden. Über den Parameter count kann eingestellt werden, wie oft die Zeichenfolge old ersetzt werden soll. Standardmäßig wird jedes Vorkommen ersetzt.\n\nprint('Hund'.replace('Hu', 'Mu'))\n\nzeichenfolge = 'Ein  kurzer Text ohne  doppelte Leerzeichen.'\n\nprint(zeichenfolge.replace('  ', ' '))\n\nMund\nEin kurzer Text ohne doppelte Leerzeichen.\n\n\nDie Methode str.replace() kann auch zum Löschen verwendet werden. Wird für den Parameter new eine leere Zeichenfolge übergeben, wird die in old übergebene Zeichenfolge gelöscht.\n\nprint(zeichenfolge.replace(' ', '').replace('doppelte', ''))\n\nEinkurzerTextohneLeerzeichen.\n\n\nMit der Methode str.replace() kann die eingelesene Liste um den Zeilenumbruch bereinigt werden.\n\ndateipfad = \"01-daten/einwohner_europa_2019.csv\"\ndateiobjekt_einwohner = open(dateipfad, 'r')\n\n# Methode readlines\neinwohner = dateiobjekt_einwohner.readlines()\neinwohner_neu = []\n\nfor element in einwohner:\n  einwohner_neu.append(element.replace('\\n', ''))\n\neinwohner = einwohner_neu\nprint(einwohner)\n\n# Datei schließen\ndateiobjekt_einwohner.close();\n\n['GEO,Value', 'Belgien,11467923', 'Bulgarien,7000039', 'Tschechien,10528984', 'Daenemark,5799763', 'Deutschland einschliesslich ehemalige DDR,82940663', 'Estland,1324820', 'Irland,4904240', 'Griechenland,10722287', 'Spanien,46934632', 'Frankreich,67028048', 'Kroatien,4076246', 'Italien,61068437', 'Zypern,875898', 'Lettland,1919968', 'Litauen,2794184', 'Luxemburg,612179', 'Uganda,-1', 'Ungarn,9772756', 'Malta,493559', 'Niederlande,17423013', 'Oesterreich,8842000', 'Polen,37972812', 'Portugal,10276617', 'Rumaenien,19405156', 'Slowenien,2080908', 'Slowakei,5450421', 'Finnland,5512119', 'Schweden,10243000', 'Vereinigtes Koenigreich,66647112']",
+    "objectID": "skript/lesen_schreiben.html#alle-zeilen-auf-einmal-lesen-mit-readlines",
+    "href": "skript/lesen_schreiben.html#alle-zeilen-auf-einmal-lesen-mit-readlines",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.6 Alle Zeilen auf einmal lesen mit readlines()",
+    "text": "6.6 Alle Zeilen auf einmal lesen mit readlines()\nStatt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as f:\n    zeilen = f.readlines()\n    print(zeilen)\n\n['Dies ist ein Test.']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n, deshalb kann eine Nachbearbeitung mit .strip() sinnvoll sein:\n\nfor zeile in zeilen:\n    print(zeile.strip())\n\nDies ist ein Test.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   },
   {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#dateien-schreiben",
-    "href": "skript/dateien-lesen-und-schreiben.html#dateien-schreiben",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.7 Dateien schreiben",
-    "text": "7.7 Dateien schreiben\nUm Dateien zu schreiben, müssen diese mit der write-Methode eines Dateiobjekts verwendet werden. Dieser Methode wird als Argument die zu schreibende Zeichenfolge übergeben.\n\ndateipfad = \"01-daten/neue_datei.txt\"\n\n# Öffne Datei zum Schreiben öffnen\ndatei = open(dateipfad, mode = 'w')\n\n# Inhalt in die Datei schreiben\ndatei.write(\"Prokrastination an Hochschulen\\n\\n\".upper())\ndatei.write(\"KAPITEL 1: Aller Anfang ist schwer\\nPlatzhalter: Den Rest schreibe ich später.\")\n\n# Datei schließen\n\ndatei.close()\n\nDie Datei kann nun ausgelesen werden.\n\ndateiinhalt = open(dateipfad, mode = 'r')\ntext = dateiinhalt.read()\nprint(text)\n\ndateiinhalt.close()\n\nPROKRASTINATION AN HOCHSCHULEN\n\nKAPITEL 1: Aller Anfang ist schwer\nPlatzhalter: Den Rest schreibe ich später.",
+    "objectID": "skript/lesen_schreiben.html#dateien-manuell-schließen-mit-close",
+    "href": "skript/lesen_schreiben.html#dateien-manuell-schließen-mit-close",
+    "title": "6  Arbeiten mit Dateien",
+    "section": "6.7 Dateien manuell schließen mit close()",
+    "text": "6.7 Dateien manuell schließen mit close()\nWenn Sie keinen with-Block verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:\n\ndatei = open(\"01-daten/beispiel.txt\", \"w\")\ndatei.write(\"Dies ist ein Test.\")\ndatei.close()\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nclose() ist wichtig, damit Änderungen gespeichert werden und die Datei nicht gesperrt bleibt.\nEmpfehlung: Nutzen Sie immer with open(...), da Python die Datei dann automatisch schließt – auch bei Fehlern.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
-    ]
-  },
-  {
-    "objectID": "skript/dateien-lesen-und-schreiben.html#aufgabe-dateien-schreiben",
-    "href": "skript/dateien-lesen-und-schreiben.html#aufgabe-dateien-schreiben",
-    "title": "7  Dateien lesen und schreiben",
-    "section": "7.8 Aufgabe Dateien schreiben",
-    "text": "7.8 Aufgabe Dateien schreiben\n\nErzeugen Sie eine neue Datei mit der Endung .txt, die den Namen ihrer Heimatstadt hat. Schreiben Sie in diese Datei 10 Zeilen mit Informationen zur Stadt.\n\n  (Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Funktionen Module Dateien.“ Fachhochschule Dortmund.",
-    "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Dateien lesen und schreiben</span>"
-    ]
-  },
-  {
-    "objectID": "skript/module-und-pakete-importieren.html",
-    "href": "skript/module-und-pakete-importieren.html",
-    "title": "8  Module und Pakete importieren",
-    "section": "",
-    "text": "8.1 import as\nDer Funktionsumfang von Python kann erheblich durch das Importieren von Modulen und Paketen erweitert werden. Module und Pakete sind Bibliotheken, die Funktionsdefinitionen enthalten.\nModule und Pakete werden mit dem Schlüsselwort import in Python geladen. Beispielsweise kann das für die Erzeugung (pseudo-)zufälliger Zahlen zuständige Modul random mit dem Befehl import random eingebunden werden. Anschließend stehen die Funktionen des Moduls unter dem Modulnamen in der Schreibweise modul.funktion() zur Verfügung.\nDas Paket Matplotlib bringt viele Funktionen zur grafischen Darstellung von Daten mit. Das Modul matplotlib.pyplot stellt eine Schnittstelle zu den enthaltenen Funktionen dar.\nUm lange Modulnamen zu vereinfachen, kann beim Importieren das Schlüsselwort as verwendet werden, um dem Modul einen neuen Namen zuzuweisen.\nimport matplotlib.pyplot as plt\n\nplt.plot(zufallsdaten)\n\n\n\n\nGrafik mit dem Modul pyplot aus dem Paket matplotlib\nFür häufig verwendete Module haben sich bestimmte Kürzel etabliert. In den Bausteinen werden häufig die folgenden Pakete und Kürzel genutzt:",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Module und Pakete importieren</span>"
-    ]
-  },
-  {
-    "objectID": "skript/module-und-pakete-importieren.html#import-as",
-    "href": "skript/module-und-pakete-importieren.html#import-as",
-    "title": "8  Module und Pakete importieren",
-    "section": "",
-    "text": "Modul\nKürzel\nBefehl\n\n\n\n\nNumPy\nnp\nimport numpy as np\n\n\nPandas\npd\nimport pandas as pd\n\n\nmatplotlib.pyplot\nplt\nimport matplotlib.pyplot as plt",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Module und Pakete importieren</span>"
-    ]
-  },
-  {
-    "objectID": "skript/module-und-pakete-importieren.html#kleine-modulübersicht",
-    "href": "skript/module-und-pakete-importieren.html#kleine-modulübersicht",
-    "title": "8  Module und Pakete importieren",
-    "section": "8.2 Kleine Modulübersicht",
-    "text": "8.2 Kleine Modulübersicht\nDa es nicht möglich ist, auf alle diese Module einzugehen, werden im folgenden nur einige wenige Module aufgelistet, welche für die Zielgruppe dieses Skripts interessant sein könnten. Hinweis: Die Eigennamen einiger Module weisen eine Groß- und Kleinschreibung auf, bspw. das Modul NumPy. Beim Importieren der Module werden die Modulnamen jedoch klein geschrieben. In der folgenden Liste wird auf die Groß- und Kleinschreibung daher verzichtet.\n\nmath: mathematische Funktionen und Konstanten\nscipy: wissenschaftliche Funktionen\nsys: Interaktion mit dem Python-Interpreter\nos: Interaktion mit dem Betriebssystem\nglob: Durchsuchen von Dateisystempfaden\nmultiprocessing / threading: Parallelprogramierung mit Prozessen / Threads\nmatplotlib: Visualisierung von Daten und Erstellen von Abbildungen\nnumpy: numerische Operationen und Funktionen\npandas: Daten einlesen und auswerten\ntime: Zeitfunktionen\n\n  (Arnold (2023))\n\n\n\n\nArnold, Simone. 2023. „Datenanalyse mit Python. Funktionen Module Dateien.“ Fachhochschule Dortmund.",
-    "crumbs": [
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Module und Pakete importieren</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
   }
 ]
