@@ -11,7 +11,7 @@ Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Flor
 
 Zitiervorschlag
 
-Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch, und Sebastian Seipel. 2025. Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python. <https://github.com/bausteine-der-datenanalyse/w-python>.
+Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch, und Sebastian Seipel. 2025. "Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python". <https://github.com/bausteine-der-datenanalyse/w-python>.
 
 BibTeX-Vorlage
 
