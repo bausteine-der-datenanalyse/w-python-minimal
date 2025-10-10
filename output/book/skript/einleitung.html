@@ -187,6 +187,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Arbeiten mit Dateien</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../skript/daswichtigste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Das Wichtigste</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -228,6 +234,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9;">
+<p><iframe src="https://av.tib.eu/player/71644" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></p>
+</div>
+<section id="willkommen-bei-python" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Willkommen bei Python!</h1>
 <div class="border">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -237,20 +248,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Python Logo von Python Software Foundation steht unter der <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>. Die Wort-Bild-Marke ist markenrechtlich geschützt: <a href="https://www.python.org/psf/trademarks/" class="uri">https://www.python.org/psf/trademarks/</a>. Das Werk ist abrufbar auf <a href="https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg">wikimedia</a>. 2008</p>
 </div>
-<section id="willkommen-bei-python" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Willkommen bei Python!</h1>
 <p>Python ist eine moderne Programmiersprache, die sich besonders gut für Einsteigerinnen und Einsteiger eignet. Sie ist leicht verständlich und wird in vielen Bereichen eingesetzt – von der Datenanalyse bis hin zur Webentwicklung.</p>
 <blockquote class="blockquote">
 <p>In diesem Kurs lernen Sie Python Schritt für Schritt anhand praktischer Beispiele.</p>
 </blockquote>
 <section id="lernziele-dieses-kapitels" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="lernziele-dieses-kapitels"><span class="header-section-number">2.1</span> Lernziele dieses Kapitels</h2>
-<p>Am Ende dieses Kapitels können Sie: - einfache Python-Programme schreiben, - Text auf dem Bildschirm ausgeben, - erste Variablen definieren und verwenden.</p>
+<p>Am Ende dieses Kapitels können Sie:</p>
+<ul>
+<li>einfache Python-Programme schreiben,</li>
+<li>Text auf dem Bildschirm ausgeben,</li>
+<li>erste Variablen definieren und verwenden.</li>
+</ul>
 </section>
 <section id="ihr-erstes-programm" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="ihr-erstes-programm"><span class="header-section-number">2.2</span> Ihr erstes Programm</h2>
 <p>Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl <code>print()</code>:</p>
-<div id="b92079c3" class="cell" data-execution_count="1">
+<div id="444338aa" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo Welt!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo Welt!</code></pre>
@@ -261,12 +275,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="variablen-namen-für-werte" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="variablen-namen-für-werte"><span class="header-section-number">2.3</span> Variablen – Namen für Werte</h2>
 <p>Variablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.</p>
-<div id="9f9e0fe6" class="cell" data-execution_count="2">
+<div id="ae1f7062" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Frau Müller"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:</p>
-<div id="c38e70bb" class="cell" data-execution_count="3">
+<div id="62585a3c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name <span class="op">+</span> <span class="st">" ist "</span> <span class="op">+</span> <span class="bu">str</span>(alter) <span class="op">+</span> <span class="st">" Jahre alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Frau Müller ist 32 Jahre alt.</code></pre>
@@ -300,7 +314,7 @@ Lösung
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="acd8f8fd" class="cell" data-execution_count="4">
+<div id="e75a2876" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mein_name <span class="op">=</span> <span class="st">"Ihr Name hier"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo "</span> <span class="op">+</span> mein_name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -326,7 +340,7 @@ Lösung
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="9dff1404" class="cell" data-execution_count="5">
+<div id="9ccd9998" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Frau Müller"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>

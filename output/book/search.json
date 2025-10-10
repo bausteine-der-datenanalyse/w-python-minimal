@@ -44,7 +44,7 @@
     "href": "skript/einleitung.html#lernziele-dieses-kapitels",
     "title": "1  Einführung",
     "section": "2.1 Lernziele dieses Kapitels",
-    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie: - einfache Python-Programme schreiben, - Text auf dem Bildschirm ausgeben, - erste Variablen definieren und verwenden.",
+    "text": "2.1 Lernziele dieses Kapitels\nAm Ende dieses Kapitels können Sie:\n\neinfache Python-Programme schreiben,\nText auf dem Bildschirm ausgeben,\nerste Variablen definieren und verwenden.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
@@ -457,6 +457,16 @@
     "text": "6.7 Dateien manuell schließen mit close()\nWenn Sie keinen with-Block verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:\n\ndatei = open(\"01-daten/beispiel.txt\", \"w\")\ndatei.write(\"Dies ist ein Test.\")\ndatei.close()\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nclose() ist wichtig, damit Änderungen gespeichert werden und die Datei nicht gesperrt bleibt.\nEmpfehlung: Nutzen Sie immer with open(...), da Python die Datei dann automatisch schließt – auch bei Fehlern.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
+    ]
+  },
+  {
+    "objectID": "skript/daswichtigste.html",
+    "href": "skript/daswichtigste.html",
+    "title": "7  Das Wichtigste",
+    "section": "",
+    "text": "Python ist eine sehr vielseitige und deshalb auch eine der am häufigsten genutzen Programmiersprachen. Die Pythonbasis bringt das Grundgerüst für die statistische Programmierung mit. Durch spezialisierte Module wird der Funktionsumfang noch erheblich erweitert. Mehr dazu erfahren Sie in dem Video.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Wichtigste</span>"
     ]
   }
 ]
