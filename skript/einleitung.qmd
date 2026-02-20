@@ -7,7 +7,7 @@
 # Willkommen bei Python!
 
 ::: {.border}
-![Logo der Programmiersprache Python](00-bilder/python-logo-and-wordmark-cc0-tm.png)
+![Logo der Programmiersprache Python](00-bilder/python-logo-and-wordmark-cc0-tm.png){fig-alt="Logo der Programmiersprache Python"}
 
 Python Logo von Python Software Foundation steht unter der [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). Die Wort-Bild-Marke ist markenrechtlich geschützt: <https://www.python.org/psf/trademarks/>. Das Werk ist abrufbar auf [wikimedia](https://de.m.wikipedia.org/wiki/Datei:Python_logo_and_wordmark.svg). 2008
 ::: 

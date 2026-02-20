@@ -64,6 +64,19 @@ while zähler < 5:
 
 ::: {.callout-important icon="false" collapse="false"}
 Achten Sie auf eine Abbruchbedingung – sonst läuft die Schleife endlos!
+
+Wird die Variable 'zähler' nicht erhöht, wird die Abbruchbedingung nie erreicht.
+
+``` {python}
+#| eval: false
+
+zähler = 0
+
+while zähler < 5:
+    print("Zähler ist:", zähler)
+```
+
+In Python können Sie die Programmausführung durch gemeinsames Drücken der Tasten Strg und C beenden. Je nach verwendeter Entwicklungsumgebung kann eine andere Tastenkombination gelten.
 :::
 
 ## Schleifen mit `for` und `range()`
