@@ -79,7 +79,7 @@ print("Regenschirm dabei?", hat_regenschirm)
 print("Typ von 'ist_sonnig':", type(ist_sonnig))
 ```
 
-Booleans werden besonders in **Bedingungen** und **Vergleichen** verwendet, was Sie in Kapitel 4 genauer kennenlernen.
+Booleans werden besonders in **Bedingungen** und **Vergleichen** verwendet, was Sie in Kapitel 3 genauer kennenlernen.
 
 ## Rechnen mit Zahlen
 
@@ -136,7 +136,7 @@ Das nennt man **Typecasting**. Hier sind die wichtigsten Funktionen dafür:
 
 | Funktion | Beschreibung | Beispiel |
 |----------|--------------|----------|
-| `str())` | Zahl → Text | `str(42)` → `"42"` |
+| `str()` | Zahl → Text | `str(42)` → `"42"` |
 | `int()` | Text/Zahl → ganze Zahl | `int("10")` → `10` |
 | `float()` | Text/Zahl → Kommazahl | `float("3.14")` → `3.14` |
 

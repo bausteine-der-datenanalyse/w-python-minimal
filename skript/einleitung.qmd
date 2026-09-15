@@ -30,7 +30,7 @@ Am Ende dieses Kapitels können Sie:
 ## Ihr erstes Programm
 
 Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. 
-WIr lassen uns die Worte 'Hello World' ausgeben. Dazu nutzen wir den print-Befehl
+Wir lassen uns die Worte 'Hallo Welt' ausgeben. Dazu nutzen wir den print-Befehl
  `print()`:
 
 ```{python}
@@ -40,7 +40,7 @@ print("Hallo Welt!")
 
 **Was passiert hier?**
 - `print()` ist eine sogenannte **Funktion**, die etwas auf dem Bildschirm ausgibt.
-- Der Text `"Hello World!"` wird angezeigt.
+- Der Text `"Hallo Welt!"` wird angezeigt.
 - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.
 
 ## Variablen – Namen für Werte

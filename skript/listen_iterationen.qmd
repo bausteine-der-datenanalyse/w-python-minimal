@@ -100,7 +100,7 @@ print(namen)
 ```
 
 ::: {.callout-note icon="false" collapse="false"}
-Die Methode `.append())` hängt einen neuen Wert an das Ende der Liste.
+Die Methode `.append()` hängt einen neuen Wert an das Ende der Liste.
 :::
 
 ## Verschachtelte Schleifen

@@ -215,7 +215,7 @@ liste2 = liste1
 
 print("ID liste1:", id(liste1))
 print("ID liste2:", id(liste2))
-print("ID liste1 gleich ID list2:", liste1 is liste2)
+print("ID liste1 gleich ID liste2:", liste1 is liste2)
 ```
 
 ::: {.callout-note collapse="true"}
@@ -257,7 +257,7 @@ print(liste1 is liste2)
 ## Tupel
 Tupel sind Listen sehr ähnlich, jedoch sind Tupel unveränderbare Datenobjekte. Das heißt, die Elemente eines angelegten Tupels können weder geändert, noch entfernt werden. Auch können keine neuen Elemente zum Tupel hinzugefügt werden.
 
-Tupel werdem mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form `(wert, )` angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator `[start:stop:step]` möglich. Tupel können mit den Operatoren `+` und `*` verkettet werden.
+Tupel werden mit runden Klammern `()` erzeugt, die Elemente werden mit einem Komma `,` getrennt. Ein Tupel mit einem Wert wird mit einem Komma in der Form `(wert, )` angelegt. Der Zugriff auf die Elemente eines Tupels ist mit dem Slice-Operator `[start:stop:step]` möglich. Tupel können mit den Operatoren `+` und `*` verkettet werden.
 
 ```{python}
 tupel1 = (2, 7.8, 'Feuer', True, text_variable)
@@ -294,7 +294,7 @@ print(tupel1, tupel2)
 ```
 
 ## Mengen
-In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammelung, dementsprechend haben die Elemente keine Reihenfolge.
+In Python können Mengen mit der `set()` Funktion z. B. aus einer Liste oder aus einem Tupel erzeugt oder durch geschweiften Klammern `{}` erstellt werden (eine leere Menge kann nur mit `set()` erzeugt werden, da `{}` ein leeres Dictionary anlegt). Mengen sind ungeordnete Sammlung, dementsprechend haben die Elemente keine Reihenfolge.
 
 ```{python}
 liste = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tupel', 5)]
@@ -498,7 +498,7 @@ print(quadratzahlen)
 # Freie Eingabe
 ## start = int(input("Startwert in Kilometer pro Stunde eingeben."))
 ## ende = int(input("Endwert in Kilometer pro Stunde eingeben."))
-## ausgabeschritte =  int(input("Anzahl auszugebener Schritte ein geben."))
+## ausgabeschritte =  int(input("Anzahl der auszugebenden Schritte eingeben."))
 
 # Fixe Werte für die Lösung
 start = 5
@@ -551,7 +551,7 @@ if len(meine_liste) > 1:
     print("\nListe sortiert:", *meine_liste) # * unterdrückt die Kommas zwischen den Listenelementen
 
 else:
-    print("Die Liste muss mindenstens zwei Elemente enthalten!")
+    print("Die Liste muss mindestens zwei Elemente enthalten!")
 
 ```
 

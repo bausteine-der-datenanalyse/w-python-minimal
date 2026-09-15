@@ -1,1 +1,3 @@
-Dies ist ein Test.
+Dies ist eine Beispieldatei.
+Sie enthält mehrere Zeilen Text.
+Jede Zeile kann einzeln eingelesen werden.
