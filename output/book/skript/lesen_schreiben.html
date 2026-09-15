@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Arbeiten mit Dateien – Bausteine Computergestützter Datenanalyse</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -69,15 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../skript/funktionen.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f67a6f502b8d980179456538afc82e6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41d1ed59529443dc312b46011c211845.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -258,13 +263,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="eine-datei-einlesen" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="eine-datei-einlesen"><span class="header-section-number">6.2</span> Eine Datei einlesen</h2>
-<div id="7fd83122" class="cell" data-execution_count="1">
+<div id="daae5b16" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Datei lesen</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"01-daten/beispiel.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> datei:</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    inhalt <span class="op">=</span> datei.read()</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(inhalt)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dies ist ein Test.</code></pre>
+<pre><code>Dies ist eine Beispieldatei.
+Sie enthält mehrere Zeilen Text.
+Jede Zeile kann einzeln eingelesen werden.</code></pre>
 </div>
 </div>
 <ul>
@@ -275,12 +282,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="zeilenweise-lesen" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="zeilenweise-lesen"><span class="header-section-number">6.3</span> Zeilenweise lesen</h2>
-<div id="c4d4b14a" class="cell" data-execution_count="2">
+<div id="b0e9da5d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"01-daten/beispiel.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> datei:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> zeile <span class="kw">in</span> datei:</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zeile:"</span>, zeile.strip())</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Zeile: Dies ist ein Test.</code></pre>
+<pre><code>Zeile: Dies ist eine Beispieldatei.
+Zeile: Sie enthält mehrere Zeilen Text.
+Zeile: Jede Zeile kann einzeln eingelesen werden.</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -328,7 +337,7 @@ Willkommen Carla</code></pre>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="49a6bfad" class="cell" data-execution_count="3">
+<div id="eebd035a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"01-daten/gruesse.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> zeile <span class="kw">in</span> f:</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(zeile.strip())</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -347,7 +356,7 @@ Willkommen Carla</code></pre>
 </section>
 <section id="in-eine-datei-schreiben" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="in-eine-datei-schreiben"><span class="header-section-number">6.4</span> In eine Datei schreiben</h2>
-<div id="0c7b0baa" class="cell" data-execution_count="4">
+<div id="a3a7aed4" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"ausgabe.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> datei:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    datei.write(<span class="st">"Das ist eine neue Zeile.</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    datei.write(<span class="st">"Und noch eine."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -359,7 +368,7 @@ Willkommen Carla</code></pre>
 </section>
 <section id="zeilenweise-schreiben-mit-schleife" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="zeilenweise-schreiben-mit-schleife"><span class="header-section-number">6.5</span> Zeilenweise schreiben mit Schleife</h2>
-<div id="6de4af50" class="cell" data-execution_count="5">
+<div id="386767e5" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> [<span class="st">"Apfel"</span>, <span class="st">"Banane"</span>, <span class="st">"Kirsche"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"obst.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
@@ -411,7 +420,7 @@ Wichtig
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d15e728a" class="cell" data-execution_count="6">
+<div id="2f72399d" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>staedte <span class="op">=</span> [<span class="st">"Berlin"</span>, <span class="st">"Hamburg"</span>, <span class="st">"München"</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"staedte.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
@@ -428,12 +437,12 @@ Wichtig
 <section id="alle-zeilen-auf-einmal-lesen-mit-readlines" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="alle-zeilen-auf-einmal-lesen-mit-readlines"><span class="header-section-number">6.6</span> Alle Zeilen auf einmal lesen mit <code>readlines()</code></h2>
 <p>Statt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:</p>
-<div id="cc110339" class="cell" data-execution_count="7">
+<div id="98eaf702" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"01-daten/beispiel.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    zeilen <span class="op">=</span> f.readlines()</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(zeilen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['Dies ist ein Test.']</code></pre>
+<pre><code>['Dies ist eine Beispieldatei.\n', 'Sie enthält mehrere Zeilen Text.\n', 'Jede Zeile kann einzeln eingelesen werden.']</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -449,11 +458,13 @@ Wichtig
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Jede Zeile endet mit <code>\n</code>, deshalb kann eine Nachbearbeitung mit <code>.strip()</code> sinnvoll sein:</p>
-<div id="eff90aaf" class="cell" data-execution_count="8">
+<div id="de7201e6" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zeile <span class="kw">in</span> zeilen:</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(zeile.strip())</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dies ist ein Test.</code></pre>
+<pre><code>Dies ist eine Beispieldatei.
+Sie enthält mehrere Zeilen Text.
+Jede Zeile kann einzeln eingelesen werden.</code></pre>
 </div>
 </div>
 </div>
@@ -463,8 +474,8 @@ Wichtig
 <section id="dateien-manuell-schließen-mit-close" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="dateien-manuell-schließen-mit-close"><span class="header-section-number">6.7</span> Dateien manuell schließen mit <code>close()</code></h2>
 <p>Wenn Sie <strong>keinen <code>with</code>-Block</strong> verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:</p>
-<div id="417e6fac" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>datei <span class="op">=</span> <span class="bu">open</span>(<span class="st">"01-daten/beispiel.txt"</span>, <span class="st">"w"</span>)</span>
+<div id="8142a40e" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>datei <span class="op">=</span> <span class="bu">open</span>(<span class="st">"test.txt"</span>, <span class="st">"w"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>datei.write(<span class="st">"Dies ist ein Test."</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>datei.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

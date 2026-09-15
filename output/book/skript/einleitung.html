@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>1&nbsp; Einführung – Bausteine Computergestützter Datenanalyse</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -69,15 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f67a6f502b8d980179456538afc82e6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41d1ed59529443dc312b46011c211845.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -267,24 +272,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="ihr-erstes-programm" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="ihr-erstes-programm"><span class="header-section-number">2.2</span> Ihr erstes Programm</h2>
-<p>Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl <code>print()</code>:</p>
-<div id="0f53f2c9" class="cell" data-execution_count="1">
+<p>Die ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. Wir lassen uns die Worte ‘Hallo Welt’ ausgeben. Dazu nutzen wir den print-Befehl <code>print()</code>:</p>
+<div id="87d3c2d0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo Welt!"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo Welt!</code></pre>
 </div>
 </div>
-<p><strong>Was passiert hier?</strong> - <code>print()</code> ist eine sogenannte <strong>Funktion</strong>, die etwas auf dem Bildschirm ausgibt. - Der Text <code>"Hello World!"</code> wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.</p>
+<p><strong>Was passiert hier?</strong> - <code>print()</code> ist eine sogenannte <strong>Funktion</strong>, die etwas auf dem Bildschirm ausgibt. - Der Text <code>"Hallo Welt!"</code> wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.</p>
 </section>
 <section id="variablen-namen-für-werte" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="variablen-namen-für-werte"><span class="header-section-number">2.3</span> Variablen – Namen für Werte</h2>
 <p>Variablen sind wie beschriftete Schubladen: Sie speichern Informationen unter einem Namen.</p>
-<div id="d53533c6" class="cell" data-execution_count="2">
+<div id="fe6b6191" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Frau Müller"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Sie können diese Variablen verwenden, um dynamische Ausgaben zu erzeugen:</p>
-<div id="e73b5f2b" class="cell" data-execution_count="3">
+<div id="53461c41" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name <span class="op">+</span> <span class="st">" ist "</span> <span class="op">+</span> <span class="bu">str</span>(alter) <span class="op">+</span> <span class="st">" Jahre alt."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Frau Müller ist 32 Jahre alt.</code></pre>
@@ -318,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="0e1571a6" class="cell" data-execution_count="4">
+<div id="6a417219" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mein_name <span class="op">=</span> <span class="st">"Ihr Name hier"</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo "</span> <span class="op">+</span> mein_name <span class="op">+</span> <span class="st">"!"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -344,7 +349,7 @@ Sie sind 32 Jahre alt.</code></pre>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="51a1b120" class="cell" data-execution_count="5">
+<div id="dd45590d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Frau Müller"</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">32</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>

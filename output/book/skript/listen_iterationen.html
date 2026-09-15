@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>4&nbsp; Mehrere Werte speichern – Bausteine Computergestützter Datenanalyse</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -69,15 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../skript/flusskontrolle.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f67a6f502b8d980179456538afc82e6f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-41d1ed59529443dc312b46011c211845.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -248,12 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="was-ist-eine-liste" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="was-ist-eine-liste"><span class="header-section-number">4.1</span> Was ist eine Liste?</h2>
 <p>Eine Liste ist eine geordnete Sammlung von Werten eines Datentyps.</p>
-<div id="728b1487" class="cell" data-execution_count="1">
+<div id="f20d11bc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>namen <span class="op">=</span> [<span class="st">"Ali"</span>, <span class="st">"Bente"</span>, <span class="st">"Carlos"</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>noten <span class="op">=</span> [<span class="fl">1.7</span>, <span class="fl">2.3</span>, <span class="fl">1.3</span>, <span class="fl">2.0</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Auf Elemente greifen Sie mit eckigen Klammern zu:</p>
-<div id="5e242271" class="cell" data-execution_count="2">
+<div id="691cefe9" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(namen[<span class="dv">0</span>])  <span class="co"># erstes Element</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(noten[<span class="op">-</span><span class="dv">1</span>]) <span class="co"># letztes Element</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -265,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="teile-aus-listen-ausschneiden-slicing" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="teile-aus-listen-ausschneiden-slicing"><span class="header-section-number">4.2</span> Teile aus Listen ausschneiden – Slicing</h2>
 <p>Mit dem sogenannten <strong>Slicing</strong> können Sie gezielt Ausschnitte aus einer Liste entnehmen. Dabei geben Sie an, <strong>wo der Ausschnitt beginnt und wo er endet</strong> (der Endwert wird <strong>nicht</strong> mehr mitgenommen):</p>
-<div id="1f8a9eaf" class="cell" data-execution_count="3">
+<div id="e89da40a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>zahlen <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahlen[<span class="dv">1</span>:<span class="dv">4</span>])  <span class="co"># Ausgabe: [20, 30, 40]</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -281,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Ebenso der Endwert: <code>[3:]</code> → ab dem vierten Element bis zum Ende</li>
 <li>Ganze Kopie: <code>[:]</code></li>
 </ul>
-<div id="666820a3" class="cell" data-execution_count="4">
+<div id="45dcd534" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahlen[:<span class="dv">3</span>])   <span class="co"># [10, 20, 30]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahlen[<span class="dv">3</span>:])   <span class="co"># [40, 50, 60]</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahlen[:])    <span class="co"># vollständige Kopie</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -304,7 +309,7 @@ Hinweis
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Sie können auch mit negativen Indizes arbeiten (<code>-1</code> ist das letzte Element):</p>
-<div id="435e4ea5" class="cell" data-execution_count="5">
+<div id="17761230" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahlen[<span class="op">-</span><span class="dv">3</span>:])  <span class="co"># [40, 50, 60]</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[40, 50, 60]</code></pre>
@@ -318,7 +323,7 @@ Hinweis
 <section id="über-listen-iterieren" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="über-listen-iterieren"><span class="header-section-number">4.3</span> Über Listen iterieren</h2>
 <p>Mit einer <code>for</code>-Schleife können Sie über jedes Element in einer Liste iterieren:</p>
-<div id="b06690a0" class="cell" data-execution_count="6">
+<div id="e315c29f" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>namen <span class="op">=</span> [<span class="st">"Ali"</span>, <span class="st">"Bente"</span>, <span class="st">"Carlos"</span>]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> namen:</span>
@@ -333,7 +338,7 @@ Hallo Carlos!</code></pre>
 <section id="erweiterung-bedingte-ausgaben" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="erweiterung-bedingte-ausgaben"><span class="header-section-number">4.4</span> Erweiterung: Bedingte Ausgaben</h2>
 <p>Sie können in der Schleife mit <code>if</code> filtern:</p>
-<div id="6a6efd40" class="cell" data-execution_count="7">
+<div id="f3d02840" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>temperaturen <span class="op">=</span> [<span class="fl">14.2</span>, <span class="fl">17.5</span>, <span class="fl">19.0</span>, <span class="fl">21.3</span>, <span class="fl">18.4</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> temperaturen:</span>
@@ -349,7 +354,7 @@ Hallo Carlos!</code></pre>
 <section id="durchschnitt-berechnen" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="durchschnitt-berechnen"><span class="header-section-number">4.5</span> Durchschnitt berechnen</h2>
 <p>Python stellt nützliche Funktionen bereit, z. B. <code>sum()</code> und <code>len()</code>:</p>
-<div id="2d329b0f" class="cell" data-execution_count="8">
+<div id="dec003c1" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>noten <span class="op">=</span> [<span class="fl">1.7</span>, <span class="fl">2.3</span>, <span class="fl">1.3</span>, <span class="fl">2.0</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>durchschnitt <span class="op">=</span> <span class="bu">sum</span>(noten) <span class="op">/</span> <span class="bu">len</span>(noten)</span>
@@ -362,7 +367,7 @@ Hallo Carlos!</code></pre>
 <section id="listen-erweitern-.append" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="listen-erweitern-.append"><span class="header-section-number">4.6</span> Listen erweitern: <code>.append()</code></h2>
 <p>Manchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte <strong>nachträglich hinzufügen</strong>:</p>
-<div id="b81eb6a2" class="cell" data-execution_count="9">
+<div id="3b6c8bde" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>namen <span class="op">=</span> []</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>namen.append(<span class="st">"Ali"</span>)</span>
@@ -385,7 +390,7 @@ Hinweis
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Die Methode <code>.append())</code> hängt einen neuen Wert an das Ende der Liste.</p>
+<p>Die Methode <code>.append()</code> hängt einen neuen Wert an das Ende der Liste.</p>
 </div>
 </div>
 </div>
@@ -393,7 +398,7 @@ Hinweis
 <section id="verschachtelte-schleifen" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="verschachtelte-schleifen"><span class="header-section-number">4.7</span> Verschachtelte Schleifen</h2>
 <p>Wenn Sie mit <strong>mehrdimensionalen Daten</strong> arbeiten – z. B. eine Tabelle mit mehreren Zeilen – können Sie Schleifen <strong>ineinander verschachteln</strong>:</p>
-<div id="17ff7b87" class="cell" data-execution_count="10">
+<div id="0b619b78" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>wochentage <span class="op">=</span> [<span class="st">"Mo"</span>, <span class="st">"Di"</span>, <span class="st">"Mi"</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>stunden <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -422,7 +427,7 @@ Di, Stunde 1
 <section id="listen-sortieren" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="listen-sortieren"><span class="header-section-number">4.8</span> Listen sortieren</h2>
 <p>Mit <code>sorted()</code> können Sie Listen <strong>alphabetisch oder numerisch sortieren</strong>:</p>
-<div id="f57599b5" class="cell" data-execution_count="11">
+<div id="dc6580ce" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>namen <span class="op">=</span> [<span class="st">"Zoe"</span>, <span class="st">"Anna"</span>, <span class="st">"Ben"</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sortiert <span class="op">=</span> <span class="bu">sorted</span>(namen)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -445,7 +450,7 @@ Wichtig
 <div class="callout-body-container callout-body">
 <p>Die Original-Liste bleibt <strong>unverändert</strong>.<br>
 Wenn Sie die Liste direkt verändern möchten, geht das mit:</p>
-<div id="efe2e75a" class="cell" data-execution_count="12">
+<div id="fee22fdd" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>namen.sort()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>

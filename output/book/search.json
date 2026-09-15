@@ -24,7 +24,7 @@
     "href": "index.html#lernziele",
     "title": "Bausteine Computergestützter Datenanalyse",
     "section": "Lernziele",
-    "text": "Lernziele\nIn diesem Bausteine werden die Grundzüge der Programmierung mit Python vermittelt. In diesem Baustein lernen Sie …\n\nGrundlagen des Programmierens\nAusgaben in Python, Grundlegende Datentypen, FLusskontrolle\ndie Dokumentation zu lesen und zu verwenden\nModule und Pakete laden",
+    "text": "Lernziele\nIn diesem Baustein werden die Grundzüge der Programmierung mit Python vermittelt. In diesem Baustein lernen Sie …\n\nGrundlagen des Programmierens\nAusgaben in Python, Grundlegende Datentypen, Flusskontrolle\ndie Dokumentation zu lesen und zu verwenden\nModule und Pakete laden",
     "crumbs": [
       "Werkzeugbaustein Python"
     ]
@@ -54,7 +54,7 @@
     "href": "skript/einleitung.html#ihr-erstes-programm",
     "title": "1  Einführung",
     "section": "2.2 Ihr erstes Programm",
-    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. WIr lassen uns die Worte ‘Hello World’ ausgeben. Dazu nutzen wir den print-Befehl print():\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print() ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hello World!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
+    "text": "2.2 Ihr erstes Programm\nDie ersten Schritte in einer neuen Programmiersprache sind immer die gleichen. Wir lassen uns die Worte ‘Hallo Welt’ ausgeben. Dazu nutzen wir den print-Befehl print():\n\nprint(\"Hallo Welt!\")\n\nHallo Welt!\n\n\nWas passiert hier? - print() ist eine sogenannte Funktion, die etwas auf dem Bildschirm ausgibt. - Der Text \"Hallo Welt!\" wird angezeigt. - Texte (auch „Strings“ genannt) stehen immer in Anführungszeichen.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung</span>"
     ]
@@ -124,7 +124,7 @@
     "href": "skript/datentypen.html#was-sind-booleans-bool",
     "title": "2  Datentypen verstehen",
     "section": "2.5 Was sind Booleans (bool)?",
-    "text": "2.5 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 4 genauer kennenlernen.",
+    "text": "2.5 Was sind Booleans (bool)?\nEin Boolean ist ein Wahrheitswert: Er kann nur zwei Zustände annehmen:\n\nTrue (wahr)\nFalse (falsch)\n\nSolche Werte begegnen uns zum Beispiel bei Fragen wie:\n\nIst die Temperatur über 30 °C?\nHat die Datei einen bestimmten Namen?\nIst die Liste leer?\n\n\nist_sonnig = True\nhat_regenschirm = False\n\nprint(\"Sonnig:\", ist_sonnig)\nprint(\"Regenschirm dabei?\", hat_regenschirm)\nprint(\"Typ von 'ist_sonnig':\", type(ist_sonnig))\n\nSonnig: True\nRegenschirm dabei? False\nTyp von 'ist_sonnig': &lt;class 'bool'&gt;\n\n\nBooleans werden besonders in Bedingungen und Vergleichen verwendet, was Sie in Kapitel 3 genauer kennenlernen.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
@@ -154,7 +154,7 @@
     "href": "skript/datentypen.html#umwandlung-von-datentypen-typecasting",
     "title": "2  Datentypen verstehen",
     "section": "2.8 Umwandlung von Datentypen (Typecasting)",
-    "text": "2.8 Umwandlung von Datentypen (Typecasting)\nManchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.\nDas nennt man Typecasting. Hier sind die wichtigsten Funktionen dafür:\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nstr())\nZahl → Text\nstr(42) → \"42\"\n\n\nint()\nText/Zahl → ganze Zahl\nint(\"10\") → 10\n\n\nfloat()\nText/Zahl → Kommazahl\nfloat(\"3.14\") → 3.14\n\n\n\n\n# Beispiel: Zahl als Text anzeigen\npunkte = 100\nprint(\"Sie haben \" + str(punkte) + \" Punkte.\")\n\n# Beispiel: String in Zahl umwandeln und berechnen\neingabe = \"3.5\"\nwert = float(eingabe) * 2\nprint(\"Doppelt so viel:\", wert)\n\nSie haben 100 Punkte.\nDoppelt so viel: 7.0\n\n\nAchten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – int(\"abc\") führt zu einem Fehler.\n\n\n\n\n\n\nTippAufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nVorsichtLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
+    "text": "2.8 Umwandlung von Datentypen (Typecasting)\nManchmal müssen Sie einen Wert von einem Datentyp in einen anderen umwandeln – z. B. eine Zahl in einen Text (String), damit sie ausgegeben werden kann.\nDas nennt man Typecasting. Hier sind die wichtigsten Funktionen dafür:\n\n\n\nFunktion\nBeschreibung\nBeispiel\n\n\n\n\nstr()\nZahl → Text\nstr(42) → \"42\"\n\n\nint()\nText/Zahl → ganze Zahl\nint(\"10\") → 10\n\n\nfloat()\nText/Zahl → Kommazahl\nfloat(\"3.14\") → 3.14\n\n\n\n\n# Beispiel: Zahl als Text anzeigen\npunkte = 100\nprint(\"Sie haben \" + str(punkte) + \" Punkte.\")\n\n# Beispiel: String in Zahl umwandeln und berechnen\neingabe = \"3.5\"\nwert = float(eingabe) * 2\nprint(\"Doppelt so viel:\", wert)\n\nSie haben 100 Punkte.\nDoppelt so viel: 7.0\n\n\nAchten Sie beim Umwandeln darauf, dass der Inhalt auch wirklich passt – int(\"abc\") führt zu einem Fehler.\n\n\n\n\n\n\nTippAufgabe: Alter in Tagen\n\n\n\n\n\nBerechnen Sie, wie alt eine Person in Tagen ist.\n\nalter_jahre = 32\ntage = alter_jahre * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.\n\n\nTipp: Denken Sie an die Umwandlung in einen String, wenn Sie die Zahl ausgeben möchten.\n\n\n\n\n\n\nVorsichtLösung\n\n\n\n\n\n\nalter = 32\ntage = alter * 365\nprint(\"Sie sind ungefähr \" + str(tage) + \" Tage alt.\")\n\nSie sind ungefähr 11680 Tage alt.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datentypen verstehen</span>"
     ]
@@ -284,7 +284,7 @@
     "href": "skript/listen_iterationen.html#listen-erweitern-.append",
     "title": "4  Mehrere Werte speichern",
     "section": "4.6 Listen erweitern: .append()",
-    "text": "4.6 Listen erweitern: .append()\nManchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte nachträglich hinzufügen:\n\nnamen = []\n\nnamen.append(\"Ali\")\nnamen.append(\"Bente\")\n\nprint(namen)\n\n['Ali', 'Bente']\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDie Methode .append()) hängt einen neuen Wert an das Ende der Liste.",
+    "text": "4.6 Listen erweitern: .append()\nManchmal kennen Sie die Listenelemente nicht vorher – dann können Sie neue Werte nachträglich hinzufügen:\n\nnamen = []\n\nnamen.append(\"Ali\")\nnamen.append(\"Bente\")\n\nprint(namen)\n\n['Ali', 'Bente']\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDie Methode .append() hängt einen neuen Wert an das Ende der Liste.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Mehrere Werte speichern</span>"
     ]
@@ -404,7 +404,7 @@
     "href": "skript/lesen_schreiben.html#eine-datei-einlesen",
     "title": "6  Arbeiten mit Dateien",
     "section": "6.2 Eine Datei einlesen",
-    "text": "6.2 Eine Datei einlesen\n\n# Beispiel: Datei lesen\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    inhalt = datei.read()\n    print(inhalt)\n\nDies ist ein Test.\n\n\n\n\"r\" steht für read (lesen).\nwith sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.\nread() liest den gesamten Inhalt der Datei als String.",
+    "text": "6.2 Eine Datei einlesen\n\n# Beispiel: Datei lesen\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    inhalt = datei.read()\n    print(inhalt)\n\nDies ist eine Beispieldatei.\nSie enthält mehrere Zeilen Text.\nJede Zeile kann einzeln eingelesen werden.\n\n\n\n\"r\" steht für read (lesen).\nwith sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.\nread() liest den gesamten Inhalt der Datei als String.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
@@ -414,7 +414,7 @@
     "href": "skript/lesen_schreiben.html#zeilenweise-lesen",
     "title": "6  Arbeiten mit Dateien",
     "section": "6.3 Zeilenweise lesen",
-    "text": "6.3 Zeilenweise lesen\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    for zeile in datei:\n        print(\"Zeile:\", zeile.strip())\n\nZeile: Dies ist ein Test.\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n.strip() entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.\n\n\n\n\n\n\n\n\n\nTippAufgabe: Datei lesen\n\n\n\n\n\nAngenommen, es gibt eine Datei gruesse.txt mit folgendem Inhalt:\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla\nSchreiben Sie ein Programm, das jede Zeile einzeln einliest und mit print(...) wiedergibt.\n\n\n\n\n\n\nVorsichtLösung\n\n\n\n\n\n\nwith open(\"01-daten/gruesse.txt\", \"r\") as f:\n    for zeile in f:\n        print(zeile.strip())\n\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla",
+    "text": "6.3 Zeilenweise lesen\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as datei:\n    for zeile in datei:\n        print(\"Zeile:\", zeile.strip())\n\nZeile: Dies ist eine Beispieldatei.\nZeile: Sie enthält mehrere Zeilen Text.\nZeile: Jede Zeile kann einzeln eingelesen werden.\n\n\n\n\n\n\n\n\nHinweis\n\n\n\n\n\n.strip() entfernt Leerzeichen und Zeilenumbrüche am Anfang und Ende.\n\n\n\n\n\n\n\n\n\nTippAufgabe: Datei lesen\n\n\n\n\n\nAngenommen, es gibt eine Datei gruesse.txt mit folgendem Inhalt:\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla\nSchreiben Sie ein Programm, das jede Zeile einzeln einliest und mit print(...) wiedergibt.\n\n\n\n\n\n\nVorsichtLösung\n\n\n\n\n\n\nwith open(\"01-daten/gruesse.txt\", \"r\") as f:\n    for zeile in f:\n        print(zeile.strip())\n\nHallo Anna\nGuten Morgen Ben\nWillkommen Carla",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
@@ -444,7 +444,7 @@
     "href": "skript/lesen_schreiben.html#alle-zeilen-auf-einmal-lesen-mit-readlines",
     "title": "6  Arbeiten mit Dateien",
     "section": "6.6 Alle Zeilen auf einmal lesen mit readlines()",
-    "text": "6.6 Alle Zeilen auf einmal lesen mit readlines()\nStatt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as f:\n    zeilen = f.readlines()\n    print(zeilen)\n\n['Dies ist ein Test.']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n, deshalb kann eine Nachbearbeitung mit .strip() sinnvoll sein:\n\nfor zeile in zeilen:\n    print(zeile.strip())\n\nDies ist ein Test.",
+    "text": "6.6 Alle Zeilen auf einmal lesen mit readlines()\nStatt über eine Datei zu iterieren, können Sie alle Zeilen auf einmal als Liste einlesen:\n\nwith open(\"01-daten/beispiel.txt\", \"r\") as f:\n    zeilen = f.readlines()\n    print(zeilen)\n\n['Dies ist eine Beispieldatei.\\n', 'Sie enthält mehrere Zeilen Text.\\n', 'Jede Zeile kann einzeln eingelesen werden.']\n\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nJede Zeile endet mit \\n, deshalb kann eine Nachbearbeitung mit .strip() sinnvoll sein:\n\nfor zeile in zeilen:\n    print(zeile.strip())\n\nDies ist eine Beispieldatei.\nSie enthält mehrere Zeilen Text.\nJede Zeile kann einzeln eingelesen werden.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
@@ -454,7 +454,7 @@
     "href": "skript/lesen_schreiben.html#dateien-manuell-schließen-mit-close",
     "title": "6  Arbeiten mit Dateien",
     "section": "6.7 Dateien manuell schließen mit close()",
-    "text": "6.7 Dateien manuell schließen mit close()\nWenn Sie keinen with-Block verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:\n\ndatei = open(\"01-daten/beispiel.txt\", \"w\")\ndatei.write(\"Dies ist ein Test.\")\ndatei.close()\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nclose() ist wichtig, damit Änderungen gespeichert werden und die Datei nicht gesperrt bleibt.\nEmpfehlung: Nutzen Sie immer with open(...), da Python die Datei dann automatisch schließt – auch bei Fehlern.",
+    "text": "6.7 Dateien manuell schließen mit close()\nWenn Sie keinen with-Block verwenden, müssen Sie die Datei selbst schließen – sonst bleibt sie geöffnet:\n\ndatei = open(\"test.txt\", \"w\")\ndatei.write(\"Dies ist ein Test.\")\ndatei.close()\n\n\n\n\n\n\n\nWichtig\n\n\n\n\n\nclose() ist wichtig, damit Änderungen gespeichert werden und die Datei nicht gesperrt bleibt.\nEmpfehlung: Nutzen Sie immer with open(...), da Python die Datei dann automatisch schließt – auch bei Fehlern.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Arbeiten mit Dateien</span>"
     ]
@@ -464,7 +464,7 @@
     "href": "skript/daswichtigste.html",
     "title": "7  Das Wichtigste",
     "section": "",
-    "text": "Python ist eine sehr vielseitige und deshalb auch eine der am häufigsten genutzen Programmiersprachen. Die Pythonbasis bringt das Grundgerüst für die statistische Programmierung mit. Durch spezialisierte Module wird der Funktionsumfang noch erheblich erweitert. Mehr dazu erfahren Sie in dem Video.",
+    "text": "Python ist eine sehr vielseitige und deshalb auch eine der am häufigsten genutzten Programmiersprachen. Die Pythonbasis bringt das Grundgerüst für die statistische Programmierung mit. Durch spezialisierte Module wird der Funktionsumfang noch erheblich erweitert. Mehr dazu erfahren Sie in dem Video.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Das Wichtigste</span>"
     ]
